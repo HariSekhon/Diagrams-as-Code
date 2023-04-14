@@ -54,6 +54,8 @@ build: init
 	if [ -z "$(CPANM)" ]; then make; exit $$?; fi
 	$(MAKE) system-packages-python
 
+	$(MAKE) python
+
 .PHONY: init
 init: git
 	@echo "running init:"
@@ -63,6 +65,14 @@ init: git
 .PHONY: install
 install: build
 	@:
+
+.PHONY: python
+python:
+	@PIP=$(PIP) PIP_OPTS="--ignore-installed" bash-tools/python_pip_install_if_absent.sh requirements.txt
+	@echo
+	$(MAKE) pycompile
+	@echo
+	@echo 'BUILD SUCCESSFUL (Diagrams)'
 
 .PHONY: test
 test:
