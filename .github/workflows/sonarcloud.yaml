@@ -21,9 +21,9 @@ on:
       - master
   pull_request:
     types:
-   		- opened
-			- synchronize
-			- reopened
+      - opened
+      - synchronize
+      - reopened
 jobs:
   sonarcloud:
     name: SonarCloud
