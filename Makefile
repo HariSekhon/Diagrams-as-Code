@@ -57,7 +57,7 @@ build: init
 	$(MAKE) python
 
 .PHONY: init
-init: git
+init:
 	@echo "running init:"
 	git submodule update --init --recursive
 	@echo
