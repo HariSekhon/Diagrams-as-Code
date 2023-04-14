@@ -15,7 +15,7 @@
 [![Codiga Grade](https://api.codiga.io/project/8840/status/svg)](https://app.codiga.io/project/8840/dashboard)
 [![Codiga Score](https://api.codiga.io/project/8840/score/svg)](https://app.codiga.io/project/8840/dashboard)
 
-[![Python](https://img.shields.io/badge/Python-3-blue)]
+![Python](https://img.shields.io/badge/Python-3-blue)
 [![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
 [![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
 
