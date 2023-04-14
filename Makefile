@@ -41,12 +41,18 @@ REPO := HariSekhon/Diagrams-as-Code
 CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
 
 .PHONY: build
-build:
+build: init
 	@echo ================
-	@echo Bash Tools Build
+	@echo Diagrams Builds
 	@echo ================
 	@$(MAKE) git-summary
-	@$(MAKE) init
+	@echo
+	# defer via external sub-call, otherwise will result in error like
+	# make: *** No rule to make target 'python-version', needed by 'build'.  Stop.
+	@$(MAKE) python-version
+
+	if [ -z "$(CPANM)" ]; then make; exit $$?; fi
+	$(MAKE) system-packages-python
 
 .PHONY: init
 init: git
