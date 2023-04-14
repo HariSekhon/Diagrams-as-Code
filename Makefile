@@ -11,7 +11,30 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
-#include Makefile.in
+# ===================
+# bootstrap commands:
+
+# setup/bootstrap.sh
+#
+# OR
+#
+# Alpine:
+#
+#   apk add --no-cache git make && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+#
+# Debian / Ubuntu:
+#
+#   apt-get update && apt-get install -y make git && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+#
+# RHEL / CentOS:
+#
+#   yum install -y make git && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+
+# ===================
+
+ifneq ("$(wildcard bash-tools/Makefile.in)", "")
+	include bash-tools/Makefile.in
+endif
 
 REPO := HariSekhon/Diagrams-as-Code
 
