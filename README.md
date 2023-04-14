@@ -27,7 +27,7 @@
 [![Ubuntu](https://img.shields.io/badge/Linux-Ubuntu-orange?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
-[![Azure DevOps Pipeline](https://dev.azure.com/HariSekhon/GitHub/_apis/build/status/HariSekhon.Diagrams-as-Code?branchName=master)](https://dev.azure.com/HariSekhon/GitHub/_build/latest?definitionId=1&branchName=master) # XXX replace link ID
+[![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2FDiagrams-as-Code?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=14&branchName=master)
 [![GitLab Pipeline](https://img.shields.io/gitlab/pipeline/HariSekhon/Diagrams-as-Code?logo=gitlab&label=GitLab%20CI)](https://gitlab.com/HariSekhon/Diagrams-as-Code/pipelines)
 [![BitBucket Pipeline](https://img.shields.io/bitbucket/pipelines/HariSekhon/Diagrams-as-Code/master?logo=bitbucket&label=BitBucket%20CI)](https://bitbucket.org/HariSekhon/Diagrams-as-Code/addon/pipelines/home#!/)
 
