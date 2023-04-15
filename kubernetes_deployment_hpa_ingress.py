@@ -35,7 +35,7 @@ from diagrams.k8s.compute import Deployment, Pod, ReplicaSet
 from diagrams.k8s.network import Ingress, Service
 
 with Diagram("Kubernetes Deployment with HPA and Ingress", show=True):
-    net = Ingress("Ingress\nwww.domain.com") >> Service("Service\n(internal\nk8s cluster\nload balancer)")
+    net = Ingress("Ingress\nwww.domain.com") >> Service("Service)")
     # pylint: disable=W0106
     net >> [Pod("web1"),
             Pod("web2"),
