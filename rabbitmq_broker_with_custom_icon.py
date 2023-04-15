@@ -49,6 +49,6 @@ with Diagram("RabbitMQ Broker with custom icon", show=True):
             Pod("worker"),
             Pod("worker")]
 
-    queue = Custom("Message queue", rabbitmq_icon)
+    rabbitmq = Custom("RabbitMQ", rabbitmq_icon)
 
-    queue >> consumers >> Aurora("Database")
+    rabbitmq >> consumers >> Aurora("Database")
