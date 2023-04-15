@@ -43,6 +43,27 @@
 
 Diagrams as Code using the awesome Python [diagrams](https://github.com/mingrammer/diagrams) module.
 
+## Quick Start
+
+Install Graphviz, Python3 and 'diagrams' pip module:
+
+```shell
+git clone https://github.com/HariSekhon/Diagrams-as-Code diagrams
+
+cd diagrams
+
+make install
+```
+
+Create the `.png` diagrams in the local directory and open them:
+
+```shell
+make
+```
+
+Impressive diagrams!!!
+
+
 XXX: CI/CD generate PNGs, store somewhere and embed pics here
 
 
