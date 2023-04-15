@@ -63,6 +63,10 @@ make
 
 Impressive diagrams!!!
 
+## Template
+
+The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows how to code different types of diagrams from simple to advanced.
+
 ## Examples
 
 TODO: CI/CD generate PNGs, store somewhere and embed pics here
