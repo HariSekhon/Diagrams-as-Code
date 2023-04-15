@@ -5,7 +5,7 @@
 #  Author: Hari Sekhon
 #  Date: [% DATE  # 2023-04-14 13:54:52 +0100 (Fri, 14 Apr 2023) %]
 #
-#  https://github.com/HariSekhon/Templates
+#  https://github.com/HariSekhon/Diagrams-as-Code
 #
 #  License: see accompanying Hari Sekhon LICENSE file
 #
