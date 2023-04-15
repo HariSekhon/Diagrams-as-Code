@@ -53,6 +53,7 @@ graphs:
 	@echo Generating Diagrams
 	@echo ===================
 	mkdir -p -v images
+	$(MAKE) clean
 	for x in *.py; do \
 		if [ "$$x" = template.py ]; then \
 			continue; \
