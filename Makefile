@@ -45,6 +45,10 @@ main:
 
 .PHONY: graphs
 graphs:
+	@if ! type -P dot >/dev/null 2>&1 || \
+		! python3 -c 'import diagrams' 2>&1; then \
+		$(MAKE) build; \
+	fi
 	@echo ===================
 	@echo Generating Diagrams
 	@echo ===================
