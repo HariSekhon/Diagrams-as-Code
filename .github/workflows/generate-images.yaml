@@ -1,0 +1,70 @@
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  Author: Hari Sekhon
+#  Date: 2023-04-15 19:21:30 +0100 (Sat, 15 Apr 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+---
+name: Generate Images
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '*.py'
+      - .github/workflows/generate-images.yaml  # this workflow
+
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        default: false
+
+  schedule:
+    - cron: '0 0 * * 1'
+
+# use minimal permissions at workflow / jobs level
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -euxo pipefail {0}
+
+jobs:
+  generate_images:
+    name: Generate Images
+    timeout-minutes: 30
+
+    if: ( github.ref_name == 'master' || github.ref_name == 'main' ) && github.event.repository.fork == false
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
+      - name: Build
+        run: |
+          setup/ci_bootstrap.sh
+
+          make
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: images
+          path: '*.png'
