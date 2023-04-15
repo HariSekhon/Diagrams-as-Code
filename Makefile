@@ -52,10 +52,15 @@ graphs:
 	@echo ===================
 	@echo Generating Diagrams
 	@echo ===================
+	mkdir -p -v images
 	for x in *.py; do \
+		if [ "$$x" = template.py ]; then \
+			continue; \
+		fi; \
 		echo "Generating $$x"; \
 		python3 $$x; \
 	done
+	mv -fv *.png images/
 
 .PHONY: build
 build: init
