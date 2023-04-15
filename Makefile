@@ -97,4 +97,4 @@ test:
 
 .PHONY: clean
 clean:
-	@rm -fv -- *.pyc *.pyo
+	@rm -fv -- *.pyc *.pyo *.png
