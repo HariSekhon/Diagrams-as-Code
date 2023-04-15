@@ -75,8 +75,18 @@ jobs:
         run: make
 
       - name: Git Commit Images
+        id: commit
         run: |
+          git add images/
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+            exit 0
+          fi
           git config user.name "$(git log -n 1 --format='%an')"
           git config user.email "$(git log -n 1 --format='%ae')"
-          git add images/
           git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
+          echo "::set-output name=new_commits::true"
+
+      - name: Git Push
+        if: steps.commit.outputs.new_commits == 'true'
+        run: git push
