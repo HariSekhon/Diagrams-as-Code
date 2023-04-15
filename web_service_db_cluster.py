@@ -41,7 +41,9 @@ with Diagram("Web Service with DB Cluster", show=True):
 
     with Cluster("RDS DB Cluster"):
         db_primary = RDS("primary")
+        # pylint: disable=W0106
         db_primary - [RDS("replica2"),
                       RDS("replica1")]
 
+    # pylint: disable=W0104
     dns >> web >> db_primary
