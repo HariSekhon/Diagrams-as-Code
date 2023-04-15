@@ -84,9 +84,9 @@ install: build
 
 .PHONY: python
 python:
-	@PIP=$(PIP) PIP_OPTS="--ignore-installed" bash-tools/python_pip_install_if_absent.sh requirements.txt
+	@PYTHON=python3 PIP=pip3 PIP_OPTS="--ignore-installed" bash-tools/python_pip_install_if_absent.sh requirements.txt
 	@echo
-	$(MAKE) pycompile
+	@#$(MAKE) pycompile
 	@echo
 	@echo 'BUILD SUCCESSFUL (Diagrams)'
 
