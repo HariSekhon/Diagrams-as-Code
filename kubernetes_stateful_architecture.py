@@ -35,16 +35,16 @@ from diagrams.k8s.compute import Pod, StatefulSet
 from diagrams.k8s.storage import PV, PVC, StorageClass
 
 with Diagram("Kubernetes Stateful Architecture", show=True):
-    with Cluster("Apps"):
+    with Cluster("App"):
         # Service clutters this diagram
         # svc = Service("Service)")
-        sts = StatefulSet("StatefulSet Controller")
+        sts = StatefulSet("StatefulSet")
 
         apps = []
         # pylint: disable=W0104
         # count from 3 to 1 to get the apps to come out in the right order top to bottom
         for _ in range(3, 0, -1):
-            pod = Pod(f"App {_}")
+            pod = Pod(f"Pod {_}")
             pvc = PVC(f"Persistent\nVolume Claim {_}")
             pv = PV(f"Persistent Volume {_}")
             #pod - sts - pvc
