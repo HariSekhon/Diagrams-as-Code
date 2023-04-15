@@ -36,7 +36,7 @@ on:
 
 # use minimal permissions at workflow / jobs level
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -74,7 +74,9 @@ jobs:
       - name: Generate Images
         run: make
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: images
-          path: '*.png'
+      - name: Git Commit Images
+        run: |
+          git config user.name "$(git log -n 1 --format='%an')"
+          git config user.email "$(git log -n 1 --format='%ae')"
+          git add images/
+          git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
