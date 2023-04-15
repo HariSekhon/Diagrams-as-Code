@@ -51,7 +51,7 @@ with Diagram("Event Processing", show=True):
             lambdas = [Lambda("Lambda proc2"),  # middle
                        Lambda("Lambda proc3"),  # puts below
                        Lambda("Lambda proc1")]  # puts last one above
-                        # this is why it's ordered weirdly here but comes out ordered in diagram
+                       # this is why it's ordered weirdly here but comes out ordered in diagram
 
     s3 = S3("S3 storage")
     redshift = Redshift("Redshift analytics")
