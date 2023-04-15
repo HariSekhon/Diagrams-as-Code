@@ -17,7 +17,7 @@
 
 """
 
-Clustered Web Services
+AWS Clustered Web Services
 
 """
 
@@ -34,7 +34,7 @@ from diagrams.aws.compute import ECS
 from diagrams.aws.database import RDS, ElastiCache
 from diagrams.aws.network import ELB, Route53
 
-with Diagram("Clustered Web Services", show=True):
+with Diagram("AWS Clustered Web Services", show=True):
     dns = Route53("Route53")
     lb = ELB("ELB")
 
