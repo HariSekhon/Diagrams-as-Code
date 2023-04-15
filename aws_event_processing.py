@@ -17,7 +17,7 @@
 
 """
 
-Event Processing
+AWS Event Processing
 
 """
 
@@ -36,7 +36,7 @@ from diagrams.aws.integration import SQS
 from diagrams.aws.storage import S3
 
 # Nest clusters
-with Diagram("Event Processing", show=True):
+with Diagram("AWS Event Processing", show=True):
     eks = EKS("EKS source")
 
     with Cluster("Event Flows"):
