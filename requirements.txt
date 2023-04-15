@@ -1,1 +1,1 @@
-diagrams==0.23.3
+diagrams>=0.23.0
