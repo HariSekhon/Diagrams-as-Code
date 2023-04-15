@@ -35,7 +35,7 @@ from diagrams.aws.database import RDS
 from diagrams.aws.network import Route53
 
 # Cluster puts a box around RDS nodes, and can connect outside ECS and Route53 to the primary RDS
-with Diagram("Web Service with DB Cluster", show=True):
+with Diagram("Web Service DB Cluster", show=True):
     dns = Route53("Route53 DNS")
     web = ECS("ECS web service")
 
