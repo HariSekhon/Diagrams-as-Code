@@ -108,6 +108,12 @@ They say a picture is worth a thousand words...
 
 ![](images/aws_clustered_web_services.png)
 
+### Kong API Gateway on Kubernetes (AWS EKS)
+
+[kong_api_gateway_kubernetes.py](kong_api_gateway_kubernetes.py):
+
+![](images/kong_api_gateway_kubernetes.png)
+
 ### AWS Event Processing
 
 [aws_event_processing.py](aws_event_processing.py):
