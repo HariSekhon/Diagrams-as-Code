@@ -24,6 +24,7 @@ RabbitMQ Broker with custom icon
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from urllib.request import urlretrieve
 
 from diagrams import Diagram, Cluster
@@ -49,3 +50,5 @@ with Diagram("RabbitMQ Broker with custom icon", show=True):
     rabbitmq = Custom("RabbitMQ", rabbitmq_icon)
 
     rabbitmq >> consumers >> Aurora("Database")
+
+os.remove(rabbitmq_icon)
