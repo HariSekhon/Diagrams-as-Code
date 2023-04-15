@@ -14,7 +14,7 @@
 #
 
 ---
-name: Build
+name: SonarCloud
 on:
   push:
     branches:
