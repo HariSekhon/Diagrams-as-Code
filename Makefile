@@ -40,15 +40,17 @@ REPO := HariSekhon/Diagrams-as-Code
 
 CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
 
-main: graphs
-	@:
+main:
+	@$(MAKE) graphs
 
 .PHONY: graphs
 graphs:
-	@echo =================
-	@echo Generating Graphs
-	@echo =================
-	for x in *.py; do python3 $$x; done
+	@echo ===================
+	@echo Generating Diagrams
+	@echo ===================
+	for x in *.py; do \
+		python3 $$x; \
+	done
 
 .PHONY: build
 build: init
