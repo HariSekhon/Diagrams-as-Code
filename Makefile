@@ -76,8 +76,7 @@ python:
 
 .PHONY: test
 test:
-	:
-	@#./check_all.sh
+	bash-tools/check_all.sh
 
 .PHONY: clean
 clean:
