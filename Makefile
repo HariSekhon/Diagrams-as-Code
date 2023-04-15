@@ -53,6 +53,7 @@ graphs:
 	@echo Generating Diagrams
 	@echo ===================
 	for x in *.py; do \
+		echo "Generating $$x"; \
 		python3 $$x; \
 	done
 
