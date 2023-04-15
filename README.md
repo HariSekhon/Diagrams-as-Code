@@ -65,7 +65,7 @@ Impressive diagrams!!!
 
 ## Examples
 
-XXX: CI/CD generate PNGs, store somewhere and embed pics here
+TODO: CI/CD generate PNGs, store somewhere and embed pics here
 
 
 ## See Also
