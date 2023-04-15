@@ -24,15 +24,12 @@ RabbitMQ Broker with custom icon
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
-# https://diagrams.mingrammer.com/docs/getting-started/examples
-
 from urllib.request import urlretrieve
 
 from diagrams import Diagram, Cluster
+
 from diagrams.custom import Custom
-
 from diagrams.aws.database import Aurora
-
 from diagrams.k8s.compute import Pod
 
 # pylint: disable=C0103
