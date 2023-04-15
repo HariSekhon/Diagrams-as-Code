@@ -17,7 +17,7 @@
 
 """
 
-Load Balanced Web Farm
+AWS Load Balanced Web Farm
 
 """
 
@@ -34,7 +34,7 @@ from diagrams.aws.compute import EC2
 from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
 
-with Diagram("Load Balanced Web Farm", show=True, direction="TB"):
+with Diagram("AWS Load Balanced Web Farm", show=True, direction="TB"):
     # can use variables to connect nodes to the same items
     # lb = ELB("lb")
     # db = RDS("events")
