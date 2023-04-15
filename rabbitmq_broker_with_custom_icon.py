@@ -3,7 +3,7 @@
 #  vim:ts=4:sts=4:sw=4:et
 #
 #  Author: Hari Sekhon
-#  Date: [% DATE  # 2023-04-14 13:54:52 +0100 (Fri, 14 Apr 2023) %]
+#  Date: 2023-04-14 13:54:52 +0100 (Fri, 14 Apr 2023)
 #
 #  https://github.com/HariSekhon/Templates
 #
@@ -17,7 +17,7 @@
 
 """
 
-RabbitMQ with custom downloaded icon
+RabbitMQ Broker with custom icon
 
 """
 
