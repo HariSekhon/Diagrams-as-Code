@@ -17,7 +17,7 @@
 
 """
 
-Web Services
+Clustered Web Services
 
 """
 
