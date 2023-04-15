@@ -70,7 +70,8 @@ The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/d
 
 ## Examples
 
-TODO: CI/CD generate PNGs, store somewhere and embed pics here
+They say a picture says a thousand words...
+
 
 
 ## See Also
