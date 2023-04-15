@@ -62,16 +62,57 @@ Create the `.png` diagrams and open them:
 make
 ```
 
-Impressive diagrams!!!
-
 ## Template
 
-The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows how to code different types of diagrams from simple to advanced.
+The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows the basics.
 
-## Examples
+For more advanced examples, see the real architectural diagrams below.
 
-They say a picture says a thousand words...
+## Diagrams
 
+They say a picture is worth a thousand words...
+
+### AWS Load Balanced Web Farm
+
+[aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
+
+![](images/aws_load_balanced_web_farm.png)
+
+### Advanced Web Services Open Source
+
+[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
+
+![](images/advanced_web_services_open_source.png)
+
+### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
+
+[kubernetes_deployment_hpa_ingress.py](kubernetes_deployment_hpa_ingress.py):
+
+![](images/kubernetes_deployment_hpa_ingress.png)
+
+### Kubernetes Stateful Architecture with persistent volumes
+
+[kubernetes_stateful_architecture.py](kubernetes_stateful_architecture.py):
+
+![](images/kubernetes_stateful_architecture.png)
+
+### GCP Pub/Sub Analytics
+
+[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
+
+![](images/gcp_pubsub_analytics.png)
+
+### AWS Clustered Web Services
+
+[aws_clustered_web_services.py](aws_clustered_web_services.py):
+
+![](images/aws_clustered_web_services.png)
+
+### AWS Event Processing
+
+[aws_event_processing.py](aws_event_processing.py):
+
+![](images/aws_event_processing.png)
 
 
 ## See Also
