@@ -62,11 +62,14 @@ jobs:
         with:
           submodules: 'true'
 
-      - name: Build
-        run: |
-          setup/ci_bootstrap.sh
+      - name: Bootstrap
+        run: setup/ci_bootstrap.sh
 
-          make
+      - name: Install Dependencies
+        run: make install
+
+      - name: Generate Images
+        run: make
 
       - uses: actions/upload-artifact@v3
         with:
