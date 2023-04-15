@@ -49,11 +49,15 @@ defaults:
 jobs:
   generate_images:
     name: Generate Images
+    runs-on: ubuntu-latest
     timeout-minutes: 30
 
     if: ( github.ref_name == 'master' || github.ref_name == 'main' ) && github.event.repository.fork == false
 
     steps:
+      - name: Environment
+        run: env | sort
+
       - uses: actions/checkout@v3
         with:
           submodules: 'true'
