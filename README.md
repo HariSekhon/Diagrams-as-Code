@@ -56,7 +56,7 @@ cd diagrams
 make install
 ```
 
-Create the `.png` diagrams in the local directory and open them:
+Create the `.png` diagrams and open them:
 
 ```shell
 make
