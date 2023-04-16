@@ -61,7 +61,7 @@ Create the `.png` diagrams and open them:
 make
 ```
 
-Prevent the diagrams from automatically opening (eg. if running in a docker container or on a CI system), by setting the `CI` environment variable to 1:
+or create the diagrams without them from automatically opening by setting the `CI` environment variable to 1 or true or any non-false value (eg. if running in a docker container or on a CI system):
 
 ```
 export CI=1
