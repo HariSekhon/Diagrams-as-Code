@@ -54,6 +54,7 @@ graphs:
 	@echo ===================
 	mkdir -p -v images
 	$(MAKE) clean
+	export CI=1; \
 	for x in *.py; do \
 		if [ "$$x" = template.py ]; then \
 			continue; \
