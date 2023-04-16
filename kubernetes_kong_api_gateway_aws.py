@@ -17,7 +17,7 @@
 
 """
 
-Kong API Gateway on Kubernetes
+Kong API Gateway on Kubernetes (AWS EKS)
 
 """
 
@@ -51,7 +51,7 @@ from diagrams.aws.compute import EKS
 from diagrams.aws.network import ELB, Route53
 
 # pylint: disable=W0104,W0106
-with Diagram('Kong API Gateway Kubernetes',
+with Diagram('Kubernetes Kong API Gateway AWS',
              show=True,
              direction='TB',
              ):
