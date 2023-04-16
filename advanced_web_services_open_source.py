@@ -24,6 +24,7 @@ Advanced Web Services Open Source
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster, Edge
 
 # On-premise / Open Source resources:
@@ -44,7 +45,7 @@ from diagrams.onprem.queue import Kafka
 # An edge object contains three attributes: label, color and style which mirror corresponding graphviz edge attributes
 
 # pylint: disable=W0106
-with Diagram(name="Advanced Web Services Open Source", show=True):
+with Diagram(name="Advanced Web Services Open Source", show=bool(os.environ.get('CI', 0))):
     nginx = Nginx("Nginx Ingress")
 
     metrics = Prometheus("Promtheus metrics")
