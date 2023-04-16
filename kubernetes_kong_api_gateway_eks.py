@@ -22,7 +22,7 @@ Kong API Gateway on Kubernetes (AWS EKS)
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -51,10 +51,15 @@ from diagrams.k8s.network import Ingress, Service
 from diagrams.aws.compute import EKS
 from diagrams.aws.network import ELB, Route53
 
+graph_attr = {
+    "splines": "spline",
+}
+
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Kong API Gateway EKS',
              show=not bool(os.environ.get('CI', 0)),
              direction='TB',
+             graph_attr=graph_attr
              ):
 
     letsencrypt = LetsEncrypt("LetsEncrypt Certificate Authority")
