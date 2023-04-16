@@ -20,15 +20,15 @@
 #
 # Alpine:
 #
-#   apk add --no-cache git make && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+#   apk add --no-cache git make && git clone https://github.com/HariSekhon/Diagrams-as-Code diagrams && cd diagrams && make
 #
 # Debian / Ubuntu:
 #
-#   apt-get update && apt-get install -y make git && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+#   apt-get update && apt-get install -y make git && git clone https://github.com/HariSekhon/Diagrams-as-Code diagrams && cd diagrams && make
 #
 # RHEL / CentOS:
 #
-#   yum install -y make git && git clone https://github.com/HariSekhon/DevOps-Python-tools pytools && cd pytools && make
+#   yum install -y make git && git clone https://github.com/HariSekhon/Diagrams-as-Code diagrams && cd diagrams && make
 
 # ===================
 
