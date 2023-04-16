@@ -24,7 +24,7 @@ AWS Clustered Web Services
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster
@@ -37,7 +37,14 @@ from diagrams.aws.compute import ECS
 from diagrams.aws.database import RDS, ElastiCache
 from diagrams.aws.network import ELB, Route53
 
-with Diagram("AWS Clustered Web Services", show=not bool(os.environ.get('CI', 0))):
+graph_attr = {
+    "splines": "spline",
+}
+
+with Diagram("AWS Clustered Web Services",
+             show=not bool(os.environ.get('CI', 0)),
+             #graph_attr=graph_attr,
+             ):
     dns = Route53("Route53")
     lb = ELB("ELB")
 
