@@ -85,7 +85,9 @@ jobs:
           git config user.name "$(git log -n 1 --format='%an')"
           git config user.email "$(git log -n 1 --format='%ae')"
           git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
-          echo "::set-output name=new_commits::true"
+          # deprecated
+          #echo "::set-output name=new_commits::true"
+          echo "new_commits=true" >> $GITHUB_OUTPUT
 
       - name: Git Push
         if: steps.commit.outputs.new_commits == 'true'
