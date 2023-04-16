@@ -101,7 +101,7 @@ python:
 
 .PHONY: test
 test:
-	bash-tools/check_all.sh
+	PYTHON=python3 bash-tools/check_all.sh
 
 .PHONY: clean
 clean:
