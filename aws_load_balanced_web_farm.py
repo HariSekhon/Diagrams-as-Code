@@ -36,7 +36,7 @@ from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
 
 with Diagram("AWS Load Balanced Web Farm",
-             show=bool(os.environ.get('CI', 0)),
+             show=not bool(os.environ.get('CI', 0)),
              direction="TB"):
     # can use variables to connect nodes to the same items
     # lb = ELB("lb")
