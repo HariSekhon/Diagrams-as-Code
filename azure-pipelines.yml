@@ -54,6 +54,6 @@ steps:
           setup/ci_git_set_dir_safe.sh
         fi
         make init
-        make ci test
+        make ci test diagrams
       '
     displayName: docker build
