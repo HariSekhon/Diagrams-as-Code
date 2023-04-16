@@ -24,6 +24,7 @@ GCP PubSub Analytics
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster
 
 # GCP resources:
@@ -37,7 +38,7 @@ from diagrams.gcp.iot import IotCore
 from diagrams.gcp.storage import GCS
 
 # pylint: disable=W0106
-with Diagram("GCP PubSub Analytics", show=True):
+with Diagram("GCP PubSub Analytics", show=bool(os.environ.get('CI', 0))):
     pubsub = PubSub("GCP Pub/Sub")
 
     with Cluster("Data Sources"):
