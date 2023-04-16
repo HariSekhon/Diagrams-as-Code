@@ -18,6 +18,7 @@
 [![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
 
 [![Mac Homebrew](https://img.shields.io/badge/Mac-Homebrew-999999?logo=apple&logoColor=white)](https://brew.sh/)
+[![Alpine](https://img.shields.io/badge/Linux-Alpine-0D597F?logo=alpine%20linux&color=0D597F)](https://alpinelinux.org/)
 [![CentOS](https://img.shields.io/badge/Linux-CentOS-red?logo=centos&color=262577&logoColor=white)](https://www.centos.org/)
 [![Debian](https://img.shields.io/badge/Linux-Debian-red?logo=debian&color=A81D33)](https://www.debian.org/)
 [![Fedora](https://img.shields.io/badge/Linux-Fedora-294172?logo=fedora)](https://getfedora.org/)
