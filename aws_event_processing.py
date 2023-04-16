@@ -37,7 +37,7 @@ from diagrams.aws.integration import SQS
 from diagrams.aws.storage import S3
 
 # Nest clusters
-with Diagram("AWS Event Processing", show=bool(os.environ.get('CI', 0))):
+with Diagram("AWS Event Processing", show=not bool(os.environ.get('CI', 0))):
     eks = EKS("EKS source")
 
     with Cluster("Event Flows"):
