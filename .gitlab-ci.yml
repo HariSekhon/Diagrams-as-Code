@@ -21,4 +21,4 @@ job:
   before_script:
     - setup/ci_bootstrap.sh
   script:
-    - make init && make ci test
+    - make init && make ci test diagrams
