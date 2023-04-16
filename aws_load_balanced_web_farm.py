@@ -24,6 +24,7 @@ AWS Load Balanced Web Farm
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram
 
 # AWS resources:
@@ -34,7 +35,9 @@ from diagrams.aws.compute import EC2
 from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
 
-with Diagram("AWS Load Balanced Web Farm", show=True, direction="TB"):
+with Diagram("AWS Load Balanced Web Farm",
+             show=bool(os.environ.get('CI', 0)),
+             direction="TB"):
     # can use variables to connect nodes to the same items
     # lb = ELB("lb")
     # db = RDS("events")
