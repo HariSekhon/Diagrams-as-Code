@@ -24,6 +24,7 @@ Kong API Gateway on Kubernetes (AWS EKS)
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster, Edge
 
 # On-premise / Open Source resources:
@@ -52,7 +53,7 @@ from diagrams.aws.network import ELB, Route53
 
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Kong API Gateway EKS',
-             show=True,
+             show=bool(os.environ.get('CI', 0)),
              direction='TB',
              ):
 
