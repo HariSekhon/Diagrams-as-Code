@@ -58,7 +58,7 @@ graph_attr = {
 with Diagram('Kubernetes Traefik Ingress GKE',
              show=not bool(os.environ.get('CI', 0)),
              direction='BT',
-             graph_attr=graph_attr
+             graph_attr=graph_attr,
              ):
 
     # letsencrypt = LetsEncrypt("LetsEncrypt Certificate Authority")
