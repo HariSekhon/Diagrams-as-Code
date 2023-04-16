@@ -52,7 +52,7 @@ from diagrams.gcp.network import DNS, LoadBalancing
 
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Traefik Ingress GKE',
-             show=bool(os.environ.get('CI', 0)),
+             show=not bool(os.environ.get('CI', 0)),
              direction='BT',
              ):
 
