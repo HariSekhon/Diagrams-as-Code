@@ -60,6 +60,15 @@ Create the `.png` diagrams and open them:
 make
 ```
 
+Prevent the diagrams from automatically opening (eg. if running in a docker container or on a CI system), by setting the `CI` environment variable to 1:
+
+```
+export CI=1
+
+make
+```
+
+
 ## Template
 
 The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows the basics.
