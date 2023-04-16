@@ -13,5 +13,5 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
-python-dev
+python3-dev
 graphviz
