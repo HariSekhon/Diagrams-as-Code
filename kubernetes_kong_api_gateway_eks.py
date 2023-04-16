@@ -53,7 +53,7 @@ from diagrams.aws.network import ELB, Route53
 
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Kong API Gateway EKS',
-             show=bool(os.environ.get('CI', 0)),
+             show=not bool(os.environ.get('CI', 0)),
              direction='TB',
              ):
 
