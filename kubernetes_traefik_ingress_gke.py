@@ -65,13 +65,18 @@ with Diagram('Kubernetes Traefik Ingress GKE',
         # load_balancer - dns
 
         with Cluster("Kubernetes Cluster"):
+
             gke = GKE("GKE")
+
             # with Cluster("Cert Manager"):
             # certmanager = CertManager("Cert Manager")
             with Cluster("Ingress"):
                 traefik = Traefik("Traefik\nIngress Controller")
-                # certmanager >> Edge(label="SSL cert", style="dashed") >> traefik
-            # letsencrypt >> Edge(label="ACME protocol\ngenerated certificate", style="dashed") >> certmanager
+            # letsencrypt >> \
+            #    Edge(label="ACME protocol\ngenerated certificate", style="dashed") \
+            #    >> certmanager \
+            #    >> Edge(label="SSL cert", style="dashed") \
+            #    >> traefik
 
             with Cluster("WebApp 2"):
                 service = Service("WebApp 2 Service")
@@ -91,6 +96,10 @@ with Diagram('Kubernetes Traefik Ingress GKE',
                 #     argocd >> service
                 # argocd >> pods
 
-        users >> Edge(label="HTTPS traffic") >> load_balancer
-        users >> Edge(label="DNS queries") >> dns
-        load_balancer >> traefik
+        users \
+            >> Edge(label="HTTPS traffic") \
+            >> load_balancer \
+            >> traefik
+        users \
+            >> Edge(label="DNS queries") \
+            >> dns
