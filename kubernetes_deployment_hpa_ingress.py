@@ -43,7 +43,7 @@ graph_attr = {
 
 with Diagram("Kubernetes Deployment HPA Ingress",
              show=not bool(os.environ.get('CI', 0)),
-             graph_attr=graph_attr,
+             #graph_attr=graph_attr,
              ):
     net = Ingress("Ingress\nwww.domain.com") >> Service("Service")
     # pylint: disable=W0106
