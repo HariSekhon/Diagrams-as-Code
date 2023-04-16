@@ -35,7 +35,7 @@ from diagrams.k8s.clusterconfig import HPA
 from diagrams.k8s.compute import Deployment, Pod, ReplicaSet
 from diagrams.k8s.network import Ingress, Service
 
-with Diagram("Kubernetes Deployment HPA Ingress", show=bool(os.environ.get('CI', 0))):
+with Diagram("Kubernetes Deployment HPA Ingress", show=not bool(os.environ.get('CI', 0))):
     net = Ingress("Ingress\nwww.domain.com") >> Service("Service")
     # pylint: disable=W0106
     net >> [Pod("web1"),
