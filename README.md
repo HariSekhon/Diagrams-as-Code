@@ -110,15 +110,15 @@ They say a picture is worth a thousand words...
 
 ### Traefik Kubernetes Ingress on GKE
 
-[kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.png):
+[kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
 
-![](images/kong_api_gateway_kubernetes.png)
+![](images/kubernetes_traefik_ingress_gke.png)
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
-[kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.png):
+[kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.py):
 
-![](images/kong_api_gateway_kubernetes.png)
+![](images/kubernetes_kong_api_gateway_eks.png)
 
 ### AWS Event Processing
 
