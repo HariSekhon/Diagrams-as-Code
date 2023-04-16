@@ -36,3 +36,4 @@ pipelines:
           - make init
           - make ci
           - make test
+          - make diagrams
