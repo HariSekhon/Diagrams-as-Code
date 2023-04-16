@@ -108,9 +108,15 @@ They say a picture is worth a thousand words...
 
 ![](images/aws_clustered_web_services.png)
 
+### Traefik Kubernetes Ingress on GKE
+
+[kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.png):
+
+![](images/kong_api_gateway_kubernetes.png)
+
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
-[kong_api_gateway_kubernetes.py](kong_api_gateway_kubernetes.py):
+[kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.png):
 
 ![](images/kong_api_gateway_kubernetes.png)
 
