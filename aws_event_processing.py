@@ -24,7 +24,7 @@ AWS Event Processing
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster
@@ -38,8 +38,15 @@ from diagrams.aws.database import Redshift
 from diagrams.aws.integration import SQS
 from diagrams.aws.storage import S3
 
+graph_attr = {
+    "splines": "spline",
+}
+
 # Nest clusters
-with Diagram("AWS Event Processing", show=not bool(os.environ.get('CI', 0))):
+with Diagram("AWS Event Processing",
+             show=not bool(os.environ.get('CI', 0)),
+             graph_attr=graph_attr,
+             ):
     eks = EKS("EKS source")
 
     with Cluster("Event Flows"):
