@@ -35,7 +35,7 @@ from diagrams.aws.compute import ECS
 from diagrams.aws.database import RDS, ElastiCache
 from diagrams.aws.network import ELB, Route53
 
-with Diagram("AWS Clustered Web Services", show=bool(os.environ.get('CI', 0))):
+with Diagram("AWS Clustered Web Services", show=not bool(os.environ.get('CI', 0))):
     dns = Route53("Route53")
     lb = ELB("ELB")
 
