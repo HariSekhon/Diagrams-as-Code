@@ -22,6 +22,7 @@ RabbitMQ Broker with custom icon
 """
 
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
+
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
