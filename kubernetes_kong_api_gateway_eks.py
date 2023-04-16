@@ -59,7 +59,7 @@ graph_attr = {
 with Diagram('Kubernetes Kong API Gateway EKS',
              show=not bool(os.environ.get('CI', 0)),
              direction='TB',
-             graph_attr=graph_attr
+             graph_attr=graph_attr,
              ):
 
     letsencrypt = LetsEncrypt("LetsEncrypt Certificate Authority")
