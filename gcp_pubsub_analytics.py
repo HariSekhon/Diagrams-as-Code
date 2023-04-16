@@ -38,7 +38,7 @@ from diagrams.gcp.iot import IotCore
 from diagrams.gcp.storage import GCS
 
 # pylint: disable=W0106
-with Diagram("GCP PubSub Analytics", show=bool(os.environ.get('CI', 0))):
+with Diagram("GCP PubSub Analytics", show=not bool(os.environ.get('CI', 0))):
     pubsub = PubSub("GCP Pub/Sub")
 
     with Cluster("Data Sources"):
