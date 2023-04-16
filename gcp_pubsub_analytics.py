@@ -57,10 +57,14 @@ with Diagram("GCP PubSub Analytics", show=not bool(os.environ.get('CI', 0))):
 
         with Cluster("Event Driven"):
             with Cluster("Processing"):
-                dataflow >> AppEngine("AppEngine") >> BigTable("BigTable")
+                dataflow \
+                    >> AppEngine("AppEngine") \
+                    >> BigTable("BigTable")
 
             with Cluster("Serverless"):
-                dataflow >> Functions("Cloud Functions") >> AppEngine("AppEngine")
+                dataflow \
+                    >> Functions("Cloud Functions") \
+                    >> AppEngine("AppEngine")
 
     # pylint: disable=W0104
     pubsub >> dataflow
