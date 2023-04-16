@@ -24,6 +24,7 @@ Kubernetes Stateful Architecture
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster
 
 # K8s resources:
@@ -34,7 +35,7 @@ from diagrams.k8s.compute import Pod, StatefulSet
 # from diagrams.k8s.network import Service
 from diagrams.k8s.storage import PV, PVC, StorageClass
 
-with Diagram("Kubernetes Stateful Architecture", show=True):
+with Diagram("Kubernetes Stateful Architecture", show=bool(os.environ.get('CI', 0))):
     with Cluster("App"):
         # Service clutters this diagram
         # svc = Service("Service)")
