@@ -24,7 +24,7 @@ Kubernetes Deployment with HPA & Ingress
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram
@@ -37,7 +37,14 @@ from diagrams.k8s.clusterconfig import HPA
 from diagrams.k8s.compute import Deployment, Pod, ReplicaSet
 from diagrams.k8s.network import Ingress, Service
 
-with Diagram("Kubernetes Deployment HPA Ingress", show=not bool(os.environ.get('CI', 0))):
+graph_attr = {
+    "splines": "spline",
+}
+
+with Diagram("Kubernetes Deployment HPA Ingress",
+             show=not bool(os.environ.get('CI', 0)),
+             graph_attr=graph_attr,
+             ):
     net = Ingress("Ingress\nwww.domain.com") >> Service("Service")
     # pylint: disable=W0106
     net >> [Pod("web1"),
