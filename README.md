@@ -64,9 +64,6 @@ make
 Create any single diagram and have it open automatically by just running the python code for that diagram:
 
 ```shell
-python3 <filename.py>
-```
-```shell
 python3 advanced_web_services_open_source.py
 ```
 
