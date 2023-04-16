@@ -22,7 +22,7 @@ Kubernetes Ingress on GKE
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -50,10 +50,15 @@ from diagrams.gcp.analytics import BigQuery, Dataflow, PubSub
 from diagrams.gcp.compute import AppEngine, GKE, Functions
 from diagrams.gcp.network import DNS, LoadBalancing
 
+graph_attr = {
+    "splines": "spline",
+}
+
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Traefik Ingress GKE',
              show=not bool(os.environ.get('CI', 0)),
              direction='BT',
+             graph_attr=graph_attr
              ):
 
     # letsencrypt = LetsEncrypt("LetsEncrypt Certificate Authority")
