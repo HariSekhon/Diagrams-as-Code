@@ -41,7 +41,7 @@ REPO := HariSekhon/Diagrams-as-Code
 CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
 
 main:
-	@$(MAKE) graphs
+	@$(MAKE) diagrams
 
 .PHONY: diagrams
 diagrams:
@@ -67,6 +67,10 @@ diagrams:
 
 .PHONY: diag
 diag: diagrams
+	@:
+
+.PHONY: graphs
+graphs: diag
 	@:
 
 .PHONY: build
