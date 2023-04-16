@@ -61,6 +61,7 @@ graphs:
 		echo "Generating $$x"; \
 		python3 $$x; \
 	done
+	@sleep 1  # give the last png a second to be opened before moving it to avoid an error
 	mv -fv *.png images/
 
 .PHONY: build
