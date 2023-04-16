@@ -70,19 +70,16 @@ with Diagram('Kubernetes Kong API Gateway EKS',
 
         with Cluster("Kubernetes Cluster"):
             eks = EKS("EKS")
+
             with Cluster("Cert Manager"):
                 certmanager = CertManager("Cert Manager")
+
             with Cluster("ArgoCD"):
                 argocd = ArgoCD("ArgoCD")
+
             with Cluster("Ingress"):
                 kong = Kong("Kong API Gateway\nIngress Controller")
                 ingress = Ingress("Kubernetes Ingress")
-            letsencrypt >> Edge(label="ACME protocol\ngenerated certificate", style="dashed") >> certmanager
-            certmanager >> Edge(label="SSL cert", style="dashed") >> ingress
-            ingress - kong
-            github >> Edge(label="GitOps trigger", style="dashed") >> argocd
-            # argocd >> Edge(label="updates", style="dashed") >> ingress
-            argocd >> Edge(style="dashed") >> ingress
 
             with Cluster("WebApp 2"):
                 service = Service("WebApp 2 Service")
@@ -102,4 +99,17 @@ with Diagram('Kubernetes Kong API Gateway EKS',
                 #     argocd >> service
                 # argocd >> pods
 
-        elb >> ingress
+            ( elb >> ingress ) - kong
+
+            letsencrypt \
+                >> Edge(label="ACME protocol\ngenerated certificate", style="dashed") \
+                >> certmanager \
+                >> Edge(label="SSL cert", style="dashed") \
+                >> ingress
+
+            github >> \
+                Edge(label="GitOps trigger", style="dashed") \
+                >> argocd \
+                >> Edge(style="dashed") \
+                >> ingress
+            # argocd >> Edge(label="updates", style="dashed") >> ingress
