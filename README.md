@@ -55,18 +55,19 @@ cd diagrams
 make install
 ```
 
-Create the `.png` diagrams and open them:
+Create all the `.png` diagrams in the `images/` dir:
 
 ```shell
 make
 ```
 
-or create the diagrams without them from automatically opening by setting the `CI` environment variable to 1 or true or any non-false value (eg. if running in a docker container or on a CI system):
+Create any single diagram and have it open automatically by just running the python code for that diagram:
 
+```shell
+python3 <filename>.py
 ```
-export CI=1
-
-make
+```shell
+python3 advanced_web_services_open_source.py
 ```
 
 
