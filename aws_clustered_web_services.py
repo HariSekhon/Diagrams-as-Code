@@ -24,6 +24,7 @@ AWS Clustered Web Services
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster
 
 # AWS resources:
@@ -34,7 +35,7 @@ from diagrams.aws.compute import ECS
 from diagrams.aws.database import RDS, ElastiCache
 from diagrams.aws.network import ELB, Route53
 
-with Diagram("AWS Clustered Web Services", show=True):
+with Diagram("AWS Clustered Web Services", show=bool(os.environ.get('CI', 0))):
     dns = Route53("Route53")
     lb = ELB("ELB")
 
