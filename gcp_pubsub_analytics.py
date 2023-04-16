@@ -24,7 +24,7 @@ GCP PubSub Analytics
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster
@@ -39,8 +39,15 @@ from diagrams.gcp.database import BigTable
 from diagrams.gcp.iot import IotCore
 from diagrams.gcp.storage import GCS
 
+graph_attr = {
+    "splines": "spline",
+}
+
 # pylint: disable=W0106
-with Diagram("GCP PubSub Analytics", show=not bool(os.environ.get('CI', 0))):
+with Diagram("GCP PubSub Analytics",
+             show=not bool(os.environ.get('CI', 0)),
+             graph_attr=graph_attr,
+             ):
     pubsub = PubSub("GCP Pub/Sub")
 
     with Cluster("Data Sources"):
