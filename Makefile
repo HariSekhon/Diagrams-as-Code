@@ -43,8 +43,8 @@ CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
 main:
 	@$(MAKE) graphs
 
-.PHONY: graphs
-graphs:
+.PHONY: diagrams
+diagrams:
 	@if ! type -P dot >/dev/null 2>&1 || \
 		! python3 -c 'import diagrams' 2>&1; then \
 		$(MAKE) build; \
@@ -64,6 +64,10 @@ graphs:
 	done
 	@sleep 1  # give the last png a second to be opened before moving it to avoid an error
 	mv -fv *.png images/
+
+.PHONY: diag
+diag: diagrams
+	@:
 
 .PHONY: build
 build: init
