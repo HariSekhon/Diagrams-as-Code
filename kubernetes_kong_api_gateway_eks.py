@@ -51,7 +51,7 @@ from diagrams.aws.compute import EKS
 from diagrams.aws.network import ELB, Route53
 
 # pylint: disable=W0104,W0106
-with Diagram('Kubernetes Kong API Gateway AWS',
+with Diagram('Kubernetes Kong API Gateway EKS',
              show=True,
              direction='TB',
              ):
