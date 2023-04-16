@@ -37,9 +37,15 @@ from diagrams.aws.compute import EC2
 from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
 
+graph_attr = {
+    "splines": "spline",
+}
+
 with Diagram("AWS Load Balanced Web Farm",
              show=not bool(os.environ.get('CI', 0)),
-             direction="TB"):
+             direction="TB",
+             graph_attr=graph_attr,
+             ):
     # can use variables to connect nodes to the same items
     # lb = ELB("lb")
     # db = RDS("events")
@@ -52,7 +58,7 @@ with Diagram("AWS Load Balanced Web Farm",
     # but less redundant code than the above can be achieved by grouping the workers into a list[]
     # pylint: disable=W0106
     ELB("ELB") >> [EC2("web1"),
-                  EC2("web2"),
-                  EC2("web3"),
-                  EC2("web4"),
-                  EC2("web5")] >> RDS("RDS DB")
+                   EC2("web2"),
+                   EC2("web3"),
+                   EC2("web4"),
+                   EC2("web5")] >> RDS("RDS DB")
