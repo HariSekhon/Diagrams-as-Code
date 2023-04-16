@@ -12,8 +12,6 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Diagrams-as-Code)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Diagrams-as-Code)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Diagrams-as-Code)
-[![Codiga Grade](https://api.codiga.io/project/8840/status/svg)](https://app.codiga.io/project/8840/dashboard)
-[![Codiga Score](https://api.codiga.io/project/8840/score/svg)](https://app.codiga.io/project/8840/dashboard)
 
 ![Python](https://img.shields.io/badge/Python-3-blue)
 [![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
