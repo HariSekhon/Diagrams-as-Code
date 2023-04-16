@@ -24,6 +24,7 @@ Kubernetes Ingress on GKE
 __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
+import os
 from diagrams import Diagram, Cluster, Edge
 
 # On-premise / Open Source resources:
@@ -51,7 +52,7 @@ from diagrams.gcp.network import DNS, LoadBalancing
 
 # pylint: disable=W0104,W0106
 with Diagram('Kubernetes Traefik Ingress GKE',
-             show=True,
+             show=bool(os.environ.get('CI', 0)),
              direction='BT',
              ):
 
