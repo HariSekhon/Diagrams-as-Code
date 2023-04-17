@@ -25,14 +25,31 @@ __author__ = 'Hari Sekhon'
 __version__ = '0.1'
 
 import os
+#import requests
+
 from diagrams import Diagram, Cluster, Edge
 
+from diagrams.custom import Custom
 from diagrams.onprem.client import User
 from diagrams.onprem.ci import Jenkins, GithubActions
 from diagrams.onprem.vcs import Git, Github
 from diagrams.saas.chat import Slack
 from diagrams.programming.language import Python
 from diagrams.programming.flowchart import Document
+
+headers = {'user-agent': 'Mozilla/5.0'}
+# hari_url = "https://media.licdn.com/dms/image/C4E03AQFXEknu7Lf0kA/profile-displayphoto-shrink_800_800/0/1660301168114?e=1687392000&v=beta&t=-KmL-O8pEQY-esJA_f3sdvx7tC0juSDc9Di4bkacfXo"
+hari_icon = "images/hari.jpeg"
+# rolling_eyes_url = "https://em-content.zobj.net/thumbs/240/apple/354/face-with-rolling-eyes_1f644.png"
+rolling_eyes_icon = "rolling_eyes.png"
+
+# r = requests.get(rolling_eyes_url, headers=headers)
+# with open(rolling_eyes_icon, 'wb') as f:
+#     f.write(r.content)
+
+# r = requests.get(hari_url, headers=headers)
+# with open(hari_icon, 'wb') as f:
+#     f.write(r.content)
 
 graph_attr = {
     "splines": "spline",
@@ -46,9 +63,11 @@ with Diagram('GitHub Actions CI/CD',
              graph_attr=graph_attr,
              ):
 
-    hari = User("Hari\nPythonista")
+    #hari = User("Hari\nPythonista")
+    hari = Custom("Hari\nPythonista", hari_icon)
     you = User("You")
-    giovanni = User("Giovanni")
+    #giovanni = User("Giovanni")
+    giovanni = Custom("Giovanni", rolling_eyes_icon)
     git = Git("Git")
 
     hari \
