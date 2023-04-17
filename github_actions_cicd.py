@@ -78,19 +78,27 @@ with Diagram('GitHub Actions CI/CD',
 
     with Cluster("Github"):
         github = Github("Diagrams-as-Code\nrepo")
+        github_actions = GithubActions("GitHub Actions\nCI/CD\nGenerate Images\nworkflow")
         readme = Document("README.md")
         git \
             >> Edge(label="git push") \
             >> github \
             >> Edge(label="trigger workflow") \
-            >> GithubActions("GitHub Actions\nCI/CD\nGenerate Images\nworkflow") \
+            >> github_actions \
             >> Edge(label="git commit\n&&\ngit push\nnew / updated diagrams") \
             >> github \
             >> readme
 
     with Cluster("Banned by Giovanni"):
         with Cluster("Do Not Use"):
-            Jenkins("Jenkins")
+            # hari \
+            #     - Edge(color='red', style="dashed") \
+            Jenkins("Jenkins") \
+            << Edge(label="banned", color='red', style="dashed") \
+            << giovanni
+            # github_actions \
+            #     << Edge(label="I will just about tolerate this") \
+            #     << giovanni
 
     slack = Slack("Slack")
 
