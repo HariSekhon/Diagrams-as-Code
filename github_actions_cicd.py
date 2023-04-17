@@ -41,7 +41,7 @@ headers = {'user-agent': 'Mozilla/5.0'}
 # hari_url = "https://media.licdn.com/dms/image/C4E03AQFXEknu7Lf0kA/profile-displayphoto-shrink_800_800/0/1660301168114?e=1687392000&v=beta&t=-KmL-O8pEQY-esJA_f3sdvx7tC0juSDc9Di4bkacfXo"
 hari_icon = "images/hari.jpeg"
 # rolling_eyes_url = "https://em-content.zobj.net/thumbs/240/apple/354/face-with-rolling-eyes_1f644.png"
-rolling_eyes_icon = "rolling_eyes.png"
+rolling_eyes_icon = "images/rolling_eyes.png"
 
 # r = requests.get(rolling_eyes_url, headers=headers)
 # with open(rolling_eyes_icon, 'wb') as f:
@@ -66,9 +66,8 @@ with Diagram('GitHub Actions CI/CD',
     #hari = User("Hari\nPythonista")
     hari = Custom("Hari\nPythonista", hari_icon)
     you = User("You")
-    giovanni = User("Giovanni")
-    # rolling eyes emoji works in locally generated png but not in GitHub Actions
-    #giovanni = Custom("Giovanni", rolling_eyes_icon)
+    #giovanni = User("Giovanni")
+    giovanni = Custom("Giovanni", rolling_eyes_icon)
     ravi = User("Ravi")
     git = Git("Git")
 
