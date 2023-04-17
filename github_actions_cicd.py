@@ -72,7 +72,7 @@ with Diagram('GitHub Actions CI/CD',
     git = Git("Git")
 
     hari \
-        >> Edge(label="crazy midnight - 4am coding") \
+        >> Edge(label="crazy midnight to 4am coding") \
         >> Python("Python") \
         >> Edge(label="git commit") \
         >> git
