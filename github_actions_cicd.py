@@ -111,7 +111,7 @@ with Diagram('GitHub Actions CI/CD',
         >> Edge(label="Hey,\nwhat did I miss?") \
         >> slack
     giovanni \
-        >> Edge(label="Hari is doing his\nrain man thing again...") \
+        >> Edge(label="Hari is doing his\n\"rain man\" thing again...") \
         >> slack
 
     you >> readme
