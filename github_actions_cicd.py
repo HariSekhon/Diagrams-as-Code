@@ -22,7 +22,7 @@ GitHub Actions CI/CD
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 #import requests
@@ -68,7 +68,8 @@ with Diagram('GitHub Actions CI/CD',
     you = User("You")
     #giovanni = User("Giovanni")
     giovanni = Custom("Giovanni", rolling_eyes_icon)
-    ravi = User("Ravi")
+    #ravi = User("Ravi")
+    ravi = Custom("Ravi", "images/man-shrugging-medium-skin-tone.png")
     git = Git("Git")
 
     hari \
