@@ -68,6 +68,7 @@ with Diagram('GitHub Actions CI/CD',
     you = User("You")
     #giovanni = User("Giovanni")
     giovanni = Custom("Giovanni", rolling_eyes_icon)
+    ravi = User("Ravi")
     git = Git("Git")
 
     hari \
@@ -104,9 +105,12 @@ with Diagram('GitHub Actions CI/CD',
 
     hari \
         >> Edge(label="Hey Guys,\nlook what I just did this weekend!") \
-        >> slack \
-        >> giovanni \
+        >> slack
+    ravi \
+        >> Edge(label="Hey, what did I miss?") \
+        >> slack
+    giovanni \
         >> Edge(label="Hari is doing his\nrain man thing again...") \
-        >> slack \
+        >> slack
 
     you >> readme
