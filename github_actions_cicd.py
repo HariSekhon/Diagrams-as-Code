@@ -30,7 +30,7 @@ import os
 from diagrams import Diagram, Cluster, Edge
 
 from diagrams.custom import Custom
-from diagrams.onprem.client import User
+from diagrams.onprem.client import User  # , Users
 from diagrams.onprem.ci import Jenkins, GithubActions
 from diagrams.onprem.vcs import Git, Github
 from diagrams.saas.chat import Slack
@@ -65,11 +65,13 @@ with Diagram('GitHub Actions CI/CD',
 
     #hari = User("Hari\nPythonista")
     hari = Custom("Hari\nPythonista", hari_icon)
-    you = User("You")
     #giovanni = User("Giovanni")
     giovanni = Custom("Giovanni", rolling_eyes_icon)
     #ravi = User("Ravi")
     ravi = Custom("Ravi", "images/man-shrugging-medium-skin-tone.png")
+    #you = User("You")
+    you = Custom("You", "images/flushed-face.png")
+    #users = Users("Users")
     git = Git("Git")
 
     hari \
@@ -114,4 +116,4 @@ with Diagram('GitHub Actions CI/CD',
         >> Edge(label="Hari is doing his\n\"rain man\"\nthing again...") \
         >> slack
 
-    you >> readme
+    you >> readme # << users
