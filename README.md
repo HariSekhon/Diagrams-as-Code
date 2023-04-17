@@ -81,6 +81,12 @@ For more advanced examples, see the real architectural diagrams below, several o
 
 They say a picture is worth a thousand words...
 
+### AWS Web Traffic
+
+[aws_web_traffic.py](aws_web_traffic.py):
+
+![](images/aws_web_traffic.png)
+
 ### AWS Load Balanced Web Farm
 
 [aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
