@@ -74,7 +74,7 @@ python3 advanced_web_services_open_source.py
 
 The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows the basics.
 
-For more advanced examples, see the real architectural diagrams below, several of which are based off the [examples](https://diagrams.mingrammer.com/docs/getting-started/examples) from the diagrams module.
+For more advanced examples, see the real architectural diagrams below (some of which are based off the [diagram examples](https://diagrams.mingrammer.com/docs/getting-started/examples) and [cloudgram examples](https://cloudgram.dedalusone.com/examples.html)).
 
 
 ## Diagrams
