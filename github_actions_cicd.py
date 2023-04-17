@@ -30,15 +30,15 @@ import os
 from diagrams import Diagram, Cluster, Edge
 
 from diagrams.custom import Custom
-from diagrams.onprem.client import User  # , Users
+#from diagrams.onprem.client import User  # , Users
 from diagrams.onprem.ci import Jenkins, GithubActions
 from diagrams.onprem.vcs import Git, Github
 from diagrams.saas.chat import Slack
 from diagrams.programming.language import Python
 from diagrams.programming.flowchart import Document
 
+# pylint: disable=C0103
 headers = {'user-agent': 'Mozilla/5.0'}
-# hari_url = "https://media.licdn.com/dms/image/C4E03AQFXEknu7Lf0kA/profile-displayphoto-shrink_800_800/0/1660301168114?e=1687392000&v=beta&t=-KmL-O8pEQY-esJA_f3sdvx7tC0juSDc9Di4bkacfXo"
 hari_icon = "images/hari.jpeg"
 # rolling_eyes_url = "https://em-content.zobj.net/thumbs/240/apple/354/face-with-rolling-eyes_1f644.png"
 rolling_eyes_icon = "images/rolling_eyes.png"
