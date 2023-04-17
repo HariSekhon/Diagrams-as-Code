@@ -80,7 +80,7 @@ with Diagram('GitHub Actions CI/CD',
         >> Edge(label="git commit") \
         >> git
 
-    with Cluster("Github"):
+    with Cluster("GitHub"):
         github = Github("Diagrams-as-Code\nrepo")
         github_actions = GithubActions("GitHub Actions\nCI/CD\nGenerate Images\nworkflow")
         readme = Document("README.md")
