@@ -115,6 +115,5 @@ with Diagram('Kubernetes Kong API Gateway EKS',
             github >> \
                 Edge(label="GitOps trigger", style="dashed") \
                 >> argocd \
-                >> Edge(style="dashed") \
+                >> Edge(label="updates", style="dashed") \
                 >> ingress
-            # argocd >> Edge(label="updates", style="dashed") >> ingress
