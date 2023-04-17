@@ -105,7 +105,7 @@ with Diagram('GitHub Actions CI/CD',
     slack = Slack("Slack")
 
     hari \
-        >> Edge(label="Hey Guys,\nlook what I just did this weekend!") \
+        >> Edge(label="Hey Guys,\nlook what I just did\nthis weekend!") \
         >> slack
     ravi \
         >> Edge(label="Hey,\nwhat did I miss?") \
