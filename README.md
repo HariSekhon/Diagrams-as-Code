@@ -83,6 +83,12 @@ For more advanced examples, see the real architectural diagrams in the next sect
 
 They say a picture is worth a thousand words...
 
+### GitHub Actions CI/CD
+
+[github_actions_cicd.py](github_actions_cicd.py):
+
+![](images/github_actions_cicd.png)
+
 ### AWS Web Traffic
 
 [aws_web_traffic.py](aws_web_traffic.py):
