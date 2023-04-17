@@ -98,7 +98,7 @@ with Diagram('GitHub Actions CI/CD',
         >> Edge(label="Hey Guys,\nlook what I just did this weekend!") \
         >> slack \
         >> giovanni \
-        >> Edge(label="Hari is doing his rain man thing again...") \
+        >> Edge(label="Hari is doing his\nrain man thing again...") \
         >> slack \
 
     you >> readme
