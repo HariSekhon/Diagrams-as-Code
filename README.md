@@ -85,6 +85,8 @@ They say a picture is worth a thousand words...
 
 ### GitHub Actions CI/CD
 
+How you're seeing these images...
+
 [github_actions_cicd.py](github_actions_cicd.py):
 
 ![](images/github_actions_cicd.png)
