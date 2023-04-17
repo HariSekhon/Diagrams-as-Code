@@ -66,8 +66,9 @@ with Diagram('GitHub Actions CI/CD',
     #hari = User("Hari\nPythonista")
     hari = Custom("Hari\nPythonista", hari_icon)
     you = User("You")
-    #giovanni = User("Giovanni")
-    giovanni = Custom("Giovanni", rolling_eyes_icon)
+    giovanni = User("Giovanni")
+    # rolling eyes emoji works in locally generated png but not in GitHub Actions
+    #giovanni = Custom("Giovanni", rolling_eyes_icon)
     ravi = User("Ravi")
     git = Git("Git")
 
