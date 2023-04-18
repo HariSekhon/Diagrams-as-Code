@@ -49,5 +49,4 @@ jobs:
     name: SonarCloud
     uses: HariSekhon/GitHub-Actions/.github/workflows/sonarcloud.yaml@master
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
