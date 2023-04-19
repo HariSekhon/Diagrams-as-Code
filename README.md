@@ -156,6 +156,11 @@ How you're seeing these diagrams...
 
 ![](images/aws_event_processing.png)
 
+### AWS Serverless Image Processing
+
+[aws_serverless_image_processing.py](aws_serverless_image_processing.py):
+
+![](images/aws_serverless_image_processing.png)
 
 ## See Also
 
