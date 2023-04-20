@@ -22,7 +22,7 @@ Kubernetes Ingress on GKE
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -81,7 +81,7 @@ with Diagram('Kubernetes Traefik Ingress GKE',
             # with Cluster("Cert Manager"):
             # certmanager = CertManager("Cert Manager")
             with Cluster("Ingress"):
-                traefik = Traefik("Traefik\nIngress Controller")
+                traefik = Traefik("Traefik\nIngress")
             # letsencrypt >> \
             #    Edge(label="ACME protocol\ngenerated certificate", style="dashed") \
             #    >> certmanager \
