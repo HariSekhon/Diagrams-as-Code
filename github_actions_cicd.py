@@ -22,7 +22,7 @@ GitHub Actions CI/CD
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 #import requests
@@ -39,9 +39,9 @@ from diagrams.programming.flowchart import Document
 
 # pylint: disable=C0103
 headers = {'user-agent': 'Mozilla/5.0'}
-hari_icon = "images/hari.jpeg"
+hari_icon = "hari.jpeg"
 # rolling_eyes_url = "https://em-content.zobj.net/thumbs/240/apple/354/face-with-rolling-eyes_1f644.png"
-rolling_eyes_icon = "images/rolling_eyes.png"
+rolling_eyes_icon = "rolling_eyes.png"
 
 # r = requests.get(rolling_eyes_url, headers=headers)
 # with open(rolling_eyes_icon, 'wb') as f:
@@ -68,9 +68,9 @@ with Diagram('GitHub Actions CI/CD',
     #giovanni = User("Giovanni")
     giovanni = Custom("Giovanni", rolling_eyes_icon)
     #ravi = User("Ravi")
-    ravi = Custom("Ravi", "images/man-shrugging-medium-skin-tone.png")
+    ravi = Custom("Ravi", "man-shrugging-medium-skin-tone.png")
     #you = User("You")
-    you = Custom("You", "images/flushed-face.png")
+    you = Custom("You", "flushed-face.png")
     #users = Users("Users")
     git = Git("Git")
 
