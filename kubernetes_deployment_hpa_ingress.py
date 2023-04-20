@@ -29,7 +29,8 @@ __version__ = '0.2'
 import os
 from diagrams import Diagram
 
-# K8s resources:
+# ============================================================================ #
+# Kubernetes resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
 #
