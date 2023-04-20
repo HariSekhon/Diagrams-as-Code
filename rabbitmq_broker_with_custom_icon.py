@@ -39,14 +39,16 @@ from diagrams.k8s.compute import Pod
 rabbitmq_url = "https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png"
 rabbitmq_icon = "rabbitmq.png"
 
-# XXX: filename=images/ changes the $PWD so rabbitmq_icon path must be local dir,
-# but at this point we're still at top level dir
-urlretrieve(rabbitmq_url, os.path.join("images", rabbitmq_icon) )
+image_dir = 'images'
+
+# NOTE: filename=images/ parameter to Diagram() changes the $PWD so rabbitmq_icon path must be local dir,
+# but at this point we're still at top level dir so must join to prefix it with the image_dir
+urlretrieve(rabbitmq_url, os.path.join(image_dir, rabbitmq_icon))
 
 # pylint: disable=W0106
 with Diagram("RabbitMQ Broker with custom icon",
              show=not bool(os.environ.get('CI', 0)),
-             filename='images/rabbitmq_broker_with_custom_icon',
+             filename=os.path.join(image_dir, 'rabbitmq_broker_with_custom_icon'),
              ):
     with Cluster("Consumers"):
         consumers = [
