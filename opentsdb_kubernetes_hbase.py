@@ -75,10 +75,13 @@ graph_attr = {
     "splines": "spline",  # rounded arrows, much nicer
     # "rotation": "90",
     "landscape": "false",
-    # "center": "true",
-    # "margin": "0",
-    # "lheight": "200",
-    # "lwidth": "5",
+    #"center": "true",
+    #"margin": "0",    # scales the image down but doesn't change the layout
+    #"ordering": "in",  # or 'out'
+    #"outputorder": "nodesfirst",
+    #"lheight": "200",
+    #"lwidth": "5",
+    #"size": "50,100",  # scales the image down but doesn't change the layout
 }
 
 # pylint: disable=W0104,W0106
