@@ -62,7 +62,7 @@ rabbitmq_icon = "rabbitmq.png"
 
 image_dir = 'images'
 
-# NOTE: filename=images/ parameter to Diagram() changes the $PWD so rabbitmq_icon path must be local dir,
+# NOTE: filename=images/ parameter to Diagram() changes the $PWD so icon path must be local dir,
 # but at this point we're still at top level dir so must join to prefix it with the image_dir
 urlretrieve(rabbitmq_url, os.path.join(image_dir, rabbitmq_icon))
 
