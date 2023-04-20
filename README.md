@@ -130,7 +130,7 @@ One of the production environments I created for a client using [Terraform](http
 
 ### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
 
-[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [deployment.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/deployment.yaml).
+[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo - [deployment.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/deployment.yaml), [horizontal-pod-autoscaler.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/horizontal-pod-autoscaler.yaml) and [ingress.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/ingress.yaml).
 
 [kubernetes_deployment_hpa_ingress.py](kubernetes_deployment_hpa_ingress.py):
 
