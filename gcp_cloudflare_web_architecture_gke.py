@@ -22,7 +22,7 @@ GCP Cloudflare Web Architecture GKE
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -34,7 +34,7 @@ from diagrams import Diagram, Cluster, Edge
 #
 
 from diagrams.gcp.compute import GKE
-from diagrams.gcp.network import LoadBalancing
+from diagrams.gcp.network import FirewallRules, LoadBalancing
 from diagrams.gcp.storage import GCS
 
 # ============================================================================ #
@@ -95,9 +95,11 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
         users >> Edge(label="HTTPS traffic") >> cdn
 
     with Cluster("Google Cloud"):
+        firewall = FirewallRules("Firewall")
         load_balancer = LoadBalancing("Cloud Load Balancer")
         cdn \
             >> Edge(label="Proxied HTTPS Traffic") \
+            >> firewall \
             >> load_balancer
         # load_balancer - dns
 
