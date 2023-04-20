@@ -29,13 +29,44 @@ import os
 
 from diagrams import Diagram, Cluster, Edge
 
-from diagrams.custom import Custom
+# ============================================================================ #
+# On-premise / Open Source resources:
+#
+#   https://diagrams.mingrammer.com/docs/nodes/onprem
+#
+
 #from diagrams.onprem.client import User  # , Users
 from diagrams.onprem.ci import Jenkins, GithubActions
 from diagrams.onprem.vcs import Git, Github
+
+# ============================================================================ #
+# SaaS:
+#
+#   https://diagrams.mingrammer.com/docs/nodes/saas
+#
+
 from diagrams.saas.chat import Slack
+
+# ============================================================================ #
+#
+# Programming - flowcharts, programming languages and frameworks
+#
+#   https://diagrams.mingrammer.com/docs/nodes/programming
+#
+
 from diagrams.programming.language import Python
 from diagrams.programming.flowchart import Document
+
+# ============================================================================ #
+#
+# Custom - for creating a custom object using a downloaded image
+#
+#   https://diagrams.mingrammer.com/docs/nodes/custom
+#
+
+from diagrams.custom import Custom
+
+# ============================================================================ #
 
 # pylint: disable=C0103
 headers = {'user-agent': 'Mozilla/5.0'}
@@ -50,6 +81,8 @@ rolling_eyes_icon = "rolling_eyes.png"
 # r = requests.get(hari_url, headers=headers)
 # with open(hari_icon, 'wb') as f:
 #     f.write(r.content)
+
+# ============================================================================ #
 
 graph_attr = {
     "splines": "spline",
@@ -98,8 +131,8 @@ with Diagram('GitHub Actions CI/CD',
             # hari \
             #     - Edge(color='red', style="dashed") \
             Jenkins("Jenkins") \
-            << Edge(label="banned", color='red', style="dashed") \
-            << giovanni
+                << Edge(label="banned", color='red', style="dashed") \
+                << giovanni
             # github_actions \
             #     << Edge(label="I will just about tolerate this") \
             #     << giovanni
@@ -116,4 +149,4 @@ with Diagram('GitHub Actions CI/CD',
         >> Edge(label="Hari is doing his\n\"rain man\"\nthing again...") \
         >> slack
 
-    you >> readme # << users
+    you >> readme  # << users
