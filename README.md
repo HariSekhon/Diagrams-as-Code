@@ -88,6 +88,7 @@ For more advanced examples, see the real architectural diagrams in the next sect
 
 They say a picture is worth a thousand words...
 
+
 ### GitHub Actions CI/CD
 
 How you're seeing these diagrams...
@@ -96,11 +97,13 @@ How you're seeing these diagrams...
 
 ![](images/github_actions_cicd.png)
 
+
 ### AWS Web Traffic
 
 [aws_web_traffic.py](aws_web_traffic.py):
 
 ![](images/aws_web_traffic.png)
+
 
 ### AWS Load Balanced Web Farm
 
@@ -108,11 +111,20 @@ How you're seeing these diagrams...
 
 ![](images/aws_load_balanced_web_farm.png)
 
+
 ### Advanced Web Services Open Source
 
 [advanced_web_services_open_source.py](advanced_web_services_open_source.py):
 
 ![](images/advanced_web_services_open_source.png)
+
+
+### GCP Cloudflare Web Architecture GKE
+
+[gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
+
+![](images/gcp_cloudflare_web_architecture_gke.png)
+
 
 ### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
 
@@ -120,11 +132,13 @@ How you're seeing these diagrams...
 
 ![](images/kubernetes_deployment_hpa_ingress.png)
 
+
 ### Kubernetes Stateful Architecture with persistent volumes
 
 [kubernetes_stateful_architecture.py](kubernetes_stateful_architecture.py):
 
 ![](images/kubernetes_stateful_architecture.png)
+
 
 ### GCP Pub/Sub Analytics
 
@@ -132,11 +146,13 @@ How you're seeing these diagrams...
 
 ![](images/gcp_pubsub_analytics.png)
 
+
 ### AWS Clustered Web Services
 
 [aws_clustered_web_services.py](aws_clustered_web_services.py):
 
 ![](images/aws_clustered_web_services.png)
+
 
 ### Traefik Kubernetes Ingress on GKE
 
@@ -144,11 +160,13 @@ How you're seeing these diagrams...
 
 ![](images/kubernetes_traefik_ingress_gke.png)
 
+
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
 [kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.py):
 
 ![](images/kubernetes_kong_api_gateway_eks.png)
+
 
 ### AWS Event Processing
 
@@ -156,11 +174,13 @@ How you're seeing these diagrams...
 
 ![](images/aws_event_processing.png)
 
+
 ### AWS Serverless Image Processing
 
 [aws_serverless_image_processing.py](aws_serverless_image_processing.py):
 
 ![](images/aws_serverless_image_processing.png)
+
 
 ## See Also
 
