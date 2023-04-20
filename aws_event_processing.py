@@ -45,6 +45,7 @@ graph_attr = {
 # Nest clusters
 with Diagram("AWS Event Processing",
              show=not bool(os.environ.get('CI', 0)),
+             filename='images/aws_event_processing',
              graph_attr=graph_attr,
              ):
     eks = EKS("EKS source")

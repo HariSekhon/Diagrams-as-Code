@@ -47,7 +47,10 @@ from diagrams.onprem.queue import Kafka
 # An edge object contains three attributes: label, color and style which mirror corresponding graphviz edge attributes
 
 # pylint: disable=W0106
-with Diagram(name="Advanced Web Services Open Source", show=not bool(os.environ.get('CI', 0))):
+with Diagram(name="Advanced Web Services Open Source",
+             show=not bool(os.environ.get('CI', 0)),
+             filename='images/advanced_web_services_open_source',
+             ):
     nginx = Nginx("Nginx Ingress")
 
     metrics = Prometheus("Promtheus metrics")

@@ -59,6 +59,7 @@ graph_attr = {
 with Diagram('Kubernetes Kong API Gateway EKS',
              show=not bool(os.environ.get('CI', 0)),
              direction='TB',
+             filename='images/kubernetes_kong_api_gateway_eks',
              graph_attr=graph_attr,
              ):
 

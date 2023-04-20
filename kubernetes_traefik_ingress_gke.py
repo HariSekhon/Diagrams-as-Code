@@ -31,8 +31,8 @@ from diagrams import Diagram, Cluster, Edge
 #
 #   https://diagrams.mingrammer.com/docs/nodes/onprem
 #
-from diagrams.onprem.network import Nginx, Traefik
-from diagrams.onprem.certificates import CertManager, LetsEncrypt
+from diagrams.onprem.network import Traefik
+# from diagrams.onprem.certificates import CertManager, LetsEncrypt
 from diagrams.onprem.client import Users
 
 # K8s resources:
@@ -46,8 +46,7 @@ from diagrams.k8s.network import Service
 #
 #   https://diagrams.mingrammer.com/docs/nodes/gcp
 #
-from diagrams.gcp.analytics import BigQuery, Dataflow, PubSub
-from diagrams.gcp.compute import AppEngine, GKE, Functions
+from diagrams.gcp.compute import GKE
 from diagrams.gcp.network import DNS, LoadBalancing
 
 graph_attr = {
@@ -58,6 +57,7 @@ graph_attr = {
 with Diagram('Kubernetes Traefik Ingress GKE',
              show=not bool(os.environ.get('CI', 0)),
              direction='BT',
+             filename='images/kubernetes_traefik_ingress_gke',
              graph_attr=graph_attr,
              ):
 

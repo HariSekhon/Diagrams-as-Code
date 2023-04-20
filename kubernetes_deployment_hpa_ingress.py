@@ -43,6 +43,7 @@ graph_attr = {
 
 with Diagram("Kubernetes Deployment HPA Ingress",
              show=not bool(os.environ.get('CI', 0)),
+             filename='images/kubernetes_deployment_hpa_ingress',
              #graph_attr=graph_attr,
              ):
     net = Ingress("Ingress\nwww.domain.com") >> Service("Service")

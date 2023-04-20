@@ -43,6 +43,7 @@ graph_attr = {
 
 with Diagram("AWS Clustered Web Services",
              show=not bool(os.environ.get('CI', 0)),
+             filename='images/aws_clustered_web_services',
              #graph_attr=graph_attr,
              ):
     dns = Route53("Route53")

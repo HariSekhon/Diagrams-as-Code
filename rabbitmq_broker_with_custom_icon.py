@@ -42,7 +42,10 @@ rabbitmq_icon = "rabbitmq.png"
 urlretrieve(rabbitmq_url, rabbitmq_icon)
 
 # pylint: disable=W0106
-with Diagram("RabbitMQ Broker with custom icon", show=not bool(os.environ.get('CI', 0))):
+with Diagram("RabbitMQ Broker with custom icon",
+             show=not bool(os.environ.get('CI', 0)),
+             filename='images/rabbitmq_broker_with_custom_icon',
+             ):
     with Cluster("Consumers"):
         consumers = [
             Pod("worker"),

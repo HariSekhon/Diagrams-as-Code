@@ -59,7 +59,7 @@ graph_attr = {
 with Diagram('GitHub Actions CI/CD',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',
-             filename="github_actions_cicd",
+             filename="images/github_actions_cicd",
              graph_attr=graph_attr,
              ):
 

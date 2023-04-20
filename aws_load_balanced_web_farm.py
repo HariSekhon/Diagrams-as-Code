@@ -44,6 +44,7 @@ graph_attr = {
 with Diagram("AWS Load Balanced Web Farm",
              show=not bool(os.environ.get('CI', 0)),
              direction="TB",
+             filename='images/aws_load_balanced_web_farm',
              graph_attr=graph_attr,
              ):
     # can use variables to connect nodes to the same items

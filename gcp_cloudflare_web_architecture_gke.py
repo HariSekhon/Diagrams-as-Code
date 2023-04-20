@@ -80,6 +80,7 @@ graph_attr = {
 with Diagram('GCP Cloudflare Web Architecture GKE',
              show=not bool(os.environ.get('CI', 0)),
              direction='TB',
+             filename='images/gcp_cloudflare_web_architecture_gke',
              graph_attr=graph_attr,
              ):
 

@@ -46,6 +46,7 @@ graph_attr = {
 # pylint: disable=W0106
 with Diagram("GCP PubSub Analytics",
              show=not bool(os.environ.get('CI', 0)),
+             filename='images/gcp_pubsub_analytics',
              graph_attr=graph_attr,
              ):
     pubsub = PubSub("GCP Pub/Sub")

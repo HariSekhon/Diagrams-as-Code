@@ -37,7 +37,10 @@ from diagrams.k8s.compute import Pod, StatefulSet
 # from diagrams.k8s.network import Service
 from diagrams.k8s.storage import PV, PVC, StorageClass
 
-with Diagram("Kubernetes Stateful Architecture", show=not bool(os.environ.get('CI', 0))):
+with Diagram("Kubernetes Stateful Architecture",
+             show=not bool(os.environ.get('CI', 0)),
+             filename='images/kubernetes_stateful_architecture',
+             ):
     with Cluster("App"):
         # Service clutters this diagram
         # svc = Service("Service)")

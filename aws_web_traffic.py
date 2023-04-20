@@ -47,6 +47,7 @@ graph_attr = {
 with Diagram('AWS Web Traffic',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',     # left-to-right, other options: TB, BT, LR, RL
+             filename='images/aws_web_traffic',
              graph_attr=graph_attr,
              ):
 

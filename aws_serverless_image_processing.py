@@ -54,6 +54,7 @@ graph_attr = {
 # pylint: disable=W0104,W0106
 with Diagram('AWS Serverless Image Processing',
              show=not bool(os.environ.get('CI', 0)),
+             filename='images/aws_serverless_image_processing',
              graph_attr=graph_attr,
              ):
     appsync = Appsync("AWS AppSync")
