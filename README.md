@@ -121,7 +121,7 @@ How this repo got created...
 
 ### GCP Cloudflare Web Architecture GKE
 
-One of the production environments I created for a client using [Terraform](https://github.com/HariSekhon/Terraform).
+A production environment replatform I did for a client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
