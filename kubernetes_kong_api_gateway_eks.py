@@ -27,6 +27,7 @@ __version__ = '0.2'
 import os
 from diagrams import Diagram, Cluster, Edge
 
+# ============================================================================ #
 # On-premise / Open Source resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/onprem
@@ -37,13 +38,15 @@ from diagrams.onprem.vcs import Github
 from diagrams.onprem.gitops import ArgoCD
 from diagrams.onprem.client import Users
 
-# K8s resources:
+# ============================================================================ #
+# Kubernetes resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
 #
 from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ingress, Service
 
+# ============================================================================ #
 # AWS resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/aws
