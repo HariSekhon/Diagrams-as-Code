@@ -38,7 +38,7 @@ from diagrams.gcp.network import FirewallRules, LoadBalancing
 from diagrams.gcp.storage import GCS
 
 # ============================================================================ #
-# K8s resources:
+# Kubernetes resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
 #
