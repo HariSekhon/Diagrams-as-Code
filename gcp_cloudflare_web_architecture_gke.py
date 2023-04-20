@@ -22,7 +22,7 @@ GCP Cloudflare Web Architecture GKE
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -89,13 +89,14 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
     # github = Github("GitHub")
 
     with Cluster("Cloudflare"):
-        cloudflare = Cloudflare("Cloudflare\nDNS\nCDN\nWAF")
-        users >> Edge(label="DNS queries") >> cloudflare
-        users >> Edge(label="HTTPS traffic") >> cloudflare
+        dns = Cloudflare("Cloudflare\nDNS")
+        cdn = Cloudflare("Cloudflare\nCDN / WAF")
+        users >> Edge(label="DNS queries") >> dns
+        users >> Edge(label="HTTPS traffic") >> cdn
 
     with Cluster("Google Cloud"):
         load_balancer = LoadBalancing("Cloud Load Balancer")
-        cloudflare \
+        cdn \
             >> Edge(label="Proxied HTTPS Traffic") \
             >> load_balancer
         # load_balancer - dns
@@ -112,20 +113,20 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
                 nginx = Nginx("Nginx\nIngress Controller")
                 #ingress = Ingress("Kubernetes Ingress")
 
-            with Cluster("WebApp 2"):
-                service = Service("WebApp 2 Service")
-                nginx >> service
-                pods = []
-                for _ in range(3, 0, -1):
-                    pods.append(service >> Pod(f"Pod {_}") >> gcs)
-                #     argocd >> service
-                # argocd >> pods
-
             with Cluster("WebApp 1"):
                 service = Service("WebApp 1 Service")
                 nginx >> service
                 pods = []
-                for _ in range(3, 0, -1):
+                for _ in range(1, 4, 1):
+                    pods.append(service >> Pod(f"Pod {_}") >> gcs)
+                #     argocd >> service
+                # argocd >> pods
+
+            with Cluster("WebApp 2"):
+                service = Service("WebApp 2 Service")
+                nginx >> service
+                pods = []
+                for _ in range(1, 4, 1):
                     pods.append(service >> Pod(f"Pod {_}") >> gcs)
                 #     argocd >> service
                 # argocd >> pods
