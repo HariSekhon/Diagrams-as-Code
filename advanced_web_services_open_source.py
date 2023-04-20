@@ -29,6 +29,7 @@ __version__ = '0.1'
 import os
 from diagrams import Diagram, Cluster, Edge
 
+# ============================================================================ #
 # On-premise / Open Source resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/onprem
@@ -41,6 +42,8 @@ from diagrams.onprem.aggregator import Fluentd
 from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
+
+# ============================================================================ #
 
 # Edge is an object representing a connection between Nodes with some additional properties
 #
