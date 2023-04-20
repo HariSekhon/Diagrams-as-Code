@@ -91,7 +91,7 @@ They say a picture is worth a thousand words...
 
 ### GitHub Actions CI/CD
 
-How you're seeing these diagrams...
+How this repo got created...
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
@@ -121,6 +121,8 @@ How you're seeing these diagrams...
 
 ### GCP Cloudflare Web Architecture GKE
 
+One of the production environments I created for a client using [Terraform](https://github.com/HariSekhon/Terraform).
+
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
 ![](images/gcp_cloudflare_web_architecture_gke.png)
@@ -128,12 +130,16 @@ How you're seeing these diagrams...
 
 ### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
 
+[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [deployment.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/deployment.yaml).
+
 [kubernetes_deployment_hpa_ingress.py](kubernetes_deployment_hpa_ingress.py):
 
 ![](images/kubernetes_deployment_hpa_ingress.png)
 
 
 ### Kubernetes Stateful Architecture with persistent volumes
+
+[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [statefulset.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/statefulset.yaml).
 
 [kubernetes_stateful_architecture.py](kubernetes_stateful_architecture.py):
 
@@ -156,12 +162,16 @@ How you're seeing these diagrams...
 
 ### Traefik Kubernetes Ingress on GKE
 
+A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `traefik-*.yaml`.
+
 [kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
 
 ![](images/kubernetes_traefik_ingress_gke.png)
 
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
+
+A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `kong-*.yaml`.
 
 [kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.py):
 
