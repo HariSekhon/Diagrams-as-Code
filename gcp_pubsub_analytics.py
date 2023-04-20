@@ -29,6 +29,7 @@ __version__ = '0.2'
 import os
 from diagrams import Diagram, Cluster
 
+# ============================================================================ #
 # GCP resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/gcp
