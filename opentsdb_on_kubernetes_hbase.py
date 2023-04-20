@@ -86,6 +86,7 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
              ):
 
     users = Users("Users - Quants, Devs, DevOps etc.")
+    tcollectors = Custom(f"TCollector agents metrics", opentsdb_icon)
 
     with Cluster("Kubernetes on-prem"):
 
@@ -94,7 +95,9 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
         opentsdb_ingress = Nginx("Nginx Ingress OpenTSDB")
         opentsdb_service = Service("OpenTSDB service")
 
-        opentsdb_ingress >> opentsdb_service
+        tcollectors \
+            >> opentsdb_ingress \
+            >> opentsdb_service
 
         # with Cluster("Grafana"):
         grafana_service = Service("Grafana service")
