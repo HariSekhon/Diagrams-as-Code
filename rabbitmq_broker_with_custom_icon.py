@@ -24,7 +24,7 @@ RabbitMQ Broker with custom icon
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from urllib.request import urlretrieve
@@ -39,7 +39,9 @@ from diagrams.k8s.compute import Pod
 rabbitmq_url = "https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png"
 rabbitmq_icon = "rabbitmq.png"
 
-urlretrieve(rabbitmq_url, rabbitmq_icon)
+# XXX: filename=images/ changes the $PWD so rabbitmq_icon path must be local dir,
+# but at this point we're still at top level dir
+urlretrieve(rabbitmq_url, os.path.join("images", rabbitmq_icon) )
 
 # pylint: disable=W0106
 with Diagram("RabbitMQ Broker with custom icon",
@@ -56,4 +58,4 @@ with Diagram("RabbitMQ Broker with custom icon",
 
     rabbitmq >> consumers >> Aurora("Database")
 
-os.remove(rabbitmq_icon)
+#os.remove(rabbitmq_icon)
