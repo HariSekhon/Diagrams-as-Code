@@ -26,7 +26,7 @@ __version__ = '0.1'
 
 import os
 from urllib.request import urlretrieve
-from diagrams import Diagram, Cluster, Edge
+from diagrams import Diagram, Cluster  # , Edge
 
 # ============================================================================ #
 # Kubernetes resources:
@@ -34,7 +34,7 @@ from diagrams import Diagram, Cluster, Edge
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
 #
 
-from diagrams.k8s.compute import StatefulSet
+# from diagrams.k8s.compute import StatefulSet
 from diagrams.k8s.network import Service
 
 # ============================================================================ #
@@ -44,7 +44,7 @@ from diagrams.k8s.network import Service
 #
 from diagrams.onprem.client import Users
 from diagrams.onprem.analytics import Hadoop
-from diagrams.onprem.compute import Server
+# from diagrams.onprem.compute import Server
 from diagrams.onprem.database import HBase
 from diagrams.onprem.monitoring import Grafana
 from diagrams.onprem.network import Apache, Nginx
@@ -86,7 +86,7 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
              ):
 
     users = Users("Users - Quants, Devs, DevOps etc.")
-    tcollectors = Custom(f"TCollector agents metrics", opentsdb_icon)
+    tcollectors = Custom("TCollector agents metrics", opentsdb_icon)
 
     with Cluster("Kubernetes on-prem"):
 
