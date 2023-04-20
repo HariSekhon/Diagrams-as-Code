@@ -75,6 +75,10 @@ graph_attr = {
     "splines": "spline",  # rounded arrows, much nicer
     # "rotation": "90",
     "landscape": "false",
+    # "center": "true",
+    # "margin": "0",
+    # "lheight": "200",
+    # "lwidth": "5",
 }
 
 # pylint: disable=W0104,W0106
@@ -82,6 +86,7 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
              show=not bool(os.environ.get('CI', 0)),
              direction='TB',  # seems to set graphviz rankdir
              filename=os.path.join(image_dir, 'opentsdb_kubernetes_hbase'),
+             #outformat=['png', 'dot'],
              graph_attr=graph_attr,
              ):
 
@@ -139,4 +144,3 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
                     hbase[_] >> hdfs[_]
                     for i in opentsdb_range:
                         hbase[_] << opentsdb[i]
-    print(dir(hadoop))
