@@ -139,4 +139,3 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
                     hbase[_] >> hdfs[_]
                     for i in opentsdb_range:
                         hbase[_] << opentsdb[i]
-    print(dir(hadoop))
