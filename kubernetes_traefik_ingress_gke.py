@@ -27,6 +27,7 @@ __version__ = '0.2'
 import os
 from diagrams import Diagram, Cluster, Edge
 
+# ============================================================================ #
 # On-premise / Open Source resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/onprem
@@ -35,6 +36,9 @@ from diagrams.onprem.network import Traefik
 # from diagrams.onprem.certificates import CertManager, LetsEncrypt
 from diagrams.onprem.client import Users
 
+# ============================================================================ #
+# Kubernetes resources:
+#
 # K8s resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
@@ -42,6 +46,7 @@ from diagrams.onprem.client import Users
 from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Service
 
+# ============================================================================ #
 # GCP resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/gcp
