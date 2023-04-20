@@ -22,7 +22,7 @@ OpenTSDB on Kubernetes with HBase
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
 from urllib.request import urlretrieve
@@ -88,7 +88,7 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
     users = Users("Users - Quants, Devs, DevOps etc.")
     tcollectors = Custom("TCollector agents metrics", opentsdb_icon)
 
-    with Cluster("Kubernetes on-prem"):
+    with Cluster("Kubernetes on-prem") as k8s:
 
         grafana_ingress = Nginx("Nginx Ingress Grafana")
 
@@ -118,22 +118,25 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
 
         opentsdb = {}
         opentsdb_range = range(1, 16, 1)
-        for _ in opentsdb_range:
+        # crude instead of algo positioning but quick
+        ordering = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1 , 2]
+        ordered_opentsdb_range = [opentsdb_range[ordering.index(i)] for i in opentsdb_range]
+        for _ in ordered_opentsdb_range:
             opentsdb[_] = Custom(f"OpenTSDB pod {_}", opentsdb_icon)
             opentsdb_service >> opentsdb[_]
 
-    with Cluster("Hadoop cluster on-prem"):
+    with Cluster("Hadoop cluster on-prem") as hadoop:
         hbase = {}
-        hbase_range = range(1, 13, 1)
-        for _ in hbase_range:
-            hbase[_] = HBase(f"HBase node {_}")
-            for i in opentsdb_range:
-                hbase[_] << opentsdb[i]
-
         hdfs = {}
-        hdfs_range = range(1, 13, 1)
-        for _ in hdfs_range:
-            hdfs[_] = Hadoop(f"Hadoop HDFS node {_}")
-            # for node in range(1, 15, 1):
-            for i in hbase_range:
-                hdfs[_] << hbase[i]
+        node_range = range(1, 13, 1)
+        # crude instead of algo positioning but quick
+        ordering = [6, 9, 3, 12, 2, 10, 5, 7, 8, 4, 11, 1]
+        ordered_node_range = [node_range[ordering.index(i)] for i in node_range]
+        for _ in ordered_node_range:
+            with Cluster(f"Hadoop node {_}"):
+                    hbase[_] = HBase("HBase")
+                    hdfs[_] = Hadoop("Hadoop HDFS")
+                    hbase[_] >> hdfs[_]
+                    for i in opentsdb_range:
+                        hbase[_] << opentsdb[i]
+    print(dir(hadoop))
