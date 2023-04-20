@@ -31,9 +31,30 @@ from urllib.request import urlretrieve
 
 from diagrams import Diagram, Cluster
 
-from diagrams.custom import Custom
+# ============================================================================ #
+# AWS resources:
+#
+#   https://diagrams.mingrammer.com/docs/nodes/aws
+#
+
 from diagrams.aws.database import Aurora
+
+# ============================================================================ #
+# Kubernetes resources:
+#
+#   https://diagrams.mingrammer.com/docs/nodes/k8s
+#
+
 from diagrams.k8s.compute import Pod
+
+# ============================================================================ #
+#
+# Custom - for creating a custom object using a downloaded image
+#
+#   https://diagrams.mingrammer.com/docs/nodes/custom
+#
+
+from diagrams.custom import Custom
 
 # pylint: disable=C0103
 rabbitmq_url = "https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png"
