@@ -29,6 +29,9 @@ __version__ = '0.1'
 import os
 from diagrams import Diagram, Cluster
 
+# ============================================================================ #
+# Kubernetes resources:
+#
 # K8s resources:
 #
 #   https://diagrams.mingrammer.com/docs/nodes/k8s
