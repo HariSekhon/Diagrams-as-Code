@@ -22,7 +22,7 @@ Kong API Gateway on Kubernetes (AWS EKS)
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -87,7 +87,7 @@ with Diagram('Kubernetes Kong API Gateway EKS',
                 argocd = ArgoCD("ArgoCD")
 
             with Cluster("Ingress"):
-                kong = Kong("Kong API Gateway\nIngress Controller")
+                kong = Kong("Kong API Gateway")
                 ingress = Ingress("Kubernetes Ingress")
 
             with Cluster("WebApp 2"):
