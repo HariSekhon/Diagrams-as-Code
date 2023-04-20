@@ -62,8 +62,9 @@ diagrams:
 		echo "Generating $$x"; \
 		python3 $$x; \
 	done
-	@sleep 1  # give the last png a second to be opened before moving it to avoid an error
-	mv -fv *.png images/
+	@# generating images straight into images/ dir now to skip one step and avoid local run tidying being required
+	@#sleep 1  # give the last png a second to be opened before moving it to avoid an error
+	@#mv -fv *.png images/
 
 .PHONY: diag
 diag: diagrams
