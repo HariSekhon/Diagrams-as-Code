@@ -56,6 +56,8 @@ from diagrams.k8s.compute import Pod
 
 from diagrams.custom import Custom
 
+# ============================================================================ #
+
 # pylint: disable=C0103
 rabbitmq_url = "https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png"
 rabbitmq_icon = "rabbitmq.png"
