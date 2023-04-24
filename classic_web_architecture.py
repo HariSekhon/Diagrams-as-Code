@@ -17,7 +17,7 @@
 
 """
 
-Classic Web Architecture
+Old Web Architecture
 
 """
 
@@ -90,10 +90,10 @@ graph_attr = {
 }
 
 # pylint: disable=W0104,W0106
-with Diagram('Classic Web Architecture',
+with Diagram('Old Web Architecture',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',
-             filename='images/classic_web_architecture',  # override the default filename, without the extension
+             filename='images/old_web_architecture',  # override the default filename, without the extension
              graph_attr=graph_attr,
              ):
 
