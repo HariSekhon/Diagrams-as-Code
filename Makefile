@@ -41,13 +41,25 @@ REPO := HariSekhon/Diagrams-as-Code
 CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
 
 main:
-	@$(MAKE) diagrams
+	@$(MAKE) diag
+
+.PHONY: diag
+diag: diagrams
+	@:
+
+.PHONY: graphs
+graphs: diag
+	@:
 
 .PHONY: diagrams
-diagrams:
+diagrams: diagrams-python diagrams-d2
+	@:
+
+.PHONY: diagrams-python
+diagrams-python:
 	@if ! type -P dot >/dev/null 2>&1 || \
 		! python3 -c 'import diagrams' 2>&1; then \
-		$(MAKE) build; \
+		$(MAKE) install-python; \
 	fi
 	@echo ===================
 	@echo Generating Diagrams
@@ -66,21 +78,53 @@ diagrams:
 	@#sleep 1  # give the last png a second to be opened before moving it to avoid an error
 	@#mv -fv *.png images/
 
-.PHONY: diag
-diag: diagrams
+.PHONY: diagrams-d2
+diagrams-d2:
+	@if ! type -P d2 >/dev/null 2>&1; then \
+		$(MAKE) install-d2; \
+	fi; \
+	for x in *.d2; do \
+		if [ "$$x" = template.d2 ]; then \
+			continue; \
+		fi; \
+		echo "Generating $$x"; \
+		d2 --dark-theme 200 $$x images/$${x%.d2}.svg; \
+	done
+
+.PHONY: d2
+d2: diagrams-d2
 	@:
 
-.PHONY: graphs
-graphs: diag
+.PHONY: py
+py: diagrams-python
+	@:
+
+.PHONY: install
+install: build
 	@:
 
 .PHONY: build
 build: init
-	@echo ================
+	@echo ==============
 	@echo Diagrams Build
-	@echo ================
+	@echo ==============
 	@$(MAKE) git-summary
 	@echo
+	@$(MAKE) install-d2
+	@$(MAKE) install-python
+
+.PHONY: init
+init:
+	@echo "running init:"
+	git submodule update --init --recursive
+	@echo
+
+.PHONY: install-d2
+install-d2:
+	curl -fsSL https://d2lang.com/install.sh | sh -s --
+
+.PHONY: install-python
+install-python:
 	# defer via external sub-call, otherwise will result in error like
 	# make: *** No rule to make target 'python-version', needed by 'build'.  Stop.
 	@$(MAKE) python-version
@@ -89,16 +133,6 @@ build: init
 	$(MAKE) system-packages-python
 
 	$(MAKE) python
-
-.PHONY: init
-init:
-	@echo "running init:"
-	git submodule update --init --recursive
-	@echo
-
-.PHONY: install
-install: build
-	@:
 
 .PHONY: python
 python:
