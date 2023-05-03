@@ -115,13 +115,6 @@ How this repo got created...
 ![](images/github_actions_cicd.png)
 
 
-### Devs Test in Production
-
-[test_in_production.d2](test_in_production.d2)
-
-![](images/test_in_production.svg)
-
-
 ### AWS Web Traffic
 
 [aws_web_traffic.py](aws_web_traffic.py):
@@ -141,6 +134,13 @@ How this repo got created...
 [advanced_web_services_open_source.py](advanced_web_services_open_source.py):
 
 ![](images/advanced_web_services_open_source.png)
+
+
+### Devs Test in Production
+
+[test_in_production.d2](test_in_production.d2)
+
+![](images/test_in_production.svg)
 
 
 ### GCP Cloudflare Web Architecture GKE
