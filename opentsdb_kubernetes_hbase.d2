@@ -25,24 +25,40 @@ title: {
 classes: {
   users: {
     icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    #icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
   }
   nginx: {
     icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+    #shape: image
   }
   k8s_svc: {
     icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+    shape: image
+  }
+  apache: {
+    #icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
+    icon: https://www.svgrepo.com/show/353400/apache.svg
+    #shape: image
+  }
+  grafana: {
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    shape: image
   }
   opentsdb: {
     icon: ./images/opentsdb.png
+    shape: image
   }
   hbase: {
     #icon: https://hbase.apache.org/images/hbase_logo_with_orca.png
     #icon: https://hbase.apache.org/images/hbase_logo_with_orca_large.png
     #icon: https://hbase.apache.org/images/jumping-orca_rotated.png
     icon: https://diagrams.mingrammer.com/img/resources/onprem/database/hbase.png
+    shape: image
   }
   hadoop: {
     icon: https://diagrams.mingrammer.com/img/resources/onprem/analytics/hadoop.png
+    shape: image
   }
 }
 
@@ -57,6 +73,7 @@ classes: {
 #Other users -> k8s.Nginx Ingress Grafana
 
 users: Quants, Devs, DevOps, Users
+users.class: users
 #users.near: top-center
 
 k8s: Kubernetes on-prem {
@@ -75,15 +92,15 @@ k8s: Kubernetes on-prem {
   }
 
   Grafana pod 1 {
-    Apache Httpd 1.icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
-    Grafana 1.icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    Apache Httpd 1.class: apache
+    Grafana 1.class: grafana
     Apache Httpd 1 -> grafana 1: kerberos proxy
   }
   Grafana pod 1.Grafana 1 -> OpenTSDB service
 
   Grafana pod 2: Grafana pod 2 {
-    Apache Httpd 2.icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
-    Grafana 2.icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    Apache Httpd 2.class: apache
+    Grafana 2.class: grafana
     Apache Httpd 2 -> grafana 2: kerberos proxy
   }
   Grafana pod 2.Grafana 2 -> OpenTSDB service
