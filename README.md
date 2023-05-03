@@ -108,13 +108,14 @@ They say a picture is worth a thousand words...
 
 ### GitHub Actions CI/CD
 
-How this repo got created... (open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) to see them a bit larger)
+How this repo got created...
 
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
 ![](images/github_actions_cicd.png)
 
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) for this one or you may squint:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
