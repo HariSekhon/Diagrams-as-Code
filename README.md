@@ -117,9 +117,9 @@ How this repo got created...
 
 ### Devs Test in Production
 
-[release_straight_to_production.d2](release_straight_to_production.d2)
+[test_in_production.d2](test_in_production.d2)
 
-![](images/release_straight_to_production.svg)
+![](images/test_in_production.svg)
 
 
 ### AWS Web Traffic
