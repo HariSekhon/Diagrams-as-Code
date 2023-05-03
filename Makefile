@@ -88,8 +88,8 @@ diagrams-d2:
 	@echo ======================
 	mkdir -p -v images
 	$(MAKE) clean
-		# can't use shebang in d2 yet to automate differently themed diagrams because d2 doesn't currently support defining
-		# the theme in the .d2 file and also doesn't support having a separate images/ directory, see:
+		# workaround to use shebang because d2 doesn't currently support defining the theme in the .d2 file
+		# and also doesn't support having a separate images/ directory, see:
 		#
 		#	https://github.com/terrastruct/d2/issues/1286
 		#
@@ -105,8 +105,9 @@ diagrams-d2:
 			continue; \
 		fi; \
 		img="images/$${x%.d2}.svg"; \
-		echo "Generating $$x -> $$img"; \
-		d2 --theme 200 "$$x" "$$img"; \
+		shebang="$$(grep '^#!' "$$x" | sed 's/^#!//')"; \
+		echo "Generating $$x"; \
+		$$shebang "$$x" "$$img"; \
 	done
 
 .PHONY: d2
