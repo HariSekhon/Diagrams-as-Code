@@ -22,7 +22,7 @@ on:
       - main
     paths:
       - '*.py'
-      - .github/workflows/generate-images.yaml  # this workflow
+      - .github/workflows/generate-python-images.yaml  # this workflow
 
   workflow_dispatch:
     inputs:
@@ -48,7 +48,7 @@ defaults:
 
 jobs:
   generate_images:
-    name: Generate Images
+    name: Generate Python Images
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -91,4 +91,6 @@ jobs:
 
       - name: Git Push
         if: steps.commit.outputs.new_commits == 'true'
-        run: git push
+        run: |
+          git pull --no-edit
+          git push
