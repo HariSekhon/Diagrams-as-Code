@@ -13,7 +13,7 @@
 #
 
 ---
-name: Generate Images
+name: Generate D2 Images
 
 on:
   push:
