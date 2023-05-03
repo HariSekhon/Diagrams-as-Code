@@ -65,14 +65,14 @@ jobs:
       - name: Bootstrap
         run: setup/ci_bootstrap.sh
 
-      - name: Install Dependencies
-        run: make install
+      - name: Install Python Dependencies
+        run: make install-python
 
       #- name: Set Show=False
       #  run: sed -i 's/show=True/show=False/' *.py
 
-      - name: Generate Images
-        run: make
+      - name: Generate Python Images
+        run: make py
 
       - name: Git Commit Images
         id: commit
