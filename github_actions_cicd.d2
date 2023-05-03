@@ -65,7 +65,9 @@ slack: Slack {
 }
 
 Banned by Giovanni: {
+  style.border-radius: 20
   Do Not Use: {
+    style.border-radius: 20
     jenkins: Jenkins {
       icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/jenkins.png
       shape: image
@@ -93,6 +95,7 @@ git: Git {
 }
 
 github: GitHub {
+  style.border-radius: 20
   _.git -> github_repo: git push {style.animated: true}
   # github: GitHub {
   #  icon: https://icons.terrastruct.com/dev%2Fgithub.svg
@@ -103,6 +106,7 @@ github: GitHub {
     shape: image
   }
   cicd: "GitHub Actions\nCI/CD" {
+    style.border-radius: 20
     d2: "Generate D2\nImages workflow" {
       icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
       shape: image
@@ -114,8 +118,8 @@ github: GitHub {
     _.github_repo -> d2: "*.d2 changes\ntrigger workflow" {style.animated: true}
     _.github_repo -> python: "*.py changes\ntrigger workflow" {style.animated: true}
 
-    d2 -> _.github_repo: "git commit\nnew/updated diagrams" {style.animated: true}
-    python -> _.github_repo: "git commit\nnew/updated diagrams" {style.animated: true}
+    d2 -> _.github_repo: "git commit\nnew / updated diagrams" {style.animated: true}
+    python -> _.github_repo: "git commit\nnew / updated diagrams" {style.animated: true}
   }
   github_repo -> "README.md" <- _.you
 }
