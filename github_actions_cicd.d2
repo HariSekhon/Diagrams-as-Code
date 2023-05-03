@@ -1,0 +1,121 @@
+# !/usr/bin/env d2 --theme 200 --layout elk
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-03 18:50:11 +0100 (Wed, 03 May 2023)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+direction: right
+
+# this is just a regular object
+title: {
+  label: GitHub Actions CI/CD - Auto-(Re)Generate Diagrams
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+hari: "Hari\nPythonista" {
+  icon: images/hari.jpeg
+  shape: image
+  # style {
+  #  bold: false  # have to unbold because it is default for shape labels and takes priority over italic
+  #  italic: true
+  # }
+}
+
+Giovanni: {
+  icon: images/rolling_eyes.png
+  shape: image
+}
+
+Ravi: {
+  icon: images/man-shrugging-medium-skin-tone.png
+  shape: image
+}
+
+you: {
+  icon: images/flushed-face.png
+  shape: image
+}
+
+python: Python {
+  icon: https://icons.terrastruct.com/dev%2Fpython.svg
+  shape: image
+}
+
+d2: D2 {
+  icon: images/d2_graphic.png
+  shape: image
+}
+
+slack: Slack {
+  icon: https://icons.terrastruct.com/dev%2Fslack.svg
+  shape: image
+}
+
+Banned by Giovanni: {
+  Do Not Use: {
+    jenkins: Jenkins {
+      icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/jenkins.png
+      shape: image
+    }
+    # XXX: must use <- and not -> here to ensure the jenkins is put to the left and doesn't mess up the diagram - at least with ELK engine
+    jenkins <- _._.giovanni: {
+      style.stroke-dash: 5
+    }
+  }
+}
+
+hari -> python: crazy midnight to 4am coding {style.animated: true}
+hari -> d2: crazy midnight to 4am coding {style.animated: true}
+
+hari -> slack: "Hey Guys,\nlooks what\nI just did\nthis weekend!"
+giovanni -> slack: "Hari is doing his\n\"rain man\"\nthing again..."
+ravi -> slack: Hey, what did I miss?
+
+python -> git: git commit {style.animated: true}
+d2 -> git: git commit {style.animated: true}
+
+git: Git {
+  icon: https://icons.terrastruct.com/dev%2Fgit.svg
+  shape: image
+}
+
+github: GitHub {
+  _.git -> github_repo: git push {style.animated: true}
+  # github: GitHub {
+  #  icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  #  shape: image
+  # }
+  github_repo: "Diagrams-as-Code\nrepo" {
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+    shape: image
+  }
+  cicd: "GitHub Actions\nCI/CD" {
+    d2: "Generate D2\nImages workflow" {
+      icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
+      shape: image
+    }
+    python: "Generate Python\nImages workflow" {
+      icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
+      shape: image
+    }
+    _.github_repo -> d2: "*.d2 changes\ntrigger workflow" {style.animated: true}
+    _.github_repo -> python: "*.py changes\ntrigger workflow" {style.animated: true}
+
+    d2 -> _.github_repo: "git commit\nnew/updated diagrams" {style.animated: true}
+    python -> _.github_repo: "git commit\nnew/updated diagrams" {style.animated: true}
+  }
+  github_repo -> "README.md" <- _.you
+}
