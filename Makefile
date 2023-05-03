@@ -148,6 +148,7 @@ install-d2:
 	@echo Install D2
 	@echo ==============
 	curl -fsSL https://d2lang.com/install.sh | sh -s --
+	curl -fsSL https://d2lang.com/install.sh | sh -s -- --tala
 
 .PHONY: install-python
 install-python:
