@@ -1,0 +1,306 @@
+# !/usr/bin/env d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-03 03:15:06 +0100 (Wed, 03 May 2023)
+#
+#  vim:ts=4:sts=4:sw=4:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+title: {
+  label: OpenTSDB on HBase
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  users: {
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+  }
+  nginx: {
+    icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+  }
+  k8s_svc: {
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+  }
+  opentsdb: {
+    icon: ./images/opentsdb.png
+  }
+  hbase: {
+    #icon: https://hbase.apache.org/images/hbase_logo_with_orca.png
+    #icon: https://hbase.apache.org/images/hbase_logo_with_orca_large.png
+    #icon: https://hbase.apache.org/images/jumping-orca_rotated.png
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/database/hbase.png
+  }
+  hadoop: {
+    icon: https://svn.apache.org/repos/asf/hadoop/common/tags/release-0.14.4/docs/logos/hadoop_rgb.png
+  }
+}
+
+#Quants.class: users
+#Devs.class: users
+#DevOps.class: users
+#Other users.class: users
+
+#Quants -> k8s.Nginx Ingress Grafana
+#Devs -> k8s.Nginx Ingress Grafana
+#DevOps -> k8s.Nginx Ingress Grafana
+#Other users -> k8s.Nginx Ingress Grafana
+
+users: Quants, Devs, DevOps, Users
+#users.near: top-center
+
+k8s: Kubernetes on-prem {
+  _.users -> Nginx Ingress Grafana: 3 million queries per day
+  Nginx Ingress Grafana.class: nginx
+  Nginx Ingress OpenTSDB.class: nginx
+  Grafana service.class: k8s_svc
+  OpenTSDB service.class: k8s_svc
+  Nginx Ingress Grafana -> Grafana service
+  Grafana service -> Grafana pod 1.Apache Httpd 1
+  Grafana service -> Grafana pod 2.Apache Httpd 2
+
+  TCollector metrics agents.class: opentsdb
+  TCollector metrics agents -> Nginx Ingress OpenTSDB -> OpenTSDB service: 9 Billion metrics ingested per day {
+    style.animated: true
+  }
+
+  Grafana pod 1 {
+    Apache Httpd 1.icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
+    Grafana 1.icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    Apache Httpd 1 -> grafana 1: kerberos proxy
+  }
+  Grafana pod 1.Grafana 1 -> OpenTSDB service
+
+  Grafana pod 2: Grafana pod 2 {
+    Apache Httpd 2.icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
+    Grafana 2.icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    Apache Httpd 2 -> grafana 2: kerberos proxy
+  }
+  Grafana pod 2.Grafana 2 -> OpenTSDB service
+
+  OpenTSDB service -> tsdb1
+  OpenTSDB service -> tsdb2
+  OpenTSDB service -> tsdb3
+  OpenTSDB service -> tsdb4
+  OpenTSDB service -> tsdb5
+  OpenTSDB service -> tsdb6
+  OpenTSDB service -> tsdb7
+  OpenTSDB service -> tsdb8
+  OpenTSDB service -> tsdb9
+  OpenTSDB service -> tsdb10
+  OpenTSDB service -> tsdb11
+  OpenTSDB service -> tsdb12
+  OpenTSDB service -> tsdb13
+  OpenTSDB service -> tsdb14
+  OpenTSDB service -> tsdb15
+
+  tsdb1: OpenTSDB pod1 {
+    class: opentsdb
+  }
+  tsdb2: OpenTSDB pod2 {
+    class: opentsdb
+  }
+  tsdb3: OpenTSDB pod3 {
+    class: opentsdb
+  }
+  tsdb4: OpenTSDB pod4 {
+    class: opentsdb
+  }
+  tsdb5: OpenTSDB pod5 {
+    class: opentsdb
+  }
+  tsdb6: OpenTSDB pod6 {
+    class: opentsdb
+  }
+  tsdb7: OpenTSDB pod7 {
+    class: opentsdb
+  }
+  tsdb8: OpenTSDB pod8 {
+    class: opentsdb
+  }
+  tsdb9: OpenTSDB pod9 {
+    class: opentsdb
+  }
+  tsdb10: OpenTSDB pod10 {
+    class: opentsdb
+  }
+  tsdb11: OpenTSDB pod11 {
+    class: opentsdb
+  }
+  tsdb12: OpenTSDB pod12 {
+    class: opentsdb
+  }
+  tsdb13: OpenTSDB pod13 {
+    class: opentsdb
+  }
+  tsdb14: OpenTSDB pod14 {
+    class: opentsdb
+  }
+  tsdb15: OpenTSDB pod15 {
+    class: opentsdb
+  }
+
+  #tsdb1 -> _.hadoop
+  #tsdb2 -> _.hadoop
+  #tsdb3 -> _.hadoop
+  #tsdb4 -> _.hadoop
+  #tsdb5 -> _.hadoop
+  #tsdb6 -> _.hadoop
+  #tsdb7 -> _.hadoop
+  #tsdb8 -> _.hadoop
+  #tsdb9 -> _.hadoop
+  #tsdb10 -> _.hadoop
+  #tsdb11 -> _.hadoop
+  #tsdb12 -> _.hadoop
+  #tsdb13 -> _.hadoop
+  #tsdb14 -> _.hadoop
+  #tsdb15 -> _.hadoop
+
+  #tsdb1 -> _.hadoop.node 1.hbase1
+  #tsdb1 -> _.hadoop.node 2.hbase2
+  #tsdb1 -> _.hadoop.node 3.hbase3
+  #tsdb1 -> _.hadoop.node 4.hbase4
+  #tsdb1 -> _.hadoop.node 5.hbase5
+  #tsdb1 -> _.hadoop.node 6.hbase6
+  #tsdb1 -> _.hadoop.node 7.hbase7
+  #tsdb1 -> _.hadoop.node 8.hbase8
+  #tsdb1 -> _.hadoop.node 9.hbase9
+  #tsdb1 -> _.hadoop.node 10.hbase10
+  #tsdb1 -> _.hadoop.node 11.hbase11
+  #tsdb1 -> _.hadoop.node 12.hbase12
+  #
+  #tsdb1 -> _.hadoop.node 1.hbase1
+  #tsdb2 -> _.hadoop.node 2.hbase2
+  #tsdb2 -> _.hadoop.node 3.hbase3
+  #tsdb2 -> _.hadoop.node 4.hbase4
+  #tsdb2 -> _.hadoop.node 5.hbase5
+  #tsdb2 -> _.hadoop.node 6.hbase6
+  #tsdb2 -> _.hadoop.node 7.hbase7
+  #tsdb2 -> _.hadoop.node 8.hbase8
+  #tsdb2 -> _.hadoop.node 9.hbase9
+  #tsdb2 -> _.hadoop.node 10.hbase10
+  #tsdb2 -> _.hadoop.node 11.hbase11
+  #tsdb2 -> _.hadoop.node 12.hbase12
+}
+
+hadoop: Hadoop cluster on-prem {
+  near: bottom-center
+  node 1: {
+    hbase1: HBase 1 {
+      class: hbase
+    }
+    hdfs1: Hadoop HDFS 1 {
+      class: hadoop
+    }
+    hbase1 -> hdfs1
+  }
+  node 2: {
+    hbase2: HBase 2 {
+      class: hbase
+    }
+    hdfs2: Hadoop HDFS 2 {
+      class: hadoop
+    }
+    hbase2 -> hdfs2
+  }
+  node 3: {
+    hbase3: HBase 3 {
+      class: hbase
+    }
+    hdfs3: Hadoop HDFS 3 {
+      class: hadoop
+    }
+    hbase3 -> hdfs3
+  }
+  node 4: {
+    hbase4: HBase 4 {
+      class: hbase
+    }
+    hdfs4: Hadoop HDFS 4 {
+      class: hadoop
+    }
+    hbase4 -> hdfs4
+  }
+  node 5: {
+    hbase5: HBase 5 {
+      class: hbase
+    }
+    hdfs5: Hadoop HDFS 5 {
+      class: hadoop
+    }
+    hbase5 -> hdfs5
+  }
+  node 6: {
+    hbase6: HBase 6 {
+      class: hbase
+    }
+    hdfs6: Hadoop HDFS 6 {
+      class: hadoop
+    }
+    hbase6 -> hdfs6
+  }
+  node 7: {
+    hbase7: HBase 7 {
+      class: hbase
+    }
+    hdfs7: Hadoop HDFS 7 {
+      class: hadoop
+    }
+    hbase7 -> hdfs7
+  }
+  node 8: {
+    hbase8: HBase 8 {
+      class: hbase
+    }
+    hdfs8: Hadoop HDFS 8 {
+      class: hadoop
+    }
+    hbase8 -> hdfs8
+  }
+  node 9: {
+    hbase9: HBase 9 {
+      class: hbase
+    }
+    hdfs9: Hadoop HDFS 9 {
+      class: hadoop
+    }
+    hbase9 -> hdfs9
+  }
+  node 10: {
+    hbase10: HBase 10 {
+      class: hbase
+    }
+    hdfs10: Hadoop HDFS 10 {
+      class: hadoop
+    }
+    hbase10 -> hdfs10
+  }
+  node 11: {
+    hbase11: HBase 11 {
+      class: hbase
+    }
+    hdfs11: Hadoop HDFS 11 {
+      class: hadoop
+    }
+    hbase11 -> hdfs11
+  }
+  node 12: {
+    hbase12: HBase 12 {
+      class: hbase
+    }
+    hdfs12: Hadoop HDFS 12 {
+      class: hadoop
+    }
+    hbase12 -> hdfs12
+  }
+}
