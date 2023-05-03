@@ -14,6 +14,8 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
+direction: down
+
 title: {
   label: OpenTSDB on Kubernetes and HBase
   near: top-center
@@ -169,6 +171,10 @@ k8s: Kubernetes on-prem {
     class: opentsdb
   }
 
+  # Can't connect to hadoop cluster when combined with 'near' placement control due to this ticket:
+  #
+  #   https://github.com/terrastruct/d2/issues/1285
+  #
   #tsdb1 -> _.hadoop
   #tsdb2 -> _.hadoop
   #tsdb3 -> _.hadoop
@@ -323,3 +329,9 @@ hadoop: Hadoop cluster on-prem {
     hbase12 -> hdfs12
   }
 }
+
+# any connection under the dagre layout engine, whether from tsdb objects or the k8s container, sends the hadoop cluster off to the side, this only works in elk engine, but unfortunately the arrows don't connect in the middle of the diagram in elk engine, as per:
+#
+#     https://github.com/terrastruct/d2/issues/1285
+#
+#k8s -> hadoop
