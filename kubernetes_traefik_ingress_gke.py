@@ -59,7 +59,7 @@ graph_attr = {
 }
 
 # pylint: disable=W0104,W0106
-with Diagram('Kubernetes Traefik Ingress GKE',
+with Diagram('Kubernetes Traefik Ingress on GKE',
              show=not bool(os.environ.get('CI', 0)),
              direction='BT',
              filename='images/kubernetes_traefik_ingress_gke',
