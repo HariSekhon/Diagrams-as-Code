@@ -14,6 +14,13 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
+title: {
+  label: "I don't always test my code...\nbut when I do...\nI do it in Production!"
+  near: top-center
+  shape: text
+  style.font-size: 40
+}
+
 classes: {
   meme: {
     icon: images/test-in-production-meme.jpg
@@ -21,12 +28,13 @@ classes: {
   }
 }
 
-"I don't always test my code...\nbut when I do...\nI do it in Production!": {
-  Dev 1.class: meme
-  Dev 2.class: meme
-  Dev 3.class: meme
-  Dev 1 -> CI/CD: feature 1
-  Dev 2 -> CI/CD: feature 2
-  Dev 3 -> CI/CD: feature 3
-  CI/CD -> Prod
-}
+Dev 1.class: meme
+Dev 2.class: meme
+Dev 3.class: meme
+
+Dev 1 -> CI/CD: feature 1 { style.animated: true }
+Dev 2 -> CI/CD: feature 2 { style.animated: true }
+Dev 3 -> CI/CD: feature 3 { style.animated: true }
+
+CI/CD -> Prod { style.animated: true }
+CI/CD.shape: diamond
