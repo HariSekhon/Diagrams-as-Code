@@ -21,7 +21,7 @@ on:
       - master
       - main
     paths:
-      - '*.py'
+      - '*.d2'
       - .github/workflows/generate-d2-images.yaml  # this workflow
 
   workflow_dispatch:
