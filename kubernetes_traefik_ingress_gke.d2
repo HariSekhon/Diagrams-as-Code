@@ -64,13 +64,11 @@ GCP {
   Cloud DNS.class: cloud_dns
   GKE {
     GKE.class: gke
-    Ingress {
-      _._.Cloud Load Balancer -> Traefik Ingress
-      Traefik Ingress.class: traefik
-    }
+    _.Cloud Load Balancer -> Traefik Ingress
+    Traefik Ingress.class: traefik
     WebApp 1 {
       WebApp 1 service.class: k8s_svc
-      _.Ingress.Traefik Ingress -> WebApp 1 service
+      _.Traefik Ingress -> WebApp 1 service
       Pod 1.class: k8s_pod
       Pod 2.class: k8s_pod
       Pod 3.class: k8s_pod
@@ -80,7 +78,7 @@ GCP {
     }
     WebApp 2 {
       WebApp 2 service.class: k8s_svc
-      _.Ingress.Traefik Ingress -> WebApp 2 service
+      _.Traefik Ingress -> WebApp 2 service
       Pod 1.class: k8s_pod
       Pod 2.class: k8s_pod
       Pod 3.class: k8s_pod
