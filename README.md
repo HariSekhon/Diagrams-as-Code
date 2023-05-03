@@ -136,16 +136,9 @@ How this repo got created...
 ![](images/advanced_web_services_open_source.png)
 
 
-### Devs Test in Production
-
-[test_in_production.d2](test_in_production.d2)
-
-![](images/test_in_production.svg)
-
-
 ### GCP Cloudflare Web Architecture GKE
 
-A production environment replatform I did for a client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
+A production web apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
@@ -170,20 +163,6 @@ A production environment replatform I did for a client using [Terraform](https:/
 ![](images/kubernetes_stateful_architecture.png)
 
 
-### GCP Pub/Sub Analytics
-
-[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
-
-![](images/gcp_pubsub_analytics.png)
-
-
-### AWS Clustered Web Services
-
-[aws_clustered_web_services.py](aws_clustered_web_services.py):
-
-![](images/aws_clustered_web_services.png)
-
-
 ### Traefik Kubernetes Ingress on GKE
 
 A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `traefik-*.yaml`.
@@ -204,9 +183,27 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 ## OpenTSDB on Kubernetes and HBase
 
+A high scale production OpenTSDB replatform I did to Kubernetes for a hedge fund.
+
+I also had to do advanced performance tuning of their production HBase cluster suffering from frequent outages due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
+
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
 ![](images/opentsdb_kubernetes_hbase.svg)
+
+
+### AWS Clustered Web Services
+
+[aws_clustered_web_services.py](aws_clustered_web_services.py):
+
+![](images/aws_clustered_web_services.png)
+
+
+### GCP Pub/Sub Analytics
+
+[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
+
+![](images/gcp_pubsub_analytics.png)
 
 
 ### AWS Event Processing
@@ -221,6 +218,13 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 [aws_serverless_image_processing.py](aws_serverless_image_processing.py):
 
 ![](images/aws_serverless_image_processing.png)
+
+
+### Devs Test in Production
+
+[test_in_production.d2](test_in_production.d2)
+
+![](images/test_in_production.svg)
 
 
 ## See Also
