@@ -79,10 +79,10 @@ Generate only the Python png diagrams:
 make py
 ```
 
-Create any single D2 diagram and have it open automatically by running d2 against the file:
+Create any single D2 diagram by running `d2` against the file:
 
 ```shell
-d2 opentsdb_kubernetes_hbase.d2
+d2 --theme 200 opentsdb_kubernetes_hbase.d2
 ```
 
 Create any single Python diagram and have it open automatically by just running python against the file:
