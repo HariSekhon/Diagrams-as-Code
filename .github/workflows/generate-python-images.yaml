@@ -13,7 +13,7 @@
 #
 
 ---
-name: Generate Images
+name: Generate Python Images
 
 on:
   push:
