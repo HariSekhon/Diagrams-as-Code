@@ -108,11 +108,17 @@ They say a picture is worth a thousand words...
 
 ### GitHub Actions CI/CD
 
-How this repo got created...
+How this repo got created... (open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) to see them a bit larger)
+
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
 ![](images/github_actions_cicd.png)
+
+
+[github_actions_cicd.d2](github_actions_cicd.d2):
+
+![](images/github_actions_cicd.svg)
 
 
 ### AWS Web Traffic
