@@ -1,0 +1,31 @@
+# !/usr/bin/env d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-03 04:51:54 +0100 (Wed, 03 May 2023)
+#
+#  vim:ts=4:sts=4:sw=4:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+classes: {
+  meme: {
+    icon: images/test-in-production-meme.jpg
+  }
+}
+
+Release Straight to Production!: {
+  Dev 1.class: meme
+  Dev 2.class: meme
+  Dev 3.class: meme
+  Dev 1 -> CI/CD: feature 1
+  Dev 2 -> CI/CD: feature 2
+  Dev 3 -> CI/CD: feature 3
+  CI/CD -> Prod
+}
