@@ -22,7 +22,7 @@ OpenTSDB on Kubernetes with HBase
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.2.1'
 
 import os
 from urllib.request import urlretrieve
@@ -146,4 +146,4 @@ with Diagram('OpenTSDB on Kubernetes and HBase',
                     hdfs[_] = Hadoop("Hadoop HDFS")
                     hbase[_] >> hdfs[_]
                     for i in opentsdb_range:
-                        hbase[_] << opentsdb[i]
+                        opentsdb[i] >> hbase[_]
