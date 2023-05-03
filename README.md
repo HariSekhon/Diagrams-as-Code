@@ -110,6 +110,12 @@ They say a picture is worth a thousand words...
 
 How this repo got created...
 
+
+[github_actions_cicd.py](github_actions_cicd.py):
+
+![](images/github_actions_cicd.png)
+
+
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
 ![](images/github_actions_cicd.svg)
