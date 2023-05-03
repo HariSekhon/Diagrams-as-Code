@@ -84,6 +84,7 @@ jobs:
           fi
           git config user.name "$(git log -n 1 --format='%an')"
           git config user.email "$(git log -n 1 --format='%ae')"
+          git config pull.rebase false
           git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
           # deprecated
           #echo "::set-output name=new_commits::true"
