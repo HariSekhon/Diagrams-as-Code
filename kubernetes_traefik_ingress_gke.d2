@@ -1,0 +1,92 @@
+# !/usr/bin/env d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-03 07:25:16 +0100 (Wed, 03 May 2023)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+title: {
+  label: Traefik Kubernetes Ingress on GKE
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  users: {
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    #icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  load_balancer: {
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/network/load-balancing.png
+    shape: image
+  }
+  cloud_dns: {
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/network/dns.png
+    shape: image
+  }
+  k8s_svc: {
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+    shape: image
+  }
+  k8s_pod: {
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
+    shape: image
+  }
+  traefik: {
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/traefik.png
+    shape: image
+  }
+  gke: {
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/compute/kubernetes-engine.png
+    shape: image
+  }
+}
+
+Users.class: users
+#Users.near: top-center
+
+GCP {
+  _.Users -> Cloud Load Balancer
+  _.Users -> Cloud DNS
+  Cloud Load Balancer.class: load_balancer
+  Cloud DNS.class: cloud_dns
+  GKE {
+    GKE.class: gke
+    Ingress {
+      _._.Cloud Load Balancer -> Traefik Ingress
+      Traefik Ingress.class: traefik
+    }
+    WebApp 1 {
+      WebApp 1 service.class: k8s_svc
+      _.Ingress.Traefik Ingress -> WebApp 1 service
+      Pod 1.class: k8s_pod
+      Pod 2.class: k8s_pod
+      Pod 3.class: k8s_pod
+      WebApp 1 service -> Pod 1
+      WebApp 1 service -> Pod 2
+      WebApp 1 service -> Pod 3
+    }
+    WebApp 2 {
+      WebApp 2 service.class: k8s_svc
+      _.Ingress.Traefik Ingress -> WebApp 2 service
+      Pod 1.class: k8s_pod
+      Pod 2.class: k8s_pod
+      Pod 3.class: k8s_pod
+      WebApp 2 service -> Pod 1
+      WebApp 2 service -> Pod 2
+      WebApp 2 service -> Pod 3
+    }
+  }
+}
