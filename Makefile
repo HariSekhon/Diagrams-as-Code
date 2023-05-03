@@ -148,7 +148,8 @@ install-d2:
 	@echo Install D2
 	@echo ==============
 	curl -fsSL https://d2lang.com/install.sh | sh -s --
-	curl -fsSL https://d2lang.com/install.sh | sh -s -- --tala
+	@# don't install this, see DevOps-bash-tools setup/install_d2.sh for details why
+	@#curl -fsSL https://d2lang.com/install.sh | sh -s -- --tala
 
 .PHONY: install-python
 install-python:
