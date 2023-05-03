@@ -106,7 +106,7 @@ diagrams-d2:
 		fi; \
 		echo "Generating $$x"; \
 		img="images/$${x%.d2}.svg"
-		d2 --theme 200 $$x "$$img"; \
+		d2 --theme 200 "$$x" "$$img"; \
 	done
 
 .PHONY: d2
