@@ -167,9 +167,9 @@ A production web apps replatform to Google Kubernetes Engine I did for an intern
 
 A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `traefik-*.yaml`.
 
-[kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
+[kubernetes_traefik_ingress_gke.d2](kubernetes_traefik_ingress_gke.d2):
 
-![](images/kubernetes_traefik_ingress_gke.png)
+![](images/kubernetes_traefik_ingress_gke.svg)
 
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
