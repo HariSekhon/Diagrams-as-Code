@@ -93,7 +93,7 @@ diagrams-d2:
 			continue; \
 		fi; \
 		echo "Generating $$x"; \
-		d2 --dark-theme 200 $$x images/$${x%.d2}.svg; \
+		d2 --theme 200 $$x images/$${x%.d2}.svg; \
 	done
 
 .PHONY: d2
