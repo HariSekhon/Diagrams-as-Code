@@ -104,8 +104,8 @@ diagrams-d2:
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
 		fi; \
-		echo "Generating $$x"; \
-		img="images/$${x%.d2}.svg"
+		img="images/$${x%.d2}.svg"; \
+		echo "Generating $$x -> $$img"; \
 		d2 --theme 200 "$$x" "$$img"; \
 	done
 
