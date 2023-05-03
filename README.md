@@ -171,6 +171,10 @@ A Traefik deployment I did for a client using my [Kubernetes-configs](https://gi
 
 ![](images/kubernetes_traefik_ingress_gke.svg)
 
+[kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
+
+![](images/kubernetes_traefik_ingress_gke.png)
+
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
