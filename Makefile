@@ -105,7 +105,7 @@ diagrams-d2:
 			continue; \
 		fi; \
 		img="images/$${x%.d2}.svg"; \
-		shebang="$$(grep '^#!' "$$x" | sed 's/^#!//' || :)"; \
+		shebang="$$(grep '^#!/.*d2' "$$x" | sed 's/^#!//' || :)"; \
 		if [ -z "$$shebang" ]; then \
 			shebang="d2 --theme 200"; \
 		fi; \
