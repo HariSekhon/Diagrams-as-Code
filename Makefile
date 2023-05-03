@@ -61,9 +61,9 @@ diagrams-python:
 		! python3 -c 'import diagrams' 2>&1; then \
 		$(MAKE) install-python; \
 	fi
-	@echo ===================
-	@echo Generating Diagrams
-	@echo ===================
+	@echo ==========================
+	@echo Generating Python Diagrams
+	@echo ==========================
 	mkdir -p -v images
 	$(MAKE) clean
 	export CI=1; \
@@ -82,7 +82,12 @@ diagrams-python:
 diagrams-d2:
 	@if ! type -P d2 >/dev/null 2>&1; then \
 		$(MAKE) install-d2; \
-	fi; \
+	fi;
+	@echo ======================
+	@echo Generating D2 Diagrams
+	@echo ======================
+	mkdir -p -v images
+	$(MAKE) clean
 	for x in *.d2; do \
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
@@ -110,8 +115,9 @@ build: init
 	@echo ==============
 	@$(MAKE) git-summary
 	@echo
-	@$(MAKE) install-d2
-	@$(MAKE) install-python
+	@$(MAKE) d2
+	@echo
+	@$(MAKE) py
 
 .PHONY: init
 init:
@@ -121,10 +127,16 @@ init:
 
 .PHONY: install-d2
 install-d2:
+	@echo ==============
+	@echo Install D2
+	@echo ==============
 	curl -fsSL https://d2lang.com/install.sh | sh -s --
 
 .PHONY: install-python
 install-python:
+	@echo ==============
+	@echo Install Python
+	@echo ==============
 	# defer via external sub-call, otherwise will result in error like
 	# make: *** No rule to make target 'python-version', needed by 'build'.  Stop.
 	@$(MAKE) python-version
