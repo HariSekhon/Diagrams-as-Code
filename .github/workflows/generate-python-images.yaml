@@ -1,0 +1,97 @@
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  Author: Hari Sekhon
+#  Date: 2023-04-15 19:21:30 +0100 (Sat, 15 Apr 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+---
+name: Generate Python Images
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '*.py'
+      - .github/workflows/generate-python-images.yaml  # this workflow
+
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        default: false
+
+  schedule:
+    - cron: '0 0 * * 1'
+
+# use minimal permissions at workflow / jobs level
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -euxo pipefail {0}
+
+jobs:
+  generate_images:
+    name: Generate Python Images
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    if: ( github.ref_name == 'master' || github.ref_name == 'main' ) && github.event.repository.fork == false
+
+    steps:
+      - name: Environment
+        run: env | sort
+
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
+      - name: Bootstrap
+        run: setup/ci_bootstrap.sh
+
+      - name: Install Python Dependencies
+        run: make install-python
+
+      #- name: Set Show=False
+      #  run: sed -i 's/show=True/show=False/' *.py
+
+      - name: Generate Python Images
+        run: make py
+
+      - name: Git Commit Images
+        id: commit
+        run: |
+          git add images/
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "$(git log -n 1 --format='%an')"
+          git config user.email "$(git log -n 1 --format='%ae')"
+          git config pull.rebase false
+          git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
+          # deprecated
+          #echo "::set-output name=new_commits::true"
+          echo "new_commits=true" >> $GITHUB_OUTPUT
+
+      - name: Git Push
+        if: steps.commit.outputs.new_commits == 'true'
+        run: |
+          git pull --no-edit
+          git push

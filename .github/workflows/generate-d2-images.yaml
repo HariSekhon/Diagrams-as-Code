@@ -13,7 +13,7 @@
 #
 
 ---
-name: Generate Images
+name: Generate D2 Images
 
 on:
   push:
@@ -21,8 +21,8 @@ on:
       - master
       - main
     paths:
-      - '*.py'
-      - .github/workflows/generate-images.yaml  # this workflow
+      - '*.d2'
+      - .github/workflows/generate-d2-images.yaml  # this workflow
 
   workflow_dispatch:
     inputs:
@@ -48,7 +48,7 @@ defaults:
 
 jobs:
   generate_images:
-    name: Generate Images
+    name: Generate D2 Images
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -65,14 +65,11 @@ jobs:
       - name: Bootstrap
         run: setup/ci_bootstrap.sh
 
-      - name: Install Dependencies
-        run: make install
+      - name: Install D2 Dependencies
+        run: make install-d2
 
-      #- name: Set Show=False
-      #  run: sed -i 's/show=True/show=False/' *.py
-
-      - name: Generate Images
-        run: make
+      - name: Generate D2 Images
+        run: make d2
 
       - name: Git Commit Images
         id: commit
@@ -84,6 +81,7 @@ jobs:
           fi
           git config user.name "$(git log -n 1 --format='%an')"
           git config user.email "$(git log -n 1 --format='%ae')"
+          git config pull.rebase false
           git commit --message "Committed Generated Images - GitHub Actions Workflow: $GITHUB_WORKFLOW" images/
           # deprecated
           #echo "::set-output name=new_commits::true"
@@ -91,4 +89,6 @@ jobs:
 
       - name: Git Push
         if: steps.commit.outputs.new_commits == 'true'
-        run: git push
+        run: |
+          git pull --no-edit
+          git push

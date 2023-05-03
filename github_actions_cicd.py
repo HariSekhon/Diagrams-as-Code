@@ -22,7 +22,7 @@ GitHub Actions CI/CD
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.3'
+__version__ = '0.4'
 
 import os
 #import requests
@@ -88,11 +88,13 @@ graph_attr = {
     "splines": "spline",
 }
 
+image_dir = 'images'
+
 # pylint: disable=W0104,W0106
 with Diagram('GitHub Actions CI/CD',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',
-             filename="images/github_actions_cicd",
+             filename=os.path.join(image_dir, "github_actions_cicd"),
              graph_attr=graph_attr,
              ):
 
@@ -109,21 +111,28 @@ with Diagram('GitHub Actions CI/CD',
 
     hari \
         >> Edge(label="crazy midnight to 4am coding") \
-        >> Python("Python") \
+        >> [
+                Python("Python"),
+                # can't handle svg
+                #Custom("D2", "d2_graphic.svg")
+                Custom("D2", "d2_graphic.png")
+                #Custom("D2", "d2_logo.png")
+           ] \
         >> Edge(label="git commit") \
         >> git
 
     with Cluster("GitHub"):
-        github = Github("Diagrams-as-Code\nrepo")
-        github_actions = GithubActions("GitHub Actions\nCI/CD\nGenerate Images\nworkflow")
+        github_repo = Github("Diagrams-as-Code\nrepo")
+        with Cluster("GitHub Actions\nCI/CD"):
+            python_workflow = GithubActions("Generate Python\nImages workflow")
+            d2_workflow = GithubActions("Generate D2\nImages workflow")
         readme = Document("README.md")
-        git \
-            >> Edge(label="git push") \
-            >> github \
-            >> Edge(label="trigger workflow") \
-            >> github_actions \
-            >> Edge(label="git commit\n&&\ngit push\nnew / updated diagrams") \
-            >> github \
+        git >> Edge(label="git push") >> github_repo
+        github_repo >> Edge(label="*.py changes trigger workflow") >> python_workflow
+        github_repo >> Edge(label="*.d2 changes trigger workflow") >> d2_workflow
+        [python_workflow, d2_workflow] \
+            >> Edge(label="git commit new / updated diagrams") \
+            >> github_repo \
             >> readme
 
     with Cluster("Banned by Giovanni"):
