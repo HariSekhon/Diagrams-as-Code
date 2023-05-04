@@ -38,7 +38,7 @@ endif
 
 REPO := HariSekhon/Diagrams-as-Code
 
-CODE_FILES := $(shell git ls-files | grep -E -e '\.sh$$' -e '\.py$$' | sort)
+CODE_FILES := $(shell git ls-files | grep -E -e '\.d2$$' -e '\.sh$$' -e '\.py$$' | sort)
 
 main:
 	@$(MAKE) diag
@@ -187,6 +187,7 @@ clean:
 	@echo "Removing any leftover dot files:"
 	@for x in *.py; do rm -fv "$${x%.py}"; done
 
-.PHONY: wc
-wc:
-	wc -l *.d2 *.py
+# set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
+#.PHONY: wc
+#wc:
+#    wc -l *.d2 *.py
