@@ -13,5 +13,6 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
+curl
 graphviz
 python3-setuptools
