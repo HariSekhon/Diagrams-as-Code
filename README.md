@@ -37,12 +37,18 @@
 [![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-FCA121?logo=gitlab)](https://gitlab.com/HariSekhon/Diagrams-as-Code)
 [![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-0052CC?logo=bitbucket)](https://bitbucket.org/HariSekhon/Diagrams-as-Code)
 
-[![Generate Python Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml)
 [![Generate D2 Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml)
+[![Generate Python Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml)
 [![Validation](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml)
 [![Semgrep](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep.yaml)
 [![Semgrep Cloud](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml)
 [![Kics](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml)
+
+[![D2](https://img.shields.io/badge/D2-Declarative%20Diagramming-3776AB?logo=pending&logoColor=white)](https://d2lang.com/)
+[![MermaidJS](https://img.shields.io/badge/NodeJS-MermaidJS-339933?logo=nodedotjs&logoColor=white)](https://mermaid.js.org/)
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Python Diagrams](https://img.shields.io/badge/Python-diagrams-3776AB?logo=python&logoColor=white)](https://diagrams.mingrammer.com/)
+[![Draw.io](https://img.shields.io/badge/draw.io-xml-3776AB?logo=diagrams.net&color=F08705&logoColor=white)](https://app.diagrams.net/?splash=0&libs=gcp)
 
 Diagrams as Code using the awesome [D2 language](https://d2lang.com/) and [Python diagrams](https://github.com/mingrammer/diagrams) module.
 
@@ -79,22 +85,22 @@ Generate only the Python png diagrams:
 make py
 ```
 
-Create any single D2 diagram by running `d2` against the file:
+Create any single D2 diagram by running the d2 script file:
 
 ```shell
-d2 --theme 200 opentsdb_kubernetes_hbase.d2
+./opentsdb_kubernetes_hbase.d2
 ```
 
-Create any single Python diagram and have it open automatically by just running python against the file:
+Create any single Python diagram and have it open automatically by running the python script file:
 
 ```shell
-python3 advanced_web_services_open_source.py
+./advanced_web_services_open_source.py
 ```
 
 
-## Template
+## Templates
 
-The [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) shows the basics.
+The [templates/template.d2](https://github.com/HariSekhon/Templates/blob/master/template.d2) and [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) show the basics of each language.
 
 For more advanced examples, see the real architectural diagrams in the next section.
 
@@ -108,13 +114,14 @@ They say a picture is worth a thousand words...
 
 ### GitHub Actions CI/CD
 
-How this repo got created... (open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) to see them a bit larger)
+How this repo got created...
 
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
 ![](images/github_actions_cicd.png)
 
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) for this one or you may squint:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
