@@ -237,9 +237,11 @@ I also had to do advanced performance tuning of their production HBase cluster s
 
 ### Devs Test in Production
 
-[test_in_production.d2](test_in_production.d2)
+[test_in_production.d2](test_in_production.d2):
 
 ![](images/test_in_production.svg)
+
+[code_commit_push.d2](code_commit_push.d2):
 
 ![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
 
