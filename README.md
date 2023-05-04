@@ -44,10 +44,11 @@
 [![Semgrep Cloud](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml)
 [![Kics](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml)
 
-![](https://img.shields.io/badge/D2-lang-3776AB?logo=pending&logoColor=white)
-![](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
-![](https://img.shields.io/badge/Python-diagrams-3776AB?logo=python&logoColor=white)
-![](https://img.shields.io/badge/draw.io-xml-3776AB?logo=diagrams.net&color=F08705&logoColor=white)
+[![D2](https://img.shields.io/badge/D2-Declarative%20Diagramming-3776AB?logo=pending&logoColor=white)](https://d2lang.com/)
+[![MermaidJS](https://img.shields.io/badge/NodeJS-MermaidJS-339933?logo=nodedotjs&logoColor=white)](https://mermaid.js.org/)
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Python Diagrams](https://img.shields.io/badge/Python-diagrams-3776AB?logo=python&logoColor=white)](https://diagrams.mingrammer.com/)
+[![Draw.io](https://img.shields.io/badge/draw.io-xml-3776AB?logo=diagrams.net&color=F08705&logoColor=white)](https://app.diagrams.net/?splash=0&libs=gcp)
 
 Diagrams as Code using the awesome [D2 language](https://d2lang.com/) and [Python diagrams](https://github.com/mingrammer/diagrams) module.
 
