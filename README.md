@@ -241,6 +241,7 @@ I also had to do advanced performance tuning of their production HBase cluster s
 
 ![](images/test_in_production.svg)
 
+![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
 
 ## See Also
 
