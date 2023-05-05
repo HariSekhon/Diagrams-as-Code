@@ -140,7 +140,8 @@ Prefix Git branches with Jira ticket numbers in Jira's `AA-NNNN` format for GitH
             'git0': '#839192',
             'git1': '#2874A6',
             'gitInv0': '#FFFFFF',
-            'gitBranchLabel0': '#FFFFFF'
+            'gitBranchLabel0': '#FFFFFF',
+            'commitLabelColor': '#FFFFFF'
         }
     }
 }%%
@@ -172,7 +173,8 @@ gitGraph
             'git1': '#C0392B ',
             'git2': '#2E86C1',
             'gitInv0': '#FFFFFF',
-            'gitBranchLabel0': '#FFFFFF'
+            'gitBranchLabel0': '#FFFFFF',
+            'commitLabelColor': '#FFFFFF'
         }
     }
 }%%
