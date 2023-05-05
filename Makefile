@@ -182,8 +182,12 @@ test:
 
 .PHONY: clean
 clean:
+	@echo "Git resetting images/ dir"
+	git checkout images
+	@echo
 	@echo "Removing any stray PNGs or *.pyc *.pyo files:"
 	@rm -fv -- *.pyc *.pyo *.png *.svg
+	@echo
 	@echo "Removing any leftover dot files:"
 	@for x in *.py; do rm -fv "$${x%.py}"; done
 
