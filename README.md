@@ -128,7 +128,7 @@ Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/READ
 
 # GitHub Flow with Jira ticket integration
 
-Prefix Git branches with Jira ticket numbers in Jira's `AA-NNNN` format for GitHub Pull Requests to automatically appear in Jira tickets:
+Prefix Git branches with Jira ticket numbers in Jira's `AA-NNN` format for GitHub Pull Requests to automatically appear in Jira tickets (see this [doc](https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/)):
 
 ```mermaid
 %% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
@@ -157,6 +157,7 @@ gitGraph
     commit
     commit
 ```
+
 
 # Git - why you shouldn't use long-lived branches
 
