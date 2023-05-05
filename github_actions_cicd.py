@@ -91,7 +91,7 @@ graph_attr = {
 image_dir = 'images'
 
 # pylint: disable=W0104,W0106
-with Diagram('GitHub Actions CI/CD',
+with Diagram('GitHub Actions CI/CD - Auto-(Re)Generate Diagrams',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',
              filename=os.path.join(image_dir, "github_actions_cicd"),
@@ -122,7 +122,7 @@ with Diagram('GitHub Actions CI/CD',
         >> git
 
     with Cluster("GitHub"):
-        github_repo = Github("Diagrams-as-Code\nrepo")
+        github_repo = Github("Diagrams-as-Code\nGitHub repo")
         with Cluster("GitHub Actions\nCI/CD"):
             python_workflow = GithubActions("Generate Python\nImages workflow")
             d2_workflow = GithubActions("Generate D2\nImages workflow")
