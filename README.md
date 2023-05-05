@@ -126,6 +126,97 @@ Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/READ
 ![](images/github_actions_cicd.svg)
 
 
+# GitHub Flow with Jira ticket integration
+
+Prefix Git branches with Jira ticket numbers in Jira's `AA-NNNN` format for GitHub Pull Requests to automatically appear in Jira tickets:
+
+```mermaid
+%% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
+%% https://htmlcolorcodes.com/
+%%{ init: {
+        'logLevel': 'debug',
+        'theme': 'dark',
+        'themeVariables': {
+            'git0': '#839192',
+            'git1': '#2874A6',
+            'gitInv0': '#FFFFFF',
+            'gitBranchLabel0': '#FFFFFF'
+        }
+    }
+}%%
+gitGraph
+    commit
+    commit id: "branch"
+    branch AA-NNN-my-feature-branch
+    checkout AA-NNN-my-feature-branch
+    commit id: "add code"
+    commit id: "refine code"
+    checkout main
+    merge AA-NNN-my-feature-branch id: "merge PR" type: HIGHLIGHT tag: "2023.15 release"
+    commit
+    commit
+```
+
+# Why you shouldn't use long-lived Git branches
+
+
+```mermaid
+%% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
+%% https://htmlcolorcodes.com/
+%%{ init: {
+        'logLevel': 'debug',
+        'theme': 'dark',
+        'mainBranchName': 'master',
+        'themeVariables': {
+            'git0': '#839192',
+            'git1': '#C0392B ',
+            'git2': '#2E86C1',
+            'gitInv0': '#FFFFFF',
+            'gitBranchLabel0': '#FFFFFF'
+        }
+    }
+}%%
+gitGraph
+    commit
+    commit id: "branch"
+    branch long-lived-branch
+    checkout long-lived-branch
+    commit id: "50 clever commits"
+    checkout main
+    commit
+    checkout long-lived-branch
+    commit id: "too clever"
+    checkout main
+    commit
+    checkout long-lived-branch
+    commit id: "too long"
+    checkout main
+    commit
+    checkout long-lived-branch
+    commit id: "try to merge back"
+    checkout main
+    merge long-lived-branch id: "Merge Conflict!!" type: REVERSE
+    checkout long-lived-branch
+    commit id: "trying to fix"
+    commit id: "still trying to fix"
+    commit id: "struggling to fix"
+    commit id: "ask Hari for help"
+    branch fixes-branch-to-send-to-naughty-colleague
+    checkout fixes-branch-to-send-to-naughty-colleague
+    commit id: "fix 1"
+    commit id: "fix 2"
+    commit id: "fix 3"
+    commit id: "could have been working on better things!"
+    checkout long-lived-branch
+    merge fixes-branch-to-send-to-naughty-colleague id: "merge fixes"
+    commit id: "more commits"
+    commit id: "because this branch only had 105 commits already"
+    checkout main
+    merge long-lived-branch id: "Finallly Merged!" type: HIGHLIGHT
+    commit id: "Please never do that again"
+```
+
+
 ### AWS Web Traffic
 
 [aws_web_traffic.py](aws_web_traffic.py):
@@ -245,24 +336,6 @@ I also had to do advanced performance tuning of their production HBase cluster s
 
 ![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
 
-
-# GitHub Flow with Jira ticket integration
-
-Prefix Git branches with Jira ticket numbers in Jira's `AA-NNNN` format for GitHub Pull Requests to automatically appear in Jira tickets:
-
-```mermaid
-gitGraph
-    commit
-    commit
-    branch AA-NNN-my-feature-branch
-    checkout AA-NNN-my-feature-branch
-    commit
-    commit
-    checkout main
-    merge AA-NNN-my-feature-branch
-    commit
-    commit
-```
 
 ## See Also
 
