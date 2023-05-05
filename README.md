@@ -208,7 +208,7 @@ gitGraph
     commit id: "fix 3"
     commit id: "could have been working on better things!"
     checkout long-lived-branch
-    merge fixes-branch-to-send-to-naughty-colleague id: "merge fixes"
+    merge fixes-branch-to-send-to-naughty-colleague id: "merge fixes" type: HIGHLIGHT
     commit id: "more commits"
     commit id: "because this branch only had 105 commits already"
     checkout main
