@@ -44,7 +44,7 @@ Ravi: {
   shape: image
 }
 
-you: {
+You {
   icon: images/flushed-face.png
   shape: image
 }
@@ -121,5 +121,5 @@ github: GitHub {
     d2 -> _.github_repo: "git commit\nnew / updated diagrams" {style.animated: true}
     python -> _.github_repo: "git commit\nnew / updated diagrams" {style.animated: true}
   }
-  github_repo -> "README.md" <- _.you
+  github_repo -> "README.md" <- _.You
 }
