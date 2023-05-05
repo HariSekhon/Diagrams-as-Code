@@ -22,7 +22,7 @@ GitHub Actions CI/CD
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.4'
+__version__ = '0.4.1'
 
 import os
 #import requests
@@ -112,11 +112,11 @@ with Diagram('GitHub Actions CI/CD - Auto-(Re)Generate Diagrams',
     hari \
         >> Edge(label="crazy midnight to 4am coding") \
         >> [
-                Python("Python"),
                 # can't handle svg
                 #Custom("D2", "d2_graphic.svg")
-                Custom("D2", "d2_graphic.png")
                 #Custom("D2", "d2_logo.png")
+                Custom("D2", "d2_graphic.png"),
+                Python("Python")
            ] \
         >> Edge(label="git commit") \
         >> git
