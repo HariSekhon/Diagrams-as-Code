@@ -158,7 +158,7 @@ gitGraph
     commit
 ```
 
-# Why you shouldn't use long-lived Git branches
+# Git - why you shouldn't use long-lived branches
 
 
 ```mermaid
