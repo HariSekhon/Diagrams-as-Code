@@ -254,12 +254,12 @@ Prefix Git branches with Jira ticket numbers in Jira's `AA-NNNN` format for GitH
 gitGraph
     commit
     commit
-    branch AA-NNN-my-prefixed-feature-branch
-    checkout AA-NNN-my-prefixed-feature-branch
+    branch AA-NNN-my-feature-branch
+    checkout AA-NNN-my-feature-branch
     commit
     commit
     checkout main
-    merge AA-NNN-my-prefixed-feature-branch
+    merge AA-NNN-my-feature-branch
     commit
     commit
 ```
