@@ -27,8 +27,8 @@
 
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
 [![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2FDiagrams-as-Code?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=14&branchName=master)
-[![GitLab Pipeline](https://img.shields.io/gitlab/pipeline/HariSekhon/Diagrams-as-Code?logo=gitlab&label=GitLab%20CI)](https://gitlab.com/HariSekhon/Diagrams-as-Code/pipelines)
-[![BitBucket Pipeline](https://img.shields.io/bitbucket/pipelines/HariSekhon/Diagrams-as-Code/master?logo=bitbucket&label=BitBucket%20CI)](https://bitbucket.org/HariSekhon/Diagrams-as-Code/addon/pipelines/home#!/)
+[![GitLab Pipeline](https://img.shields.io/badge/GitLab%20CI-legacy-lightgrey?logo=gitlab)](https://gitlab.com/HariSekhon/Diagrams-as-Code/pipelines)
+[![BitBucket Pipeline](https://img.shields.io/badge/Bitbucket%20CI-legacy-lightgrey?logo=bitbucket)](https://bitbucket.org/HariSekhon/Diagrams-as-Code/addon/pipelines/home#!/)
 
 [![Repo on Azure DevOps](https://img.shields.io/badge/repo-Azure%20DevOps-0078D7?logo=azure%20devops)](https://dev.azure.com/HariSekhon/GitHub/_git/Diagrams-as-Code)
 [![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-2088FF?logo=github)](https://github.com/HariSekhon/Diagrams-as-Code)
