@@ -82,7 +82,9 @@ image_dir = 'images'
 
 # NOTE: filename=images/ parameter to Diagram() changes the $PWD so icon path must be local dir,
 # but at this point we're still at top level dir so must join to prefix it with the image_dir
+# nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
 urlretrieve(f5_url, os.path.join(image_dir, f5_icon))
+# nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
 urlretrieve(dns_url, os.path.join(image_dir, dns_icon))
 
 graph_attr = {
