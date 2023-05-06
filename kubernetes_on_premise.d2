@@ -48,7 +48,7 @@ classes: {
     # icon: https://landscape.cncf.io/logos/metal-lb.svg
     shape: image
   }
-  k8s_master: {
+  kube: {
     icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
     shape: image
   }
@@ -62,9 +62,9 @@ classes: {
   }
 }
 
-master1: Kubernetes Master 1 {class: k8s_master}
-master2: Kubernetes Master 2 {class: k8s_master}
-master3: Kubernetes Master 3 {class: k8s_master}
+kube1: Kubernetes 1 {class: kube}
+kube2: Kubernetes 2 {class: kube}
+kube3: Kubernetes 3 {class: kube}
 
 Server 1.class: server
 Server 2.class: server
@@ -99,13 +99,13 @@ users -> user_network
 
 # lb1 -- keepalived1 -- keepalived2 -- lb2
 
-network -> master1
-network -> master2
-network -> master3
+network -> kube1
+network -> kube2
+network -> kube3
 
-master1 -- Server 1
-master2 -- Server 2
-master3 -- Server 3
+kube1 -- Server 1
+kube2 -- Server 2
+kube3 -- Server 3
 
 storage_network: Network {class: network}
 
