@@ -311,9 +311,9 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 ## OpenTSDB on Kubernetes and HBase
 
-A high scale production OpenTSDB replatform I did to Kubernetes for a hedge fund ingesting 9 Billion data points and serving 3 million queries a day.
+A high scale production OpenTSDB replatform I did to Kubernetes for a hedge fund, ingesting 9 billion data points per day and serving 3 million queries a day.
 
-I also had to do advanced performance tuning of their production HBase cluster suffering from frequent outages due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
+I also had to do advanced performance tuning of their production HBase cluster suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
