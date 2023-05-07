@@ -350,7 +350,7 @@ I also had to do advanced performance tuning of their production HBase cluster w
 
 ### Devs Test in Production
 
-Iirc I created and stuck this meme pic on the wall of my tech dept back in 2011 while working in an internet Ad Tech company doing several canary deployments a day. We literally did test in production using a small fraction of live internet traffic.
+Iirc I created and stuck this meme pic of [The Most Interesting Man in the World](https://en.wikipedia.org/wiki/The_Most_Interesting_Man_in_the_World) on the wall of my tech dept back in 2011 while leading the infra team of an internet Ad Tech company doing several canary deployments a day. We literally did test in production using a small fraction of live internet traffic.
 
 [test_in_production.d2](test_in_production.d2):
 
