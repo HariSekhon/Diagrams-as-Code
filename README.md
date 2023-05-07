@@ -119,7 +119,7 @@ How this repo got created...
 
 ![](images/github_actions_cicd.png)
 
-Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) for this one or you may squint:
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#github-actions-cicd) for this one or you may squint:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
