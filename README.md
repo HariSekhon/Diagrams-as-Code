@@ -268,6 +268,13 @@ A production web apps replatform to Google Kubernetes Engine I did for an intern
 ![](images/kubernetes_stateful_architecture.png)
 
 
+### Kubernetes Service External Traffic Policy
+
+[kubernetes_external_traffic_policy.d2](kubernetes_external_traffic_policy.d2):
+
+![](images/kubernetes_external_traffic_policy.svg)
+
+
 ### Kubernetes on Premise
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
