@@ -270,6 +270,10 @@ A production web apps replatform to Google Kubernetes Engine I did for an intern
 
 ### Kubernetes Service External Traffic Policy
 
+[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo - [service.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/service.yaml#L141)
+
+https://cloud.google.com/kubernetes-engine/docs/how-to/service-parameters#externalTrafficPolicy
+
 [kubernetes_external_traffic_policy.d2](kubernetes_external_traffic_policy.d2):
 
 ![](images/kubernetes_external_traffic_policy.svg)
