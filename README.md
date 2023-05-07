@@ -119,7 +119,7 @@ How this repo got created...
 
 ![](images/github_actions_cicd.png)
 
-Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md) for this one or you may squint:
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#github-actions-cicd) for this one or you may squint:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
@@ -243,7 +243,7 @@ gitGraph
 
 ### GCP Cloudflare Web Architecture GKE
 
-A production web apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
+A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
@@ -269,6 +269,10 @@ A production web apps replatform to Google Kubernetes Engine I did for an intern
 
 
 ### Kubernetes Service External Traffic Policy
+
+[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo - [service.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/service.yaml#L141)
+
+[GKE docs](https://cloud.google.com/kubernetes-engine/docs/how-to/service-parameters#externalTrafficPolicy)
 
 [kubernetes_external_traffic_policy.d2](kubernetes_external_traffic_policy.d2):
 
@@ -307,9 +311,9 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 ## OpenTSDB on Kubernetes and HBase
 
-A high scale production OpenTSDB replatform I did to Kubernetes for a hedge fund.
+A high scale production OpenTSDB replatform I did to Kubernetes for a client, ingesting 9 billion data points per day and serving 3 million queries per day.
 
-I also had to do advanced performance tuning of their production HBase cluster suffering from frequent outages due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
+I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
