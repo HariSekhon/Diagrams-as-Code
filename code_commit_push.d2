@@ -16,47 +16,73 @@
 
 direction: right
 
-code: Code {
-  icon: https://cdn-icons-png.flaticon.com/512/6463/6463383.png
-  shape: image
+classes: {
+  common: {
+    shape: image
+    style.opacity: 0
+  }
 }
+
+code: Code {
+  class: common
+  icon: https://cdn-icons-png.flaticon.com/512/6463/6463383.png
+}
+git: Git {
+  class: common
+  icon: https://icons.terrastruct.com/dev%2Fgit.svg
+}
+github: GitHub {
+  class: common
+  icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  # icon: https://icons.terrastruct.com/social%2F039-github.svg
+}
+cicd: CI/CD {
+  class: common
+  icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
+}
+boom: Boom {
+  class: common
+  icon: https://www.freeiconspng.com/download/9158
+}
+#wink: {
+#  icon: http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/winking-face.png
+#  class: common
+#  style: {
+#    font-color: white
+#  }
+#}
+
+code -> git: commit { class: common }
+git -> github: push { class: common }
+github -> cicd: trigger { class: common }
+cicd -> boom: action { class: common }
+
 steps: {
   1: {
-    git: Git {
-      icon: https://icons.terrastruct.com/dev%2Fgit.svg
-      shape: image
-    }
-    code -> git: commit
+    code.style.opacity: 1
   }
   2: {
-    github: GitHub {
-      icon: https://icons.terrastruct.com/dev%2Fgithub.svg
-      # icon: https://icons.terrastruct.com/social%2F039-github.svg
-      shape: image
-    }
-    git -> github: push
+    (code -> git)[0].style.opacity: 1
   }
   3: {
-    cicd: CI/CD {
-      icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
-      shape: image
-    }
-    github -> cicd: trigger
+    git.style.opacity: 1
   }
   4: {
-    boom: Boom {
-      icon: https://www.freeiconspng.com/download/9158
-      shape: image
-    }
-    cicd -> boom: action
+    (git -> github)[0].style.opacity: 1
   }
-  #5: {
-  #  wink: {
-  #    icon: http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/winking-face.png
-  #    shape: image
-  #    style: {
-  #      font-color: white
-  #    }
-  #  }
-  #}
-}
+  5: {
+    github.style.opacity: 1
+  }
+  6: {
+    (github -> cicd)[0].style.opacity: 1
+  }
+  7: {
+    cicd.style.opacity: 1
+  }
+  8: {
+    (cicd -> boom)[0].style.opacity: 1
+  }
+  9: {
+    boom.style.opacity: 1
+  }
+§}
