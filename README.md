@@ -243,7 +243,7 @@ gitGraph
 
 ### GCP Cloudflare Web Architecture GKE
 
-A production web apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
+A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
