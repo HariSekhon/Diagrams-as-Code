@@ -85,7 +85,7 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
              ):
 
     # letsencrypt = LetsEncrypt("LetsEncrypt Certificate Authority")
-    users = Users("Users")
+    users = Users("Internet Users")
     # github = Github("GitHub")
 
     with Cluster("Cloudflare"):
