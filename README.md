@@ -366,7 +366,7 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 
 A sample architecture I did for a client which was quite similar to what they were moving towards (I won the gig).
 
-This is the only diagram not as code (here for historical interest). I would embed it as a live diagram but GitHub markdown doesn't allow HTML iframes to embed the live diagram so this is just a png.
+This is the only diagram not as code (here for historical interest). I would embed the interactive live diagram but GitHub markdown doesn't allow HTML iframes so this is the live published png.
 
 ![GCP Diagram LucidChart](https://lucid.app/publicSegments/view/0b3e557b-9f0b-4d0b-9e6e-f379a2801d45/image.png)
 
