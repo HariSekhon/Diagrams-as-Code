@@ -362,9 +362,9 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 ![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
 
 
-### LucidChart
+### LucidChart - GCP Architecture
 
-A sample architecture I did for a client which was quite similar to what they were moving towards (I won the gig).
+A sample architecture I did for a client for us to talk through, which was similar to what they had in mind (I won the gig).
 
 This is the only diagram not as code (here for historical interest). I would embed the interactive live diagram but GitHub markdown doesn't allow HTML iframes so this is the live published png.
 
