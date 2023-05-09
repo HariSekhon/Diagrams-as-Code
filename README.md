@@ -429,15 +429,6 @@ gitGraph
     commit id: "commit 2"
 
     checkout staging
-    commit id: "commit 2 "
-
-    checkout production
-    commit id: "commit 2  "
-
-    checkout dev
-    commit id: "commit 3"
-
-    checkout staging
     merge dev id: "fast-forward merge" tag: "CI/CD + QA Tests"
 
     checkout production
@@ -445,13 +436,23 @@ gitGraph
 
 
     checkout dev
+    commit id: "commit 3"
+
+    checkout staging
+    commit id: "commit 3 "
+
+    checkout production
+    commit id: "commit 3  "
+
+    checkout dev
     commit id: "commit 4"
 
     checkout staging
-    commit id: "commit 4 "
+    merge dev id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
 
     checkout production
-    commit id: "commit 4  "
+    merge staging id: "fast-forward merge 2 " tag: "Production Releease (CI/CD)"
+
 
     checkout dev
     commit id: "commit 5"
@@ -464,34 +465,6 @@ gitGraph
 
     checkout dev
     commit id: "commit 6"
-
-    checkout staging
-    merge dev id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
-
-    checkout production
-    merge staging id: "fast-forward merge 2 " tag: "Production Releease (CI/CD)"
-
-
-    checkout dev
-    commit id: "commit 7"
-
-    checkout staging
-    commit id: "commit 7 "
-
-    checkout production
-    commit id: "commit 7  "
-
-    checkout dev
-    commit id: "commit 8"
-
-    checkout staging
-    commit id: "commit 8 "
-
-    checkout production
-    commit id: "commit 8  "
-
-    checkout dev
-    commit id: "commit 9"
 
     checkout staging
     merge dev id: "fast-forward merge 3" tag: "CI/CD + QA Tests"
