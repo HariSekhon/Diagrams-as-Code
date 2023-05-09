@@ -173,6 +173,7 @@ gitGraph
 
 # Git - why you shouldn't use long-lived branches
 
+\* Exception: unless you're using [Environment Branches](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#git---environment-branches).
 
 ```mermaid
 %% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
