@@ -146,14 +146,14 @@ Prefix Git branches with Jira ticket numbers in Jira's `AA-NNN` format for GitHu
 %% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
 %% https://htmlcolorcodes.com/
 %%{ init: {
-        'logLevel': 'debug',
-        'theme': 'dark',
-        'themeVariables': {
-            'git0': '#839192',
-            'git1': '#2874A6',
-            'gitInv0': '#FFFFFF',
-            'gitBranchLabel0': '#FFFFFF',
-            'commitLabelColor': '#FFFFFF'
+        "logLevel": "debug",
+        "theme": "dark",
+        "themeVariables": {
+            "git0": "#839192",
+            "git1": "#2874A6",
+            "gitInv0": "#FFFFFF",
+            "gitBranchLabel0": "#FFFFFF",
+            "commitLabelColor": "#FFFFFF"
         }
     }
 }%%
@@ -179,18 +179,18 @@ gitGraph
 %% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
 %% https://htmlcolorcodes.com/
 %%{ init: {
-        'logLevel': 'debug',
-        'theme': 'dark',
-        'gitGraph': {
-            'mainBranchName': 'master'
+        "logLevel": "debug",
+        "theme": "dark",
+        "gitGraph": {
+            "mainBranchName": "master"
         },
-        'themeVariables': {
-            'git0': '#839192',
-            'git1': '#C0392B ',
-            'git2': '#2E86C1',
-            'gitInv0': '#FFFFFF',
-            'gitBranchLabel0': '#FFFFFF',
-            'commitLabelColor': '#FFFFFF'
+        "themeVariables": {
+            "git0": "#839192",
+            "git1": "#C0392B ",
+            "git2": "#2E86C1",
+            "gitInv0": "#FFFFFF",
+            "gitBranchLabel0": "#FFFFFF",
+            "commitLabelColor": "#FFFFFF"
         }
     }
 }%%
@@ -396,18 +396,18 @@ Also, contrary to some naysayers it's quite easy to diff environment branches as
 
 ```mermaid
 %%{ init: {
-        'logLevel': 'debug',
-        'theme': 'dark',
-        'gitGraph': {
-            'mainBranchName': 'dev'
+        "logLevel": "debug",
+        "theme": "dark",
+        "gitGraph": {
+            "mainBranchName": "dev"
         },
-        'themeVariables': {
-            'git0': 'red',
-            'git1': 'blue ',
-            'git2': 'green',
-            'gitInv0': '#FFFFFF',
-            'gitBranchLabel0': '#FFFFFF',
-            'commitLabelColor': '#FFFFFF'
+        "themeVariables": {
+            "git0": "red",
+            "git1": "blue ",
+            "git2": "green",
+            "gitInv0": "#FFFFFF",
+            "gitBranchLabel0": "#FFFFFF",
+            "commitLabelColor": "#FFFFFF"
         }
     }
 }%%
