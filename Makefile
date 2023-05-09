@@ -148,7 +148,7 @@ install-d2:
 	@echo Install D2
 	@echo ==============
 	@if ! type -P curl >/dev/null 2>&2; then \
-		bash-tools/install_packages.sh curl; \
+		bash-tools/packages/install_packages.sh curl; \
 	fi
 	curl -fsSL https://d2lang.com/install.sh | sh -s --
 	@# don't install this, see DevOps-bash-tools setup/install_d2.sh for details why
@@ -170,7 +170,7 @@ install-python:
 
 .PHONY: python
 python:
-	@PYTHON=python3 PIP=pip3 PIP_OPTS="--ignore-installed" bash-tools/python_pip_install_if_absent.sh requirements.txt
+	@PYTHON=python3 PIP=pip3 PIP_OPTS="--ignore-installed" bash-tools/python/python_pip_install_if_absent.sh requirements.txt
 	@echo
 	@#$(MAKE) pycompile
 	@echo
@@ -178,7 +178,7 @@ python:
 
 .PHONY: test
 test:
-	PYTHON=python3 bash-tools/check_all.sh
+	PYTHON=python3 bash-tools/checks/check_all.sh
 
 .PHONY: clean
 clean:
