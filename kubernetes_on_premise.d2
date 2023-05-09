@@ -41,7 +41,7 @@ classes: {
     shape: image
   }
   load_balancer: {
-    label: "HA Load Balancer\n(HAProxy / Traefik\nKong / MetalLB)"
+    label: "HA Load Balancer\n(HAProxy / Traefik / Kong)"
     # there isn't a good generic load balancer icon so using this for now - switch to one of the product specific icons if you know which one
     icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
@@ -64,62 +64,62 @@ classes: {
   }
 }
 
-kube1: Kubernetes 1 {class: k8s}
-kube2: Kubernetes 2 {class: k8s}
-kube3: Kubernetes 3 {class: k8s}
+users: Users {
+  icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+  shape: image
+}
 
-Server 1.class: server
-Server 2.class: server
-Server 3.class: server
+users -> user_network
+
+user_network: Network {class: network}
+
+user_network -> lb1
+user_network -> lb2
+# lb1 -- lb2: VRRP
 
 lb1: {class: load_balancer}
 lb2: {class: load_balancer}
+
+lb1 -> network
+lb2 -> network
 
 network: Network {
   class: network
   # style.opacity: 0
 }
 
-users: Users {
-  icon: https://icons.terrastruct.com/essentials%2F359-users.svg
-  shape: image
-}
+network -> kube1
+network -> kube2
+network -> kube3
 
-user_network -> lb1
-user_network -> lb2
-# lb1 -- lb2: VRRP
+kube1: Kubernetes 1 {class: k8s}
+kube2: Kubernetes 2 {class: k8s}
+kube3: Kubernetes 3 {class: k8s}
 
-lb1 -> network
-lb2 -> network
+kube1 -- Server 1
+kube2 -- Server 2
+kube3 -- Server 3
 
-user_network: Network {class: network}
+Server 1.class: server
+Server 2.class: server
+Server 3.class: server
 
-users -> user_network
+# Server 1 -- Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
+# Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
 
 # keepalived1: KeepAlive 1
 # keepalived2: KeepAlive 2
 
 # lb1 -- keepalived1 -- keepalived2 -- lb2
 
-network -> kube1
-network -> kube2
-network -> kube3
-
-kube1 -- Server 1
-kube2 -- Server 2
-kube3 -- Server 3
-
-storage_network: Network {class: network}
-
-# Server 1 -- Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
-# Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
-
 Server 1 -> storage_network
 Server 2 -> storage_network
 Server 3 -> storage_network
 
-storage1: {class: storage}
-storage2: {class: storage}
+storage_network: Network {class: network}
 
 storage_network -> storage1
 storage_network -> storage2
+
+storage1: {class: storage}
+storage2: {class: storage}
