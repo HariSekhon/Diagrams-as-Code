@@ -296,9 +296,17 @@ A production internet customer facing website and apps replatform to Google Kube
 
 ### Kubernetes on Premise
 
+Traditionally:
+
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
 
 ![](images/kubernetes_on_premise.svg)
+
+with MetalLB:
+
+[kubernetes_on_premise_metallb.d2](kubernetes_on_premise_metallb.d2):
+
+![](images/kubernetes_on_premise_metallb.svg)
 
 
 ### Traefik Kubernetes Ingress on GKE
