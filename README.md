@@ -180,7 +180,9 @@ gitGraph
 %%{ init: {
         'logLevel': 'debug',
         'theme': 'dark',
-        'mainBranchName': 'master',
+        'gitGraph': {
+            'mainBranchName': 'master'
+        },
         'themeVariables': {
             'git0': '#839192',
             'git1': '#C0392B ',
@@ -197,19 +199,19 @@ gitGraph
     branch long-lived-branch
     checkout long-lived-branch
     commit id: "50 clever commits"
-    checkout main
+    checkout master
     commit
     checkout long-lived-branch
     commit id: "too clever"
-    checkout main
+    checkout master
     commit
     checkout long-lived-branch
     commit id: "too long"
-    checkout main
+    checkout master
     commit
     checkout long-lived-branch
     commit id: "try to merge back"
-    checkout main
+    checkout master
     merge long-lived-branch id: "Merge Conflict!!" type: REVERSE
     checkout long-lived-branch
     commit id: "trying to fix"
@@ -226,7 +228,7 @@ gitGraph
     merge fixes-branch-to-send-to-naughty-colleague id: "merge fixes" type: HIGHLIGHT
     commit id: "more commits"
     commit id: "because this branch only had 105 commits already"
-    checkout main
+    checkout master
     merge long-lived-branch id: "Finallly Merged!" type: HIGHLIGHT
     commit id: "Please never do that again"
 ```
