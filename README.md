@@ -373,6 +373,117 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 ![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
 
 
+### Environment Branches - at least they don't only test in Production!
+
+Another internet facing client refused to use tagging because they didn't want to have to think up version or release numbers for their website releases.
+
+Not everybody likes environment branches, but they worked in production for over 2 years and they are easy to use:
+
+```mermaid
+%%{ init: {
+        'logLevel': 'debug',
+        'theme': 'dark',
+        'mainBranchName': 'main',
+        'themeVariables': {
+            'git0': 'red',
+            'git1': 'blue ',
+            'git2': 'green',
+            'gitInv0': '#FFFFFF',
+            'gitBranchLabel0': '#FFFFFF',
+            'commitLabelColor': '#FFFFFF'
+        }
+    } 
+}%%
+
+gitGraph
+    branch staging
+    branch production
+
+    checkout main
+    commit id: "commit 1"
+
+    checkout staging
+    commit id: "commit 1 "
+
+    checkout production
+    commit id: "commit 1  "
+
+    checkout main
+    commit id: "commit 2"
+
+    checkout staging
+    commit id: "commit 2 "
+
+    checkout production
+    commit id: "commit 2  "
+
+    checkout main
+    commit id: "commit 3"
+
+    checkout staging
+    merge main id: "fast-forward merge" tag: "CI/CD + QA Tests"
+
+    checkout production
+    merge staging id: "fast-forward merge " tag: "Production Release (CI/CD)"
+
+
+    checkout main
+    commit id: "commit 4"
+
+    checkout staging
+    commit id: "commit 4 "
+
+    checkout production
+    commit id: "commit 4  "
+
+    checkout main
+    commit id: "commit 5"
+
+    checkout staging
+    commit id: "commit 5 "
+
+    checkout production
+    commit id: "commit 5  "
+
+    checkout main
+    commit id: "commit 6"
+
+    checkout staging
+    merge main id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
+
+    checkout production
+    merge staging id: "fast-forward merge 2 " tag: "Production Releease (CI/CD)"
+
+
+    checkout main
+    commit id: "commit 7"
+
+    checkout staging
+    commit id: "commit 7 "
+
+    checkout production
+    commit id: "commit 7  "
+
+    checkout main
+    commit id: "commit 8"
+
+    checkout staging
+    commit id: "commit 8 "
+
+    checkout production
+    commit id: "commit 8  "
+
+    checkout main
+    commit id: "commit 9"
+
+    checkout staging
+    merge main id: "fast-forward merge 3" tag: "CI/CD + QA Tests"
+
+    checkout production
+    merge staging id: "fast-forward merge 3 " tag: "Production Release (CI/CD)"
+```
+
+
 ### LucidChart - GCP Architecture
 
 A sample architecture I did for a client for us to talk through, which was similar to what they had in mind (I won the gig).
