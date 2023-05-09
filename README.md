@@ -385,7 +385,9 @@ Not everybody likes environment branches, but they worked in production for over
 %%{ init: {
         'logLevel': 'debug',
         'theme': 'dark',
-        'mainBranchName': 'main',
+        'gitGraph': {
+            'mainBranchName': 'dev'
+        },
         'themeVariables': {
             'git0': 'red',
             'git1': 'blue ',
@@ -394,14 +396,14 @@ Not everybody likes environment branches, but they worked in production for over
             'gitBranchLabel0': '#FFFFFF',
             'commitLabelColor': '#FFFFFF'
         }
-    } 
+    }
 }%%
 
 gitGraph
     branch staging
     branch production
 
-    checkout main
+    checkout dev
     commit id: "commit 1"
 
     checkout staging
@@ -410,7 +412,7 @@ gitGraph
     checkout production
     commit id: "commit 1  "
 
-    checkout main
+    checkout dev
     commit id: "commit 2"
 
     checkout staging
@@ -419,17 +421,17 @@ gitGraph
     checkout production
     commit id: "commit 2  "
 
-    checkout main
+    checkout dev
     commit id: "commit 3"
 
     checkout staging
-    merge main id: "fast-forward merge" tag: "CI/CD + QA Tests"
+    merge dev id: "fast-forward merge" tag: "CI/CD + QA Tests"
 
     checkout production
     merge staging id: "fast-forward merge " tag: "Production Release (CI/CD)"
 
 
-    checkout main
+    checkout dev
     commit id: "commit 4"
 
     checkout staging
@@ -438,7 +440,7 @@ gitGraph
     checkout production
     commit id: "commit 4  "
 
-    checkout main
+    checkout dev
     commit id: "commit 5"
 
     checkout staging
@@ -447,17 +449,17 @@ gitGraph
     checkout production
     commit id: "commit 5  "
 
-    checkout main
+    checkout dev
     commit id: "commit 6"
 
     checkout staging
-    merge main id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
+    merge dev id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
 
     checkout production
     merge staging id: "fast-forward merge 2 " tag: "Production Releease (CI/CD)"
 
 
-    checkout main
+    checkout dev
     commit id: "commit 7"
 
     checkout staging
@@ -466,7 +468,7 @@ gitGraph
     checkout production
     commit id: "commit 7  "
 
-    checkout main
+    checkout dev
     commit id: "commit 8"
 
     checkout staging
@@ -475,11 +477,11 @@ gitGraph
     checkout production
     commit id: "commit 8  "
 
-    checkout main
+    checkout dev
     commit id: "commit 9"
 
     checkout staging
-    merge main id: "fast-forward merge 3" tag: "CI/CD + QA Tests"
+    merge dev id: "fast-forward merge 3" tag: "CI/CD + QA Tests"
 
     checkout production
     merge staging id: "fast-forward merge 3 " tag: "Production Release (CI/CD)"
