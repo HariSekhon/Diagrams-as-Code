@@ -1,0 +1,110 @@
+#!/usr/bin/env d2 --theme 200
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-06 00:27:56 +0100 (Sat, 06 May 2023)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#           K u b e r n e t e s   O n - p r e m i s e   M e t a l L B
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Kubernetes On-Premise with MetalLB
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  network: {
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/network/routes.png
+    shape: image
+  }
+  storage: {
+    label: "HA Networked Storage\nfor Kubernetes\nPersistent Volumes"
+    icon: https://icons.terrastruct.com/azure%2FStorage%20Service%20Color%2FGeneral%20Storage.svg
+    shape: image
+  }
+  lb: {
+    label: "MetalLB"
+    icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
+    shape: image
+  }
+  k8s: {
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  k8s_ingress: {
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/ing.png
+    shape: image
+  }
+  server: {
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+}
+
+users: Users {
+  icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+  shape: image
+}
+
+users -> user_network
+
+user_network: Network {class: network}
+
+user_network -> Server 1.lb1
+user_network -> Server 2.lb2: {
+  label: VIP\nLayer 2 Failover
+  style.opacity: 0.5
+  style.stroke-dash: 5
+}
+
+Server 1 {
+  class: server
+  lb1.class: lb
+  lb1 -> kube1
+  lb1 -> _.Server 2.kube2
+  lb1 -> _.Server 3.kube3
+  kube1: Kubernetes 1 {class: k8s}
+}
+Server 2 {
+  class: server
+  lb2.class: lb
+  lb2 -> kube2
+  lb2 -> _.Server 1.kube1
+  lb2 -> _.Server 3.kube3
+  kube2: Kubernetes 2 {class: k8s}
+}
+Server 3 {
+  class: server
+  lb3.class: lb
+  lb3 -> kube3
+  lb3 -> _.Server 1.kube1
+  lb3 -> _.Server 2.kube2
+  kube3: Kubernetes 3 {class: k8s}
+}
+
+Server 1 -> storage_network
+Server 2 -> storage_network
+Server 3 -> storage_network
+
+storage_network: Network {class: network}
+
+storage_network -> storage1
+storage_network -> storage2
+
+storage1: {class: storage}
+storage2: {class: storage}
