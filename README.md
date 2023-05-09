@@ -381,7 +381,9 @@ At least they don't only test in Production!
 
 Another internet facing client refused to use tagging because they didn't want to have to think up version or release numbers for their website releases.
 
-Not everybody likes environment branches, but they worked in production for over 2 years and they are easy to use:
+Not everybody likes environment branches, but they worked in production for over 2 years and they are easy to use.
+
+Also, contrary to some naysayers it's quite easy to diff environment branches as everything should be in Git, so you can get a very quick and easy difference between your environments in a single `git diff` command.
 
 ```mermaid
 %%{ init: {
