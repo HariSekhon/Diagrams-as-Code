@@ -88,7 +88,7 @@ users.class: users
 #  shape: image
 # }
 
-gcp: Google Cloud {
+gcp: Google Cloud Platform {
   gcr.class: gcr
   # _.dockerhub -> gke.gke
   # _.quay -> gke.gke
@@ -96,7 +96,7 @@ gcp: Google Cloud {
     # label: pull\njenkins\ntrivy\ndocker\nimages
     # style.stroke-dash: 5
   }
-  gke: GKE {
+  gke: Google Kubernetes Engine {
     gke.class: gke
     ingress: Ingress {
       nginx.class: nginx
