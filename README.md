@@ -294,6 +294,19 @@ A production internet customer facing website and apps replatform to Google Kube
 ![](images/kubernetes_external_traffic_policy.svg)
 
 
+### Jenkins on Kubernetes (GKE)
+
+A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
+
+GitHub repo: [Jenkins on Kubernetes configs](https://github.com/HariSekhon/Kubernetes-configs)
+
+GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins)
+
+[jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
+
+![](images/jenkins_kubernetes_docker.svg)
+
+
 ### Kubernetes on Premise
 
 Traditionally:
