@@ -147,7 +147,7 @@ gcp: Google Cloud {
       jnlp -> docker: Docker Build
       jnlp -> trivy: Scan docker images\nfor vulnerabilities
       trivy -> docker: using\nDOCKER_HOST=tcp://localhost:2375
-      trivy -> _._.gcr: test images in registry {
+      trivy -> _._.gcr: scan images in registry {
         style.stroke-dash: 5
       }
       #docker <-> _._.gcr: push built docker images\npull docker images to test
