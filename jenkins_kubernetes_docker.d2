@@ -40,9 +40,40 @@ classes: {
     icon: https://icons.terrastruct.com/dev%2Fdocker.svg
     shape: image
   }
+  clair: {
+    label: Clair
+    #icon: https://www.projectquay.io/img/clair-logo-svg-vector.svg
+    # from https://github.com/quay/clair
+    #icon: https://cloud.githubusercontent.com/assets/343539/21630811/c5081e5c-d202-11e6-92eb-919d5999c77a.png
+    # just the icon without the name, from AquaSec security
+    #icon: https://lh6.googleusercontent.com/hQqgUGW_dyTn3HHEge2nVAxLsdGdf249Ow0uyKbXcfV8bxpxjEcFugSG3U-DTowCmwbfbecnSnctvwPipewDbFAHh4CkIpTuERZBosEpevr9CBpLmP0zxWNJ-6ACHOP9Pxbw1-JUKs1ykJotHLrx-ZXlPNictVXmNVBkVkRFwGsYeym0Uk1RL5Wkug
+    # downloaded in case it disappears from online or link changes and breaks future CI/CD runs
+    icon: images/clair.png
+    shape: image
+  }
+  grype: {
+    label: Grype
+    #icon: https://user-images.githubusercontent.com/5199289/136855393-d0a9eef9-ccf1-4e2b-9d7c-7aad16a567e5.png
+    # just icon without word
+    icon: https://anchore.com/wp-content/uploads/2021/11/image-111.png
+    shape: image
+  }
   trivy: {
     label: Trivy
-    icon: https://appsecmap.com/images/d/Trivy.png
+    #icon: https://appsecmap.com/images/d/Trivy.png
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/security/trivy.png
+    shape: image
+  }
+  sonarqube: {
+    label: SonarQube
+    # word icon
+    #icon: https://assets-eu-01.kc-usercontent.com/e1f3885c-805a-0150-804f-0996e00cd37d/afadf76d-420e-414d-acff-4a9efb344baa/SonarQubeIcon.svg
+    # solid blue, hard to read
+    #icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/085492c1-74a1-4749-908f-fa94fbd1fc5a/open-graph-sonar.png
+    # official website icon
+    #icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/5590df23-cc3a-4487-a3dd-e5dcb2da8731/sonar-logo-horizontal.svg
+    # pic only icon from twitter profile
+    icon: https://pbs.twimg.com/profile_images/1500905367433318400/fMj5ti-L_400x400.jpg
     shape: image
   }
   ingress: {
@@ -54,6 +85,17 @@ classes: {
     label: Users
     icon: https://icons.terrastruct.com/essentials%2F359-users.svg
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  github: {
+    label: GitHub\nrepos
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+    # icon: https://icons.terrastruct.com/social%2F039-github.svg
+    shape: image
+  }
+  git: {
+    label: GitHub repo
+    icon: https://icons.terrastruct.com/dev%2Fgit.svg
     shape: image
   }
   nginx: {
@@ -77,6 +119,19 @@ classes: {
 
 users -> gcp.gke.ingress.nginx
 users.class: users
+
+#github : GitHub{
+  github.class: github
+#  repo1.class: git {
+#    label: GitHub repo 1
+#  }
+#  repo2.class: git {
+#    label: GitHub repo 2
+#  }
+#  repo3.class: git {
+#    label: GitHub repo 3
+#  }
+#}
 
 # dockerhub: {
 #  label: DockerHub
@@ -105,7 +160,35 @@ gcp: Google Cloud Platform {
     jenkins: Jenkins Server\npod {
       server.class: jenkins
     }
+    _._.github -> jenkins.server: webhook trigger
+    _._.github <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    # messy and ugly
+    #_._.github.repo1 -> jenkins.server: webhook trigger
+    #_._.github.repo2 -> jenkins.server: webhook trigger
+    #_._.github.repo3 -> jenkins.server: webhook trigger
+    #_._.github.repo1 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    #_._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    #_._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
+    sonar: SonarQube\npod {
+      container.class: sonarqube
+    }
+    # places sonar on the right of the diagram, giving more balance
+    # comes out on the left insted of right
+    #sonar -- _._.github {
+    #  style.opacity: 0
+    #  style.stroke-dash: 5
+    #}
+    blank: { style.opacity: 0 }
+    # forces sonar back to the right
+    sonar -- blank: {
+      style.opacity: 0
+      style.stroke-dash: 5
+    }
+    clair: Clair\npod {
+      container.class: clair
+    }
+    clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
     jenkins_agent1: Jenkins Agent\npod {
       jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions
       jnlp.class: Jenkins
@@ -115,25 +198,30 @@ gcp: Google Cloud Platform {
         icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20SDK.svg
         shape: image
       }
+      gcloud_sdk <- _._._.github: git clone
 
+      grype.class: grype
       trivy.class: trivy
-      trivy.label: Trivy\ncontainer
 
       docker.class: docker
       docker.label: Docker-in-Docker\ncontainer
 
-      jnlp -> gcloud_sdk: CI/CD Build & Deploy\ninstructions
-      jnlp -> trivy: Scan docker images\nfor vulnerabilities
+      jnlp -> gcloud_sdk: CI/CD Build,\nScan & Deploy\ninstructions
+      gcloud_sdk -> _.clair.container: Scan docker images\nfor vulnerabilities
+      gcloud_sdk -> _.sonar.container: Scan code
+      gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
+      gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
 
       gcloud_sdk -> docker: Docker Build
 
-      trivy -> docker: using\nDOCKER_HOST=tcp://localhost:2375
-      trivy -> _._.gcr: scan images in registry {
-        style.stroke-dash: 5
-      }
+      trivy -> docker: using\nDOCKER_HOST=\ntcp://localhost:2375
+      grype -> docker: using\nDOCKER_HOST=\ntcp://localhost:2375
 
-      _._.gcr <-> docker: push built docker images\npull docker images to test
-      # docker <- _._.gcr: pull docker images to test
+      trivy -> _._.gcr: { style.stroke-dash: 5 }
+      grype -> _._.gcr: { style.stroke-dash: 5 }
+
+      docker -> _._.gcr: push built docker images
+      docker <- _._.gcr: pull docker images to test
     }
   }
 }
