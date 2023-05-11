@@ -486,7 +486,7 @@ gitGraph
     checkout production
     merge staging id: "fast-forward merge 3 " tag: "Production Release (CI/CD)"
 ```
-Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer. It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate.
+Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer. It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating [GitHub Releases in Jenkins](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy).
 
 ### LucidChart - GCP Architecture
 
