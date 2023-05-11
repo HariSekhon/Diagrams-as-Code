@@ -99,7 +99,7 @@ make py
 Create any single D2 diagram by running the d2 script file:
 
 ```shell
-./opentsdb_kubernetes_hbase.d2
+./jenkins_kubernetes_docker.d2
 ```
 
 Create any single Python diagram and have it open automatically by running the python script file:
