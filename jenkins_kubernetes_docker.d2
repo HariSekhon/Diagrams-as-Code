@@ -1,0 +1,175 @@
+#!/usr/bin/env d2 --theme 200
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-11 01:42:50 +0100 (Thu, 11 May 2023)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#               Jenkins on Kubernetes with Auto-Scaling and Docker
+# ============================================================================ #
+
+direction: down
+
+title: {
+  label: Jenkins on Kubernetes
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  name: {
+    #style.3d: true
+    #style.animated: true
+    #style.underline: true
+    #style.opacity: 0.5  # 0 - 1  # 0 is invisible, less than 1 is translucent
+    #style.stroke-dash: 5  # 0 - 10
+  }
+  jenkins: {
+    label: Jenkins
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/jenkins.png
+    shape: image
+  }
+  docker: {
+    label: Docker
+    #icon: https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+    shape: image
+  }
+  trivy: {
+    label: Trivy
+    icon: https://appsecmap.com/images/d/Trivy.png
+    shape: image
+  }
+  k8s: {
+    label: Kubernetes
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  ingress: {
+    label: Kubernetes Ingress
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/ing.png
+    shape: image
+  }
+  service: {
+    label: Kubernetes Service
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+    shape: image
+  }
+  pod: {
+    label: Kubernetes Pod
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
+    shape: image
+  }
+  users: {
+    label: Users
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    #icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  nginx: {
+    label: Nginx
+    #icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/nginx.png
+    shape: image
+  }
+  gke: {
+    label: GKE
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/compute/kubernetes-engine.png
+    shape: image
+  }
+  gcr: {
+    label: GCR
+    #icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
+    icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
+    shape: image
+  }
+  network: {
+    label: Network
+    icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+    shape: image
+  }
+}
+
+users -> gcp.gke.ingress.nginx
+users.class: users
+
+#dockerhub: {
+#  label: DockerHub
+#  class: docker
+#}
+#
+#quay: Quay.io {
+#  icon: https://pics.freeicons.io/uploads/icons/png/21458934601551942638-512.png
+#  shape: image
+#}
+
+gcp: Google Cloud {
+  gcr.class: gcr
+  #_.dockerhub -> gke.gke
+  #_.quay -> gke.gke
+  gcr -> gke.gke: {
+    #label: pull\njenkins\ntrivy\ndocker\nimages
+    #style.stroke-dash: 5
+  }
+  gke: GKE {
+    gke.class: gke
+    #gke -> jenkins_agent1: {
+    #  style.stroke-dash: 5
+    #}
+    ingress: Ingress {
+      nginx.class: nginx
+    }
+    ingress.nginx -> jenkins.server
+    jenkins: Jenkins Server\npod {
+      server.class: jenkins
+    }
+    jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
+    jenkins_agent1: Jenkins Agent\npod {
+      jnlp -> _.jenkins.server: phones homes\nfor CI/CD pipeline\ninstructions
+      jnlp.class: Jenkins
+      jnlp.label: Jenkins Agent\njnlp container
+      docker.class: docker
+      docker.label: Docker-in-Docker container
+      trivy.class: trivy
+      trivy.label: Trivy container
+      jnlp -> docker: Docker Build
+      jnlp -> trivy: Scan docker images\nfor vulnerabilities
+      trivy -> docker: using\nDOCKER_HOST=tcp://localhost:2375
+      trivy -> _._.gcr: test images in registry {
+        style.stroke-dash: 5
+      }
+      #docker <-> _._.gcr: push built docker images\npull docker images to test
+      _._.gcr <-> docker: push built docker images\npull docker images to test
+      #_._.gcr -> docker: pull docker images to test
+    }
+    #jenkins.server -> jenkins_agent2.jnlp
+    #jenkins_agent2: Jenkins Agent 2\npod {
+    #  jnlp.class: Jenkins
+    #  jnlp.label: Jenkins Agent\njnlp container
+    #  docker.class: docker
+    #  docker.label: Docker-in-Docker container
+    #  trivy.class: trivy
+    #  trivy.label: Trivy container
+    #  jnlp -> docker: Docker Build
+    #  jnlp -> trivy: Scan docker images\nfor vulnerabilities
+    #  trivy -> docker: using\nDOCKER_HOST=tcp://localhost:2375
+    #  trivy -> _._.gcr: test images in registry {
+    #    style.stroke-dash: 5
+    #  }
+    #  _._.gcr <-> docker: push built docker images\npull docker images to test
+    #}
+    #k8s.class: k8s
+  }
+}
