@@ -303,7 +303,7 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
 
-GitHub repo: [Jenkins on Kubernetes configs](https://github.com/HariSekhon/Kubernetes-configs)
+GitHub repo: [Jenkins on Kubernetes](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base)
 
 GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins)
 
