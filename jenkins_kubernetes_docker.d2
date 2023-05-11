@@ -107,7 +107,7 @@ gcp: Google Cloud {
     }
     jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
     jenkins_agent1: Jenkins Agent\npod {
-      jnlp -> _.jenkins.server: phones homes\nfor CI/CD pipeline\ninstructions
+      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions
       jnlp.class: Jenkins
       jnlp.label: Jenkins Agent\njnlp container
 
