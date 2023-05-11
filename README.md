@@ -305,7 +305,7 @@ A production Jenkins on Kubernetes I built for a client with auto-spawning agent
 
 GitHub repo: [Jenkins on Kubernetes](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base)
 
-GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins) with the code scanning functions
+GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins) with the code & container scanning functions
 
 [jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
 
