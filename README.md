@@ -310,6 +310,8 @@ GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://gi
 
 ### Kubernetes on Premise
 
+GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+
 Traditionally:
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
