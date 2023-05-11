@@ -350,7 +350,9 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 A high scale production OpenTSDB replatform I did to Kubernetes for a client, ingesting 9 billion data points per day and serving 3 million queries per day.
 
-I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course). This was the second client I had to do in-depth performance tuning of HBase, a selection of tools for this can be found in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo.
+I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
+
+This was the second client I did in-depth performance tuning of HBase for. I published a selection of useful HBase tools in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo.
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
