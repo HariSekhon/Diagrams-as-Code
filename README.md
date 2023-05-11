@@ -105,7 +105,7 @@ Create any single D2 diagram by running the d2 script file:
 Create any single Python diagram and have it open automatically by running the python script file:
 
 ```shell
-./advanced_web_services_open_source.py
+./gcp_cloudflare_web_architecture_gke.py
 ```
 
 
