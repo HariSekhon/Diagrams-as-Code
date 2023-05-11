@@ -141,9 +141,9 @@ gcp: Google Cloud {
       jnlp.class: Jenkins
       jnlp.label: Jenkins Agent\njnlp container
       docker.class: docker
-      docker.label: Docker-in-Docker container
+      docker.label: Docker-in-Docker\ncontainer
       trivy.class: trivy
-      trivy.label: Trivy container
+      trivy.label: Trivy\ncontainer
       jnlp -> docker: Docker Build
       jnlp -> trivy: Scan docker images\nfor vulnerabilities
       trivy -> docker: using\nDOCKER_HOST=tcp://localhost:2375
