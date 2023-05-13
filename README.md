@@ -39,6 +39,7 @@
 [![Generate Python Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml)
 [![Validation](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml)
 [![Kics](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml)
+[![Grype](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml)
 [![Semgrep](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep.yaml)
 [![Semgrep Cloud](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/semgrep-cloud.yaml)
 [![SonarCloud](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/sonarcloud.yaml)
