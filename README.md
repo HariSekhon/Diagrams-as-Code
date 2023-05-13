@@ -37,6 +37,7 @@
 
 [![Generate D2 Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml)
 [![Generate Python Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml)
+[![D2 fmt](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/d2-fmt.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/d2-fmt.yaml)
 [![Validation](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml)
 [![Kics](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml)
 [![Grype](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml)
@@ -364,7 +365,7 @@ A high scale production OpenTSDB replatform I did to Kubernetes for a client, in
 
 I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
-This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo. 
+This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo.
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
