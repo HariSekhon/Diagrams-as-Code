@@ -362,7 +362,7 @@ A high scale production OpenTSDB replatform I did to Kubernetes for a client, in
 
 I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
-This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo -  see `hbase_*.py` and `opentsdb_*.py`.
+This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo. 
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
