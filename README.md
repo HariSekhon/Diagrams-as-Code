@@ -324,7 +324,7 @@ Traditionally:
 
 ![](images/kubernetes_on_premise.svg)
 
-with MetalLB:
+with [MetalLB](https://metallb.universe.tf/) ([configs](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)):
 
 [kubernetes_on_premise_metallb.d2](kubernetes_on_premise_metallb.d2):
 
