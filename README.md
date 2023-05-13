@@ -263,7 +263,7 @@ gitGraph
 
 A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
-There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo, External DNS automatic DNS record creation in Cloudflare for any Kubernetes ingresses [here](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) and External Secrets pulling into Kubernetes from GCP Secret Manager [here](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base).
+There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo, [External DNS](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) automatic DNS record creation in Cloudflare for any Kubernetes ingresses and [External Secrets](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base) pulling into Kubernetes from GCP Secret Manager.
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
