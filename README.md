@@ -305,7 +305,7 @@ A production Jenkins on Kubernetes I built for a client with auto-spawning agent
 
 GitHub repo: [Jenkins on Kubernetes](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base)
 
-GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins) with the code & container scanning functions
+GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins) with the code & container scanning functions, eg. [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy), [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy), [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy) among many others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars) and epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
 
 [jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
 
