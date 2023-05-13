@@ -265,7 +265,7 @@ gitGraph
 
 A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
 
-There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo, External DNS automatic DNS record creation in Cloudflare for any Kubernetes ingresses [here](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) and External Secrets pulling into Kubernetes from GCP Secret Manager [here](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base).
+There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo, [External DNS](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) automatic DNS record creation in Cloudflare for any Kubernetes ingresses and [External Secrets](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base) pulling into Kubernetes from GCP Secret Manager.
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
@@ -305,9 +305,9 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
 
-GitHub repo: [Jenkins on Kubernetes](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base)
+GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base), [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base), [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
 
-GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://github.com/HariSekhon/Jenkins) with the code & container scanning functions
+GitHub repo: [Jenkins](https://github.com/HariSekhon/Jenkins) - Advanced [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile) & [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions, eg. [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy), [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy), [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy) among many others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars) and epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
 
 [jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
 
@@ -318,13 +318,15 @@ GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://gi
 
 GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
 
+GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
+
 Traditionally:
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
 
 ![](images/kubernetes_on_premise.svg)
 
-with MetalLB:
+with [MetalLB](https://metallb.universe.tf/) ([configs](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)):
 
 [kubernetes_on_premise_metallb.d2](kubernetes_on_premise_metallb.d2):
 
@@ -356,11 +358,13 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 ## OpenTSDB on Kubernetes and HBase
 
+GitHub repo: [DevOps-Python-tools](https://github.com/HariSekhon/DevOps-Python-tools)
+
 A high scale production OpenTSDB replatform I did to Kubernetes for a client, ingesting 9 billion data points per day and serving 3 million queries per day.
 
 I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
-This was the second client I did in-depth performance tuning of HBase for. I published a selection of useful HBase tools in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo.
+This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo. 
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
@@ -416,7 +420,7 @@ Another internet facing client refused to use tagging because they didn't want t
 
 Not everybody likes environment branches, but they worked in production for over 2 years and they are easy to use.
 
-Also, contrary to some naysayers it's quite easy to diff environment branches as everything should be in Git, so you can get a very quick and easy difference between your environments in a single `git diff` command. It's also easy to [automate backporting hotfixes](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMergePipeline.groovy) to lower environments.
+Also, contrary to some naysayers it's quite easy to diff environment branches as everything should be in Git, so you can get a very quick and easy difference between your environments in a single `git diff` command. It's also easy to automate backporting hotfixes to lower environments ([gitMerge.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMerge.groovy), [gitMergePipeline.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMergePipeline.groovy)).
 
 ```mermaid
 %%{ init: {
@@ -496,7 +500,7 @@ gitGraph
     checkout production
     merge staging id: "fast-forward merge 3 " tag: "Production Release (CI/CD)"
 ```
-Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, [just incrementing](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy) `NN` which is a no brainer. It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating [GitHub Releases in Jenkins](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy).
+Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer ([githubNextRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy)). It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating GitHub Releases in Jenkins ([githubCreateRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy)).
 
 ### LucidChart - GCP Architecture
 
