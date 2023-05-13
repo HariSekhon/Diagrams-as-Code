@@ -316,6 +316,8 @@ GitHub repo: [Jenkins - Advanced Jenkinsfile & Groovy Shared Library](https://gi
 
 GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
 
+GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
+
 Traditionally:
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
