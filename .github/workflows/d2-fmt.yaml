@@ -1,0 +1,80 @@
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-13 21:12:04 +0100 (Sat, 13 May 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+---
+name: D2 fmt
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '*.d2'
+      - .github/workflows/d2-fmt.yaml  # this workflow
+
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        default: false
+
+  schedule:
+    - cron: '0 0 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -euxo pipefail {0}
+
+jobs:
+  d2_fmt:
+    name: D2 fmt
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    if: ( github.ref_name == 'master' || github.ref_name == 'main' ) && github.event.repository.fork == false
+
+    steps:
+      - name: Environment
+        run: env | sort
+
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
+      - name: Bootstrap
+        run: setup/ci_bootstrap.sh
+
+      - name: Install D2 Dependencies
+        run: make install-d2
+
+      - name: D2 fmt
+        run: |
+          d2 fmt
+          # put headers back to normal to avoid this bug: https://github.com/terrastruct/d2/issues/1319
+          sed -i 's|# !/|#!/|' *.d2
+          if ! git diff --quiet; then
+            echo "There are formatting changes:"
+            echo
+            git diff
+            exit 1
+          fi
