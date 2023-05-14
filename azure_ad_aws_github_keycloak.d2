@@ -129,7 +129,7 @@ aws.label: AWS IAM Identity Center\n(formerly AWS SSO)
 aws_services.class: aws_services
 github.class: github
 jenkins.class: jenkins
-#argo.class: argocd
+# argo.class: argocd
 apps.class: apps
 
 users -> aad: login {class: animated}
@@ -144,8 +144,8 @@ aad <- github: SSO redirect {class: saml}
 aad -> jenkins: SSO redirect {class: invisible}
 aad <- jenkins: SSO redirect {class: oidc}
 
-#aad -> argo: SSO redirect {class: invisible}
-#aad <- argo: SSO redirect {class: oidc}
+# aad -> argo: SSO redirect {class: invisible}
+# aad <- argo: SSO redirect {class: oidc}
 
 apps -> aad: SSO redirect {class: invisible}
 apps <- aad: SSO redirect {class: invisible}
