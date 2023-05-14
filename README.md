@@ -79,6 +79,16 @@ They say a picture is worth a thousand words...
 ### Index
 
 - [GitHub Actions CI/CD](#github-actions-cicd)
+- [GitHub Flow with Jira integration](#github-flow-with-jira-ticket-integration)
+- [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
+- [AWS Web Traffic](#aws-web-traffic)
+- [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
+- [Advanced Web Services Open Source](#advanced-web-services-open-source)
+- [GCP Cloudflare Web Architecture](#gcp-cloudflare-web-architecture-gke)
+- [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
+- [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
+- [Kubernetes Service External Traffic Policy](#kubernetes-service-external-traffic-policy)
+- [Jenkins on Kubernetes](#jenkins-on-kubernetes)
 
 
 ### GitHub Actions CI/CD
