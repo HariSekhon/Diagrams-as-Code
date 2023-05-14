@@ -312,15 +312,15 @@ computer: Desktop or Laptop {
       # curl <- _._._.network.lan: { class: http_response }
 
       curl -> host: {class: invisible}
-      host -> cli {class: invisible}
+      host -> cli: {class: invisible}
 
       host: |sh
         host www.domain.com
 
         www.domain.com has address 1.2.3.4
       |
-      #host -> nslookup: {class: invisible}
-      #nslookup: |sh
+      # host -> nslookup: {class: invisible}
+      # nslookup: |sh
       #  nslookup www.domain.com
       #
       #  Server:         10.255.252.1
@@ -329,8 +329,8 @@ computer: Desktop or Laptop {
       #  Non-authoritative answer:
       #  Name:   www.domain.com
       #  Address: 172.217.169.4
-      #|
-      #dig: |sh
+      # |
+      # dig: |sh
       #  dig www.domain.com
       #
       #  ; <<>> DiG 9.10.6 <<>> www.domain.com
@@ -351,7 +351,7 @@ computer: Desktop or Laptop {
       #  ;; SERVER: 10.255.252.1#53(10.255.252.1)
       #  ;; WHEN: Sun May 14 16:50:39 BST 2023
       #  ;; MSG SIZE  rcvd: 73
-      #|
+      # |
     }
 
     browsers -> windows: {class: invisible}
@@ -362,7 +362,7 @@ computer: Desktop or Laptop {
     mac.class: mac
     linux: Linux {
       linux.class: linux
-      #linux -- distros
+      # linux -- distros
       distros: Distros {
         ubuntu.class: ubuntu
         debian.class: debian
@@ -371,12 +371,12 @@ computer: Desktop or Laptop {
       }
     }
 
-    #mac -> _.desktop: {class: invisible}
-    #mac -> _.laptop: {class: invisible}
-    #windows -> _.desktop: {class: invisible}
-    #windows -> _.laptop: {class: invisible}
-    #linux -> _.desktop: {class: invisible}
-    #linux -> _.laptop: {class: invisible}
+    # mac -> _.desktop: {class: invisible}
+    # mac -> _.laptop: {class: invisible}
+    # windows -> _.desktop: {class: invisible}
+    # windows -> _.laptop: {class: invisible}
+    # linux -> _.desktop: {class: invisible}
+    # linux -> _.laptop: {class: invisible}
   }
 
   os -> desktop: {class: invisible}
@@ -385,7 +385,7 @@ computer: Desktop or Laptop {
   laptop.class: laptop
   desktop.class: desktop
 
-  #blank: {class: invisible}
-  #desktop -> blank: {class: invisible}
-  #laptop -> blank: {class: invisible}
+  # blank: {class: invisible}
+  # desktop -> blank: {class: invisible}
+  # laptop -> blank: {class: invisible}
 }
