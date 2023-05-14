@@ -69,7 +69,7 @@ jobs:
 
       - name: D2 fmt
         run: |
-          d2 fmt
+          d2 fmt *.d2
           # put headers back to normal to avoid this bug: https://github.com/terrastruct/d2/issues/1319
           sed -i 's|# !/|#!/|' *.d2
           if ! git diff --quiet; then
