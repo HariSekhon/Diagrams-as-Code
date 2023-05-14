@@ -137,13 +137,14 @@ apps <- aad: SSO redirect {class: invisible}
 
 apps -> keycloak: OIDC auth {class: dash}
 keycloak.class: keycloak
-#aad -> keycloak: SSO redirect {class: invisible}
+# aad -> keycloak: SSO redirect {class: invisible}
 keycloak -> aad: SSO redirect {class: dash}
 
 users -> aws: access # {class: animated}
 users -> github: access # {class: animated}
-users -> jenkins: access # {class: animated}
-#users -> keycloak: login {class: animated}
+users -> jenkins: access
+# {class: animated}
+# users -> keycloak: login {class: animated}
 users -> apps: acccess # {class: animated}
 
 aws -> aws_services: access # {class: animated}
