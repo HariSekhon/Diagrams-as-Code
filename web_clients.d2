@@ -335,18 +335,18 @@ computer: Desktop or Laptop {
       }
     }
 
-    mac -> _.laptop: {class: invisible}
     mac -> _.desktop: {class: invisible}
-    windows -> _.laptop: {class: invisible}
+    mac -> _.laptop: {class: invisible}
     windows -> _.desktop: {class: invisible}
-    linux -> _.laptop: {class: invisible}
+    windows -> _.laptop: {class: invisible}
     linux -> _.desktop: {class: invisible}
+    linux -> _.laptop: {class: invisible}
   }
 
   laptop.class: laptop
   desktop.class: desktop
 
   blank: {class: invisible}
-  laptop -> blank: {class: invisible}
   desktop -> blank: {class: invisible}
+  laptop -> blank: {class: invisible}
 }
