@@ -78,17 +78,33 @@ They say a picture is worth a thousand words...
 
 ### Index
 
+- [Diagrams](#diagrams)
 - [GitHub Actions CI/CD](#github-actions-cicd)
-- [GitHub Flow with Jira integration](#github-flow-with-jira-ticket-integration)
+- [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
 - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
 - [AWS Web Traffic](#aws-web-traffic)
 - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
 - [Advanced Web Services Open Source](#advanced-web-services-open-source)
-- [GCP Cloudflare Web Architecture](#gcp-cloudflare-web-architecture-gke)
+- [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
 - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
 - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
 - [Kubernetes Service External Traffic Policy](#kubernetes-service-external-traffic-policy)
 - [Jenkins on Kubernetes](#jenkins-on-kubernetes)
+- [Kubernetes on Premise](#kubernetes-on-premise)
+- [Traefik Kubernetes Ingress on GKE](#traefik-kubernetes-ingress-on-gke)
+- [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
+- [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
+- [AWS Clustered Web Services](#aws-clustered-web-services)
+- [GCP Pub/Sub Analytics](#gcp-pubsub-analytics)
+- [AWS Event Processing](#aws-event-processing)
+- [AWS Serverless Image Processing](#aws-serverless-image-processing)
+- [Devs Test in Production](#devs-test-in-production)
+- [Git - Environment Branches](#git---environment-branches)
+- [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
+- [Web Clients](#web-clients)
+- [Rebuild from Source](#rebuild-from-source)
+- [Templates](#templates)
+- [See Also](#see-also)
 
 
 ### GitHub Actions CI/CD
@@ -107,7 +123,7 @@ Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/READ
 ![](images/github_actions_cicd.svg)
 
 
-# GitHub Flow with Jira ticket integration
+### GitHub Flow with Jira ticket integration
 
 Prefix Git branches with Jira ticket numbers in Jira's `AA-NNN` format for GitHub Pull Requests to automatically appear in Jira tickets (see this [doc](https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/)):
 
@@ -140,7 +156,7 @@ gitGraph
 ```
 
 
-# Git - why you shouldn't use long-lived branches
+### Git - why you shouldn't use long-lived branches
 
 \* [Environment Branches](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#git---environment-branches) may be one of the few exceptions but requires workflow discipline.
 
@@ -529,10 +545,6 @@ Create any single Python diagram and have it open automatically by running the p
 ## Templates
 
 The [templates/template.d2](https://github.com/HariSekhon/Templates/blob/master/template.d2) and [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) show the basics of each language.
-
-For more advanced examples, see the real architectural diagrams in the next section.
-
-(some of which are based off the [diagram examples](https://diagrams.mingrammer.com/docs/getting-started/examples) and [cloudgram examples](https://cloudgram.dedalusone.com/examples.html))
 
 
 ## See Also
