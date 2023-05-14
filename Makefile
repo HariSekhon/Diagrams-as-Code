@@ -204,11 +204,19 @@ clean:
 .PHONY: fmt
 fmt:
 	d2 fmt *.d2
+
 	# put shebang header back to normal to work around this bug:
 	#
 	#   https://github.com/terrastruct/d2/issues/1319
 	#
-	sed -i 's|# !/|#!/|' *.d2
+	#if uname -s | grep Darwin; then \
+	#    alias sed=gsed; \
+	#fi; \
+	gsed -i 's|# !/|#!/|' *.d2
+
+	# revert typechange of template.d2 symlink
+	git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
+
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
 #.PHONY: wc
