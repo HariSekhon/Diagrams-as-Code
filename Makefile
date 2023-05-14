@@ -199,6 +199,7 @@ clean:
 	@echo "Removing dot files:"
 	@for x in *.py; do rm -fv -- "$${x%.py}"; done
 	@echo
+	@#git status --porcelain --ignored | awk '/^!!/{print $2}' | xargs rm -fv --
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
 #.PHONY: wc
