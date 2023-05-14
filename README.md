@@ -98,7 +98,9 @@ I read an article that said:
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Clients](#web-clients)
-- [Build from Source](#rebuild-from-source)
+  - [Network - Layer 3 - Local - ARP](#network---layer-3---local---arp)
+  - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
+- [Build from Source](#build-from-source)
 - [Templates](#templates)
 - [See Also](#see-also)
 
