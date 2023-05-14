@@ -34,44 +34,56 @@ classes: {
     icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/jenkins.png
     shape: image
   }
+  jnlp: {
+    label: JNLP
+    icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ83AlZnZlE8K4Eu1YcU21AGHqn6yUiR5sPudY-8Sqpsv2SpbIwozrOkafvanvJtnIKDVA&usqp=CAU
+    #icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMD1zTPfv13yyi3gUADFXc-paO1PViTt7U1yRUxTGTnD3zXOBlvALgfCYcnNDUDor7sb4&usqp=CAU
+    shape: image
+  }
   docker: {
     label: Docker
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png
     icon: https://icons.terrastruct.com/dev%2Fdocker.svg
     shape: image
   }
+  cloudbuild: {
+    label: Cloud Build
+    # icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/build.png
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
+    shape: image
+  }
   clair: {
     label: Clair
-    #icon: https://www.projectquay.io/img/clair-logo-svg-vector.svg
+    # icon: https://www.projectquay.io/img/clair-logo-svg-vector.svg
     # from https://github.com/quay/clair
-    #icon: https://cloud.githubusercontent.com/assets/343539/21630811/c5081e5c-d202-11e6-92eb-919d5999c77a.png
+    # icon: https://cloud.githubusercontent.com/assets/343539/21630811/c5081e5c-d202-11e6-92eb-919d5999c77a.png
     # just the icon without the name, from AquaSec security
-    #icon: https://lh6.googleusercontent.com/hQqgUGW_dyTn3HHEge2nVAxLsdGdf249Ow0uyKbXcfV8bxpxjEcFugSG3U-DTowCmwbfbecnSnctvwPipewDbFAHh4CkIpTuERZBosEpevr9CBpLmP0zxWNJ-6ACHOP9Pxbw1-JUKs1ykJotHLrx-ZXlPNictVXmNVBkVkRFwGsYeym0Uk1RL5Wkug
+    icon: https://lh6.googleusercontent.com/hQqgUGW_dyTn3HHEge2nVAxLsdGdf249Ow0uyKbXcfV8bxpxjEcFugSG3U-DTowCmwbfbecnSnctvwPipewDbFAHh4CkIpTuERZBosEpevr9CBpLmP0zxWNJ-6ACHOP9Pxbw1-JUKs1ykJotHLrx-ZXlPNictVXmNVBkVkRFwGsYeym0Uk1RL5Wkug
     # downloaded in case it disappears from online or link changes and breaks future CI/CD runs
-    icon: images/clair.png
+    # icon: images/clair.png
     shape: image
   }
   grype: {
     label: Grype
-    #icon: https://user-images.githubusercontent.com/5199289/136855393-d0a9eef9-ccf1-4e2b-9d7c-7aad16a567e5.png
+    # icon: https://user-images.githubusercontent.com/5199289/136855393-d0a9eef9-ccf1-4e2b-9d7c-7aad16a567e5.png
     # just icon without word
     icon: https://anchore.com/wp-content/uploads/2021/11/image-111.png
     shape: image
   }
   trivy: {
     label: Trivy
-    #icon: https://appsecmap.com/images/d/Trivy.png
+    # icon: https://appsecmap.com/images/d/Trivy.png
     icon: https://diagrams.mingrammer.com/img/resources/onprem/security/trivy.png
     shape: image
   }
   sonarqube: {
     label: SonarQube
     # word icon
-    #icon: https://assets-eu-01.kc-usercontent.com/e1f3885c-805a-0150-804f-0996e00cd37d/afadf76d-420e-414d-acff-4a9efb344baa/SonarQubeIcon.svg
+    # icon: https://assets-eu-01.kc-usercontent.com/e1f3885c-805a-0150-804f-0996e00cd37d/afadf76d-420e-414d-acff-4a9efb344baa/SonarQubeIcon.svg
     # solid blue, hard to read
-    #icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/085492c1-74a1-4749-908f-fa94fbd1fc5a/open-graph-sonar.png
+    # icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/085492c1-74a1-4749-908f-fa94fbd1fc5a/open-graph-sonar.png
     # official website icon
-    #icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/5590df23-cc3a-4487-a3dd-e5dcb2da8731/sonar-logo-horizontal.svg
+    # icon: https://assets-eu-01.kc-usercontent.com/62ab8174-eef6-01d0-2c3c-101910aab0d4/5590df23-cc3a-4487-a3dd-e5dcb2da8731/sonar-logo-horizontal.svg
     # pic only icon from twitter profile
     icon: https://pbs.twimg.com/profile_images/1500905367433318400/fMj5ti-L_400x400.jpg
     shape: image
@@ -111,25 +123,32 @@ classes: {
   }
   gke: {
     label: GKE
-    icon: https://diagrams.mingrammer.com/img/resources/gcp/compute/kubernetes-engine.png
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FKubetnetes%20Engine.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/gcp/compute/kubernetes-engine.png
     shape: image
   }
   gcr: {
     label: GCR
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
     # icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
-    icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
     shape: image
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+  invisible: {
+    style.opacity: 0
   }
 }
 
-users -> gcp.gke.ingress.nginx
-users.class: users
+# users -> gcp.gke.ingress.nginx
+# users.class: users
 
-#github -> sonarcloud: code scanning
-#sonarcloud.class: sonarcloud
+# github -> sonarcloud: code scanning
+# sonarcloud.class: sonarcloud
 
-#github : GitHub{
-  github.class: github
+# github : GitHub{
+github.class: github
 #  repo1.class: git {
 #    label: GitHub repo 1
 #  }
@@ -139,7 +158,7 @@ users.class: users
 #  repo3.class: git {
 #    label: GitHub repo 3
 #  }
-#}
+# }
 
 # dockerhub: {
 #  label: DockerHub
@@ -156,57 +175,67 @@ gcp: Google Cloud Platform {
   # _.dockerhub -> gke.gke
   # _.quay -> gke.gke
   gcr -> gke.gke: {
+    label: pull docker images
     # label: pull\njenkins\ntrivy\ndocker\nimages
     # style.stroke-dash: 5
+    style.animated: true
   }
+  cloudbuild.class: cloudbuild
+  cloudbuild -> gcr: push Docker images
   gke: Google Kubernetes Engine {
     gke.class: gke
-    ingress: Ingress {
-      nginx.class: nginx
-    }
-    ingress.nginx -> jenkins.server
+    # ingress: Ingress {
+    #  nginx.class: nginx
+    # }
+    # ingress.nginx -> jenkins.server
     jenkins: Jenkins Server\npod {
       server.class: jenkins
+      server.label: Jenkins Server
     }
-    _._.github -> jenkins.server: webhook trigger
-    _._.github <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    _._.github -> jenkins.server: webhook trigger { style.animated: true }
+    _._.github <- jenkins.server: polling SCM (as backup for lost webhooks) { style.animated: true }
     # messy and ugly
-    #_._.github.repo1 -> jenkins.server: webhook trigger
-    #_._.github.repo2 -> jenkins.server: webhook trigger
-    #_._.github.repo3 -> jenkins.server: webhook trigger
-    #_._.github.repo1 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
-    #_._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
-    #_._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    # _._.github.repo1 -> jenkins.server: webhook trigger
+    # _._.github.repo2 -> jenkins.server: webhook trigger
+    # _._.github.repo3 -> jenkins.server: webhook trigger
+    # _._.github.repo1 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    # _._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
+    # _._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
-    sonar: SonarQube\npod {
-      container.class: sonarqube
-    }
+    # sonar: SonarQube\npod {
+    #  container.class: sonarqube
+    # }
     # places sonar on the right of the diagram, giving more balance
     # comes out on the left insted of right
-    #sonar -- _._.github {
+    # sonar -- _._.github {
     #  style.opacity: 0
     #  style.stroke-dash: 5
-    #}
-    blank: { style.opacity: 0 }
+    # }
+    # blank: { style.opacity: 0 }
     # forces sonar back to the right
-    sonar -- blank: {
-      style.opacity: 0
-      style.stroke-dash: 5
-    }
-    clair: Clair\npod {
-      container.class: clair
-    }
-    clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
+    # sonar -- blank: {
+    #  style.opacity: 0
+    #  style.stroke-dash: 5
+    # }
+    # clair: Clair\npod {
+    #  container.class: clair
+    # }
+    # clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
     jenkins_agent1: Jenkins Agent\npod {
-      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions
-      jnlp.class: Jenkins
-      jnlp.label: Jenkins Agent\njnlp container
+      agent.class: Jenkins
+      agent.label: Jenkins Agent
+      agent -- jnlp # : { class: invisible }
+      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions { style.animated: true }
+      jnlp.class: jnlp
+      jnlp.label: JNLP container
+      jnlp -> gcloud_sdk: CI/CD Build,\nScan & Deploy\ninstructions
 
       gcloud_sdk: GCloud SDK\ncontainer {
         icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20SDK.svg
         shape: image
       }
-      gcloud_sdk <- _._._.github: git clone
+      # gcloud_sdk <- _._._.github: git clone
+      gcloud_sdk -> _._.cloudbuild: Docker Build
 
       grype.class: grype
       trivy.class: trivy
@@ -214,22 +243,34 @@ gcp: Google Cloud Platform {
       docker.class: docker
       docker.label: Docker-in-Docker\ncontainer
 
-      jnlp -> gcloud_sdk: CI/CD Build,\nScan & Deploy\ninstructions
-      gcloud_sdk -> _.clair.container: Scan docker images\nfor vulnerabilities
-      gcloud_sdk -> _.sonar.container: Scan code
-      gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
+      # gcloud_sdk -> _.clair.container: Scan docker images\nfor vulnerabilities
+      # gcloud_sdk -> _.sonar.container: Scan code
       gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
+      gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
 
-      gcloud_sdk -> docker: Docker Build
+      #gcloud_sdk -> docker: Docker Build
 
-      trivy -> docker: using\nDOCKER_HOST=\ntcp://localhost:2375
-      grype -> docker: using\nDOCKER_HOST=\ntcp://localhost:2375
+      trivy -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
+      grype -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
 
-      trivy -> _._.gcr: { style.stroke-dash: 5 }
-      grype -> _._.gcr: { style.stroke-dash: 5 }
+      # trivy -> _._.gcr: { style.stroke-dash: 5 }
+      # grype -> _._.gcr: { style.stroke-dash: 5 }
 
-      docker -> _._.gcr: push built docker images
-      docker <- _._.gcr: pull docker images to test
+      docker -> _._.gcr: push built docker images: { style.animated: true }
+      docker <- _._.gcr: pull docker images to test { style.animated: true }
     }
+
+    # jenkins_agent1.trivy -> jenkins.server: publish HTML report in UI { style.stroke-dash: 5 }
+    trivy: Trivy pod {
+      server: {
+        label: Trivy Server
+        class: trivy
+      }
+      server -> _.jenkins_agent1.trivy: { #cache vulnerability DB & analysis\n(massive speed up) {
+        style.animated: true
+        style.stroke-dash: 5
+      }
+    }
+
   }
 }
