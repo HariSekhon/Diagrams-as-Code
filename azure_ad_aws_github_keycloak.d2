@@ -85,7 +85,7 @@ classes: {
     shape: image
   }
   keycloak: {
-    label: Keycloak
+    label: Keycloak\n(OIDC to Azure AD)
     icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
     shape: image
   }
@@ -115,10 +115,10 @@ users.class: users
 aad.class: azuread
 aws.class: aws
 aws.label: AWS IAM Identity Center\n(formerly AWS SSO)
+aws_services.class: aws_services
 github.class: github
 jenkins.class: jenkins
 apps.class: apps
-aws_services.class: aws_services
 
 users -> aad: login {class: animated}
 users <- aad: credentials {class: animated}
@@ -132,10 +132,18 @@ aad <- github: SSO redirect {class: dash}
 aad -> jenkins: SSO redirect {class: invisible}
 aad <- jenkins: SSO redirect {class: dash}
 
+apps -> aad: SSO redirect {class: invisible}
+apps <- aad: SSO redirect {class: invisible}
+
+apps -> keycloak: OIDC auth {class: dash}
+keycloak.class: keycloak
+#aad -> keycloak: SSO redirect {class: invisible}
+keycloak -> aad: SSO redirect {class: dash}
+
 users -> aws: access # {class: animated}
 users -> github: access # {class: animated}
 users -> jenkins: access # {class: animated}
-users -> keycloak: login {class: animated}
+#users -> keycloak: login {class: animated}
 users -> apps: acccess # {class: animated}
 
 aws -> aws_services: access # {class: animated}
@@ -158,11 +166,3 @@ git_repo2.class: git
 # argo.class: argocd
 # argo -> k8s: configure\ndeployments {class: animated}
 # k8s.class: k8s
-
-apps -> keycloak: OIDC auth {class: dash}
-keycloak.class: keycloak
-aad -> keycloak: SSO redirect {class: invisible}
-keycloak -> aad: SSO redirect {class: dash}
-
-apps -> aad: SSO redirect {class: invisible}
-# apps <- aad: SSO redirect {class: invisible}
