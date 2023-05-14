@@ -1,0 +1,125 @@
+#!/usr/bin/env d2
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-14 18:48:58 +0100 (Sun, 14 May 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#         N e t w o r k   -   L a y e r   3   -   L o c a l   -   A R P
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Network - Layer 3 - Local - ARP
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  desktop: {
+    label: Desktop
+    icon: https://icons.terrastruct.com/tech%2Fdesktop.svg
+    shape: image
+  }
+  server: {
+    label: Server
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+    # icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+    shape: image
+  }
+  router: {
+    label: Router
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/router.png
+    shape: image
+  }
+  switch: {
+    label: Switch
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/switch.png
+    shape: image
+  }
+  network: {
+    label: Network
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/subnet.png
+    # icon: https://icons.terrastruct.com/infra%2F014-network.svg
+    # icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+    shape: image
+  }
+  internet: {
+    label: Internet
+    icon: https://icons.terrastruct.com/infra%2F022-hosting.svg
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+  invisible: {
+    style.opacity: 0
+  }
+  arp_broadcast: {
+    label: 1. Broadcast to 10.0.0.255\nARP\nwho has IP address 10.0.0.3
+    style.animated: true
+  }
+  arp_reply: {
+    label: 2. ARP reply\nI have IP 10.0.0.3\nmy MAC address is: A1:B2:C3:D4:E5:F6
+    style.animated: true
+  }
+  data: {
+    label: 3. Send data packets\nto MAC A1:B2:C3:D4:E5:F
+    style.animated: true
+  }
+}
+
+desktop: {class: desktop}
+switch: {class: switch}
+router: {class: router}
+server1: {class: server}
+server2: {class: server}
+desktop.label: Desktop\nIP address: 10.0.0.4
+router.label: Router\nIP address: 10.0.0.1
+server1.label: Server 1\nIP address: 10.0.0.2
+server2.label: Server 2\nIP address: 10.0.0.3
+
+logic -- desktop
+
+logic: {
+  IP: |md
+    IP address: 10.0.0.4
+
+    Subnet Mask: 255.255.255.0
+
+    Binary maths calculation of IP + Subnet mask
+
+    calculates that any IP in the range 10.0.0.1 - 10.0.0.254
+
+    is on the local network
+
+    so broadcast to find its hardware MAC address using ARP
+
+    (address resolution protocol)
+
+    and then connect directly using its local hardware address
+  |
+}
+
+desktop -> switch: {class: arp_broadcast}
+switch -> router: {class: arp_broadcast}
+switch -> server1: {class: arp_broadcast}
+switch -> server2: {class: arp_broadcast}
+server2 -> switch -> desktop: {class: arp_reply}
+desktop -> switch -> server2: {class: data}
