@@ -242,6 +242,8 @@ gitGraph
 
 ### Azure Active Directory Single Sign-On
 
+I've administered Azure Active Directory at a couple of companies and integrated a variety of applications including GitHub Enterprise Cloud, AWS IAM Identity Center (formely AWS SSO), Jenkins, ArgoCD, Keycloak, Hubspot etc using the typical OIDC or SAML integration mechanisms.
+
 (azure_ad_aws_github_keycloak.d2](azure_ad_aws_github_keycloak.d2):
 
 ![](images/azure_ad_aws_github_keycloak.svg)
