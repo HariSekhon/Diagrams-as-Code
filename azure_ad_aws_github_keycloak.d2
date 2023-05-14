@@ -63,6 +63,22 @@ classes: {
     icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/jenkins.png
     shape: image
   }
+  docker: {
+    label: Docker
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+    shape: image
+  }
+  k8s: {
+    label: Kubernetes
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  argocd: {
+    label: ArgoCD
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/gitops/argocd.png
+    shape: image
+  }
   keycloak: {
     label: Keycloak
     icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
@@ -96,7 +112,6 @@ aws.class: aws
 aws.label: AWS IAM Identity Center\n(formerly AWS SSO)
 github.class: github
 jenkins.class: jenkins
-keycloak.class: keycloak
 apps.class: apps
 aws_services.class: aws_services
 
@@ -104,29 +119,39 @@ users -> aad: login {class: animated}
 users <- aad: credentials {class: animated}
 
 aad -> aws: SSO redirect {class: invisible}
-aad <- aws: SSO redirect {class: dash}
-
+#aad <- aws: SSO redirect {class: dash}
+#
 aad -> github: SSO redirect {class: invisible}
-aad <- github: SSO redirect {class: dash}
-
+#aad <- github: SSO redirect {class: dash}
+#
 aad -> jenkins: SSO redirect {class: invisible}
-aad <- jenkins: SSO redirect {class: dash}
+#aad <- jenkins: SSO redirect {class: dash}
 
-aad -> keycloak: SSO redirect {class: invisible}
-aad <- keycloak: SSO redirect {class: dash}
-
-users -> aws: {class: animated}
-users -> github: {class: animated}
-users -> jenkins: {class: animated}
-users -> keycloak: {class: animated}
-keycloak -> apps: OIDC {class: animated}
+users -> aws: access {class: animated}
+users -> github: access {class: animated}
+users -> jenkins: access {class: animated}
+#users -> keycloak: access {class: animated}
+users -> apps: acccess {class: animated}
 
 aws -> aws_services: access {class: animated}
 
-github -> git_repo1: {class: animated}
-github -> git_repo2: {class: animated}
+github -> git_repo1: access {class: animated}
+github -> git_repo2: access {class: animated}
 # github -> git_repo3 {class: animated}
 
 git_repo1.class: git
 git_repo2.class: git
 # git_repo3.class: git
+
+jenkins -> docker: build {class: animated}
+docker.class: docker
+docker -> k8s: pull docker images {class: animated}
+jenkins -> argo: call {class: animated}
+argo.class: argocd
+argo -> k8s: configures deployments {class: animated}
+k8s.class: k8s
+
+apps -> keycloak: OIDC auth {class: dash}
+keycloak.class: keycloak
+#keycloak -> aad: SSO redirect {class: dash}
+#aad -> keycloak: SSO redirect {class: invisible}
