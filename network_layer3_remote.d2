@@ -1,0 +1,146 @@
+#!/usr/bin/env d2
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-14 18:48:58 +0100 (Sun, 14 May 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#         N e t w o r k   -   L a y e r   3   -   R e m o t e   -   I P
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Network - Layer 3 - Remote - IP
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  desktop: {
+    label: Desktop
+    icon: https://icons.terrastruct.com/tech%2Fdesktop.svg
+    shape: image
+  }
+  server: {
+    label: Server
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+    # icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+    shape: image
+  }
+  router: {
+    label: Router
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/router.png
+    shape: image
+  }
+  switch: {
+    label: Switch
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/switch.png
+    shape: image
+  }
+  network: {
+    label: Network
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/subnet.png
+    # icon: https://icons.terrastruct.com/infra%2F014-network.svg
+    # icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+    shape: image
+  }
+  internet: {
+    label: Internet
+    icon: https://icons.terrastruct.com/infra%2F022-hosting.svg
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+  invisible: {
+    style.opacity: 0
+  }
+  forward: {
+    label: Forward this data to IP 1.2.3.4
+    style.animated: true
+  }
+  default_gateway: {
+    label: 1.2.3.4 isn't on my network\nforward to my default gateway
+    style.animated: true
+  }
+  have_route: {
+    label: have route entry for network 1.2.3.0/24\nwhere that IP will be\nforwarding to that network's router
+    style.animated: true
+  }
+}
+
+desktop: {class: desktop}
+# switch: {class: switch}
+router: {class: router}
+router2: {class: router}
+router2.label: Router 2
+router3: {class: router}
+router3.label: Router 3
+router4: {class: router}
+router4.label: Router 4
+router5: {class: router}
+router5.label: Router 5
+router6: {class: router}
+router6.label: Router 6
+router6: {class: router}
+router7.label: Router 7
+router7: {class: router}
+router8: {class: router}
+router8.label: Router 8
+server1: {class: server}
+desktop.label: Desktop\nIP address: 10.0.0.4
+router.label: Router\nIP address: 10.0.0.1
+server1.label: Server 1\nIP address: 1.2.3.4
+
+logic -- desktop
+
+logic: {
+  IP: |md
+    IP address: 10.0.0.4
+
+    Subnet Mask: 255.255.255.0
+
+    Binary maths calculation of IP + Subnet mask
+
+    calculates that any IP in the range 10.0.0.1 - 10.0.0.254
+
+    is on the local network
+
+    but IP 1.2.3.4 is not in this range
+
+    it must be remote
+
+    so send traffic to 1.2.3.4 to router to forward it on
+  |
+}
+
+router4 -- router2
+router5 <- router3: default gateway
+router7 -- router4
+router8 -- router4
+
+# desktop -> switch: {class: forward}
+# switch -> router: {class: forward}
+desktop -> router: {class: forward}
+router -> router2: {class: default_gateway}
+router3 <- router2: {class: default_gateway}
+router6 <- router3: {class: have_route}
+# router3 -- router4
+# router8 <- router5: I have a route to network 1.2.3.0/24\nwhere there IP will be\nforwarding to that network's router {class: animated}
+router6 -> server1: IP 1.2.3.4 is on my local network\nsending locally using ARP {class: animated}
