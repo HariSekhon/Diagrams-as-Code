@@ -244,7 +244,7 @@ gitGraph
 
 I've administered [Azure Active Directory](https://azure.microsoft.com/en-us/products/active-directory) at a couple of companies and integrated a variety of applications including GitHub Enterprise Cloud, AWS IAM Identity Center (formerly AWS SSO), Jenkins, ArgoCD, Keycloak, Hubspot etc using the typical OIDC or SAML integration mechanisms.
 
-(azure_ad_aws_github_keycloak.d2](azure_ad_aws_github_keycloak.d2):
+[azure_ad_aws_github_keycloak.d2](azure_ad_aws_github_keycloak.d2):
 
 ![](images/azure_ad_aws_github_keycloak.svg)
 
