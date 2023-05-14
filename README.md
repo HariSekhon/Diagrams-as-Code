@@ -98,7 +98,7 @@ I read an article that said:
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Clients](#web-clients)
-- [Rebuild from Source](#rebuild-from-source)
+- [Build from Source](#rebuild-from-source)
 - [Templates](#templates)
 - [See Also](#see-also)
 
@@ -502,7 +502,7 @@ When you're trying to explain to your kids how the internet works...
 ![](images/web_clients.svg)
 
 
-## Rebuild from Source
+## Build from Source
 
 Install D2, Graphviz, Python3 and 'diagrams' pip module:
 
