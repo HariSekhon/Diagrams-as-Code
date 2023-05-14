@@ -182,8 +182,11 @@ test:
 
 .PHONY: clean
 clean:
-	@echo "Git resetting images/ dir"
+	@echo
+	@echo "Git resetting images/ dir:"
+	@echo
 	git checkout images
+	@echo
 	@echo
 	@echo "Removing *.pyc / *.pyo files:"
 	@echo
@@ -195,6 +198,7 @@ clean:
 	@echo
 	@echo "Removing dot files:"
 	@for x in *.py; do rm -fv -- "$${x%.py}"; done
+	@echo
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
 #.PHONY: wc
