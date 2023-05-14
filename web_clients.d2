@@ -216,7 +216,7 @@ platform: Cloud Platform or Datacenter {
   azure -> webserver
   server -> webserver
 
-  webserver: Web Server {
+  webserver: Web Servers {
     apache.class: apache
     nginx.class: nginx
 
@@ -311,11 +311,47 @@ computer: Desktop or Laptop {
       # curl -> _._._.network.lan: { class: http_request }
       # curl <- _._._.network.lan: { class: http_response }
 
+      curl -> host: {class: invisible}
+      host -> cli {class: invisible}
+
       host: |sh
         host www.domain.com
 
         www.domain.com has address 1.2.3.4
       |
+      #host -> nslookup: {class: invisible}
+      #nslookup: |sh
+      #  nslookup www.domain.com
+      #
+      #  Server:         10.255.252.1
+      #  Address:        10.255.252.1#53
+      #
+      #  Non-authoritative answer:
+      #  Name:   www.domain.com
+      #  Address: 172.217.169.4
+      #|
+      #dig: |sh
+      #  dig www.domain.com
+      #
+      #  ; <<>> DiG 9.10.6 <<>> www.domain.com
+      #  ;; global options: +cmd
+      #  ;; Got answer:
+      #  ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59483
+      #  ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+      #
+      #  ;; OPT PSEUDOSECTION:
+      #  ; EDNS: version: 0, flags: do; udp: 512
+      #  ;; QUESTION SECTION:
+      #  ;www.domain.com.                        IN      A
+      #
+      #  ;; ANSWER SECTION:
+      #  www.domain.com.         211     IN      A       172.217.169.4
+      #
+      #  ;; Query time: 7 msec
+      #  ;; SERVER: 10.255.252.1#53(10.255.252.1)
+      #  ;; WHEN: Sun May 14 16:50:39 BST 2023
+      #  ;; MSG SIZE  rcvd: 73
+      #|
     }
 
     browsers -> windows: {class: invisible}
@@ -335,18 +371,21 @@ computer: Desktop or Laptop {
       }
     }
 
-    mac -> _.desktop: {class: invisible}
-    mac -> _.laptop: {class: invisible}
-    windows -> _.desktop: {class: invisible}
-    windows -> _.laptop: {class: invisible}
-    linux -> _.desktop: {class: invisible}
-    linux -> _.laptop: {class: invisible}
+    #mac -> _.desktop: {class: invisible}
+    #mac -> _.laptop: {class: invisible}
+    #windows -> _.desktop: {class: invisible}
+    #windows -> _.laptop: {class: invisible}
+    #linux -> _.desktop: {class: invisible}
+    #linux -> _.laptop: {class: invisible}
   }
+
+  os -> desktop: {class: invisible}
+  os -> laptop: {class: invisible}
 
   laptop.class: laptop
   desktop.class: desktop
 
-  blank: {class: invisible}
-  desktop -> blank: {class: invisible}
-  laptop -> blank: {class: invisible}
+  #blank: {class: invisible}
+  #desktop -> blank: {class: invisible}
+  #laptop -> blank: {class: invisible}
 }
