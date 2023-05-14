@@ -226,23 +226,9 @@ platform: Cloud Platform or Datacenter {
       label: www.domain.com\n1.2.3.4
       class: internet
     }
-    # website <- _._.internet: { class: http_request }
-    # website -> _._.internet: { class: http_response }
-    # website <- _._.network.router: { class: http_request }
-    # website -> _._.network.router: { class: http_response }
-    # website <- _._.computer.os.browsers: { class: http_request }
-    # website -> _._.computer.os.browsers: { class: http_response }
-    # website <- _._.computer.os.browsers: {class: http_request}
-    # website -> _._.computer.os.browsers: {class: http_response}
   }
 
   dns.class: dns
-  # dns <- _.internet: { class: dns_request }
-  # dns -> _.internet: { class: dns_response }
-  # dns <- _.computer.os: { class: dns_request }
-  # dns -> _.computer.os: { class: dns_response }
-  # dns <- _.computer.os.cli.host: { class: invisible }
-  # dns -> _.computer.os.cli.host: { class: invisible }
 }
 
 # platform -> internet: { class: traffic }
@@ -273,6 +259,8 @@ platform: Cloud Platform or Datacenter {
 computer: Desktop or Laptop {
   software -> _.platform.dns: {class: dns_request}
   software <- _.platform.dns: {class: dns_response}
+  # software.os -> _.platform.dns: {class: dns_request}
+  # software.os <- _.platform.dns: {class: dns_response}
   # os -> _.network.lan: { class: traffic }
   # os <- _.network.lan: { class: traffic }
 
@@ -282,14 +270,6 @@ computer: Desktop or Laptop {
       chrome.class: chrome
       firefox.class: firefox
       safari.class: safari
-
-      # chrome -> _._._.platform.website: { class: http_request }
-      # firefox -> _._._.platform.website:{ class: http_request }
-      # safari -> _._._.platform.website: { class: http_request }
-      #
-      # chrome <- _._._.platform.website: { class: http_response }
-      # firefox <- _._._.platform.website: { class: http_response }
-      # safari <- _._._.platform.website: { class: http_response }
     }
     browsers -> _._.platform.webserver.website: {class: http_request}
     browsers <- _._.platform.webserver.website: {class: http_response}
@@ -354,7 +334,12 @@ computer: Desktop or Laptop {
       # |
     }
 
+    # cli -> os #: {class: invisible}
     # browsers -> os #: {class: invisible}
+
+    # cli -> blank #: {class: invisible}
+    # browsers -> blank #: {class: invisible}
+    # blank -> os
 
     os: Operating Systems {
       windows.class: windows
@@ -370,6 +355,11 @@ computer: Desktop or Laptop {
         }
       }
       # windows -- mac -- linux
+
+      # windows -> blank: {class: invisible}
+      # mac -> blank: {class: invisible}
+      # linux -> blank: {class: invisible}
+      # blank.class: invisible
     }
   }
 
@@ -378,10 +368,10 @@ computer: Desktop or Laptop {
 
   desktop.class: desktop
   laptop.class: laptop
-  #laptop -> blank: {class: invisible}
-  #desktop -> blank: {class: invisible}
+  # laptop -> blank: {class: invisible}
+  # desktop -> blank: {class: invisible}
   #
-  #blank: {class: invisible}
+  # blank: {class: invisible}
   # desktop -> blank: {class: invisible}
   # laptop -> blank: {class: invisible}
 }
