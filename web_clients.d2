@@ -257,10 +257,10 @@ platform: Cloud Platform or Datacenter {
 # }
 
 computer: Desktop or Laptop {
-  #software -> _.platform.dns: {class: dns_request}
-  #software <- _.platform.dns: {class: dns_response}
-   software.os -> _.platform.dns: {class: dns_request}
-   software.os <- _.platform.dns: {class: dns_response}
+  # software -> _.platform.dns: {class: dns_request}
+  # software <- _.platform.dns: {class: dns_response}
+  software.os -> _.platform.dns: {class: dns_request}
+  software.os <- _.platform.dns: {class: dns_response}
   # os -> _.network.lan: { class: traffic }
   # os <- _.network.lan: { class: traffic }
 
@@ -291,8 +291,8 @@ computer: Desktop or Laptop {
       # curl -> _._._.network.lan: { class: http_request }
       # curl <- _._._.network.lan: { class: http_response }
 
-      #curl -> host: {class: invisible}
-      #host -> cli: {class: invisible}
+      # curl -> host: {class: invisible}
+      # host -> cli: {class: invisible}
 
       host: |sh
         host www.domain.com
