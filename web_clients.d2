@@ -271,12 +271,12 @@ platform: Cloud Platform or Datacenter {
 # }
 
 computer: Desktop or Laptop {
-  os -> _.platform.dns: {class: dns_request}
-  os <- _.platform.dns: {class: dns_response}
+  software -> _.platform.dns: {class: dns_request}
+  software <- _.platform.dns: {class: dns_response}
   # os -> _.network.lan: { class: traffic }
   # os <- _.network.lan: { class: traffic }
 
-  os: Operating System {
+  software: Software {
     browsers: Web Browsers {
       browser.class: browser
       chrome.class: chrome
@@ -354,38 +354,34 @@ computer: Desktop or Laptop {
       # |
     }
 
-    browsers -> windows: {class: invisible}
-    browsers -> mac: {class: invisible}
-    browsers -> linux: {class: invisible}
+    #browsers -> os #: {class: invisible}
 
-    windows.class: windows
-    mac.class: mac
-    linux: Linux {
-      linux.class: linux
-      # linux -- distros
-      distros: Distros {
-        ubuntu.class: ubuntu
-        debian.class: debian
-        redhat.class: redhat
-        suse.class: suse
+    os: Operating Systems {
+      windows.class: windows
+      mac.class: mac
+      linux: Linux {
+        linux.class: linux
+        # linux -- distros
+        distros: Distros {
+          ubuntu.class: ubuntu
+          debian.class: debian
+          redhat.class: redhat
+          suse.class: suse
+        }
       }
+      #windows -- mac -- linux
     }
-
-    # mac -> _.desktop: {class: invisible}
-    # mac -> _.laptop: {class: invisible}
-    # windows -> _.desktop: {class: invisible}
-    # windows -> _.laptop: {class: invisible}
-    # linux -> _.desktop: {class: invisible}
-    # linux -> _.laptop: {class: invisible}
   }
 
-  os -> desktop: {class: invisible}
-  os -> laptop: {class: invisible}
+  software.os -> desktop: {class: invisible}
+  software.os -> laptop: {class: invisible}
 
   laptop.class: laptop
   desktop.class: desktop
+  laptop -> blank {class: invisible}
+  desktop -> blank {class: invisible}
 
-  # blank: {class: invisible}
+  blank: {class: invisible}
   # desktop -> blank: {class: invisible}
   # laptop -> blank: {class: invisible}
 }
