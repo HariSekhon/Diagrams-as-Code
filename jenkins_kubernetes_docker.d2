@@ -52,6 +52,11 @@ classes: {
     icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
     shape: image
   }
+  argocd: {
+    label: ArgoCD
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/gitops/argocd.png
+    shape: image
+  }
   clair: {
     label: Clair
     # icon: https://www.projectquay.io/img/clair-logo-svg-vector.svg
@@ -181,7 +186,7 @@ gcp: Google Cloud Platform {
     style.animated: true
   }
   cloudbuild.class: cloudbuild
-  cloudbuild -> gcr: push docker images
+  cloudbuild -> gcr: push docker images {style.animated: true}
   gke: Google Kubernetes Engine {
     gke.class: gke
     # ingress: Ingress {
@@ -201,12 +206,12 @@ gcp: Google Cloud Platform {
     # _._.github.repo1 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     # _._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     # _._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
-    jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\ndynamically
-    jenkins_agent1: Jenkins Agent\npod {
+    jenkins.server -> jenkins_agent: Spawn ephemeral Jenkins Agent(s)\ndynamically
+    jenkins_agent: Jenkins Agent\npod {
       agent.class: Jenkins
       agent.label: Jenkins Agent
       agent -- jnlp # : { class: invisible }
-      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions {style.animated: true}
+      jnlp -> _.jenkins.server: phone home\nfor CI/CD pipeline\ninstructions {style.animated: true}
       jnlp.class: jnlp
       jnlp.label: JNLP container
       jnlp -> gcloud_sdk: CI/CD Build,\nScan & Deploy\ninstructions
@@ -241,13 +246,13 @@ gcp: Google Cloud Platform {
       docker <- _._.gcr: pull docker images to test {style.animated: true}
     }
 
-    # jenkins_agent1.trivy -> jenkins.server: publish HTML report in UI { style.stroke-dash: 5 }
+    # jenkins_agent.trivy -> jenkins.server: publish HTML report in UI { style.stroke-dash: 5 }
     trivy: Trivy pod {
       server: {
         label: Trivy Server
         class: trivy
       }
-      server -> _.jenkins_agent1.trivy: {
+      server -> _.jenkins_agent.trivy: {
         label: cached vulnerability DB\n(massive speed up)
         style.animated: true
         style.stroke-dash: 5
@@ -256,9 +261,16 @@ gcp: Google Cloud Platform {
 
     blank: {style.opacity: 0}
 
+    argocd: ArgoCD\npods {
+      container.class: argocd
+      _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
+      container -> _.gke: {style.animated: true}
+    }
+
     clair: Clair\npod {
       container.class: clair
     }
+
     # clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
     sonar: SonarQube\npod {
       container.class: sonarqube
