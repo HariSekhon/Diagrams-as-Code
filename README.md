@@ -97,7 +97,7 @@ I read an article that said:
   - [Devs Test in Production](#devs-test-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
-  - [Web Clients](#web-clients)
+  - [Web Basics](#web-basics)
   - [Network - Layer 3 - Local - ARP](#network---layer-3---local---arp)
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Build from Source](#build-from-source)
@@ -497,13 +497,13 @@ This is the only diagram not as code (here for historical interest). I would emb
 ![GCP Diagram LucidChart](images/LucidChart_GCP_diagram.png)
 
 
-### Web Clients
+### Web Basics
 
 When you're trying to explain to your kids how the internet works...
 
-[web_clients.d2](web_clients.d2):
+[web_basics.d2](web_basics.d2):
 
-![](images/web_clients.svg)
+![](images/web_basics.svg)
 
 
 ### Network - Layer 3 - Local - ARP
