@@ -182,7 +182,7 @@ classes: {
     style.stroke-dash: 5
   }
   http_request: {
-    label: HTML GET /
+    label: HTTP GET /
     style.animated: true
     style.stroke-dash: 5
   }
@@ -376,12 +376,12 @@ computer: Desktop or Laptop {
   software.os -> desktop: {class: invisible}
   software.os -> laptop: {class: invisible}
 
-  laptop.class: laptop
   desktop.class: desktop
-  laptop -> blank: {class: invisible}
-  desktop -> blank: {class: invisible}
-
-  blank: {class: invisible}
+  laptop.class: laptop
+  #laptop -> blank: {class: invisible}
+  #desktop -> blank: {class: invisible}
+  #
+  #blank: {class: invisible}
   # desktop -> blank: {class: invisible}
   # laptop -> blank: {class: invisible}
 }
