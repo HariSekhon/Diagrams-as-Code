@@ -511,6 +511,14 @@ This is the only diagram not as code (here for historical interest). I would emb
 
 ![GCP Diagram LucidChart](images/LucidChart_GCP_diagram.png)
 
+### Web Clients
+
+When you're trying to explain to your kids how the internet works...
+
+[web_clients.d2](web_clients.d2):
+
+![](images/web_clients.svg)
+
 
 ## See Also
 
