@@ -201,6 +201,15 @@ clean:
 	@echo
 	@#git status --porcelain --ignored | awk '/^!!/{print $2}' | xargs rm -fv --
 
+.PHONY: fmt
+fmt:
+	d2 fmt *.d2
+	# put shebang header back to normal to work around this bug:
+	#
+	#   https://github.com/terrastruct/d2/issues/1319
+	#
+	sed -i 's|# !/|#!/|' *.d2
+
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
 #.PHONY: wc
 #wc:
