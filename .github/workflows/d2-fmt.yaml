@@ -68,18 +68,7 @@ jobs:
         run: make install-d2
 
       - name: D2 fmt
-        run: d2 fmt *.d2
-
-      - name: Fix shebang headers
-        run: |
-          # put shebang header back to normal to work around this bug:
-          #
-          #   https://github.com/terrastruct/d2/issues/1319
-          #
-          sed -i 's|# !/|#!/|' *.d2
-
-      - name: Git revert typechanges (symlinks)
-        run: git checkout $(git status --porcelain | awk '/^.T/{print $2}')
+        run: make fmt
 
       - name: Check diff
         run: |
