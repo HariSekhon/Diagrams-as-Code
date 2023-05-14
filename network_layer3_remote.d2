@@ -83,6 +83,10 @@ classes: {
     label: have route entry for network 1.2.3.0/24\nwhere that IP will be\nforwarding to that network's router
     style.animated: true
   }
+  local: {
+    label: IP 1.2.3.4 is on my local network\nsending locally using ARP
+    style.animated: true
+  }
 }
 
 desktop: {class: desktop}
@@ -141,6 +145,4 @@ desktop -> router: {class: forward}
 router -> router2: {class: default_gateway}
 router3 <- router2: {class: default_gateway}
 router6 <- router3: {class: have_route}
-# router3 -- router4
-# router8 <- router5: I have a route to network 1.2.3.0/24\nwhere there IP will be\nforwarding to that network's router {class: animated}
-router6 -> server1: IP 1.2.3.4 is on my local network\nsending locally using ARP {class: animated}
+router6 -> server1: {class: local}
