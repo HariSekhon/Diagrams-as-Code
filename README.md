@@ -80,7 +80,7 @@ I read an article that said:
   - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
   - [AWS Web Traffic](#aws-web-traffic)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
-  - [Advanced Web Services Open Source](#advanced-web-services-open-source)
+  - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
   - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
   - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
@@ -91,6 +91,7 @@ I read an article that said:
   - [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
   - [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
+  - [Advanced Web Services Open Source](#advanced-web-services-open-source)
   - [GCP Pub/Sub Analytics](#gcp-pubsub-analytics)
   - [AWS Event Processing](#aws-event-processing)
   - [AWS Serverless Image Processing](#aws-serverless-image-processing)
@@ -239,11 +240,11 @@ gitGraph
 ![](images/aws_load_balanced_web_farm.png)
 
 
-### Advanced Web Services Open Source
+### Azure Active Directory Single Sign-On
 
-[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
+(azure_ad_aws_github_keycloak.d2](azure_ad_aws_github_keycloak.d2):
 
-![](images/advanced_web_services_open_source.png)
+![](images/azure_ad_aws_github_keycloak.svg)
 
 
 ### GCP Cloudflare Web Architecture GKE
@@ -361,6 +362,13 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 [aws_clustered_web_services.py](aws_clustered_web_services.py):
 
 ![](images/aws_clustered_web_services.png)
+
+
+### Advanced Web Services Open Source
+
+[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
+
+![](images/advanced_web_services_open_source.png)
 
 
 ### GCP Pub/Sub Analytics
