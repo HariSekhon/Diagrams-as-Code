@@ -37,7 +37,7 @@ classes: {
   jnlp: {
     label: JNLP
     icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ83AlZnZlE8K4Eu1YcU21AGHqn6yUiR5sPudY-8Sqpsv2SpbIwozrOkafvanvJtnIKDVA&usqp=CAU
-    #icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMD1zTPfv13yyi3gUADFXc-paO1PViTt7U1yRUxTGTnD3zXOBlvALgfCYcnNDUDor7sb4&usqp=CAU
+    # icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMD1zTPfv13yyi3gUADFXc-paO1PViTt7U1yRUxTGTnD3zXOBlvALgfCYcnNDUDor7sb4&usqp=CAU
     shape: image
   }
   docker: {
@@ -192,8 +192,8 @@ gcp: Google Cloud Platform {
       server.class: jenkins
       server.label: Jenkins Server
     }
-    _._.github -> jenkins.server: webhook trigger { style.animated: true }
-    _._.github <- jenkins.server: polling SCM (as backup for lost webhooks) { style.animated: true }
+    _._.github -> jenkins.server: webhook trigger {style.animated: true}
+    _._.github <- jenkins.server: polling SCM (as backup for lost webhooks) {style.animated: true}
     # messy and ugly
     # _._.github.repo1 -> jenkins.server: webhook trigger
     # _._.github.repo2 -> jenkins.server: webhook trigger
@@ -202,30 +202,11 @@ gcp: Google Cloud Platform {
     # _._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     # _._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
-    # sonar: SonarQube\npod {
-    #  container.class: sonarqube
-    # }
-    # places sonar on the right of the diagram, giving more balance
-    # comes out on the left insted of right
-    # sonar -- _._.github {
-    #  style.opacity: 0
-    #  style.stroke-dash: 5
-    # }
-    # blank: { style.opacity: 0 }
-    # forces sonar back to the right
-    # sonar -- blank: {
-    #  style.opacity: 0
-    #  style.stroke-dash: 5
-    # }
-    # clair: Clair\npod {
-    #  container.class: clair
-    # }
-    # clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
     jenkins_agent1: Jenkins Agent\npod {
       agent.class: Jenkins
       agent.label: Jenkins Agent
       agent -- jnlp # : { class: invisible }
-      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions { style.animated: true }
+      jnlp -> _.jenkins.server: phones home\nfor CI/CD pipeline\ninstructions {style.animated: true}
       jnlp.class: jnlp
       jnlp.label: JNLP container
       jnlp -> gcloud_sdk: CI/CD Build,\nScan & Deploy\ninstructions
@@ -248,7 +229,7 @@ gcp: Google Cloud Platform {
       gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
       gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
 
-      #gcloud_sdk -> docker: Docker Build
+      # gcloud_sdk -> docker: Docker Build
 
       trivy -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
       grype -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
@@ -256,8 +237,8 @@ gcp: Google Cloud Platform {
       # trivy -> _._.gcr: { style.stroke-dash: 5 }
       # grype -> _._.gcr: { style.stroke-dash: 5 }
 
-      docker -> _._.gcr: push built docker images: { style.animated: true }
-      docker <- _._.gcr: pull docker images to test { style.animated: true }
+      docker -> _._.gcr: push built docker images {style.animated: true}
+      docker <- _._.gcr: pull docker images to test {style.animated: true}
     }
 
     # jenkins_agent1.trivy -> jenkins.server: publish HTML report in UI { style.stroke-dash: 5 }
@@ -266,11 +247,37 @@ gcp: Google Cloud Platform {
         label: Trivy Server
         class: trivy
       }
-      server -> _.jenkins_agent1.trivy: { #cache vulnerability DB & analysis\n(massive speed up) {
+      server -> _.jenkins_agent1.trivy: {
+        label: cached vulnerability DB\n(massive speed up)
         style.animated: true
         style.stroke-dash: 5
       }
     }
 
+    blank: {style.opacity: 0}
+
+    clair: Clair\npod {
+      container.class: clair
+    }
+    # clair.container -> _.gcr: scan images in registry { style.stroke-dash: 5 }
+    sonar: SonarQube\npod {
+      container.class: sonarqube
+    }
+
+    # places sonar on the right of the diagram, giving more balance
+    # comes out on the left insted of right
+    # sonar -- _._.github {
+    #  style.opacity: 0
+    #  style.stroke-dash: 5
+    # }
+    # forces sonar back to the right
+    clair -- blank: {
+      style.opacity: 0
+      style.stroke-dash: 5
+    }
+    sonar -- blank: {
+      style.opacity: 0
+      style.stroke-dash: 5
+    }
   }
 }
