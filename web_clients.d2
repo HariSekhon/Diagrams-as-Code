@@ -1,4 +1,4 @@
-# !/usr/bin/env d2 --theme 0
+#!/usr/bin/env d2 --theme 0
 #                             myfilename.d2 forceformat.png -h # trick to eat arg
 #
 #  vim:ts=2:sts=2:sw=2:et:filetype=d2
@@ -204,7 +204,7 @@ classes: {
   }
 }
 
-platform: Platform {
+platform: Cloud Platform or Datacenter {
   aws.class: aws
   gcp.class: gcp
   azure.class: azure
@@ -217,7 +217,7 @@ platform: Platform {
   azure -> webserver
   server -> webserver
 
-  webserver: {
+  webserver: Web Server {
     apache.class: apache
     nginx.class: nginx
 
@@ -227,12 +227,14 @@ platform: Platform {
       label: www.domain.com\n1.2.3.4
       class: internet
     }
-    # domain <- _._.internet: { class: http_request }
-    # domain -> _._.internet: { class: http_response }
-    # domain <- _._.network.router: { class: http_request }
-    # domain -> _._.network.router: { class: http_response }
-    # domain <- _._.computer.os.browsers: { class: http_request }
-    # domain -> _._.computer.os.browsers: { class: http_response }
+    # website <- _._.internet: { class: http_request }
+    # website -> _._.internet: { class: http_response }
+    # website <- _._.network.router: { class: http_request }
+    # website -> _._.network.router: { class: http_response }
+    # website <- _._.computer.os.browsers: { class: http_request }
+    # website -> _._.computer.os.browsers: { class: http_response }
+    # website <- _._.computer.os.browsers: {class: http_request}
+    # website -> _._.computer.os.browsers: {class: http_response}
   }
 
   dns.class: dns
@@ -297,6 +299,9 @@ computer: Desktop or Laptop {
 
     cli: Command Line {
       cli.class: commandline
+
+      # host -> _._._.platform.dns: { class: dns_request }
+      # host <- _._._.platform.dns: { class: dns_response }
       curl: |sh
         curl wwww.domain.com
 
@@ -312,8 +317,6 @@ computer: Desktop or Laptop {
 
         www.domain.com has address 1.2.3.4
       |
-      # host -> _._._.platform.dns: { class: dns_request }
-      # host <- _._._.platform.dns: { class: dns_response }
     }
 
     browsers -> windows: {class: invisible}
