@@ -209,9 +209,7 @@ fmt:
 	#
 	#   https://github.com/terrastruct/d2/issues/1319
 	#
-	#if uname -s | grep Darwin; then \
-	#    alias sed=gsed; \
-	#fi; \
+	sleep 1
 	gsed -i 's|# !/|#!/|' *.d2
 
 	# revert typechange of template.d2 symlink
