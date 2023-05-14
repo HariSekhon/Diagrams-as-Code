@@ -201,7 +201,7 @@ gcp: Google Cloud Platform {
     # _._.github.repo1 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     # _._.github.repo2 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
     # _._.github.repo3 <- jenkins.server: polling SCM (as backup for lost webhooks) { style.stroke-dash: 5 }
-    jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\n(auto-scales horizontally)
+    jenkins.server -> jenkins_agent1: Spawn ephemeral Jenkins Agent(s)\ndynamically
     jenkins_agent1: Jenkins Agent\npod {
       agent.class: Jenkins
       agent.label: Jenkins Agent
