@@ -44,18 +44,18 @@ boom: Boom {
   class: common
   icon: https://www.freeiconspng.com/download/9158
 }
-#wink: {
+# wink: {
 #  icon: http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/winking-face.png
 #  class: common
 #  style: {
 #    font-color: white
 #  }
-#}
+# }
 
-code -> git: commit { class: common }
-git -> github: push { class: common }
-github -> cicd: trigger { class: common }
-cicd -> boom: action { class: common }
+code -> git: commit {class: common}
+git -> github: push {class: common}
+github -> cicd: trigger {class: common}
+cicd -> boom: action {class: common}
 
 steps: {
   1: {
@@ -85,4 +85,5 @@ steps: {
   9: {
     boom.style.opacity: 1
   }
-§}
+  §
+}
