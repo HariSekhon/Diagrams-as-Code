@@ -132,31 +132,32 @@ aad <- github: SSO redirect {class: dash}
 aad -> jenkins: SSO redirect {class: invisible}
 aad <- jenkins: SSO redirect {class: dash}
 
-users -> aws: access #{class: animated}
-users -> github: access #{class: animated}
-users -> jenkins: access #{class: animated}
+users -> aws: access # {class: animated}
+users -> github: access # {class: animated}
+users -> jenkins: access # {class: animated}
 users -> keycloak: login {class: animated}
-users -> apps: acccess #{class: animated}
+users -> apps: acccess # {class: animated}
 
-aws -> aws_services: access #{class: animated}
+aws -> aws_services: access # {class: animated}
 
-github -> git_repo1: access #{class: animated}
-github -> git_repo2: access #{class: animated}
+github -> git_repo1: access # {class: animated}
+github -> git_repo2: access
+# {class: animated}
 # github -> git_repo3 {class: animated}
 
 git_repo1.class: git
 git_repo2.class: git
 # git_repo3.class: git
 
-#jenkins -> docker: build {class: animated}
-#docker.class: docker
-#docker -> ecr: push\ndocker images {class: animated}
-#ecr -> k8s: pull\ndocker images {class:animated}
-#ecr.class: ecr
-#jenkins -> argo: call {class: animated}
-#argo.class: argocd
-#argo -> k8s: configure\ndeployments {class: animated}
-#k8s.class: k8s
+# jenkins -> docker: build {class: animated}
+# docker.class: docker
+# docker -> ecr: push\ndocker images {class: animated}
+# ecr -> k8s: pull\ndocker images {class:animated}
+# ecr.class: ecr
+# jenkins -> argo: call {class: animated}
+# argo.class: argocd
+# argo -> k8s: configure\ndeployments {class: animated}
+# k8s.class: k8s
 
 apps -> keycloak: OIDC auth {class: dash}
 keycloak.class: keycloak
@@ -164,4 +165,4 @@ aad -> keycloak: SSO redirect {class: invisible}
 keycloak -> aad: SSO redirect {class: dash}
 
 apps -> aad: SSO redirect {class: invisible}
-#apps <- aad: SSO redirect {class: invisible}
+# apps <- aad: SSO redirect {class: invisible}
