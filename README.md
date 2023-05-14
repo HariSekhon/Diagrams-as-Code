@@ -302,7 +302,7 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 ![](images/kubernetes_external_traffic_policy.svg)
 
 
-### Jenkins on Kubernetes (GKE)
+### Jenkins on Kubernetes
 
 A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
 
