@@ -88,7 +88,7 @@ classes: {
     shape: image
   }
   keycloak: {
-    label: Keycloak\n(OIDC to Azure AD)
+    label: Keycloak
     icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
     shape: image
   }
@@ -102,6 +102,14 @@ classes: {
     label: Apps
     icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
     shape: image
+  }
+  oidc: {
+    label: SSO redirect\n(OIDC)
+    style.stroke-dash: 5
+  }
+  saml: {
+    label: SSO redirect\n(SAML)
+    style.stroke-dash: 5
   }
   animated: {
     style.animated: true
@@ -121,19 +129,23 @@ aws.label: AWS IAM Identity Center\n(formerly AWS SSO)
 aws_services.class: aws_services
 github.class: github
 jenkins.class: jenkins
+#argo.class: argocd
 apps.class: apps
 
 users -> aad: login {class: animated}
 users <- aad: credentials {class: animated}
 
 aad -> aws: SSO redirect {class: invisible}
-aad <- aws: SSO redirect {class: dash}
+aad <- aws: SSO redirect {class: saml}
 
 aad -> github: SSO redirect {class: invisible}
-aad <- github: SSO redirect {class: dash}
+aad <- github: SSO redirect {class: saml}
 
 aad -> jenkins: SSO redirect {class: invisible}
-aad <- jenkins: SSO redirect {class: dash}
+aad <- jenkins: SSO redirect {class: oidc}
+
+#aad -> argo: SSO redirect {class: invisible}
+#aad <- argo: SSO redirect {class: oidc}
 
 apps -> aad: SSO redirect {class: invisible}
 apps <- aad: SSO redirect {class: invisible}
@@ -141,7 +153,7 @@ apps <- aad: SSO redirect {class: invisible}
 apps -> keycloak: OIDC auth {class: dash}
 keycloak.class: keycloak
 # aad -> keycloak: SSO redirect {class: invisible}
-keycloak -> aad: SSO redirect {class: dash}
+keycloak -> aad: {class: oidc}
 
 users -> aws: access # {class: animated}
 users -> github: access # {class: animated}
