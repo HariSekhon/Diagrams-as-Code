@@ -70,7 +70,7 @@ jobs:
       - name: D2 fmt
         run: d2 fmt *.d2
 
-      - name: Fix shebang header
+      - name: Fix shebang headers
         run: |
           # put shebang header back to normal to work around this bug:
           #
