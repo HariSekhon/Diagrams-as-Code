@@ -354,7 +354,7 @@ computer: Desktop or Laptop {
       # |
     }
 
-    #browsers -> os #: {class: invisible}
+    # browsers -> os #: {class: invisible}
 
     os: Operating Systems {
       windows.class: windows
@@ -369,7 +369,7 @@ computer: Desktop or Laptop {
           suse.class: suse
         }
       }
-      #windows -- mac -- linux
+      # windows -- mac -- linux
     }
   }
 
@@ -378,8 +378,8 @@ computer: Desktop or Laptop {
 
   laptop.class: laptop
   desktop.class: desktop
-  laptop -> blank {class: invisible}
-  desktop -> blank {class: invisible}
+  laptop -> blank: {class: invisible}
+  desktop -> blank: {class: invisible}
 
   blank: {class: invisible}
   # desktop -> blank: {class: invisible}
