@@ -146,3 +146,4 @@ router -> router2: {class: default_gateway}
 router3 <- router2: {class: default_gateway}
 router6 <- router3: {class: have_route}
 router6 -> server1: {class: local}
+server1 -> desktop: {class: invisible}
