@@ -485,6 +485,7 @@ gitGraph
 ```
 Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer ([githubNextRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy)). It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating GitHub Releases in Jenkins ([githubCreateRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy)).
 
+
 ### LucidChart - GCP Architecture
 
 A sample architecture I did for a client for us to talk through, which was similar to what they had in mind (I won the gig).
@@ -493,6 +494,7 @@ This is the only diagram not as code (here for historical interest). I would emb
 
 ![GCP Diagram LucidChart](images/LucidChart_GCP_diagram.png)
 
+
 ### Web Clients
 
 When you're trying to explain to your kids how the internet works...
@@ -500,6 +502,20 @@ When you're trying to explain to your kids how the internet works...
 [web_clients.d2](web_clients.d2):
 
 ![](images/web_clients.svg)
+
+
+### Network - Layer 3 - Local - ARP
+
+[network_layer3_local.d2](network_layer3_local.d2):
+
+![](images/network_layer3_local.svg)
+
+
+### Network - Layer 3 - Remote - IP
+
+[network_layer3_remote.d2](network_layer3_remote.d2):
+
+![](images/network_layer3_remote.svg)
 
 
 ## Build from Source
