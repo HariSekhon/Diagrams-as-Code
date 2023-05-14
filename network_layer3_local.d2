@@ -121,5 +121,7 @@ desktop -> switch: {class: arp_broadcast}
 switch -> router: {class: arp_broadcast}
 switch -> server1: {class: arp_broadcast}
 switch -> server2: {class: arp_broadcast}
-server2 -> switch -> desktop: {class: arp_reply}
-desktop -> switch -> server2: {class: data}
+server2 -> switch: {class: arp_reply}
+switch -> desktop: {class: arp_reply}
+desktop -> switch: {class: data}
+switch -> server2: {class: data}
