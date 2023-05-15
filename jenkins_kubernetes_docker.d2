@@ -228,9 +228,6 @@ gcp: Google Cloud Platform {
       grype.class: grype
       trivy.class: trivy
 
-      docker.class: docker
-      docker.label: Docker-in-Docker\ncontainer
-
       # gcloud_sdk -> _.clair.container: Scan docker images\nfor vulnerabilities
       # gcloud_sdk -> _.sonar.container: Scan code
       gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
@@ -238,14 +235,19 @@ gcp: Google Cloud Platform {
 
       # gcloud_sdk -> docker: Docker Build
 
-      trivy -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
-      grype -> docker: use\nDOCKER_HOST=\ntcp://localhost:2375
+      trivy -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2375
+      grype -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2375
 
       # trivy -> _._.gcr: { style.stroke-dash: 5 }
       # grype -> _._.gcr: { style.stroke-dash: 5 }
 
-      docker -> _._.gcr: push built docker images {style.animated: true}
-      docker <- _._.gcr: pull docker images to test {style.animated: true}
+    }
+
+    docker: Docker\npod {
+      container.class: docker
+      container.label: Docker-in-Docker\ncontainer
+      container -> _._.gcr: push built docker images {style.animated: true}
+      container <- _._.gcr: pull docker images to test {style.animated: true}
     }
 
     # jenkins_agent.trivy -> jenkins.server: publish HTML report in UI { style.stroke-dash: 5 }
@@ -265,8 +267,8 @@ gcp: Google Cloud Platform {
 
     argocd: ArgoCD\npods {
       container.class: argocd
-      _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
-      container -> _.gke: {style.animated: true}
+      #_.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
+      #container -> _.gke: {style.animated: true}
     }
 
     clair: Clair\npod {
