@@ -1,4 +1,4 @@
-#!/usr/bin/env d2 --theme 0
+#!/usr/bin/env d2
 #
 #  Author: Hari Sekhon
 #  Date: 2023-05-11 01:42:50 +0100 (Thu, 11 May 2023)
@@ -240,7 +240,6 @@ gcp: Google Cloud Platform {
 
       # trivy -> _._.gcr: { style.stroke-dash: 5 }
       # grype -> _._.gcr: { style.stroke-dash: 5 }
-
     }
 
     docker: Docker\npod {
@@ -267,8 +266,8 @@ gcp: Google Cloud Platform {
 
     argocd: ArgoCD\npods {
       container.class: argocd
-      #_.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
-      #container -> _.gke: {style.animated: true}
+      # _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
+      # container -> _.gke: {style.animated: true}
     }
 
     clair: Clair\npod {
