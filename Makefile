@@ -211,7 +211,7 @@ fmt:
 	#
 	sleep 1
 	if uname -s | grep Darwin; then \
-		sed(){ gsed "$@"; }; \
+		sed(){ gsed "$$@"; }; \
 	fi; \
 	sed -i 's|# !/|#!/|' *.d2
 
