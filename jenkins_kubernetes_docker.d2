@@ -235,8 +235,8 @@ gcp: Google Cloud Platform {
 
       # gcloud_sdk -> docker: Docker Build
 
-      trivy -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2375
-      grype -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2375
+      trivy -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2376
+      grype -> _.docker: use\nDOCKER_HOST=\ntcp://docker.docker.svc.cluster.local:2376
 
       # trivy -> _._.gcr: { style.stroke-dash: 5 }
       # grype -> _._.gcr: { style.stroke-dash: 5 }
