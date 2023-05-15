@@ -271,7 +271,7 @@ platform: Cloud Platform or Datacenter {
 #  }
 # }
 
-computer: Desktop or Laptop {
+computer: Computer {
   # software -> _.platform.dns: {class: dns_request}
   # software <- _.platform.dns: {class: dns_response}
   software.os -> _.platform.dns: {class: dns_request}
@@ -369,6 +369,7 @@ computer: Desktop or Laptop {
           debian.class: debian
           redhat.class: redhat
           suse.class: suse
+          # ubuntu -- debian -- redhat -- suse: {class: invisible}
         }
       }
       # windows -- mac -- linux
