@@ -79,9 +79,14 @@ classes: {
     shape: image
   }
   mac: {
-    label: Mac
+    label: macOS / iOS
     icon: https://icons.terrastruct.com/dev%2Fapple.svg
     # icon: https://diagrams.mingrammer.com/img/resources/generic/os/ios.png
+    shape: image
+  }
+  android: {
+    label: Android
+    icon: https://icons.terrastruct.com/dev%2Fandroid.svg
     shape: image
   }
   debian: {
@@ -139,6 +144,16 @@ classes: {
   desktop: {
     label: Desktop
     icon: https://icons.terrastruct.com/tech%2Fdesktop.svg
+    shape: image
+  }
+  tablet: {
+    label: Tablet
+    icon: https://icons.terrastruct.com/tech%2F079-tablet-1.svg
+    shape: image
+  }
+  phone: {
+    label: Smart Phone
+    icon: https://icons.terrastruct.com/tech%2F052-smartphone-3.svg
     shape: image
   }
   server: {
@@ -345,6 +360,7 @@ computer: Desktop or Laptop {
     os: Operating Systems {
       windows.class: windows
       mac.class: mac
+      android.class: android
       linux: Linux {
         linux.class: linux
         # linux -- distros
@@ -364,11 +380,15 @@ computer: Desktop or Laptop {
     }
   }
 
-  software.os -> desktop: {class: invisible}
+  software.os -> phone: {class: invisible}
+  software.os -> tablet: {class: invisible}
   software.os -> laptop: {class: invisible}
+  software.os -> desktop: {class: invisible}
 
-  desktop.class: desktop
+  phone.class: phone
+  tablet.class: tablet
   laptop.class: laptop
+  desktop.class: desktop
   # laptop -> blank: {class: invisible}
   # desktop -> blank: {class: invisible}
   #
