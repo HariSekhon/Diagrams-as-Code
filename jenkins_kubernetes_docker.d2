@@ -243,7 +243,7 @@ gcp: Google Cloud Platform {
       clairctl -> _.clair.container: Index & Match\nagainst vulnerabilities DBs {style.animated: true}
 
       gcloud_sdk -> grype: Scan code & docker images\nfor vulnerabilities
-      gcloud_sdk -> trivy: Scan code & docker images\nfor vulnerabilities
+      gcloud_sdk -> trivy: Scan code\n& docker images\nfor vulnerabilities
 
       # gcloud_sdk -> docker: Docker Build
 
@@ -277,7 +277,7 @@ gcp: Google Cloud Platform {
 
     argocd: ArgoCD\npods {
       container.class: argocd
-      _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize\nto Kubernetes
+      _.jenkins_agent.gcloud_sdk -> container: Deploy\nKustomize\n+ Helm\nto\nKubernetes
       # container -> _.gke: {style.animated: true}
     }
 
