@@ -240,7 +240,7 @@ gcp: Google Cloud Platform {
         label: clairctl
         class: clair
       }
-      clairctl -> _.clair.container: check vulnerabilities DB
+      clairctl -> _.clair.container: Index & Match\nagainst vulnerabilities DBs
 
       gcloud_sdk -> grype: Scan code & docker images\nfor vulnerabilities
       gcloud_sdk -> trivy: Scan code & docker images\nfor vulnerabilities
@@ -268,7 +268,7 @@ gcp: Google Cloud Platform {
         class: trivy
       }
       server -> _.jenkins_agent.trivy: {
-        label: cached vulnerability DB\n(massive speed up vs just CLI)
+        label: cached vulnerability DBs\n(massive speed up vs just CLI)
         style.animated: true
         style.stroke-dash: 5
       }
