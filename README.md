@@ -251,7 +251,7 @@ I've administered [Azure Active Directory](https://azure.microsoft.com/en-us/pro
 
 ### Jenkins on Kubernetes
 
-A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
+A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker, SonarQube, Clair, Grype and Trivy for code & container scanning.
 
 GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base), [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base), [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
 
