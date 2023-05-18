@@ -203,7 +203,7 @@ clean:
 
 .PHONY: fmt
 fmt:
-	d2 fmt *.d2
+	d2 fmt *.d2 custom/*.d2
 
 	# put shebang header back to normal to work around this bug:
 	#
