@@ -573,7 +573,7 @@ Create any single Python diagram and have it open automatically by running the p
 
 ## Templates
 
-The [templates/template.d2](https://github.com/HariSekhon/Templates/blob/master/template.d2) and [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) show the basics of each language.
+The [templates/diagram.d2](https://github.com/HariSekhon/Templates/blob/master/diagram.d2) and [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) show the basics of each language.
 
 They are a good starting point for creating your own diagrams, and come pre-loaded with many useful icons, links to docs and links to icon sets.
 
