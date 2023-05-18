@@ -226,13 +226,6 @@ gitGraph
 ```
 
 
-### AWS Web Traffic
-
-[aws_web_traffic.py](aws_web_traffic.py):
-
-![](images/aws_web_traffic.png)
-
-
 ### AWS Load Balanced Web Farm
 
 [aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
@@ -357,41 +350,6 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
 ![](images/opentsdb_kubernetes_hbase.svg)
-
-
-### AWS Clustered Web Services
-
-[aws_clustered_web_services.py](aws_clustered_web_services.py):
-
-![](images/aws_clustered_web_services.png)
-
-
-### Advanced Web Services Open Source
-
-[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
-
-![](images/advanced_web_services_open_source.png)
-
-
-### GCP Pub/Sub Analytics
-
-[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
-
-![](images/gcp_pubsub_analytics.png)
-
-
-### AWS Event Processing
-
-[aws_event_processing.py](aws_event_processing.py):
-
-![](images/aws_event_processing.png)
-
-
-### AWS Serverless Image Processing
-
-[aws_serverless_image_processing.py](aws_serverless_image_processing.py):
-
-![](images/aws_serverless_image_processing.png)
 
 
 ### Devs Test in Production
@@ -528,6 +486,51 @@ When you're trying to explain to your kids how the internet works...
 [network_layer3_remote.d2](network_layer3_remote.d2):
 
 ![](images/network_layer3_remote.svg)
+
+## Samples Revamped
+
+These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/getting-started/examples) and [Cloudgram](https://cloudgram.dedalusone.com/examples.html) examples.
+
+### AWS Web Traffic
+
+[aws_web_traffic.py](aws_web_traffic.py):
+
+![](images/aws_web_traffic.png)
+
+
+### AWS Clustered Web Services
+
+[aws_clustered_web_services.py](aws_clustered_web_services.py):
+
+![](images/aws_clustered_web_services.png)
+
+
+### Advanced Web Services Open Source
+
+[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
+
+![](images/advanced_web_services_open_source.png)
+
+
+### GCP Pub/Sub Analytics
+
+[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
+
+![](images/gcp_pubsub_analytics.png)
+
+
+### AWS Event Processing
+
+[aws_event_processing.py](aws_event_processing.py):
+
+![](images/aws_event_processing.png)
+
+
+### AWS Serverless Image Processing
+
+[aws_serverless_image_processing.py](aws_serverless_image_processing.py):
+
+![](images/aws_serverless_image_processing.png)
 
 
 ## Build from Source
