@@ -257,7 +257,7 @@ gcp: Google Cloud Platform {
     docker: Docker\npod {
       container.class: docker
       container.label: Docker-in-Docker\ncontainer
-      container -> _._.gcr: push built docker images {style.animated: true}
+      #container -> _._.gcr: push built docker images {style.animated: true}
       container <- _._.gcr: pull docker images to test {style.animated: true}
     }
 
