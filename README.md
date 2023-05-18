@@ -78,7 +78,6 @@ I read an article that said:
   - [GitHub Actions CI/CD](#github-actions-cicd)
   - [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
   - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
-  - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
@@ -97,6 +96,7 @@ I read an article that said:
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Samples Revamped](#samples-revamped)
   - [AWS Web Traffic](#aws-web-traffic)
+  - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
   - [Advanced Web Services Open Source](#advanced-web-services-open-source)
   - [GCP Pub/Sub Analytics](#gcp-pubsub-analytics)
@@ -225,13 +225,6 @@ gitGraph
     merge long-lived-branch id: "Finallly Merged!" type: HIGHLIGHT
     commit id: "Please never do that again"
 ```
-
-
-### AWS Load Balanced Web Farm
-
-[aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
-
-![](images/aws_load_balanced_web_farm.png)
 
 
 ### Azure Active Directory Single Sign-On
@@ -497,6 +490,13 @@ These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/g
 [aws_web_traffic.py](aws_web_traffic.py):
 
 ![](images/aws_web_traffic.png)
+
+
+### AWS Load Balanced Web Farm
+
+[aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
+
+![](images/aws_load_balanced_web_farm.png)
 
 
 ### AWS Clustered Web Services
