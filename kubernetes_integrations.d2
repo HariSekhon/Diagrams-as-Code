@@ -79,6 +79,21 @@ classes: {
     # icon: https://diagrams.mingrammer.com/img/resources/azure/network/dns-zones.png
     shape: image
   }
+  externaldns: {
+    label: External DNS
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/external-dns.png
+    shape: image
+  }
+  kustomize: {
+    label: Kustomize
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/kustomize.png
+    shape: image
+  }
+  helm: {
+    label: Helm
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/helm.png
+    shape: image
+  }
   cloudflare: {
     label: Cloudflare DNS
     icon: https://diagrams.mingrammer.com/img/resources/saas/cdn/cloudflare.png
@@ -201,7 +216,7 @@ aws: AWS {
     k8s.class: k8s
     dns: External DNS {
       pod.class: pod
-      dns.class: dns
+      dns.class: externaldns
       pod -- dns
       dns -> _._.route53: {class: registerdns}
       dns -> _._._.cloudflare: {class: registerdns}
