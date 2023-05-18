@@ -228,7 +228,7 @@ gcp: Google Cloud Platform {
       grype.class: grype
       trivy.class: trivy
 
-      gcloud_sdk -> sonar-scanner: Scan code
+      gcloud_sdk -> sonar-scanner: Scan code for\nbugs & vulnerabilities
       sonar-scanner: {
         label: Sonar Scanner
         class: sonarqube
@@ -242,8 +242,8 @@ gcp: Google Cloud Platform {
       }
       clairctl -> _.clair.container: check vulnerabilities DB
 
-      gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
-      gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
+      gcloud_sdk -> grype: Scan code & docker images\nfor vulnerabilities
+      gcloud_sdk -> trivy: Scan code & docker images\nfor vulnerabilities
 
       # gcloud_sdk -> docker: Docker Build
 
