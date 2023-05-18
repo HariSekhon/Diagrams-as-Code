@@ -228,8 +228,20 @@ gcp: Google Cloud Platform {
       grype.class: grype
       trivy.class: trivy
 
-      # gcloud_sdk -> _.clair.container: Scan docker images\nfor vulnerabilities
-      # gcloud_sdk -> _.sonar.container: Scan code
+      gcloud_sdk -> sonar-scanner: Scan code
+      sonar-scanner: {
+        label: Sonar Scanner
+        class: sonarqube
+      }
+      sonar-scanner -> _.sonar.container: Report results
+
+      gcloud_sdk -> clairctl: Scan docker images\nfor vulnerabilities
+      clairctl: {
+        label: clairctl
+        class: clair
+      }
+      clairctl -> _.clair.container: check vulnerabilities DB
+
       gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
       gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
 
@@ -256,7 +268,7 @@ gcp: Google Cloud Platform {
         class: trivy
       }
       server -> _.jenkins_agent.trivy: {
-        label: cached vulnerability DB\n(massive speed up)
+        label: cached vulnerability DB\n(massive speed up vs just CLI)
         style.animated: true
         style.stroke-dash: 5
       }
@@ -266,7 +278,7 @@ gcp: Google Cloud Platform {
 
     argocd: ArgoCD\npods {
       container.class: argocd
-      # _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize
+      _.jenkins_agent.gcloud_sdk -> container: Deploy\nHelm + Kustomize\nto Kubernetes
       # container -> _.gke: {style.animated: true}
     }
 
@@ -286,13 +298,11 @@ gcp: Google Cloud Platform {
     #  style.stroke-dash: 5
     # }
     # forces sonar back to the right
-    clair -- blank: {
-      style.opacity: 0
-      style.stroke-dash: 5
-    }
-    sonar -- blank: {
-      style.opacity: 0
-      style.stroke-dash: 5
-    }
+    # clair -- blank: {
+    #  #style.opacity: 0
+    # }
+    # sonar -- blank: {
+    #  #style.opacity: 0
+    # }
   }
 }
