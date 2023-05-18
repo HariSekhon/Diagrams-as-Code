@@ -81,11 +81,11 @@ I read an article that said:
   - [AWS Web Traffic](#aws-web-traffic)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
+  - [Jenkins on Kubernetes](#jenkins-on-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
   - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
   - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
   - [Kubernetes Service External Traffic Policy](#kubernetes-service-external-traffic-policy)
-  - [Jenkins on Kubernetes](#jenkins-on-kubernetes)
   - [Kubernetes on Premise](#kubernetes-on-premise)
   - [Traefik Kubernetes Ingress on GKE](#traefik-kubernetes-ingress-on-gke)
   - [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
@@ -249,6 +249,19 @@ I've administered [Azure Active Directory](https://azure.microsoft.com/en-us/pro
 ![](images/azure_ad_aws_github_keycloak.svg)
 
 
+### Jenkins on Kubernetes
+
+A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
+
+GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base), [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base), [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
+
+GitHub repo: [Jenkins](https://github.com/HariSekhon/Jenkins) - Advanced [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile) & [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions, eg. [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy), [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy), [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy) among many others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars) and epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
+
+[jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
+
+![](images/jenkins_kubernetes_docker.svg)
+
+
 ### GCP Cloudflare Web Architecture GKE
 
 A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
@@ -287,19 +300,6 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 [kubernetes_external_traffic_policy.d2](kubernetes_external_traffic_policy.d2):
 
 ![](images/kubernetes_external_traffic_policy.svg)
-
-
-### Jenkins on Kubernetes
-
-A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker and Trivy container scanning.
-
-GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base), [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base), [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
-
-GitHub repo: [Jenkins](https://github.com/HariSekhon/Jenkins) - Advanced [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile) & [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions, eg. [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy), [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy), [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy) among many others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars) and epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
-
-[jenkins_kubernetes_docker.d2](jenkins_kubernetes_docker.d2):
-
-![](images/jenkins_kubernetes_docker.svg)
 
 
 ### Kubernetes on Premise
