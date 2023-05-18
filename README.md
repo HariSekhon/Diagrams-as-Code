@@ -81,7 +81,7 @@ I read an article that said:
   - [AWS Web Traffic](#aws-web-traffic)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
-  - [Jenkins on Kubernetes](#jenkins-on-kubernetes)
+  - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
   - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
   - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
@@ -249,7 +249,7 @@ I've administered [Azure Active Directory](https://azure.microsoft.com/en-us/pro
 ![](images/azure_ad_aws_github_keycloak.svg)
 
 
-### Jenkins on Kubernetes
+### Jenkins CI/CD on Kubernetes
 
 A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker, SonarQube, Clair, Grype and Trivy for code & container scanning.
 
