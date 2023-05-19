@@ -487,9 +487,9 @@ These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/g
 
 ### AWS Web Traffic
 
-[aws_web_traffic.py](aws_web_traffic.py):
+[aws_web_traffic_classic.py](aws_web_traffic_classic.py):
 
-![](images/aws_web_traffic.png)
+![](images/aws_web_traffic_classic.png)
 
 
 ### AWS Load Balanced Web Farm
