@@ -1,4 +1,4 @@
-# !/usr/bin/env d2
+#!/usr/bin/env d2
 #
 #  vim:ts=2:sts=2:sw=2:et:filetype=d2
 #
@@ -239,7 +239,7 @@ aws: AWS {
   aws.class: aws
   route53.class: route53
   secrets_manager.class: aws_secret
-  secrets_manager -> aws: {class: invisible}
+  route53 -> secrets_manager -> aws: {class: invisible}
   # secrets_manager -> eks.secrets.secrets {class: pullsecrets}
   eks: EKS Cluster {
     k8s -- eks
@@ -285,7 +285,7 @@ gcp: GCP {
   gcp.class: gcp
   clouddns.class: clouddns
   secrets_manager.class: gcp_secret
-  secrets_manager -> gcp: {class: invisible}
+  clouddns -> secrets_manager -> gcp: {class: invisible}
   # secrets_manager -> gke.secrets.secrets: {class: pullsecrets}
   gke: GKE Cluster {
     k8s -- gke
