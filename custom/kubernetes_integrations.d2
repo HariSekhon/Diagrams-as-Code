@@ -1,4 +1,4 @@
-#!/usr/bin/env d2
+# !/usr/bin/env d2
 #
 #  vim:ts=2:sts=2:sw=2:et:filetype=d2
 #
@@ -177,7 +177,7 @@ classes: {
     # dark filled
     icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
     # light filled
-    #icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
+    # icon: https://diagrams.mingrammer.com/img/resources/gcp/devtools/container-registry.png
     shape: image
   }
   clouddns: {
@@ -223,22 +223,28 @@ classes: {
 }
 
 internet: {
-    style.opacity: 0
-    internet -> cloudflare: {class: animated}
-    blank -> letsencrypt: {class: invisible}
-    blank.class: invisible
+  style.opacity: 0
+  internet -> cloudflare: {class: animated}
+  internet -> _.aws.route53: {class: animated}
+  internet -> _.gcp.clouddns: {class: animated}
+  blank -> letsencrypt: {class: invisible}
+  blank.class: invisible
 
-    internet.class: Internet
-    cloudflare.class: Cloudflare
-    letsencrypt.class: letsencrypt
+  internet.class: Internet
+  cloudflare.class: Cloudflare
+  letsencrypt.class: letsencrypt
 }
 
 aws: AWS {
   aws.class: aws
   route53.class: route53
   secrets_manager.class: aws_secret
-  #secrets_manager -> eks.secrets.secrets {class: pullsecrets}
+  secrets_manager -> aws: {class: invisible}
+  # secrets_manager -> eks.secrets.secrets {class: pullsecrets}
   eks: EKS Cluster {
+    k8s -- eks
+    eks.class: eks
+    k8s.class: k8s
     ingress: Ingress {
       container.class: ingress
       nginx.class: nginx
@@ -251,7 +257,7 @@ aws: AWS {
     }
     certmanager: Cert Manager\npod {
       container.class: certmanager
-      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _._._.internet.letsencrypt: get free SSL certificates for Ingresses {class: animated}
       container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
     dns: External DNS {
@@ -272,17 +278,19 @@ aws: AWS {
       container.class: argocd
     }
     argocd.container -> k8s: Deploy App {class: argodeploy}
-    k8s -- eks
-    eks.class: eks
-    k8s.class: k8s
   }
 }
 
 gcp: GCP {
+  gcp.class: gcp
   clouddns.class: clouddns
   secrets_manager.class: gcp_secret
-  #secrets_manager -> gke.secrets.secrets: {class: pullsecrets}
+  secrets_manager -> gcp: {class: invisible}
+  # secrets_manager -> gke.secrets.secrets: {class: pullsecrets}
   gke: GKE Cluster {
+    k8s -- gke
+    gke.class: gke
+    k8s.class: k8s
     ingress: Ingress {
       container.class: ingress
       nginx.class: nginx
@@ -295,15 +303,15 @@ gcp: GCP {
     }
     certmanager: Cert Manager\npod {
       container.class: certmanager
-      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _._._.internet.letsencrypt: get free SSL certificates for Ingresses {class: animated}
       container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
     dns: External DNS {
       pod.class: pod
       dns.class: externaldns
       dns -- pod
-      dns -> _._.clouddns {class: registerdns}
-      dns -> _._._.internet.cloudflare {class: registerdns}
+      dns -> _._.clouddns: {class: registerdns}
+      dns -> _._._.internet.cloudflare: {class: registerdns}
     }
     secrets: External Secrets {
       pod.class: pod
@@ -316,9 +324,5 @@ gcp: GCP {
       container.class: argocd
     }
     argocd.container -> k8s: Deploy App {class: argodeploy}
-    k8s -- gke
-    gke.class: gke
-    k8s.class: k8s
   }
-  gcp.class: gcp
 }
