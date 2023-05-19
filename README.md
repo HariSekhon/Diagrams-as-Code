@@ -75,7 +75,7 @@ I read an article that said:
 ### Index
 
 - [Diagrams](#diagrams)
-  - [GitHub Actions CI/CD](#github-actions-cicd)
+  - [This Repo's Creation and GitHub Actions CI/CD to automatically (re)generate diagrams from code changes](#this-repos-creation-and-github-actions-cicd-to-automatically-regenerate-diagrams-from-code-changes)
   - [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
   - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
   - [AWS Web Traffic Classic](#aws-web-traffic-classic)
