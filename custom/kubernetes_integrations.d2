@@ -1,4 +1,4 @@
-#!/usr/bin/env d2 --theme 200
+#!/usr/bin/env d2
 #
 #  vim:ts=2:sts=2:sw=2:et:filetype=d2
 #
@@ -70,6 +70,22 @@ classes: {
     icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
     shape: image
   }
+  nginx: {
+    label: Nginx
+    # icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/nginx.png
+    shape: image
+  }
+  traefik: {
+    label: Traefik
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/traefik.png
+    shape: image
+  }
+  kong: {
+    label: Kong
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/kong.png
+    shape: image
+  }
   kustomize: {
     label: Kustomize
     icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/kustomize.png
@@ -78,6 +94,16 @@ classes: {
   helm: {
     label: Helm
     icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/helm.png
+    shape: image
+  }
+  certmanager: {
+    label: Cert Manager
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/certificates/cert-manager.png
+    shape: image
+  }
+  letsencrypt: {
+    label: Lets Encrypt
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/certificates/lets-encrypt.png
     shape: image
   }
   externaldns: {
@@ -196,14 +222,16 @@ classes: {
   }
 }
 
-cloudflare.class: Cloudflare
-internet.class: Internet
+internet: {
+    style.opacity: 0
+    internet -> cloudflare: {class: animated}
+    blank -> letsencrypt: {class: invisible}
+    blank.class: invisible
 
-cloudflare -> aws
-cloudflare -> gcp
-
-internet -> aws
-internet -> gcp
+    internet.class: Internet
+    cloudflare.class: Cloudflare
+    letsencrypt.class: letsencrypt
+}
 
 aws: AWS {
   aws.class: aws
@@ -219,7 +247,7 @@ aws: AWS {
       dns.class: externaldns
       pod -- dns
       dns -> _._.route53: {class: registerdns}
-      dns -> _._._.cloudflare: {class: registerdns}
+      dns -> _._._.internet.cloudflare: {class: registerdns}
     }
     secrets: External Secrets {
       pod.class: pod
@@ -234,8 +262,18 @@ aws: AWS {
     argocd.container -> k8s: Deploy App {class: argodeploy}
     ingress: Ingress {
       container.class: ingress
-      _._._.internet -> container: {class: http}
-      _._._.cloudflare -> container: {class: proxied}
+      nginx.class: nginx
+      kong.class: kong
+      traefik.class: traefik
+      container -> kong: {class: invisible}
+      nginx -> traefik: {class: invisible}
+      _._._.internet.internet -> container: {class: http}
+      _._._.internet.cloudflare -> container: {class: proxied}
+    }
+    certmanager: Cert Manager\npod {
+      container.class: certmanager
+      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
   }
 }
@@ -250,10 +288,10 @@ gcp: GCP {
     k8s.class: k8s
     dns: External DNS {
       pod.class: pod
-      dns.class: dns
+      dns.class: externaldns
       pod -- dns
       dns -> _._.clouddns {class: registerdns}
-      dns -> _._._.cloudflare {class: registerdns}
+      dns -> _._._.internet.cloudflare {class: registerdns}
     }
     secrets: External Secrets {
       pod.class: pod
@@ -268,8 +306,18 @@ gcp: GCP {
     argocd.container -> k8s: Deploy App {class: argodeploy}
     ingress: Ingress {
       container.class: ingress
-      _._._.internet -> container: {class: http}
-      _._._.cloudflare -> container: {class: proxied}
+      nginx.class: nginx
+      kong.class: kong
+      traefik.class: traefik
+      container -> kong: {class: invisible}
+      nginx -> traefik: {class: invisible}
+      _._._.internet.internet -> container: {class: http}
+      _._._.internet.cloudflare -> container: {class: proxied}
+    }
+    certmanager: Cert Manager\npod {
+      container.class: certmanager
+      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
   }
   gcp.class: gcp
