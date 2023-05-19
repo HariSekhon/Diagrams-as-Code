@@ -22,7 +22,7 @@ AWS Web Traffic
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 # from urllib.request import urlretrieve
@@ -73,7 +73,8 @@ with Diagram('AWS Web Traffic Classic',
         cdn = CloudFront("CloudFront CDN")
         s3 = S3("S3 bucket (static assets)")
         users \
-            >> Route53("Route53 DNS") \
+            >> Route53("Route53 DNS")
+        users \
             >> cdn
 
         with Cluster("VPC"):
