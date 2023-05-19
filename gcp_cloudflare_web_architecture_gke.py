@@ -22,7 +22,7 @@ GCP Cloudflare Web Architecture GKE
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.3'
+__version__ = '0.4'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -97,13 +97,13 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
     with Cluster("Google Cloud"):
         firewall = FirewallRules("Firewall")
         load_balancer = LoadBalancing("Cloud Load Balancer")
+        gcs = GCS("GCS bucket\n(static assets)")
         cdn \
             >> Edge(label="Proxied HTTPS Traffic") \
             >> firewall \
             >> load_balancer
+        cdn >> gcs
         # load_balancer - dns
-
-        gcs = GCS("GCS bucket\n(static assets)")
 
         with Cluster("Kubernetes Cluster"):
             eks = GKE("GKE")
@@ -120,7 +120,7 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
                 nginx >> service
                 pods = []
                 for _ in range(1, 4, 1):
-                    pods.append(service >> Pod(f"Pod {_}") >> gcs)
+                    pods.append(service >> Pod(f"Web {_}"))
                 #     argocd >> service
                 # argocd >> pods
 
@@ -129,7 +129,7 @@ with Diagram('GCP Cloudflare Web Architecture GKE',
                 nginx >> service
                 pods = []
                 for _ in range(1, 4, 1):
-                    pods.append(service >> Pod(f"Pod {_}") >> gcs)
+                    pods.append(service >> Pod(f"Web {_}"))
                 #     argocd >> service
                 # argocd >> pods
 
