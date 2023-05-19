@@ -1,4 +1,4 @@
-#!/usr/bin/env d2
+#!/usr/bin/env d2 jenkins_kubernetes_cicd.d2 jenkins_kubernetes_cicd.png -h # trick to eat arg
 #
 #  Author: Hari Sekhon
 #  Date: 2023-05-11 01:42:50 +0100 (Thu, 11 May 2023)
@@ -92,6 +92,7 @@ classes: {
     # pic only icon from twitter profile
     icon: https://pbs.twimg.com/profile_images/1500905367433318400/fMj5ti-L_400x400.jpg
     shape: image
+    style.opacity: 0.4
   }
   sonarcloud: {
     label: SonarCloud.io
@@ -230,10 +231,11 @@ gcp: Google Cloud Platform {
 
       gcloud_sdk -> sonar-scanner: Scan code for\nbugs & vulnerabilities
       sonar-scanner: {
-        label: Sonar Scanner
+        label: Sonar Scanner\n(DISABLED)
         class: sonarqube
       }
-      sonar-scanner -> _.sonar.container: Report results {style.animated: true}
+      #sonar-scanner -> _.sonar.container: Report results {style.animated: true}
+      sonar-scanner -> _.sonar.container: Report results {style.stroke-dash: 5}
 
       gcloud_sdk -> clairctl: Scan docker images\nfor vulnerabilities
       clairctl: {
@@ -242,8 +244,10 @@ gcp: Google Cloud Platform {
       }
       clairctl -> _.clair.container: Index & Match\nagainst vulnerabilities DBs {style.animated: true}
 
-      gcloud_sdk -> grype: Scan code & docker images\nfor vulnerabilities
-      gcloud_sdk -> trivy: Scan code\n& docker images\nfor vulnerabilities
+      #gcloud_sdk -> grype: Scan code & docker images\nfor vulnerabilities
+      #gcloud_sdk -> trivy: Scan code\n& docker images\nfor vulnerabilities
+      gcloud_sdk -> grype: Scan docker images\nfor vulnerabilities
+      gcloud_sdk -> trivy: Scan docker images\nfor vulnerabilities
 
       # gcloud_sdk -> docker: Docker Build
 
