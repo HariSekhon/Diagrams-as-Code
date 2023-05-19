@@ -227,12 +227,14 @@ internet: {
   internet -> cloudflare: {class: animated}
   internet -> _.aws.route53: {class: animated}
   internet -> _.gcp.clouddns: {class: animated}
+  internet -> github: {class: invisible}
   blank -> letsencrypt: {class: invisible}
   blank.class: invisible
 
   internet.class: Internet
   cloudflare.class: Cloudflare
   letsencrypt.class: letsencrypt
+  github.class: github
 }
 
 aws: AWS {
@@ -276,8 +278,9 @@ aws: AWS {
     }
     argocd: ArgoCD pods {
       container.class: argocd
+      container -> _.k8s: Deploy App {class: argodeploy}
+      _._._.internet.github -> container
     }
-    argocd.container -> k8s: Deploy App {class: argodeploy}
   }
 }
 
@@ -322,7 +325,8 @@ gcp: GCP {
     }
     argocd: ArgoCD pods {
       container.class: argocd
+      container -> _.k8s: Deploy App {class: argodeploy}
+      _._._.internet.github -> container
     }
-    argocd.container -> k8s: Deploy App {class: argodeploy}
   }
 }
