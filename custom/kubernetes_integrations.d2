@@ -245,7 +245,7 @@ aws: AWS {
     dns: External DNS {
       pod.class: pod
       dns.class: externaldns
-      pod -- dns
+      dns -- pod
       dns -> _._.route53: {class: registerdns}
       dns -> _._._.internet.cloudflare: {class: registerdns}
     }
@@ -289,7 +289,7 @@ gcp: GCP {
     dns: External DNS {
       pod.class: pod
       dns.class: externaldns
-      pod -- dns
+      dns -- pod
       dns -> _._.clouddns {class: registerdns}
       dns -> _._._.internet.cloudflare {class: registerdns}
     }
