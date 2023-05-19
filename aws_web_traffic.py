@@ -22,9 +22,10 @@ AWS Web Traffic
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.1'
+__version__ = '0.2'
 
 import os
+# from urllib.request import urlretrieve
 from diagrams import Diagram, Cluster
 
 # ============================================================================ #
@@ -38,22 +39,37 @@ from diagrams.aws.network import ELB, Route53, CloudFront  # , VPC
 from diagrams.aws.storage import S3
 from diagrams.aws.general import Users
 
+from diagrams.custom import Custom
+
+# pylint: disable=C0103
+# aws_url =
+aws_icon = 'aws.png'
+
+image_dir = 'images'
+
 # https://www.graphviz.org/doc/info/attrs.html
 graph_attr = {
     "splines": "spline",  # rounded arrows, much nicer
 }
 
+
+# NOTE: filename=images/ parameter to Diagram() changes the $PWD so icon path must be local dir,
+# but at this point we're still at top level dir so must join to prefix it with the image_dir
+# nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+# urlretrieve(aws_url, os.path.join(image_dir, aws_icon))
+
 # pylint: disable=W0104,W0106
-with Diagram('AWS Web Traffic',
+with Diagram('AWS Web Traffic Classic',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',     # left-to-right, other options: TB, BT, LR, RL
-             filename='images/aws_web_traffic',
+             filename=os.path.join(image_dir, 'aws_web_traffic'),
              graph_attr=graph_attr,
              ):
 
     users = Users("Users")
 
     with Cluster("AWS"):
+        Custom('', aws_icon)
         cdn = CloudFront("CloudFront CDN")
         s3 = S3("S3 bucket (static assets)")
         users \
@@ -68,6 +84,7 @@ with Diagram('AWS Web Traffic',
             cdn >> s3
 
             with Cluster("AutoScaling Group"):
-                lb >> EC2("Server 1")
-                lb >> EC2("Server 2")
+                lb >> EC2("Web Server 1")
+                lb >> EC2("Web Server 2")
+                lb >> EC2("Web Server 3")
                 # ApplicationAutoScaling("AutoScaling Group")
