@@ -78,6 +78,7 @@ I read an article that said:
   - [GitHub Actions CI/CD](#github-actions-cicd)
   - [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
   - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
+  - [AWS Web Traffic Classic](#aws-web-traffic-classic)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
@@ -95,7 +96,6 @@ I read an article that said:
   - [Network - Layer 3 - Local - ARP](#network---layer-3---local---arp)
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Samples Revamped](#samples-revamped)
-  - [AWS Web Traffic](#aws-web-traffic)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
   - [Advanced Web Services Open Source](#advanced-web-services-open-source)
@@ -225,6 +225,13 @@ gitGraph
     merge long-lived-branch id: "Finallly Merged!" type: HIGHLIGHT
     commit id: "Please never do that again"
 ```
+
+
+### AWS Web Traffic Classic
+
+[aws_web_traffic_classic.py](aws_web_traffic_classic.py):
+
+![](images/aws_web_traffic_classic.png)
 
 
 ### Azure Active Directory Single Sign-On
@@ -484,12 +491,6 @@ When you're trying to explain to your kids how the internet works...
 ## Samples Revamped
 
 These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/getting-started/examples) and [Cloudgram](https://cloudgram.dedalusone.com/examples.html) examples.
-
-### AWS Web Traffic
-
-[aws_web_traffic_classic.py](aws_web_traffic_classic.py):
-
-![](images/aws_web_traffic_classic.png)
 
 
 ### AWS Load Balanced Web Farm
