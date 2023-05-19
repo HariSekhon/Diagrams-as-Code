@@ -194,7 +194,7 @@ clean:
 	@echo
 	@echo "Removing PNG / SVG files:"
 	@echo
-	@rm -fv -- *.png *.svg
+	@rm -fv -- *.png *.svg custom/*.png custom/*.svg
 	@echo
 	@echo "Removing dot files:"
 	@for x in *.py; do rm -fv -- "$${x%.py}"; done
