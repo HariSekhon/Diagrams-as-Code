@@ -1,0 +1,128 @@
+#!/usr/bin/env d2
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2023-05-18 15:49:28 +0100 (Thu, 18 May 2023)
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                      D a t a c e n t e r   N e t w o r k
+# ============================================================================ #
+
+direction: down
+
+title: {
+  label: Datacenter Network
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  git: {
+    label: Git
+    icon: https://icons.terrastruct.com/dev%2Fgit.svg
+    shape: image
+  }
+  load_balancer: {
+    label: Load Balancer
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Load%20Balancing.svg
+    # icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FElastic-Load-Balancing.svg
+    # icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLoad%20Balancers.svg
+    shape: image
+  }
+  dns: {
+    label: DNS
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20DNS.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/gcp/network/dns.png
+    # icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FDNS%20Zones.svg
+    # icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-Route-53.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/azure/network/dns-zones.png
+    shape: image
+  }
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
+  linux: {
+    label: Linux
+    icon: https://icons.terrastruct.com/dev%2Flinux.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/generic/os/linux-general.png
+    shape: image
+  }
+  server: {
+    label: Server
+    icon: https://icons.terrastruct.com/tech%2F022-server.svg
+    # icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+    shape: image
+  }
+  firewall: {
+    label: Firewall
+    icon: https://icons.terrastruct.com/infra%2F003-firewall.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/generic/network/firewall.png
+    shape: image
+  }
+  router: {
+    label: Router
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/router.png
+    shape: image
+  }
+  switch: {
+    label: Switch
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/switch.png
+    shape: image
+  }
+  network: {
+    label: Network
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/subnet.png
+    # icon: https://icons.terrastruct.com/infra%2F014-network.svg
+    # icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+    shape: image
+  }
+  internet: {
+    label: Internet
+    icon: https://icons.terrastruct.com/infra%2F022-hosting.svg
+    shape: image
+  }
+  vpn: {
+    label: VPN
+    icon: https://diagrams.mingrammer.com/img/resources/generic/network/vpn.png
+    shape: image
+  }
+  storage: {
+    label: "HA Networked Storage\nfor Kubernetes\nPersistent Volumes"
+    icon: https://icons.terrastruct.com/azure%2FStorage%20Service%20Color%2FGeneral%20Storage.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/generic/storage/storage.png
+    shape: image
+  }
+  cisco: {
+    label: Cisco
+    icon: https://cdn-icons-png.flaticon.com/512/882/882730.png
+    shape: image
+  }
+  vmware: {
+    label: VMware
+    icon: https://diagrams.mingrammer.com/img/resources/generic/virtualization/vmware.png
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+  invisible: {
+    style.opacity: 0
+  }
+}
