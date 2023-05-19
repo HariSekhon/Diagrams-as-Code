@@ -249,17 +249,17 @@ aws: AWS {
       _._._.internet.internet -> container: {class: http}
       _._._.internet.cloudflare -> container: {class: proxied}
     }
+    certmanager: Cert Manager\npod {
+      container.class: certmanager
+      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
+    }
     dns: External DNS {
       pod.class: pod
       dns.class: externaldns
       dns -- pod
       dns -> _._.route53: {class: registerdns}
       dns -> _._._.internet.cloudflare: {class: registerdns}
-    }
-    certmanager: Cert Manager\npod {
-      container.class: certmanager
-      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
-      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
     secrets: External Secrets {
       pod.class: pod
@@ -293,17 +293,17 @@ gcp: GCP {
       _._._.internet.internet -> container: {class: http}
       _._._.internet.cloudflare -> container: {class: proxied}
     }
+    certmanager: Cert Manager\npod {
+      container.class: certmanager
+      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
+      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
+    }
     dns: External DNS {
       pod.class: pod
       dns.class: externaldns
       dns -- pod
       dns -> _._.clouddns {class: registerdns}
       dns -> _._._.internet.cloudflare {class: registerdns}
-    }
-    certmanager: Cert Manager\npod {
-      container.class: certmanager
-      container -> _._._.internet.letsencrypt:get free SSL certificates for Ingresses {class: animated}
-      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
     }
     secrets: External Secrets {
       pod.class: pod
