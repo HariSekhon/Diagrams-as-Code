@@ -112,9 +112,7 @@ I read an article that said:
 They say a picture is worth a thousand words...
 
 
-### GitHub Actions CI/CD
-
-How this repo got created...
+### This Repo's Creation and GitHub Actions CI/CD to automatically (re)generate diagrams from code changes
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
