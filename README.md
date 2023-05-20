@@ -75,7 +75,7 @@ I read an article that said:
 ### Index
 
 - [Diagrams](#diagrams)
-  - [This Repo's Creation and GitHub Actions CI/CD to automatically (re)generate diagrams from code changes](#this-repos-creation-and-github-actions-cicd-to-automatically-regenerate-diagrams-from-code-changes)
+  - [This Repo's Creation & GitHub Actions CI/CD to auto-(re)generate diagrams from code changes](#this-repos-creation--github-actions-cicd-to-auto-regenerate-diagrams-from-code-changes)
   - [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
   - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
   - [AWS Web Traffic Classic](#aws-web-traffic-classic)
@@ -112,14 +112,14 @@ I read an article that said:
 They say a picture is worth a thousand words...
 
 
-### This Repo's Creation and GitHub Actions CI/CD to automatically (re)generate diagrams from code changes
+### This Repo's Creation & GitHub Actions CI/CD to auto-(re)generate diagrams from code changes
 
 [github_actions_cicd.py](github_actions_cicd.py):
 
 ![](images/github_actions_cicd.png)
 
 
-Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#github-actions-cicd) for this one or you may squint:
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#this-repos-creation--github-actions-cicd-to-auto-regenerate-diagrams-from-code-changes) to see better:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
