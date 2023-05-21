@@ -196,7 +196,7 @@ clean:
 	@echo
 	@rm -fv -- *.png *.svg custom/*.png custom/*.svg
 	@echo
-	@echo "Removing dot files:"
+	@echo "Removing intermediate dot files of the same name as Python files but without the prefix:"
 	@for x in *.py; do rm -fv -- "$${x%.py}"; done
 	@echo
 	@#git status --porcelain --ignored | awk '/^!!/{print $2}' | xargs rm -fv --
