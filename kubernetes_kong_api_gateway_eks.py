@@ -22,7 +22,7 @@ Kong API Gateway on Kubernetes (AWS EKS)
 """
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.3'
+__version__ = '0.4'
 
 import os
 from diagrams import Diagram, Cluster, Edge
@@ -108,16 +108,17 @@ with Diagram('Kubernetes Kong API Gateway EKS',
                 #     argocd >> service
                 # argocd >> pods
 
-            ( elb >> ingress ) - kong
+            elb >> Edge(label="HTTPS traffic") >> ingress
+            ingress - kong
 
             letsencrypt \
                 >> Edge(label="ACME protocol\ngenerated certificate", style="dashed") \
                 >> certmanager \
-                >> Edge(label="SSL cert", style="dashed") \
+                >> Edge(label="SSL\ncert", style="dashed") \
                 >> ingress
 
             github >> \
                 Edge(label="GitOps trigger", style="dashed") \
                 >> argocd \
-                >> Edge(label="updates", style="dashed") \
+                >> Edge(label="k8s\nyaml\nmanifest\nupdates", style="dashed") \
                 >> ingress
