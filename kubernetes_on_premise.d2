@@ -55,12 +55,6 @@ classes: {
     # icon: https://landscape.cncf.io/logos/metal-lb.svg
     shape: image
   }
-  metallb: {
-    label: MetalLB
-    # icon: https://devopstales.github.io/img/metallb2.png
-    icon: https://metallb.universe.tf/images/logo/metallb-white.png
-    shape: image
-  }
   k8s: {
     icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
     shape: image
@@ -87,13 +81,8 @@ user_network: Network {class: network}
 user_network -> lb1
 user_network -> lb2
 
-#user_network -> Server 1.metallb1
-#user_network -> Server 2.metallb2
-#user_network -> Server 3.metallb3
-
 lb1: {class: load_balancer}
 lb2: {class: load_balancer}
-# lb1 -- lb2: VRRP
 
 lb1 -> network
 lb2 -> network
@@ -109,26 +98,14 @@ network -> Server 3
 
 Server 1 {
   class: server
-  metallb1.class: metallb
-  metallb1 -> kube1
-#  metallb1 -> _.Server 2.kube2
-#  metallb1 -> _.Server 3.kube3
   kube1: Kubernetes 1 {class: k8s}
 }
 Server 2 {
   class: server
-  metallb2.class: metallb
-  metallb2 -> kube2
-#  metallb2 -> _.Server 1.kube1
-#  metallb2 -> _.Server 3.kube3
   kube2: Kubernetes 2 {class: k8s}
 }
 Server 3 {
   class: server
-  metallb3.class: metallb
-  metallb3 -> kube3
-#  metallb3 -> _.Server 1.kube1
-#  metallb3 -> _.Server 2.kube2
   kube3: Kubernetes 3 {class: k8s}
 }
 
