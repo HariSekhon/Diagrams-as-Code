@@ -163,7 +163,7 @@ gitGraph
 
 \* [Environment Branches](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#git---environment-branches) may be one of the few exceptions but requires workflow discipline.
 
-See Also: 100+ scripts for Git and most major Git repo providers like GitHub, GitLab, Bitbucket, Azure DevOps etc. found in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo.
+See Also: 100+ scripts for Git and the major Git repo providers like GitHub, GitLab, Bitbucket, Azure DevOps in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo.
 
 ```mermaid
 %% https://mermaid.js.org/syntax/gitgraph.html#gitgraph-specific-configuration-options
