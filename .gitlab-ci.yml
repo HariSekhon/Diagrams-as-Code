@@ -13,7 +13,13 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
+# ============================================================================ #
+#                               G i t L a b   C I
+# ============================================================================ #
+
 # https://docs.gitlab.com/ee/ci/yaml/README.html
+
+#include: '.gitlab/*.y*ml'
 
 image: ubuntu:18.04
 
@@ -21,4 +27,4 @@ job:
   before_script:
     - setup/ci_bootstrap.sh
   script:
-    - make init && make ci test diagrams
+    - make init && make ci test
