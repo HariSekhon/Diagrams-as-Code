@@ -29,6 +29,11 @@ title: {
 }
 
 classes: {
+  dns: {
+    label: DNS
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20DNS.svg
+    shape: image
+  }
   network: {
     #icon: https://icons.terrastruct.com/essentials%2F092-network.svg
     #icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
@@ -41,13 +46,19 @@ classes: {
     shape: image
   }
   load_balancer: {
-    label: "HA Load Balancer\n(HAProxy / Nginx / Traefik / Kong)"
+    label: "HA Master Load Balancer\n(HAProxy / Nginx / Traefik / Kong)"
     # there isn't a good generic load balancer icon so using this for now - switch to one of the product specific icons if you know which one
-    icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
-    # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
+    #icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/kong.png
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/traefik.png
     # icon: https://landscape.cncf.io/logos/metal-lb.svg
+    shape: image
+  }
+  metallb: {
+    label: MetalLB
+    # icon: https://devopstales.github.io/img/metallb2.png
+    icon: https://metallb.universe.tf/images/logo/metallb-white.png
     shape: image
   }
   k8s: {
@@ -60,25 +71,29 @@ classes: {
   }
   server: {
     icon: https://icons.terrastruct.com/essentials%2F112-server.svg
-    shape: image
   }
 }
+
+users -> DNS -> user_network
+DNS.class: dns
 
 users: Users {
   icon: https://icons.terrastruct.com/essentials%2F359-users.svg
   shape: image
 }
 
-users -> user_network
-
 user_network: Network {class: network}
 
 user_network -> lb1
 user_network -> lb2
-# lb1 -- lb2: VRRP
+
+#user_network -> Server 1.metallb1
+#user_network -> Server 2.metallb2
+#user_network -> Server 3.metallb3
 
 lb1: {class: load_balancer}
 lb2: {class: load_balancer}
+# lb1 -- lb2: VRRP
 
 lb1 -> network
 lb2 -> network
@@ -88,21 +103,34 @@ network: Network {
   # style.opacity: 0
 }
 
-network -> kube1
-network -> kube2
-network -> kube3
+network -> Server 1
+network -> Server 2
+network -> Server 3
 
-kube1: Kubernetes 1 {class: k8s}
-kube2: Kubernetes 2 {class: k8s}
-kube3: Kubernetes 3 {class: k8s}
-
-kube1 -- Server 1
-kube2 -- Server 2
-kube3 -- Server 3
-
-Server 1.class: server
-Server 2.class: server
-Server 3.class: server
+Server 1 {
+  class: server
+  metallb1.class: metallb
+  metallb1 -> kube1
+#  metallb1 -> _.Server 2.kube2
+#  metallb1 -> _.Server 3.kube3
+  kube1: Kubernetes 1 {class: k8s}
+}
+Server 2 {
+  class: server
+  metallb2.class: metallb
+  metallb2 -> kube2
+#  metallb2 -> _.Server 1.kube1
+#  metallb2 -> _.Server 3.kube3
+  kube2: Kubernetes 2 {class: k8s}
+}
+Server 3 {
+  class: server
+  metallb3.class: metallb
+  metallb3 -> kube3
+#  metallb3 -> _.Server 1.kube1
+#  metallb3 -> _.Server 2.kube2
+  kube3: Kubernetes 3 {class: k8s}
+}
 
 # Server 1 -- Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
 # Server 2 -- Server 3: VRRP {style.stroke-dash: 5}
@@ -118,8 +146,6 @@ Server 3 -> storage_network
 
 storage_network: Network {class: network}
 
-storage_network -> storage1
-storage_network -> storage2
+storage_network -> storage
 
-storage1: {class: storage}
-storage2: {class: storage}
+storage: {class: storage}
