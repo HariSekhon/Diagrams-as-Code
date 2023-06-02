@@ -13,6 +13,10 @@
 #  https://www.linkedin.com/in/HariSekhon
 #
 
+# ============================================================================ #
+#                   A z u r e   D e v O p s   P i p e l i n e
+# ============================================================================ #
+
 # https://aka.ms/yaml
 
 trigger:
@@ -54,6 +58,6 @@ steps:
           setup/ci_git_set_dir_safe.sh
         fi
         make init
-        make ci test diagrams
+        make ci test
       '
     displayName: docker build
