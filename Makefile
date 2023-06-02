@@ -177,7 +177,7 @@ python:
 	@echo 'BUILD SUCCESSFUL (Diagrams)'
 
 .PHONY: test
-test:
+test: diagrams
 	PYTHON=python3 bash-tools/checks/check_all.sh
 
 .PHONY: clean
