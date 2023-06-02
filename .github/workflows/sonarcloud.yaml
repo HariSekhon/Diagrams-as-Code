@@ -37,10 +37,6 @@ permissions:
   contents: read
   pull-requests: read
 
-concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
-  cancel-in-progress: true
-
 jobs:
   SonarCloud:
     # github.event.repository context not available in scheduled workflows
