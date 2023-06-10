@@ -111,7 +111,7 @@ They say a picture is worth a thousand words...
 ![](images/github_actions_cicd.png)
 
 
-Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#this-repos-creation--github-actions-cicd-to-auto-regenerate-diagrams-from-code-changes) to see better:
+Open [README.md](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#this-repos-creation--github-actions-cicd-to-auto-regenerate-diagrams-from-code-changes) to enlarge:
 
 [github_actions_cicd.d2](github_actions_cicd.d2):
 
