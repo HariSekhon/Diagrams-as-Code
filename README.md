@@ -245,6 +245,10 @@ GitHub repo: [Jenkins](https://github.com/HariSekhon/Jenkins) - Advanced [Jenkin
 
 ![](images/jenkins_kubernetes_cicd.svg)
 
+https://github.com/HariSekhon/Jenkins
+
+https://github.com/HariSekhon/Kubernetes-configs
+
 screenshot:
 
 ![](screenshots/gcp_cloudbuild_deployed_after_code_container_scans_failed.png)
