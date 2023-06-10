@@ -5,6 +5,8 @@
 [![Lines of Code](https://img.shields.io/badge/lines%20of%20code-5k-lightgrey?logo=codecademy)](https://github.com/HariSekhon/Diagrams-as-Code#Hari-Sekhon---Diagrams-as-Code)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/LICENSE)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/HariSekhon/Diagrams-as-Code?logo=github)](https://github.com/HariSekhon/Diagrams-as-Code/commits/master)
+[![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
+[![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
 
 [![Codacy](https://app.codacy.com/project/badge/Grade/dffc1bfd13404c95b5a0ab97fd47974e)](https://www.codacy.com/gh/HariSekhon/Diagrams-as-Code/dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/harisekhon/Diagrams-as-Code/badge)](https://www.codefactor.io/repository/github/harisekhon/Diagrams-as-Code)
@@ -14,17 +16,6 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Diagrams-as-Code)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Diagrams-as-Code)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Diagrams-as-Code&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=HariSekhon_Diagrams-as-Code)
-
-[![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
-[![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
-[![Mac Homebrew](https://img.shields.io/badge/Mac-Homebrew-999999?logo=apple&logoColor=white)](https://brew.sh/)
-[![Alpine](https://img.shields.io/badge/Linux-Alpine-0D597F?logo=alpine%20linux)](https://alpinelinux.org/)
-[![CentOS](https://img.shields.io/badge/Linux-CentOS-262577?logo=centos&logoColor=white)](https://www.centos.org/)
-[![Debian](https://img.shields.io/badge/Linux-Debian-A81D33?logo=debian)](https://www.debian.org/)
-[![Fedora](https://img.shields.io/badge/Linux-Fedora-294172?logo=fedora&logoColor=white)](https://getfedora.org/)
-[![Redhat](https://img.shields.io/badge/Linux-Redhat-EE0000?logo=red%20hat)](https://www.redhat.com/en)
-[![Rocky](https://img.shields.io/badge/Linux-Rocky-10B981?logo=rockylinux&logoColor=white)](https://rockylinux.org/)
-[![Ubuntu](https://img.shields.io/badge/Linux-Ubuntu-E95420?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
 [![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2FDiagrams-as-Code?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=14&branchName=master)
