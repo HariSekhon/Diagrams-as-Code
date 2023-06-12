@@ -237,17 +237,29 @@ I've administered [Azure Active Directory](https://azure.microsoft.com/en-us/pro
 
 A production Jenkins on Kubernetes I built for a client with auto-spawning agents for horizontal scaling and integration with Docker, SonarQube, Clair, Grype and Trivy for code & container scanning.
 
-GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base), [Clair](https://github.com/HariSekhon/Kubernetes-configs/tree/master/clair/base), [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base), [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
-
-GitHub repo: [Jenkins](https://github.com/HariSekhon/Jenkins) - Advanced [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile) & [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions, eg. [clair.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/clair.groovy) [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy), [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy), [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy) among others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars) and don't forget about the epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)!
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [Jenkins](https://github.com/HariSekhon/Kubernetes-configs/tree/master/jenkins/base)
+  - [Clair](https://github.com/HariSekhon/Kubernetes-configs/tree/master/clair/base)
+  - [SonarQube](https://github.com/HariSekhon/Kubernetes-configs/tree/master/sonarqube/base)
+  - [Trivy server](https://github.com/HariSekhon/Kubernetes-configs/tree/master/trivy/base)
+- GitHub repo: [HariSekhon/Jenkins](https://github.com/HariSekhon/Jenkins)
+  - Advanced [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
+  - [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions
+    - [clair.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/clair.groovy)
+    - [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy)
+    - [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy)
+    - [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy)
+    - [trivyImages](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy)
+    - [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy)
+    - [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy)
+    - and others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars), and don't forget about the epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
 
 [jenkins_kubernetes_cicd.d2](jenkins_kubernetes_cicd.d2):
 
 ![](images/jenkins_kubernetes_cicd.svg)
 
-https://github.com/HariSekhon/Jenkins
-
-https://github.com/HariSekhon/Kubernetes-configs
+- https://github.com/HariSekhon/Jenkins
+- https://github.com/HariSekhon/Kubernetes-configs
 
 screenshot:
 
@@ -256,9 +268,15 @@ screenshot:
 
 ### GCP Cloudflare Web Architecture GKE
 
-A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using [Terraform](https://github.com/HariSekhon/Terraform) and [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs).
+A production internet customer facing website and apps replatform to Google Kubernetes Engine I did for an internet startup client using:
 
-There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo, [External DNS](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) automatic DNS record creation in Cloudflare for any Kubernetes ingresses and [External Secrets](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base) pulling into Kubernetes from GCP Secret Manager.
+- GitHub repo: [HariSekhon/Terraform](https://github.com/HariSekhon/Terraform)
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [External DNS](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-dns/base) automatic DNS record creation in Cloudflare for any Kubernetes ingresses
+  - [External Secrets](https://github.com/HariSekhon/Kubernetes-configs/tree/master/external-secrets/base) pulling into Kubernetes from GCP Secret Manager
+
+There are Cloudflare API scripts in the [HariSekhon/DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo.
+
 
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
@@ -267,7 +285,10 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 ### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
 
-[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo - [deployment.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/deployment.yaml), [horizontal-pod-autoscaler.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/horizontal-pod-autoscaler.yaml) and [ingress.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/ingress.yaml).
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [deployment.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/deployment.yaml)
+  - [horizontal-pod-autoscaler.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/horizontal-pod-autoscaler.yaml)
+  - [ingress.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/ingress.yaml)
 
 [kubernetes_deployment_hpa_ingress.py](kubernetes_deployment_hpa_ingress.py):
 
@@ -276,7 +297,8 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 ### Kubernetes Stateful Architecture with persistent volumes
 
-[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [statefulset.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/statefulset.yaml).
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [statefulset.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/statefulset.yaml)
 
 [kubernetes_stateful_architecture.py](kubernetes_stateful_architecture.py):
 
@@ -285,7 +307,8 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 ### Kubernetes Service External Traffic Policy
 
-[Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo - [service.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/service.yaml#L141)
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [service.yaml](https://github.com/HariSekhon/Kubernetes-configs/blob/master/service.yaml#L141)
 
 [GKE docs](https://cloud.google.com/kubernetes-engine/docs/how-to/service-parameters#externalTrafficPolicy)
 
@@ -296,9 +319,8 @@ There are Cloudflare API scripts in my [DevOps-Bash-tools](https://github.com/Ha
 
 ### Kubernetes on Premise
 
-GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
-
-GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
+- GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+- GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
 
 Traditionally:
 
@@ -306,7 +328,10 @@ Traditionally:
 
 ![](images/kubernetes_on_premise.svg)
 
-with [MetalLB](https://metallb.universe.tf/) ([configs](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)):
+with [MetalLB](https://metallb.universe.tf/):
+
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [MetalLB](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)
 
 Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wiki/Starfleet)? (compare their logos)
 
@@ -317,7 +342,11 @@ Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wi
 
 ### Traefik Kubernetes Ingress on GKE
 
-A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [traefik/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik/base) and [traefik-hub-agent/base](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik-hub-agent/base).
+A Traefik deployment I did for a client.
+
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [traefik/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik/base)
+  - [traefik-hub-agent/base](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik-hub-agent/base)
 
 [kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
 
@@ -331,7 +360,12 @@ A Traefik deployment I did for a client using my [Kubernetes-configs](https://gi
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
-A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [kong/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/kong/base).
+A Kong API Gateway deployment I did for a client.
+
+- GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
+  - [Kong](https://github.com/HariSekhon/Kubernetes-configs/tree/master/kong/base)
+  - [Cert Manager](https://github.com/HariSekhon/Kubernetes-configs/tree/master/cert-manager/base)
+  - [ArgoCD](https://github.com/HariSekhon/Kubernetes-configs/tree/master/argocd/base)
 
 [kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.py):
 
@@ -340,13 +374,11 @@ A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](h
 
 ### OpenTSDB on Kubernetes and HBase
 
-GitHub repo: [DevOps-Python-tools](https://github.com/HariSekhon/DevOps-Python-tools)
-
 A high scale production OpenTSDB replatform I did to Kubernetes for a client, ingesting 9 billion data points per day and serving 3 million queries per day.
 
 I also had to do advanced performance tuning of their production HBase cluster which was suffering from frequent outages at this scale due to being set up by a non-SME on the wrong hardware (I had to make do with the existing hardware of course).
 
-This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in my [DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools) repo.
+This was the second client I did in-depth performance tuning of HBase for - I've published a selection of useful HBase tools - see `hbase_*.py` and `opentsdb_*.py` in [HariSekhon/DevOps Python tools](https://github.com/HariSekhon/DevOps-Python-tools).
 
 [opentsdb_kubernetes_hbase.d2](opentsdb_kubernetes_hbase.d2):
 
@@ -374,7 +406,11 @@ Another internet facing client refused to use tagging because they didn't want t
 
 Not everybody likes environment branches, but they worked in production for over 2 years and they are easy to use.
 
-Also, contrary to some naysayers it's quite easy to diff environment branches as everything should be in Git, so you can get a very quick and easy difference between your environments in a single `git diff` command. It's also easy to automate backporting hotfixes to lower environments ([gitMerge.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMerge.groovy), [gitMergePipeline.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMergePipeline.groovy)).
+Also, contrary to some naysayers it's quite easy to diff environment branches as everything should be in Git, so you can get a very quick and easy difference between your environments in a single `git diff` command. It's also easy to automate backporting hotfixes to lower environments:
+
+- GitHub repo: [HariSekhon/Jenkins](https://github.com/HariSekhon/Jenkin)
+  - [gitMerge.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMerge.groovy)
+  - [gitMergePipeline.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gitMergePipeline.groovy)
 
 ```mermaid
 %%{ init: {
