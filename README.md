@@ -317,7 +317,7 @@ Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wi
 
 ### Traefik Kubernetes Ingress on GKE
 
-A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `traefik-*.yaml`.
+A Traefik deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [traefik/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik/base) and [traefik-hub-agent/base](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik-hub-agent/base).
 
 [kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
 
@@ -331,7 +331,7 @@ A Traefik deployment I did for a client using my [Kubernetes-configs](https://gi
 
 ### Kong API Gateway on Kubernetes (AWS EKS)
 
-A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo `kong-*.yaml`.
+A Kong API Gateway deployment I did for a client using my [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs) repo [kong/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/kong/base).
 
 [kubernetes_kong_api_gateway_eks.py](kubernetes_kong_api_gateway_eks.py):
 
