@@ -308,7 +308,7 @@ Traditionally:
 
 with [MetalLB](https://metallb.universe.tf/) ([configs](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)):
 
-Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wiki/Starfleet)?
+Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wiki/Starfleet)? (compare their logos)
 
 [kubernetes_on_premise_metallb.d2](kubernetes_on_premise_metallb.d2):
 
