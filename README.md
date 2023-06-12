@@ -247,11 +247,8 @@ A production Jenkins on Kubernetes I built for a client with auto-spawning agent
   - [Groovy Shared Library](https://github.com/HariSekhon/Jenkins/tree/master/vars) with the code & container scanning functions
     - [clair.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/clair.groovy)
     - [grype.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/grype.groovy)
-    - [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy)
-    - [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy)
-    - [trivyImages.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy)
-    - [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy)
-    - [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy)
+    - [trivy.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivy.groovy), [trivyFS.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyFS.groovy), [trivyImages.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/trivyImages.groovy)
+    - [gcrDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/gcrDockerAuth.groovy), [garDockerAuth.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/garDockerAuth.groovy)
     - and others in [vars/](https://github.com/HariSekhon/Jenkins/tree/master/vars), and don't forget about the epic [Jenkinsfile](https://github.com/HariSekhon/Jenkins/blob/master/Jenkinsfile)
 
 [jenkins_kubernetes_cicd.d2](jenkins_kubernetes_cicd.d2):
