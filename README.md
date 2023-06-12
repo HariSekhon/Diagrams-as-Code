@@ -342,8 +342,8 @@ Is it just me or do MetaLB think they're [Starfleet](https://en.wikipedia.org/wi
 A Traefik deployment I did for a client.
 
 - GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
-  - [traefik/base/*.yaml](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik/base)
-  - [traefik-hub-agent/base](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik-hub-agent/base)
+  - [Traefik](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik/base)
+  - [Traefik Hub Agent](https://github.com/HariSekhon/Kubernetes-configs/tree/master/traefik-hub-agent/base)
 
 [kubernetes_traefik_ingress_gke.py](kubernetes_traefik_ingress_gke.py):
 
