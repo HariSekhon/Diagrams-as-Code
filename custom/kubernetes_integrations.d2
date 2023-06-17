@@ -159,6 +159,28 @@ classes: {
     icon: https://icons.terrastruct.com/aws%2FSecurity%2C%20Identity%2C%20&%20Compliance%2FAWS-Secrets-Manager.svg
     shape: image
   }
+  azure: {
+    label: Azure
+    icon: https://cdn-icons-png.flaticon.com/512/873/873107.png
+    # icon: https://www.smartdesc.co.uk/wp-content/uploads/2022/10/Azure-Square-3.png
+    shape: image
+  }
+  azure_dns: {
+    label: Azure DNS
+    icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FDNS%20Zones.svg
+    shape: image
+  }
+  aks: {
+    label: Azure Kubernetes Service
+    # icon: https://icons.terrastruct.com/azure%2FContainer%20Service%20Color%2FKubernetes%20Services.svg
+    icon: https://diagrams.mingrammer.com/img/resources/azure/compute/kubernetes-services.png
+    shape: image
+  }
+  keyvault: {
+    label: Azure Key Vault
+    icon: https://icons.terrastruct.com/azure%2FSecurity%20Service%20Color%2FKey%20Vaults.svg
+    shape: image
+  }
   gcp: {
     label: GCP
     icon: https://cdn-icons-png.flaticon.com/512/873/873117.png
@@ -229,6 +251,7 @@ internet: {
   internet -> letsencrypt: {class: invisible}
   internet -> _.aws.route53: {class: animated}
   internet -> _.gcp.clouddns: {class: animated}
+  # internet -> _.azure.dns: {class: animated}
 
   internet.class: Internet
   cloudflare.class: Cloudflare
@@ -272,7 +295,7 @@ aws: AWS {
       pod.class: pod
       secrets.class: aws_secret
       secrets.label: External Secrets
-      pod -- secrets
+      secrets -- pod
       secrets <- _._.secrets_manager: {class: pullsecrets}
     }
     argocd: ArgoCD pods {
@@ -319,7 +342,7 @@ gcp: GCP {
       pod.class: pod
       secrets.class: gcp_secret
       secrets.label: External Secrets
-      pod -- secrets
+      secrets -- pod
       secrets <- _._.secrets_manager: {class: pullsecrets}
     }
     argocd: ArgoCD pods {
@@ -329,3 +352,50 @@ gcp: GCP {
     }
   }
 }
+
+# azure: Azure {
+#  azure.class: azure
+#  dns.class: azure_dns
+#  keyvault.class: keyvault
+#  dns -> keyvault -> azure: {class: invisible}
+#  # keyvault -> aks.secrets.secrets: {class: pullsecrets}
+#  aks: Azure Kubernetes Service {
+#    k8s -- aks
+#    aks.class: aks
+#    k8s.class: k8s
+#    ingress: Ingress {
+#      container.class: ingress
+#      nginx.class: nginx
+#      kong.class: kong
+#      traefik.class: traefik
+#      container -> kong: {class: invisible}
+#      nginx -> traefik: {class: invisible}
+#      _._._.internet.internet -> container: {class: http}
+#      _._._.internet.cloudflare -> container: {class: proxied}
+#    }
+#    certmanager: Cert Manager\npod {
+#      container.class: certmanager
+#      container -> _._._.internet.letsencrypt: get free SSL certificates for Ingresses {class: animated}
+#      container -> _.ingress.container: detect FQDNs to get SSL certs for: {class: animated}
+#    }
+#    dns: External DNS {
+#      pod.class: pod
+#      dns.class: externaldns
+#      dns -- pod
+#      dns -> _._.azure_dns: {class: registerdns}
+#      dns -> _._._.internet.cloudflare: {class: registerdns}
+#    }
+#    secrets: External Secrets {
+#      pod.class: pod
+#      secrets.class: keyvault
+#      secrets.label: External Secrets
+#      secrets -- pod
+#      secrets <- _._.keyvault: {class: pullsecrets}
+#    }
+#    argocd: ArgoCD pods {
+#      container.class: argocd
+#      container -> _.k8s: Deploy App {class: argodeploy}
+#      _._._.internet.github -> container
+#    }
+#  }
+# }
