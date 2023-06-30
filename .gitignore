@@ -1,0 +1,7 @@
+!images/
+!*.svg
+!*.png
+/*.svg
+/*.png
+custom/*.png
+custom/*.svg
