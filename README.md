@@ -75,6 +75,7 @@ I read an article that said:
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
+  - [GCP Malware Scanner with ClamAV](#gcp-malware-scanner-with-clamav)
   - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
   - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
   - [Kubernetes Service External Traffic Policy](#kubernetes-service-external-traffic-policy)
@@ -279,6 +280,17 @@ There are Cloudflare API scripts in the [HariSekhon/DevOps-Bash-tools](https://g
 [gcp_cloudflare_web_architecture_gke.py](gcp_cloudflare_web_architecture_gke.py):
 
 ![](images/gcp_cloudflare_web_architecture_gke.png)
+
+
+### GCP Malware Scanner with ClamAV
+
+A variation using Kubernetes and Cloud Functions of this GCP malware scanner solution architecture:
+
+https://cloud.google.com/architecture/automate-malware-scanning-for-documents-uploaded-to-cloud-storage
+
+[gcp_malware_scanner.d2](gcp_maleware_scanner.d2):
+
+![](images/gcp_malware_scanner.svg)
 
 
 ### Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress
