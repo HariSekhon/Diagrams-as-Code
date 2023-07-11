@@ -179,21 +179,21 @@ See Also: 100+ scripts for Git and the major Git repo providers like GitHub, Git
     }
 }%%
 gitGraph
-    commit
+    commit  id: "commit 1"
     commit id: "branch"
     branch long-lived-branch
     checkout long-lived-branch
     commit id: "50 clever commits"
     checkout master
-    commit
+    commit id: "commit 2"
     checkout long-lived-branch
     commit id: "too clever"
     checkout master
-    commit
+    commit id: "commit 3"
     checkout long-lived-branch
     commit id: "too long"
     checkout master
-    commit
+    commit id: "commit 4"
     checkout long-lived-branch
     commit id: "try to merge back"
     checkout master
