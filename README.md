@@ -448,10 +448,10 @@ gitGraph
     commit id: "commit 1"
 
     checkout staging
-    commit id: "commit 1 "
+    commit id: "QA fix 1 "
 
     checkout production
-    commit id: "commit 1  "
+    commit id: "hotfix commit"
 
     checkout dev
     commit id: "commit 2"
@@ -460,17 +460,17 @@ gitGraph
     merge dev id: "fast-forward merge" tag: "CI/CD + QA Tests"
 
     checkout production
-    merge staging id: "fast-forward merge " tag: "Production Release (CI/CD)"
+    merge staging id: "fast-forward merge " tag: "v2023.1 Release (CI/CD)"
 
 
     checkout dev
     commit id: "commit 3"
 
     checkout staging
-    commit id: "commit 3 "
+    commit id: "QA fix 2 "
 
-    checkout production
-    commit id: "commit 3  "
+    #checkout production
+    #commit id: "commit 3  "
 
     checkout dev
     commit id: "commit 4"
@@ -479,17 +479,17 @@ gitGraph
     merge dev id: "fast-forward merge 2" tag: "CI/CD + QA Tests"
 
     checkout production
-    merge staging id: "fast-forward merge 2 " tag: "Production Releease (CI/CD)"
+    merge staging id: "fast-forward merge 2 " tag: "v2023.2 Release (CI/CD)"
 
 
     checkout dev
     commit id: "commit 5"
 
     checkout staging
-    commit id: "commit 5 "
+    commit id: "QA fix 3 "
 
-    checkout production
-    commit id: "commit 5  "
+    #checkout production
+    #commit id: "commit 5  "
 
     checkout dev
     commit id: "commit 6"
@@ -498,7 +498,7 @@ gitGraph
     merge dev id: "fast-forward merge 3" tag: "CI/CD + QA Tests"
 
     checkout production
-    merge staging id: "fast-forward merge 3 " tag: "Production Release (CI/CD)"
+    merge staging id: "fast-forward merge 3 " tag: "v2023.3 Release (CI/CD)"
 ```
 Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer ([githubNextRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy)). It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating GitHub Releases in Jenkins ([githubCreateRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy)).
 
