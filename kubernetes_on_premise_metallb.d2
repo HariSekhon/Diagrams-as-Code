@@ -73,7 +73,7 @@ user_network -> Server 2.lb2: {
   style.stroke-dash: 5
 }
 
-Server 1 {
+Server 1: {
   class: server
   lb1.class: lb
   lb1 -> kube1
@@ -81,7 +81,7 @@ Server 1 {
   lb1 -> _.Server 3.kube3
   kube1: Kubernetes 1 {class: k8s}
 }
-Server 2 {
+Server 2: {
   class: server
   lb2.class: lb
   lb2 -> kube2
@@ -89,7 +89,7 @@ Server 2 {
   lb2 -> _.Server 3.kube3
   kube2: Kubernetes 2 {class: k8s}
 }
-Server 3 {
+Server 3: {
   class: server
   lb3.class: lb
   lb3 -> kube3
