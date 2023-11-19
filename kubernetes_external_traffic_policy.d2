@@ -55,62 +55,62 @@ classes: {
   }
 }
 
-lb: { class: load_balancer }
+lb: {class: load_balancer}
 
-Kubernetes {
+Kubernetes: {
   style.double-border: true
   ext: "External Traffic Policy: Cluster" {
     server1: Server {
-      service1 { class: service }
-      pod1 { class: pod }
-      _._._.lb -> service1 { class: animated }
-      service1 -> pod1 { class: animated }
-      service1 -> _.server2.pod2 { class: animated }
-      service1 -> _.server3.pod3 { style.opacity: 0 }
+      service1: {class: service}
+      pod1: {class: pod}
+      _._._.lb -> service1: {class: animated}
+      service1 -> pod1: {class: animated}
+      service1 -> _.server2.pod2: {class: animated}
+      service1 -> _.server3.pod3: {style.opacity: 0}
     }
     server2: Server {
-      service2 { class: service }
-      pod2 { class: pod }
-      _._._.lb -> service2 { class: animated }
-      service2 -> pod2 { class: animated }
-      service2 -> _.server1.pod1 { class: animated }
+      service2: {class: service}
+      pod2: {class: pod}
+      _._._.lb -> service2: {class: animated}
+      service2 -> pod2: {class: animated}
+      service2 -> _.server1.pod1: {class: animated}
     }
     server3: Server {
-      service3 { class: service }
-      _._._.lb -> service3 { class: animated }
-      pod3 {
+      service3: {class: service}
+      _._._.lb -> service3: {class: animated}
+      pod3: {
         class: pod
         style.opacity: 0.5
         label: Pod not running here
       }
-      service3 -> _.server1.pod1 { class: animated }
-      service3 -> _.server2.pod2 { class: animated }
+      service3 -> _.server1.pod1: {class: animated}
+      service3 -> _.server2.pod2: {class: animated}
     }
   }
   local: "External Traffic Policy: Local" {
     server4: Server {
-      service4 { class: service }
+      service4: {class: service}
       service4.label: Service Unused
-      pod4 {
+      pod4: {
         class: pod
         style.opacity: 0.5
         label: Pod not running here
       }
-      _._._.lb -- service4 { class: no_traffic }
-      service4 -> pod4 { style.opacity: 0 }
+      _._._.lb -- service4: {class: no_traffic}
+      service4 -> pod4: {style.opacity: 0}
     }
     server5: Server {
-      service5 { class: service }
-      pod5 { class: pod }
-      _._._.lb -> service5 { class: animated }
-      service5 -> pod5 { class: animated_local }
-      #service5 -> _.server4.pod4 { style.opacity: 0 }
+      service5: {class: service}
+      pod5: {class: pod}
+      _._._.lb -> service5: {class: animated}
+      service5 -> pod5: {class: animated_local}
+      # service5 -> _.server4.pod4 { style.opacity: 0 }
     }
     server6: Server {
-      service6 { class: service }
-      pod6 { class: pod }
-      _._._.lb -> service6 { class: animated }
-      service6 -> pod6 { class: animated_local }
+      service6: {class: service}
+      pod6: {class: pod}
+      _._._.lb -> service6: {class: animated}
+      service6 -> pod6: {class: animated_local}
     }
   }
 }
