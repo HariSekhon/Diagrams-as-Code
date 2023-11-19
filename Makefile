@@ -213,7 +213,7 @@ fmt:
 	if uname -s | grep Darwin; then \
 		sed(){ gsed "$$@"; }; \
 	fi; \
-	sed -i 's|# !/|#!/|' *.d2
+	sed -i 's|# !/|#!/|' *.d2 custom/*.d2
 
 	# revert typechange of template.d2 symlink
 	git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
