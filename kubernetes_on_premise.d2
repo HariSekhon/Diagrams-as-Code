@@ -35,8 +35,8 @@ classes: {
     shape: image
   }
   network: {
-    #icon: https://icons.terrastruct.com/essentials%2F092-network.svg
-    #icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
+    # icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
     icon: https://diagrams.mingrammer.com/img/resources/gcp/network/routes.png
     shape: image
   }
@@ -48,7 +48,7 @@ classes: {
   load_balancer: {
     label: "HA Load Balancer\n(HAProxy / Nginx / Traefik / Kong)"
     # there isn't a good generic load balancer icon so using this for now - switch to one of the product specific icons if you know which one
-    #icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
+    # icon: https://diagrams.mingrammer.com/img/resources/aws/network/elastic-load-balancing.png
     icon: https://diagrams.mingrammer.com/img/resources/onprem/network/haproxy.png
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/kong.png
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/traefik.png
@@ -96,15 +96,15 @@ network -> Server 1
 network -> Server 2
 network -> Server 3
 
-Server 1 {
+Server 1: {
   class: server
   kube1: Kubernetes 1 {class: k8s}
 }
-Server 2 {
+Server 2: {
   class: server
   kube2: Kubernetes 2 {class: k8s}
 }
-Server 3 {
+Server 3: {
   class: server
   kube3: Kubernetes 3 {class: k8s}
 }
