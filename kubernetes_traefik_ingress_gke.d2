@@ -25,16 +25,16 @@ title: {
 classes: {
   users: {
     icon: https://icons.terrastruct.com/essentials%2F359-users.svg
-    #icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
     shape: image
   }
   load_balancer: {
     icon: https://diagrams.mingrammer.com/img/resources/gcp/network/load-balancing.png
-    #icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Load%20Balancing.svg
+    # icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Load%20Balancing.svg
     shape: image
   }
   cloud_dns: {
-    #icon: https://diagrams.mingrammer.com/img/resources/gcp/network/dns.png
+    # icon: https://diagrams.mingrammer.com/img/resources/gcp/network/dns.png
     icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20DNS.svg
     shape: image
   }
@@ -52,24 +52,24 @@ classes: {
   }
   gke: {
     icon: https://diagrams.mingrammer.com/img/resources/gcp/compute/kubernetes-engine.png
-    #icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FKubetnetes%20Engine.svg
+    # icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FKubetnetes%20Engine.svg
     shape: image
   }
 }
 
 Users.class: users
-#Users.near: top-center
+# Users.near: top-center
 
-GCP {
+GCP: {
   _.Users -> Cloud Load Balancer
   _.Users -> Cloud DNS
   Cloud Load Balancer.class: load_balancer
   Cloud DNS.class: cloud_dns
-  GKE {
+  GKE: {
     GKE.class: gke
     _.Cloud Load Balancer -> Traefik Ingress
     Traefik Ingress.class: traefik
-    WebApp 1 {
+    WebApp 1: {
       WebApp 1 service.class: k8s_svc
       _.Traefik Ingress -> WebApp 1 service
       Pod 1.class: k8s_pod
@@ -79,7 +79,7 @@ GCP {
       WebApp 1 service -> Pod 2
       WebApp 1 service -> Pod 3
     }
-    WebApp 2 {
+    WebApp 2: {
       WebApp 2 service.class: k8s_svc
       _.Traefik Ingress -> WebApp 2 service
       Pod 1.class: k8s_pod
