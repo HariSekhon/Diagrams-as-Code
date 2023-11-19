@@ -27,11 +27,11 @@ title: {
 classes: {
   users: {
     icon: https://icons.terrastruct.com/essentials%2F359-users.svg
-    #icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
     shape: image
   }
   nginx: {
-    #icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+    # icon: https://icons.terrastruct.com/dev%2Fnginx.svg
     icon: https://diagrams.mingrammer.com/img/resources/onprem/network/nginx.png
     shape: image
   }
@@ -40,10 +40,10 @@ classes: {
     shape: image
   }
   apache: {
-    #icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
-    #icon: https://icons.terrastruct.com/dev%2Fapache.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/network/apache.png
+    # icon: https://icons.terrastruct.com/dev%2Fapache.svg
     icon: https://www.svgrepo.com/show/353400/apache.svg
-    #shape: image
+    # shape: image
   }
   grafana: {
     icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
@@ -54,9 +54,9 @@ classes: {
     shape: image
   }
   hbase: {
-    #icon: https://hbase.apache.org/images/hbase_logo_with_orca.png
-    #icon: https://hbase.apache.org/images/hbase_logo_with_orca_large.png
-    #icon: https://hbase.apache.org/images/jumping-orca_rotated.png
+    # icon: https://hbase.apache.org/images/hbase_logo_with_orca.png
+    # icon: https://hbase.apache.org/images/hbase_logo_with_orca_large.png
+    # icon: https://hbase.apache.org/images/jumping-orca_rotated.png
     icon: https://diagrams.mingrammer.com/img/resources/onprem/database/hbase.png
     shape: image
   }
@@ -66,19 +66,19 @@ classes: {
   }
 }
 
-#Quants.class: users
-#Devs.class: users
-#DevOps.class: users
-#Other users.class: users
+# Quants.class: users
+# Devs.class: users
+# DevOps.class: users
+# Other users.class: users
 
-#Quants -> k8s.Nginx Ingress Grafana
-#Devs -> k8s.Nginx Ingress Grafana
-#DevOps -> k8s.Nginx Ingress Grafana
-#Other users -> k8s.Nginx Ingress Grafana
+# Quants -> k8s.Nginx Ingress Grafana
+# Devs -> k8s.Nginx Ingress Grafana
+# DevOps -> k8s.Nginx Ingress Grafana
+# Other users -> k8s.Nginx Ingress Grafana
 
 users: Quants, Devs, DevOps, Users
 users.class: users
-#users.near: top-center
+# users.near: top-center
 
 k8s: Kubernetes cluster on-prem {
   _.users -> Nginx Ingress Grafana: 3 million queries per day
@@ -95,7 +95,7 @@ k8s: Kubernetes cluster on-prem {
     style.animated: true
   }
 
-  Grafana pod 1 {
+  Grafana pod 1: {
     Apache Httpd 1.class: apache
     Grafana 1.class: grafana
     Apache Httpd 1 -> grafana 1: kerberos proxy
@@ -175,47 +175,47 @@ k8s: Kubernetes cluster on-prem {
   #
   #   https://github.com/terrastruct/d2/issues/1285
   #
-  #tsdb1 -> _.hadoop
-  #tsdb2 -> _.hadoop
-  #tsdb3 -> _.hadoop
-  #tsdb4 -> _.hadoop
-  #tsdb5 -> _.hadoop
-  #tsdb6 -> _.hadoop
-  #tsdb7 -> _.hadoop
-  #tsdb8 -> _.hadoop
-  #tsdb9 -> _.hadoop
-  #tsdb10 -> _.hadoop
-  #tsdb11 -> _.hadoop
-  #tsdb12 -> _.hadoop
-  #tsdb13 -> _.hadoop
-  #tsdb14 -> _.hadoop
-  #tsdb15 -> _.hadoop
+  # tsdb1 -> _.hadoop
+  # tsdb2 -> _.hadoop
+  # tsdb3 -> _.hadoop
+  # tsdb4 -> _.hadoop
+  # tsdb5 -> _.hadoop
+  # tsdb6 -> _.hadoop
+  # tsdb7 -> _.hadoop
+  # tsdb8 -> _.hadoop
+  # tsdb9 -> _.hadoop
+  # tsdb10 -> _.hadoop
+  # tsdb11 -> _.hadoop
+  # tsdb12 -> _.hadoop
+  # tsdb13 -> _.hadoop
+  # tsdb14 -> _.hadoop
+  # tsdb15 -> _.hadoop
 
-  #tsdb1 -> _.hadoop.node 1.hbase1
-  #tsdb1 -> _.hadoop.node 2.hbase2
-  #tsdb1 -> _.hadoop.node 3.hbase3
-  #tsdb1 -> _.hadoop.node 4.hbase4
-  #tsdb1 -> _.hadoop.node 5.hbase5
-  #tsdb1 -> _.hadoop.node 6.hbase6
-  #tsdb1 -> _.hadoop.node 7.hbase7
-  #tsdb1 -> _.hadoop.node 8.hbase8
-  #tsdb1 -> _.hadoop.node 9.hbase9
-  #tsdb1 -> _.hadoop.node 10.hbase10
-  #tsdb1 -> _.hadoop.node 11.hbase11
-  #tsdb1 -> _.hadoop.node 12.hbase12
+  # tsdb1 -> _.hadoop.node 1.hbase1
+  # tsdb1 -> _.hadoop.node 2.hbase2
+  # tsdb1 -> _.hadoop.node 3.hbase3
+  # tsdb1 -> _.hadoop.node 4.hbase4
+  # tsdb1 -> _.hadoop.node 5.hbase5
+  # tsdb1 -> _.hadoop.node 6.hbase6
+  # tsdb1 -> _.hadoop.node 7.hbase7
+  # tsdb1 -> _.hadoop.node 8.hbase8
+  # tsdb1 -> _.hadoop.node 9.hbase9
+  # tsdb1 -> _.hadoop.node 10.hbase10
+  # tsdb1 -> _.hadoop.node 11.hbase11
+  # tsdb1 -> _.hadoop.node 12.hbase12
   #
-  #tsdb1 -> _.hadoop.node 1.hbase1
-  #tsdb2 -> _.hadoop.node 2.hbase2
-  #tsdb2 -> _.hadoop.node 3.hbase3
-  #tsdb2 -> _.hadoop.node 4.hbase4
-  #tsdb2 -> _.hadoop.node 5.hbase5
-  #tsdb2 -> _.hadoop.node 6.hbase6
-  #tsdb2 -> _.hadoop.node 7.hbase7
-  #tsdb2 -> _.hadoop.node 8.hbase8
-  #tsdb2 -> _.hadoop.node 9.hbase9
-  #tsdb2 -> _.hadoop.node 10.hbase10
-  #tsdb2 -> _.hadoop.node 11.hbase11
-  #tsdb2 -> _.hadoop.node 12.hbase12
+  # tsdb1 -> _.hadoop.node 1.hbase1
+  # tsdb2 -> _.hadoop.node 2.hbase2
+  # tsdb2 -> _.hadoop.node 3.hbase3
+  # tsdb2 -> _.hadoop.node 4.hbase4
+  # tsdb2 -> _.hadoop.node 5.hbase5
+  # tsdb2 -> _.hadoop.node 6.hbase6
+  # tsdb2 -> _.hadoop.node 7.hbase7
+  # tsdb2 -> _.hadoop.node 8.hbase8
+  # tsdb2 -> _.hadoop.node 9.hbase9
+  # tsdb2 -> _.hadoop.node 10.hbase10
+  # tsdb2 -> _.hadoop.node 11.hbase11
+  # tsdb2 -> _.hadoop.node 12.hbase12
 }
 
 hadoop: Hadoop cluster on-prem {
@@ -334,4 +334,4 @@ hadoop: Hadoop cluster on-prem {
 #
 #     https://github.com/terrastruct/d2/issues/1285
 #
-#k8s -> hadoop
+# k8s -> hadoop
