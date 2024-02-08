@@ -19,6 +19,8 @@
 
 # https://docs.gitlab.com/ee/ci/yaml/README.html
 
+# TODO: set to schedule to avoid wasting build minutes
+
 #include: '.gitlab/*.y*ml'
 
 image: ubuntu:18.04
