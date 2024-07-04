@@ -279,9 +279,9 @@ screenshot:
 
 [argocd.d2](argocd.d2):
 
-<!-- ![](images/argocd.svg) -->
+![](images/argocd.svg)
 
-<img src="images/argocd.svg" alt="drawing" width="500"/>
+<!-- <img src="images/argocd.svg" alt="drawing" width="500"/> -->
 
 ### GCP Cloudflare Web Architecture GKE
 
