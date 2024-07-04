@@ -222,7 +222,7 @@ fmt: init
 		pushd "$$directory" && \
 		git checkout $$(git status --porcelain | awk '/^.T/{print $$2}') && \
 		popd ||
-		exit 1
+		exit 1; \
 	done
 
 
