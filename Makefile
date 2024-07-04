@@ -202,7 +202,7 @@ clean:
 	@#git status --porcelain --ignored | awk '/^!!/{print $2}' | xargs rm -fv --
 
 .PHONY: fmt
-fmt:
+fmt: init
 	d2 fmt *.d2 custom/*.d2
 
 	# put shebang header back to normal to work around this bug:
@@ -217,6 +217,7 @@ fmt:
 
 	# revert typechange of template.d2 symlink
 	git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
+	cd templates && git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
 
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
