@@ -218,8 +218,9 @@ fmt: init
 	# revert typechange of template.d2 symlink
 	for directory in . templates; do \
 		pushd "$$directory" && \
-		git checkout $$(git status --porcelain | awk '/^.T/{print $$2}'); \
-		popd; \
+		git checkout $$(git status --porcelain | awk '/^.T/{print $$2}') && \
+		popd ||
+		exit 1
 	done
 
 
