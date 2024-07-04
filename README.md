@@ -274,6 +274,11 @@ screenshot:
 
 ![](screenshots/gcp_cloudbuild_deployed_after_code_container_scans_failed.png)
 
+### ArgoCD
+
+[argocd.d2](argocd.d2):
+
+![](images/argocd.svg)
 
 ### GCP Cloudflare Web Architecture GKE
 
