@@ -40,6 +40,8 @@ REPO := HariSekhon/Diagrams-as-Code
 
 CODE_FILES := $(shell git ls-files | grep -E -e '\.d2$$' -e '\.sh$$' -e '\.py$$' | sort)
 
+SHELL := /usr/bin/env bash
+
 main:
 	@$(MAKE) diag
 
