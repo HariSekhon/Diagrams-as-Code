@@ -84,7 +84,7 @@ repo full of links to Diagrams technologies and
   - [AWS Web Traffic Classic](#aws-web-traffic-classic)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
-  - [ArgoCD - GitOps for Kubernetes](#argo-cd-git-ops)
+  - [ArgoCD - GitOps for Kubernetes](#argocd---gitops-for-kubernetes)
   - [GCP Cloudflare Web Architecture GKE](#gcp-cloudflare-web-architecture-gke)
   - [GCP Malware Scanner with ClamAV](#gcp-malware-scanner-with-clamav)
   - [Kubernetes Deployment with Horizontal Pod Autoscaler and Ingress](#kubernetes-deployment-with-horizontal-pod-autoscaler-and-ingress)
