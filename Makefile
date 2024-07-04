@@ -221,7 +221,7 @@ fmt: init
 	for directory in . templates; do \
 		pushd "$$directory" && \
 		git checkout $$(git status --porcelain | awk '/^.T/{print $$2}') && \
-		popd ||
+		popd || \
 		exit 1; \
 	done
 
