@@ -22,6 +22,7 @@ on:
       - main
     paths:
       - '*.d2'
+      #- Makefile
       - .github/workflows/d2-fmt.yaml  # this workflow
 
   workflow_dispatch:
