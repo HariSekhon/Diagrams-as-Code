@@ -216,8 +216,10 @@ fmt: init
 	sed -i 's|# !/|#!/|' *.d2 custom/*.d2 templates/*.d2
 
 	# revert typechange of template.d2 symlink
-	git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
-	cd templates && git checkout $$(git status --porcelain | awk '/^.T/{print $$2}')
+	for directory in . templates; do \
+		pushd "$$directory" && \
+		git checkout $$(git status --porcelain | awk '/^.T/{print $$2}'); \
+	done
 
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
