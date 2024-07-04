@@ -1,0 +1,105 @@
+#!/usr/bin/env d2 --theme 200
+#
+#  Author: Hari Sekhon
+#  Date: 2024-07-04 17:06:29 +0200 (Thu, 04 Jul 2024)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#          A r g o C D   -   G i t O p s   f o r   K u b e r n e t e s
+# ============================================================================ #
+
+direction: down
+
+title: {
+  label: ArgoCD - GitOps for Kubernetes
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  argocd: {
+    label: ArgoCD
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/gitops/argocd.png
+    shape: image
+  }
+  cicd: {
+    label: CI/CD
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/ci/github-actions.png
+    shape: image
+  }
+  devops: {
+    label: DevOps
+    icon: https://cdn-icons-png.flaticon.com/512/6463/6463383.png
+    shape: image
+  }
+  git: {
+    label: Git\nrepo
+    icon: https://icons.terrastruct.com/dev%2Fgit.svg
+    shape: image
+  }
+  docker: {
+    label: Docker
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+    shape: image
+  }
+  k8s: {
+    label: Kubernetes
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  container-registry: {
+    label: Container Registry
+    # square corners
+    # icon: https://icons.terrastruct.com/aws%2FCompute%2FAmazon-EC2-Container-Registry.svg
+    # round corners
+    # icon: https://diagrams.mingrammer.com/img/resources/aws/compute/ec2-container-registry.png
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
+    shape: image
+  }
+  dash: {
+    style.stroke-dash: 5
+    style.animated: true
+  }
+  # invisible: {
+  #  style.opacity: 0
+  # }
+}
+
+devops.class: devops
+git.class: git
+cicd.class: cicd
+docker.class: docker
+argocd.class: argocd
+container-registry.class: container-registry
+k8s.class: k8s
+
+devops -> git: push code {class: dash}
+
+git -> cicd: trigger {class: dash}
+
+cicd -> git: git commit updated\nk8s image version {class: dash}
+
+cicd -> docker: build {class: dash}
+
+docker -> container-registry: push docker image {class: dash}
+
+container-registry -> k8s: k8s pulls docker image {class: dash}
+
+argocd -> git: poll {class: dash}
+
+git -> argocd: git pull updates {class: dash}
+
+argocd -> k8s: update k8s objects {class: dash}
