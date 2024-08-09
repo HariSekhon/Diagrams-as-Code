@@ -80,7 +80,7 @@ repo full of links to Diagrams technologies and
 - [Diagrams](#diagrams)
   - [This Repo's Creation & GitHub Actions CI/CD to auto-(re)generate diagrams from code changes](#this-repos-creation--github-actions-cicd-to-auto-regenerate-diagrams-from-code-changes)
   - [GitHub Flow with Jira ticket integration](#github-flow-with-jira-ticket-integration)
-  - [Git - why you shouldn't use long-lived branches](#git---why-you-shouldnt-use-long-lived-branches)
+  - [Git - why you shouldn't use long-lived feature branches](#git---why-you-shouldnt-use-long-lived-feature-branches)
   - [AWS Web Traffic Classic](#aws-web-traffic-classic)
   - [Azure Active Directory Single Sign-On](#azure-active-directory-single-sign-on)
   - [Jenkins CI/CD on Kubernetes](#jenkins-cicd-on-kubernetes)
@@ -164,7 +164,7 @@ gitGraph
 ```
 
 
-### Git - why you shouldn't use long-lived branches
+### Git - why you shouldn't use long-lived feature branches
 
 \* [Environment Branches](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#git---environment-branches) may be one of the few exceptions but requires workflow discipline.
 
