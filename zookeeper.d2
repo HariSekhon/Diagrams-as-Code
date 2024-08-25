@@ -1,0 +1,81 @@
+#!/usr/bin/env d2 --theme 200
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-08-25 03:45:23 +0200 (Sun, 25 Aug 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                               Z o o K e e p e r
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Zookeeper Consensus
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
+  zookeeper: {
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/zookeeper.png
+    shape: image
+  }
+}
+
+# ============================================================================ #
+#                                   N o d e s
+# ============================================================================ #
+
+apps.class: apps
+
+zookeeper1: Zookeeper Node 1 {
+  class: zookeeper
+}
+
+zookeeper2: Zookeeper Node 2 {
+  class: zookeeper
+}
+
+zookeeper3: Zookeeper 3 {
+  class: zookeeper
+}
+
+# zookeeper4: Zookeeper Node 4 {
+#  class: zookeeper
+# }
+#
+# zookeeper5: Zookeeper Node 5 {
+#  class: zookeeper
+# }
+
+# ============================================================================ #
+#                                    F l o w
+# ============================================================================ #
+
+apps -> zookeeper1
+
+zookeeper1 <-> zookeeper2: consensus protocol
+zookeeper1 <-> zookeeper3: consesnsu protocol
+# zookeeper1 <-> zookeeper4: consesnsu protocol
+# zookeeper1 <-> zookeeper5: consesnsu protocol
+zookeeper2 <-> zookeeper3: consensus protocol
+# zookeeper2 <-> zookeeper4: consensus protocol
+# zookeeper2 <-> zookeeper5: consensus protocol
