@@ -17,7 +17,7 @@
 
 """
 
-Old Web Architecture
+Multi-Datacenter GSLB F5 Java Stack
 
 """
 
@@ -68,7 +68,6 @@ from diagrams.programming.language import Java
 from diagrams.custom import Custom
 
 # ============================================================================ #
-# ============================================================================ #
 
 # pylint: disable=C0103
 
@@ -92,14 +91,14 @@ graph_attr = {
 }
 
 # pylint: disable=W0104,W0106
-with Diagram('Old Web Architecture',
+with Diagram('Multi-Datacenter GSLB F5 Java Stack',
              show=not bool(os.environ.get('CI', 0)),
              direction='LR',
              filename='images/old_web_architecture',  # override the default filename, without the extension
              graph_attr=graph_attr,
              ):
 
-    gslb = Custom("DNS GSLB\nGlobal Server Load Balancing\nHealth Check Datacenters", dns_icon)
+    gslb = Custom("DNS GSLB\nGlobal Server Load Balancing\nHealth Check\nDatacenters", dns_icon)
 
     for n in range(1, 3, 1):
         with Cluster(f"Datacenter {n}") as dc:
@@ -107,15 +106,15 @@ with Diagram('Old Web Architecture',
             lb = Custom("F5 Big-IP 8900\nLoad Balancer", f5_icon)
             with Cluster("Cassandra") as cassandra:
                 cassandra_cluster = []
-                for i in range(2):
-                    cassandra_cluster.append(Cassandra("Cassandra node"))
+                for _ in range(1, 3, 1):
+                    cassandra_cluster.append(Cassandra(f"Cassandra node {_}"))
                 for i, node in enumerate(cassandra_cluster):
                     j = i + 1
                     if j >= len(cassandra_cluster):
                         j = 0
                     cassandra_cluster[i] >> cassandra_cluster[j]
 
-            for _ in range(2):
+            for _ in range(2, 0, -1):
                 with Cluster(f"Server {_}"):
                     # Server("Server")
                     # LinuxGeneral("Linux")
