@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #  coding=utf-8
 #  vim:ts=4:sts=4:sw=4:et
+#  pylint: disable=W0106
 #
 #  Author: Hari Sekhon
 #  Date: 2023-04-14 13:54:52 +0100 (Fri, 14 Apr 2023)
@@ -24,7 +25,7 @@ AWS Load Balanced Web Farm
 # based on https://diagrams.mingrammer.com/docs/getting-started/examples
 
 __author__ = 'Hari Sekhon'
-__version__ = '0.2'
+__version__ = '0.3'
 
 import os
 from diagrams import Diagram
@@ -37,6 +38,7 @@ from diagrams import Diagram
 from diagrams.aws.compute import EC2
 from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
+from diagrams.onprem.client import Users
 
 graph_attr = {
     "splines": "spline",
@@ -57,10 +59,13 @@ with Diagram("AWS Load Balanced Web Farm",
     # lb >> EC2("worker4") >> db
     # lb >> EC2("worker5") >> db
 
+    elb = ELB("ELB\nElastic Load Balancer")
+
+    Users('Users') >> elb
+
     # but less redundant code than the above can be achieved by grouping the workers into a list[]
-    # pylint: disable=W0106
-    ELB("ELB") >> [EC2("web1"),
-                   EC2("web2"),
-                   EC2("web3"),
-                   EC2("web4"),
-                   EC2("web5")] >> RDS("RDS DB")
+    elb >> [EC2("Web Server 1"),
+            EC2("Web Server 2"),
+            EC2("Web Server 3"),
+            EC2("Web Server 4"),
+            EC2("Web Server 5")] >> RDS("RDS Database")
