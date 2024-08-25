@@ -548,11 +548,11 @@ When you're trying to explain to your kids how the internet works...
 
 ![](images/web_basics.svg)
 
-### Network - Layer 3 - Local - ARP
+### Network - Layer 2 - Local - ARP
 
-[network_layer3_local.d2](network_layer3_local.d2):
+[network_layer2_local.d2](network_layer2_local.d2):
 
-![](images/network_layer3_local.svg)
+![](images/network_layer2_local.svg)
 
 ### Network - Layer 3 - Remote - IP
 
