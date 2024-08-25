@@ -90,6 +90,7 @@ I read an article that said:
   - [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
   - [Kafka Flink Elasticsearch](#kafka-flink-elasticsearch)
   - [Elasticsearch Queries](#elasticsearch-queries)
+  - [Cassandra Queries](#cassandra-queries)
   - [Devs Test in Production](#devs-test-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
