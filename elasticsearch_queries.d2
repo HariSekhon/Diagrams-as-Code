@@ -46,6 +46,13 @@ classes: {
   }
 }
 
+# ============================================================================ #
+#                                   N o d e s
+# ============================================================================ #
+
+kibana.class: kibana
+users.class: users
+
 es_node1: Elasticsearch\nClient Node\n(Query Coordinator\n& Aggregator) {
   class: elasticsearch
 }
@@ -53,6 +60,7 @@ es_node1: Elasticsearch\nClient Node\n(Query Coordinator\n& Aggregator) {
 es_node2: Elasticsearch\nData Node 1 {
   class: elasticsearch
 }
+
 es_node3: Elasticsearch\nData Node 2 {
   class: elasticsearch
 }
@@ -61,8 +69,9 @@ es_node4: Elasticsearch\nMaster Node {
   class: elasticsearch
 }
 
-kibana.class: kibana
-users.class: users
+# ============================================================================ #
+#                                    F l o w
+# ============================================================================ #
 
 users -> kibana: UI\nSearch
 
