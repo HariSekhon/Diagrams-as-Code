@@ -88,6 +88,7 @@ I read an article that said:
   - [Traefik Kubernetes Ingress on GKE](#traefik-kubernetes-ingress-on-gke)
   - [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
   - [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
+  - [MySQL Replica Architecture](#mysql-replica-architecture)
   - [Kafka Flink Elasticsearch](#kafka-flink-elasticsearch)
   - [Elasticsearch Queries](#elasticsearch-queries)
   - [Cassandra Queries](#cassandra-queries)
