@@ -1,0 +1,85 @@
+# !/usr/bin/env d2 --theme 200
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-08-25 05:00:23 +0200 (Sun, 25 Aug 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#              M y S Q L   R e p l i c a   A r c h i t e c t u r e
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: MySQL Replica Architecture
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  users: {
+    label: Users
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  mysql: {
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/database/mysql.png
+    shape: image
+  }
+  servers: {
+    icon: https://icons.terrastruct.com/tech%2Fservers.svg
+    shape: image
+  }
+}
+
+# ============================================================================ #
+#                                   N o d e s
+# ============================================================================ #
+
+webservers: {
+  label: Web Servers
+  class: servers
+}
+
+mysql_master: MySQL Master\n(read/write) {
+  class: mysql
+}
+
+mysql_replica1: MySQL Read Replica 1 {
+  class: mysql
+}
+
+mysql_replica2: MySQL Read Replica 2 {
+  class: mysql
+}
+
+mysql_replica3: MySQL Read Replica 3 {
+  class: mysql
+}
+
+# ============================================================================ #
+#                                    F l o w
+# ============================================================================ #
+
+mysql_master -> mysql_replica1: replication {style.animated: true}
+mysql_master -> mysql_replica2: replication {style.animated: true}
+mysql_master -> mysql_replica3: replication {style.animated: true}
+
+webservers -> mysql_replica1: reads
+webservers -> mysql_replica2: reads
+webservers -> mysql_replica3: reads
+
+webservers -> mysql_master: writes {style.animated: true}
