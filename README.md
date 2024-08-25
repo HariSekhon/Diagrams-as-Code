@@ -96,7 +96,7 @@ I read an article that said:
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Basics](#web-basics)
-  - [Network - Layer 3 - Local - ARP](#network---layer-3---local---arp)
+  - [Network - Layer 2 - Local - ARP](#network---layer-2---local---arp)
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Samples Revamped](#samples-revamped)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
