@@ -409,7 +409,7 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 [elasticsearch_queries.d2](elasticsearch_queries.d2):
 
-![](images/elasticsearchi_queries.svg)
+![](images/elasticsearch_queries.svg)
 
 ### Devs Test in Production
 
