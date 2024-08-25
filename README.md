@@ -397,6 +397,12 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 ![](images/opentsdb_kubernetes_hbase.svg)
 
+### Kafka Flink Elasticsearch
+
+[kafka_flink_elasticsearch.d2](kafka_flink_elasticsearch.d2):
+
+![](images/kafka_flink_elasticsearch.svg)
+
 ### Devs Test in Production
 
 Iirc I created and stuck this meme pic of [The Most Interesting Man in the World](https://en.wikipedia.org/wiki/The_Most_Interesting_Man_in_the_World) on the wall of my tech dept back in 2011 while leading the infra team of an internet Ad Tech company doing several production releases a day. We literally did test in production using a small fraction of live internet traffic via canary deployments.
