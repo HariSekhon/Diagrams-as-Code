@@ -1,0 +1,82 @@
+#!/usr/bin/env d2 --theme 200
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-08-25 04:26:26 +0200 (Sun, 25 Aug 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                       C a s s a n d r a   Q u e r i e s
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Cassandra Queries
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  users: {
+    label: Users
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  cassandra: {
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/database/cassandra.png
+    shape: image
+  }
+}
+
+# ============================================================================ #
+#                                   N o d e s
+# ============================================================================ #
+
+users.class: users
+
+cassandra_node1: Cassandra Node 1\n(Query Coordinator) {
+  class: cassandra
+}
+
+cassandra_node2: Cassandra Node 2 {
+  class: cassandra
+}
+
+cassandra_node3: Cassandra Node 3 {
+  class: cassandra
+}
+
+cassandra_node3: Cassandra Node 3 {
+  class: cassandra
+}
+
+cassandra_node4: Cassandra Node 4 {
+  class: cassandra
+}
+
+# ============================================================================ #
+#                                    F l o w
+# ============================================================================ #
+
+users -> cassandra_node1: CQL\nquery
+
+cassandra_node1 -> cassandra_node2: query
+cassandra_node1 -> cassandra_node3: query
+cassandra_node1 -> cassandra_node4: query
+
+cassandra_node1 <- cassandra_node2: response
+cassandra_node1 <- cassandra_node3: response
+cassandra_node1 <- cassandra_node4: response
