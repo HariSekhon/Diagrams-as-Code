@@ -400,6 +400,12 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 ![](images/opentsdb_kubernetes_hbase.svg)
 
+### MySQL Replica Architecture
+
+[mysql_replica_architecture.d2](mysql_replica_architecture.d2):
+
+![](images/mysql_replica_architecture.svg)
+
 ### Kafka Flink Elasticsearch
 
 [kafka_flink_elasticsearch.d2](kafka_flink_elasticsearch.d2):
