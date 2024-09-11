@@ -600,6 +600,12 @@ These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/g
 
 ![](images/aws_serverless_image_processing.png)
 
+### Prometheus & Thanos
+
+[prometheus_thanos.d2](prometheus_thanos.d2)
+
+![](images/prometheus_thanos.png)
+
 ## Build from Source
 
 Install D2, Graphviz, Python3 and 'diagrams' pip module:
