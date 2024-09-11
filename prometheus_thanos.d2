@@ -1,0 +1,82 @@
+# !/usr/bin/env d2 --theme 200
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-09-12 01:14:18 +0200 (Thu, 12 Sep 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                     P r o m e t h e u s   &   T h a n o s
+# ============================================================================ #
+
+title: {
+  label: Prometheus & Thanos
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  thanos: {
+    label: Thanos
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/thanos.png
+    shape: image
+  }
+  prometheus: {
+    label: Prometheus
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/prometheus.png
+    shape: image
+  }
+  exporter: {
+    label: Prometheus\nExporters
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/prometheus.png
+    shape: image
+  }
+  grafana: {
+    label: Grafana
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/monitoring/grafana.png
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+}
+
+grafana.class: grafana
+
+thanos_querier.class: thanos
+thanos_querier.label: Thanos\nQuerier
+thanos1.class: thanos
+thanos2.class: thanos
+thanos3.class: thanos
+
+prometheus1.class: prometheus
+prometheus2.class: prometheus
+prometheus3.class: prometheus
+
+exporter1.class: exporter
+exporter2.class: exporter
+exporter3.class: exporter
+
+grafana -> thanos_querier
+
+thanos_querier -> thanos1 -> prometheus1
+thanos_querier -> thanos2 -> prometheus2
+thanos_querier -> thanos3 -> prometheus3
+
+prometheus1 -> exporter1: {style.stroke-dash: 5}
+prometheus2 -> exporter2: {style.stroke-dash: 5}
+prometheus3 -> exporter3: {style.stroke-dash: 5}
