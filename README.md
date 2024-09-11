@@ -425,6 +425,12 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 ![](images/cassandra_queries.svg)
 
+### Prometheus & Thanos
+
+[prometheus_thanos.d2](prometheus_thanos.d2)
+
+![](images/prometheus_thanos.svg)
+
 ### Devs Test in Production
 
 Iirc I created and stuck this meme pic of [The Most Interesting Man in the World](https://en.wikipedia.org/wiki/The_Most_Interesting_Man_in_the_World) on the wall of my tech dept back in 2011 while leading the infra team of an internet Ad Tech company doing several production releases a day. We literally did test in production using a small fraction of live internet traffic via canary deployments.
@@ -599,12 +605,6 @@ These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/g
 [aws_serverless_image_processing.py](aws_serverless_image_processing.py):
 
 ![](images/aws_serverless_image_processing.png)
-
-### Prometheus & Thanos
-
-[prometheus_thanos.d2](prometheus_thanos.d2)
-
-![](images/prometheus_thanos.png)
 
 ## Build from Source
 
