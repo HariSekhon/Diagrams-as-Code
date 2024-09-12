@@ -92,6 +92,7 @@ I read an article that said:
   - [Kafka Flink Elasticsearch](#kafka-flink-elasticsearch)
   - [Elasticsearch Queries](#elasticsearch-queries)
   - [Cassandra Queries](#cassandra-queries)
+  - [Prometheus & Thanos](#prometheus--thanos)
   - [Devs Test in Production](#devs-test-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
@@ -107,7 +108,16 @@ I read an article that said:
   - [AWS Serverless Image Processing](#aws-serverless-image-processing)
 - [Build from Source](#build-from-source)
 - [Templates](#templates)
-- [See Also](#see-also)
+- [Star History](#star-history)
+- [More Core Repos](#more-core-repos)
+  - [Knowledge](#knowledge)
+  - [DevOps Code](#devops-code)
+  - [Containerization](#containerization)
+  - [CI/CD](#cicd)
+  - [DBA - SQL](#dba---sql)
+  - [DevOps Reloaded](#devops-reloaded)
+  - [Templates](#templates)
+  - [Misc](#misc)
 
 <!-- INDEX_END -->
 
@@ -654,9 +664,9 @@ The [templates/diagram.d2](https://github.com/HariSekhon/Templates/blob/master/d
 
 They are a good starting point for creating your own diagrams, and come pre-loaded with many useful icons, links to docs and links to icon sets.
 
-### Stargazers over time
+## Star History
 
-[![Stargazers over time](https://starchart.cc/HariSekhon/Diagrams-as-Code.svg)](https://starchart.cc/HariSekhon/Diagrams-as-Code)
+[![Star History Chart](https://api.star-history.com/svg?repos=HariSekhon/Diagrams-as-Code&type=Date)](https://star-history.com/#HariSekhon/Diagrams-as-Code&Date)
 
 ## More Core Repos
 
