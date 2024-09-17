@@ -60,6 +60,7 @@
 [![CloudGram](https://img.shields.io/badge/CloudGram-editor-blue?logo=pending&logoColor=white)](https://cloudgram.dedalusone.com/index.html)
 [![PlantUML](https://img.shields.io/badge/PlantUML-editor-blue?logo=pending&logoColor=white)](https://www.planttext.com/)
 [![Excalidraw](https://img.shields.io/badge/Excalidraw-editor-blue?logo=pending&logoColor=white)](https://excalidraw.com/)
+[![Miro](https://img.shields.io/badge/Miro-dashboard-FEDD33.svg)](https://miro.com/app/dashboard/)
 
 Diagrams-as-Code using the awesome [D2 language](https://d2lang.com/), [MermaidJS](https://mermaid.js.org/), [Python diagrams](https://github.com/mingrammer/diagrams) and [Graphviz](https://graphviz.org/).
 
