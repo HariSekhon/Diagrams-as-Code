@@ -90,10 +90,12 @@ I read an article that said:
   - [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
   - [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
   - [MySQL Replica Architecture](#mysql-replica-architecture)
+  - [Kafka Pub/Sub](#kafka-pubsub)
   - [Kafka Flink Elasticsearch](#kafka-flink-elasticsearch)
   - [Elasticsearch Queries](#elasticsearch-queries)
   - [Cassandra Queries](#cassandra-queries)
   - [Prometheus & Thanos](#prometheus--thanos)
+  - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
   - [Devs Test in Production](#devs-test-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
@@ -418,6 +420,12 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 ![](images/mysql_replica_architecture.svg)
 
+### Kafka Pub/Sub
+
+[kafka_pubsub.d2](kafka_pubsub.d2):
+
+![](images/kafka_pubsub.svg)
+
 ### Kafka Flink Elasticsearch
 
 [kafka_flink_elasticsearch.d2](kafka_flink_elasticsearch.d2):
@@ -441,6 +449,12 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 [prometheus_thanos.d2](prometheus_thanos.d2)
 
 ![](images/prometheus_thanos.svg)
+
+### RabbitMQ Pub/Sub
+
+[rabbitmq_pubsub.d2](rabbitmq_pubsub.d2):
+
+![](images/rabbitmq_pubsub.svg)
 
 ### Devs Test in Production
 
