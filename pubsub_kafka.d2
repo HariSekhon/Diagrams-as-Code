@@ -1,0 +1,84 @@
+#!/usr/bin/env d2
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-09-24 15:24:01 +0100 (Tue, 24 Sep 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                           P u b / S u b   K a f k a
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Kafka Pub/Sub
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  kafka: {
+    label: Kafka
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/queue/kafka.png
+    shape: image
+  }
+  users: {
+    label: Users
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    shape: image
+  }
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
+}
+
+users1.class: users
+users2.class: users
+
+apps1.class: apps
+apps2.class: apps
+
+publish: {
+  height: 1
+  width: 1
+}
+
+subscribe: {
+  height: 1
+  width: 1
+}
+
+kafka_cluster: {
+  label: Kafka Cluster
+  kafka1: {
+    label: Kafka\nnode 1
+    class: kafka
+  }
+  kafka2: {
+    label: Kafka\nnode 2
+    class: kafka
+  }
+  kafka1 -- kafka2: topic replication
+}
+
+users1 -> publish: {style.animated: true}
+apps1 -> publish: {style.animated: true}
+
+subscribe -> apps2: {style.animated: true}
+subscribe -> users2: {style.animated: true}
+
+publish -> kafka_cluster -> subscribe: {style.animated: true}
