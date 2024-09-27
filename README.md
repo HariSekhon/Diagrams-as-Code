@@ -515,8 +515,9 @@ gitGraph
     checkout staging
     commit id: "QA fix 2 "
 
-    #checkout production
-    #commit id: "commit 3  "
+    %% new MermaidJS comment format
+    %% checkout production
+    %% commit id: "commit 3  "
 
     checkout dev
     commit id: "commit 4"
@@ -534,8 +535,9 @@ gitGraph
     checkout staging
     commit id: "QA fix 3 "
 
-    #checkout production
-    #commit id: "commit 5  "
+    %% new MermaidJS comment format
+    %% checkout production
+    %% commit id: "commit 5  "
 
     checkout dev
     commit id: "commit 6"
