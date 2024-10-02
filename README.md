@@ -102,6 +102,7 @@ I read an article that said:
   - [Web Basics](#web-basics)
   - [Network - Layer 2 - Local - ARP](#network---layer-2---local---arp)
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
+- [Gantt Chart of my Experience](#gantt-chart-of-my-experience)
 - [Samples Revamped](#samples-revamped)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
@@ -109,7 +110,6 @@ I read an article that said:
   - [GCP Pub/Sub Analytics](#gcp-pubsub-analytics)
   - [AWS Event Processing](#aws-event-processing)
   - [AWS Serverless Image Processing](#aws-serverless-image-processing)
-- [Gantt Chart of my Experience](#gantt-chart-of-my-experience)
 - [Build from Source](#build-from-source)
 - [Templates](#templates)
 - [Star History](#star-history)
@@ -594,46 +594,6 @@ When you're trying to explain to your kids how the internet works...
 
 ![](images/network_layer3_remote.svg)
 
-## Samples Revamped
-
-These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/getting-started/examples) and [Cloudgram](https://cloudgram.dedalusone.com/examples.html) examples.
-
-### AWS Load Balanced Web Farm
-
-[aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
-
-![](images/aws_load_balanced_web_farm.png)
-
-### AWS Clustered Web Services
-
-[aws_clustered_web_services.py](aws_clustered_web_services.py):
-
-![](images/aws_clustered_web_services.png)
-
-### Advanced Web Services Open Source
-
-[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
-
-![](images/advanced_web_services_open_source.png)
-
-### GCP Pub/Sub Analytics
-
-[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
-
-![](images/gcp_pubsub_analytics.png)
-
-### AWS Event Processing
-
-[aws_event_processing.py](aws_event_processing.py):
-
-![](images/aws_event_processing.png)
-
-### AWS Serverless Image Processing
-
-[aws_serverless_image_processing.py](aws_serverless_image_processing.py):
-
-![](images/aws_serverless_image_processing.png)
-
 ## Gantt Chart of my Experience
 
 This should give you some idea of my long evolution having reached the level of lead engineer and architect
@@ -870,6 +830,46 @@ gantt
     %%Kibana                 : crit, 2013-03-31, 2024-12-31
     SolrCloud              : done, 2013-04-01, 2024-03-01
 ```
+
+## Samples Revamped
+
+These are reworked from [Python diagrams](https://diagrams.mingrammer.com/docs/getting-started/examples) and [Cloudgram](https://cloudgram.dedalusone.com/examples.html) examples.
+
+### AWS Load Balanced Web Farm
+
+[aws_load_balanced_web_farm.py](aws_load_balanced_web_farm.py):
+
+![](images/aws_load_balanced_web_farm.png)
+
+### AWS Clustered Web Services
+
+[aws_clustered_web_services.py](aws_clustered_web_services.py):
+
+![](images/aws_clustered_web_services.png)
+
+### Advanced Web Services Open Source
+
+[advanced_web_services_open_source.py](advanced_web_services_open_source.py):
+
+![](images/advanced_web_services_open_source.png)
+
+### GCP Pub/Sub Analytics
+
+[gcp_pubsub_analytics.py](gcp_pubsub_analytics.py):
+
+![](images/gcp_pubsub_analytics.png)
+
+### AWS Event Processing
+
+[aws_event_processing.py](aws_event_processing.py):
+
+![](images/aws_event_processing.png)
+
+### AWS Serverless Image Processing
+
+[aws_serverless_image_processing.py](aws_serverless_image_processing.py):
+
+![](images/aws_serverless_image_processing.png)
 
 ## Build from Source
 
