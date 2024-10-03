@@ -874,7 +874,7 @@ gantt
     Kubernetes-configs : active, 2020-09-16, 2024-09-21
     SQL-keywords : active, 2013-08-13, 2020-12-31
     Templates : active, 2019-11-25, 2024-09-25
-    TeamCity-CI : active, 2020-12-03, 2022-13-31
+    TeamCity-CI : active, 2020-12-03, 2022-12-31
     Terraform : active, 2021-01-18, 2024-09-21
     Jenkins : active, 2022-01-17, 2024-09-23
     GitHub-Actions : active, 2022-01-17, 2024-09-22
