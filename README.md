@@ -856,30 +856,30 @@ gantt
 gantt
     dateFormat  YYYY-MM-DD
     title Repositories Gantt Chart
-    Nagios-Plugins : active, 2012-12-30, 2024-09-22
-    lib : active, 2012-12-30, 2024-09-22
-    Spotify-tools : active, 2012-12-30, 2024-09-22
-    DevOps-Perl-tools : active, 2012-12-30, 2024-09-22
+    Nagios-Plugins : active, 2012-12-30, 2020-12-31
+    lib : active, 2012-12-30, 2015-12-31
+    Spotify-tools : active, 2012-12-30, 2020-12-31
+    DevOps-Perl-tools : active, 2012-12-30, 2020-12-31
     spark-apps : done, 2015-05-25, 2020-04-02
-    lib-java : active, 2015-05-31, 2024-09-22
-    pylib : active, 2015-10-27, 2024-09-23
-    DevOps-Python-tools : active, 2015-10-27, 2024-09-23
-    Dockerfiles : active, 2016-01-17, 2024-09-28
-    DevOps-Bash-tools : active, 2016-01-17, 2024-09-28
-    Nagios-Plugin-Kafka : active, 2016-06-07, 2024-09-22
-    HAProxy-configs : active, 2018-06-08, 2024-09-22
+    lib-java : active, 2015-05-31, 2016-12-31
+    pylib : active, 2015-10-27, 2020-12-31
+    DevOps-Python-tools : active, 2015-10-27, 2020-12-31
+    Dockerfiles : active, 2016-01-17, 2022-12-31
+    DevOps-Bash-tools : active, 2016-01-17, 2024-12-31
+    Nagios-Plugin-Kafka : active, 2016-06-07, 2017-12-31
+    HAProxy-configs : active, 2018-06-08, 2022-12-31
     DevOps-Golang-tools : active, 2020-04-30, 2024-09-22
     Spotify-Playlists : active, 2020-06-29, 2024-09-22
     SQL-scripts : active, 2020-08-05, 2024-09-21
     Kubernetes-configs : active, 2020-09-16, 2024-09-21
-    SQL-keywords : active, 2020-09-16, 2024-09-21
-    Templates : active, 2020-09-16, 2024-09-25
-    TeamCity-CI : active, 2020-12-03, 2024-09-21
+    SQL-keywords : active, 2013-08-13, 2020-12-31
+    Templates : active, 2019-11-25, 2024-09-25
+    TeamCity-CI : active, 2020-12-03, 2022-13-31
     Terraform : active, 2021-01-18, 2024-09-21
     Jenkins : active, 2022-01-17, 2024-09-23
     GitHub-Actions : active, 2022-01-17, 2024-09-22
-    CI-CD : active, 2022-03-25, 2024-10-01
-    GitHub-Actions-Contexts : active, 2022-08-17, 2024-09-21
+    CI-CD : active, 2022-03-25, 2023-12-31
+    GitHub-Actions-Contexts : active, 2022-08-17, 2022-12-31
     Diagrams-as-Code : active, 2023-04-14, 2024-10-02
     Template-Repo : active, 2023-04-15, 2024-09-22
     Packer : active, 2023-06-02, 2024-09-21
@@ -887,7 +887,7 @@ gantt
     Knowledge-Base : active, 2023-11-22, 2024-09-29
     HariSekhon : active, 2024-08-14, 2024-10-02
     GitHub-Commit-Times-Graph : active, 2024-09-07, 2024-09-08
-    GitHub-Repos-MermaidJS-Gantt-Chart : active, 2024-10-02, 2024-10-02
+    GitHub-Repos-MermaidJS-Gantt-Chart : active, 2024-10-02, 2024-10-03
 ```
 
 ## Samples Revamped
