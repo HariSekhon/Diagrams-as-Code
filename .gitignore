@@ -1,6 +1,7 @@
 !data/
 !data/**
 !images/
+#!*.dat
 !*.svg
 !*.png
 /*.svg
