@@ -105,6 +105,7 @@ I read an article that said:
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Gantt Chart of my Experience](#gantt-chart-of-my-experience)
 - [Gantt Chart of my GitHub Repos](#gantt-chart-of-my-github-repos)
+- [Git Commits per Month](#git-commits-per-month)
 - [Samples Revamped](#samples-revamped)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
@@ -890,6 +891,12 @@ gantt
     GitHub-Commit-Times-Graph : active, 2024-09-07, 2024-09-08
     GitHub-Repos-MermaidJS-Gantt-Chart : active, 2024-10-02, 2024-10-03
 ```
+
+## Git Commits per Month
+
+[git_commits_per_month.gnuplot](git_commits_per_month.gnuplot)
+
+![](images/git_commits_per_month.png)
 
 ## Samples Revamped
 
