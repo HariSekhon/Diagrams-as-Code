@@ -11,7 +11,7 @@ set boxwidth 0.5 relative
 set style fill solid
 set datafile separator ' '
 set title "Git Commits per Month"
-set xlabel "Year-Month"
+set xlabel "Month-Year"
 set format x "%b %Y"
 set xdata time
 set timefmt "%Y-%m"
