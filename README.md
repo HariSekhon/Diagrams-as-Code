@@ -105,7 +105,8 @@ I read an article that said:
   - [Network - Layer 3 - Remote - IP](#network---layer-3---remote---ip)
 - [Gantt Chart of my Experience](#gantt-chart-of-my-experience)
 - [Gantt Chart of my GitHub Repos](#gantt-chart-of-my-github-repos)
-- [Git Commits per Month](#git-commits-per-month)
+- [Git Commits per Month for this Repo](#git-commits-per-month-for-this-repo)
+- [Git Commits per Hour across my Repos](#git-commits-per-hour-across-my-repos)
 - [Samples Revamped](#samples-revamped)
   - [AWS Load Balanced Web Farm](#aws-load-balanced-web-farm)
   - [AWS Clustered Web Services](#aws-clustered-web-services)
@@ -892,11 +893,23 @@ gantt
     GitHub-Repos-MermaidJS-Gantt-Chart : active, 2024-10-02, 2024-10-03
 ```
 
-## Git Commits per Month
+## Git Commits per Month for this Repo
+
+Generated using GNUplot:
 
 [git_commits_per_month.gnuplot](git_commits_per_month.gnuplot)
 
-![](images/git_commits_per_month.png)
+![Git Commits per Month](images/git_commits_per_month.png)
+
+Generated using MermaidJS:
+
+## Git Commits per Hour across my Repos
+
+Generated using GNUplot:
+
+[git_commits_times.gnuplot](git_commit_times.gnuplot)
+
+![Git Commits per Hour](images/git_commit_times.png)
 
 ## Samples Revamped
 
