@@ -6,7 +6,7 @@
 set terminal pngcairo size 1280,720 enhanced font "Arial,14"
 set ylabel "Number of Commits"
 set grid
-set xtics rotate by -45
+#set xtics rotate by -45
 set boxwidth 0.8 relative
 set style fill solid
 set datafile separator " "
