@@ -4,6 +4,7 @@
 #!*.dat
 !*.svg
 !*.png
+!*.webp
 /*.svg
 /*.png
 custom/*.png
