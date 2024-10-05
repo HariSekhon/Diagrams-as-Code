@@ -98,6 +98,7 @@ I read an article that said:
   - [Prometheus & Thanos](#prometheus--thanos)
   - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
   - [Devs Test in Production](#devs-test-in-production)
+  - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Basics](#web-basics)
@@ -476,7 +477,13 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 
 [code_commit_push.d2](code_commit_push.d2):
 
-![](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/images/code_commit_push.svg)
+![](images/code_commit_push.svg)
+
+### The Danger of Testing Ideas in Production
+
+[karl_marx_test_ideas_in_production.d2](karl_marx_test_ideas_in_production.d2)
+
+![](images/karl_marx_test_ideas_in_production.svg)
 
 ### Git - Environment Branches
 
