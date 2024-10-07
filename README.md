@@ -459,6 +459,9 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 [prometheus_thanos.d2](prometheus_thanos.d2)
 
+See Also: Prometheus and components quick install scripts in the
+[DevOps-Bash-tools](https://github.com/HariSekhon/DevOps-Bash-tools) repo.
+
 ![](images/prometheus_thanos.svg)
 
 ### RabbitMQ Pub/Sub
