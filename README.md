@@ -97,6 +97,7 @@ I read an article that said:
   - [Cassandra Queries](#cassandra-queries)
   - [Prometheus & Thanos](#prometheus--thanos)
   - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
+  - [Apigee Akamai EKS](#apigee-akamai-eks)
   - [Devs Test in Production](#devs-test-in-production)
   - [Code, Commit, Push, Boom](#code-commit-push-boom)
   - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
@@ -470,6 +471,12 @@ See Also: Prometheus and components quick install scripts in the
 [rabbitmq_pubsub.d2](rabbitmq_pubsub.d2):
 
 ![](images/rabbitmq_pubsub.svg)
+
+### Apigee Akamai EKS
+
+[apigee_akamai_eks.d2](apigee_akamai_eks.d2)
+
+![](images/apigee_akamai_eks.svg)
 
 ### Devs Test in Production
 
