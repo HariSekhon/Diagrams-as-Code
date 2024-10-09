@@ -484,6 +484,8 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 
 ### The Danger of Testing Ideas in Production
 
+I may have gone overboard and done so many Diagrams-as-Code I'm starting to see life this way...
+
 [karl_marx_test_ideas_in_production.d2](karl_marx_test_ideas_in_production.d2)
 
 ![](images/karl_marx_test_ideas_in_production.svg)
