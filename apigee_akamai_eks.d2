@@ -1,0 +1,153 @@
+#!/usr/bin/env d2 --theme 200
+#                             myfilename.d2 forceformat.png -h # trick to eat arg
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2024-10-09 18:15:20 +0300 (Wed, 09 Oct 2024)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#                 A p i g e e   - >   A k a m a i   - >   E K S
+# ============================================================================ #
+
+direction: down
+
+# this is just a regular object
+title: {
+  label: Apigee API Gateway, Akamai WAF and EKS
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  # name: {
+  #  label: Display Name
+  #  icon: images/d2_graphic.png
+  #  shape: image
+  #  style.3d: true
+  #  style.animated: true
+  #  style.underline: true
+  #  style.opacity: 0.5  # 0 - 1  # 0 is invisible, less than 1 is translucent
+  #  style.stroke-dash: 5  # 0 - 10
+  # }
+  users: {
+    label: Users
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
+  apigee: {
+    label: Apigee\nAPI Gateway
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FAPI%20Management%2FApigee%20API%20Platform.svg
+    shape: image
+  }
+  akamai: {
+    label: Akamai WAF
+    icon: https://diagrams.mingrammer.com/img/resources/saas/cdn/akamai.png
+    shape: image
+  }
+  load_balancer: {
+    label: AWS ELB\nLoad Balancer
+    icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FElastic-Load-Balancing.svg
+    # icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLoad%20Balancers.svg
+    shape: image
+  }
+  k8s: {
+    label: Kubernetes
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  ingress: {
+    label: Kubernetes Ingress
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/ing.png
+    shape: image
+  }
+  service: {
+    label: Kubernetes Service
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+    shape: image
+  }
+  pod: {
+    label: Kubernetes Pod
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
+    shape: image
+  }
+  nginx: {
+    label: Nginx
+    # icon: https://icons.terrastruct.com/dev%2Fnginx.svg
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/nginx.png
+    shape: image
+  }
+  cloud: {
+    label: "" # use an AWS / GCP / Azure icon inside the cloud instead
+    shape: cloud
+    # style.fill: transparent
+  }
+  aws: {
+    label: "" # the icon itself says Amazon Web Services, this is redundant labelling
+    icon: https://icons.terrastruct.com/dev%2Famazonwebservices.svg
+    # icon: https://icons.terrastruct.com/aws%2F_Group%20Icons%2FAWS-Cloud-alt_light-bg.svg
+    shape: image
+  }
+  eks: {
+    label: EKS\nElastic\nKubernetes\nService
+    icon: https://diagrams.mingrammer.com/img/resources/aws/compute/elastic-kubernetes-service.png
+    shape: image
+  }
+  # animated: {
+  #  style.animated: true
+  # }
+  # dash: {
+  #  style.stroke-dash: 5
+  # }
+  # invisible: {
+  #  style.opacity: 0
+  # }
+}
+
+users.class: users
+apps.class: apps
+apigee.class: apigee
+akamai.class: akamai
+
+users -> apigee
+apps -> apigee
+apigee -> akamai -> cloud.lb
+
+cloud: AWS {
+  aws.class: aws
+
+  lb.class: load_balancer
+
+  # aws -- lb: {style.opacity: 0}
+
+  lb -> eks.ingress
+
+  eks: EKS {
+    eks.class: eks
+    ingress.class: ingress
+    service.class: service
+    pod1.class: pod
+    pod2.class: pod
+
+    ingress -> service
+    service -> pod1
+    service -> pod2
+  }
+}
