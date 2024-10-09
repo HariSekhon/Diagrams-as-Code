@@ -31,20 +31,9 @@ title: {
 }
 
 classes: {
-  # name: {
-  #  label: Display Name
-  #  icon: images/d2_graphic.png
-  #  shape: image
-  #  style.3d: true
-  #  style.animated: true
-  #  style.underline: true
-  #  style.opacity: 0.5  # 0 - 1  # 0 is invisible, less than 1 is translucent
-  #  style.stroke-dash: 5  # 0 - 10
-  # }
   users: {
     label: Users
-    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
-    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
     shape: image
   }
   apps: {
@@ -126,9 +115,9 @@ apps.class: apps
 apigee.class: apigee
 akamai.class: akamai
 
-users -> apigee
-apps -> apigee
-apigee -> akamai -> cloud.lb
+users -> apigee: {style.animated: true}
+apps -> apigee: {style.animated: true}
+apigee -> akamai -> cloud.lb: {style.animated: true}
 
 cloud: AWS {
   aws.class: aws
@@ -137,7 +126,7 @@ cloud: AWS {
 
   # aws -- lb: {style.opacity: 0}
 
-  lb -> eks.ingress
+  lb -> eks.ingress: {style.animated: true}
 
   eks: EKS {
     eks.class: eks
@@ -146,8 +135,8 @@ cloud: AWS {
     pod1.class: pod
     pod2.class: pod
 
-    ingress -> service
-    service -> pod1
-    service -> pod2
+    ingress -> service: {style.animated: true}
+    service -> pod1: {style.animated: true}
+    service -> pod2: {style.animated: true}
   }
 }
