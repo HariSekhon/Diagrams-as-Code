@@ -79,17 +79,17 @@ es_node4: Elasticsearch\nMaster Node {
 #                                    F l o w
 # ============================================================================ #
 
-users -> kibana: UI\nSearch {style.animated:true}
+users -> kibana: UI\nSearch {style.animated: true}
 
-kibana -> es_node1: API\nquery {style.animated:true}
+kibana -> es_node1: API\nquery {style.animated: true}
 
 users -> es_node1: API\nquery\n(code) {style.stroke-dash: 3}
 apps -> es_node1: API\nquery {style.stroke-dash: 3}
 
-#users -- apps
+# users -- apps
 
-es_node1 -> es_node2: query {style.animated:true}
-es_node1 -> es_node3: query {style.animated:true}
+es_node1 -> es_node2: query {style.animated: true}
+es_node1 -> es_node3: query {style.animated: true}
 
 es_node1 <- es_node2: response
 es_node1 <- es_node3: response
