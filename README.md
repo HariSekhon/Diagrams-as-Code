@@ -98,6 +98,7 @@ I read an article that said:
   - [Prometheus & Thanos](#prometheus--thanos)
   - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
   - [Devs Test in Production](#devs-test-in-production)
+  - [Code, Commit, Push, Boom](#code-commit-push-boom)
   - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
@@ -477,6 +478,10 @@ Iirc I created and stuck this meme pic of [The Most Interesting Man in the World
 [test_in_production.d2](test_in_production.d2):
 
 ![](images/test_in_production.svg)
+
+If done badly though without canary release testing or similar then it can result in this...
+
+### Code, Commit, Push, Boom
 
 [code_commit_push.d2](code_commit_push.d2):
 
