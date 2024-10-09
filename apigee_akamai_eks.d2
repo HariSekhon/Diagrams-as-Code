@@ -21,7 +21,6 @@
 
 direction: down
 
-# this is just a regular object
 title: {
   label: Apigee API Gateway, Akamai WAF and EKS
   near: top-center
@@ -54,7 +53,6 @@ classes: {
   load_balancer: {
     label: AWS ELB\nLoad Balancer
     icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FElastic-Load-Balancing.svg
-    # icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLoad%20Balancers.svg
     shape: image
   }
   k8s: {
@@ -77,21 +75,14 @@ classes: {
     icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
     shape: image
   }
-  nginx: {
-    label: Nginx
-    # icon: https://icons.terrastruct.com/dev%2Fnginx.svg
-    icon: https://diagrams.mingrammer.com/img/resources/onprem/network/nginx.png
-    shape: image
-  }
-  cloud: {
-    label: "" # use an AWS / GCP / Azure icon inside the cloud instead
-    shape: cloud
-    # style.fill: transparent
-  }
+  #cloud: {
+  #  label: "" # use an AWS / GCP / Azure icon inside the cloud instead
+  #  shape: cloud
+  #  # style.fill: transparent
+  #}
   aws: {
     label: "" # the icon itself says Amazon Web Services, this is redundant labelling
     icon: https://icons.terrastruct.com/dev%2Famazonwebservices.svg
-    # icon: https://icons.terrastruct.com/aws%2F_Group%20Icons%2FAWS-Cloud-alt_light-bg.svg
     shape: image
   }
   eks: {
@@ -99,15 +90,6 @@ classes: {
     icon: https://diagrams.mingrammer.com/img/resources/aws/compute/elastic-kubernetes-service.png
     shape: image
   }
-  # animated: {
-  #  style.animated: true
-  # }
-  # dash: {
-  #  style.stroke-dash: 5
-  # }
-  # invisible: {
-  #  style.opacity: 0
-  # }
 }
 
 users.class: users
