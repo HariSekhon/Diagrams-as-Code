@@ -35,6 +35,11 @@ classes: {
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
     shape: image
   }
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
   elasticsearch: {
     icon: https://diagrams.mingrammer.com/img/resources/elastic/saas/elastic.png
     shape: image
@@ -52,6 +57,7 @@ classes: {
 
 kibana.class: kibana
 users.class: users
+apps.class: apps
 
 es_node1: Elasticsearch\nClient Node\n(Query Coordinator\n& Aggregator) {
   class: elasticsearch
@@ -73,14 +79,17 @@ es_node4: Elasticsearch\nMaster Node {
 #                                    F l o w
 # ============================================================================ #
 
-users -> kibana: UI\nSearch
+users -> kibana: UI\nSearch {style.animated:true}
 
-kibana -> es_node1: API\nquery
+kibana -> es_node1: API\nquery {style.animated:true}
 
-users -> es_node1: API\nquery
+users -> es_node1: API\nquery\n(code) {style.stroke-dash: 3}
+apps -> es_node1: API\nquery {style.stroke-dash: 3}
 
-es_node1 -> es_node2: query
-es_node1 -> es_node3: query
+#users -- apps
+
+es_node1 -> es_node2: query {style.animated:true}
+es_node1 -> es_node3: query {style.animated:true}
 
 es_node1 <- es_node2: response
 es_node1 <- es_node3: response
