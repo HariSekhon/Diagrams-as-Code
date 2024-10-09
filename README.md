@@ -439,17 +439,17 @@ This was the second client I did in-depth performance tuning of HBase for - I've
 
 ![](images/kafka_pubsub.svg)
 
-### Kafka Flink Elasticsearch
-
-[kafka_flink_elasticsearch.d2](kafka_flink_elasticsearch.d2):
-
-![](images/kafka_flink_elasticsearch.svg)
-
 ### Elasticsearch Queries
 
 [elasticsearch_queries.d2](elasticsearch_queries.d2):
 
 ![](images/elasticsearch_queries.svg)
+
+### Kafka Flink Elasticsearch
+
+[kafka_flink_elasticsearch.d2](kafka_flink_elasticsearch.d2):
+
+![](images/kafka_flink_elasticsearch.svg)
 
 ### Cassandra Queries
 
