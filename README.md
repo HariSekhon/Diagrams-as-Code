@@ -31,6 +31,7 @@
 [![Generate D2 Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-d2-images.yaml)
 [![Generate Python Images](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/generate-python-images.yaml)
 [![D2 fmt](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/d2-fmt.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/d2-fmt.yaml)
+[![Markdown](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/markdown.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/markdown.yaml)
 [![Validation](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/validate.yaml)
 [![Kics](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/kics.yaml)
 [![Grype](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/Diagrams-as-Code/actions/workflows/grype.yaml)
