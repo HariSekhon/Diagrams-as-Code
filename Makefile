@@ -69,11 +69,11 @@ diagrams-python:
 	mkdir -p -v images
 	$(MAKE) clean
 	export CI=1; \
-	for x in *.py; do \
+	@for x in *.py; do \
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
-		echo "Generating $$x"; \
+		echo "Generating $$x -> $$img"; \
 		python3 $$x; \
 	done
 	@# generating images straight into images/ dir now to skip one step and avoid local run tidying being required
@@ -102,7 +102,7 @@ diagrams-d2:
 		#if [ -x "$$x" ]; then
 		#    ./"$$x"
 		#fi
-	for x in *.d2; do \
+	@for x in *.d2; do \
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
 		fi; \
@@ -111,9 +111,33 @@ diagrams-d2:
 		if [ -z "$$shebang" ]; then \
 			shebang="d2 --theme 200"; \
 		fi; \
-		echo "Generating $$x"; \
+		echo "Generating $$x -> $$img"; \
 		$$shebang "$$x" "$$img"; \
 	done
+
+.PHONY: diagrams-mermaidjs
+diagrams-mermaidjs:
+	@if ! type -P mmdc >/dev/null 2>&1; then \
+		$(MAKE) install-mermaidjs; \
+	fi;
+	@echo =============================
+	@echo Generating MermaidJS Diagrams
+	@echo =============================
+	mkdir -p -v images
+	$(MAKE) clean
+	@for x in *.mmd; do \
+		if [ "$$x" = template.mmd ]; then \
+			continue; \
+		fi; \
+		img="images/$${x%.mmd}.svg"; \
+		echo "Generating $$x -> $$img"; \
+		mmdc -i "$$x" -o "$$img"; \
+		echo; \
+	done
+
+.PHONY: mmdc
+mmdc: diagrams-mermaidjs
+	@:
 
 .PHONY: d2
 d2: diagrams-d2
@@ -155,6 +179,16 @@ install-d2:
 	curl -fsSL https://d2lang.com/install.sh | sh -s --
 	@# don't install this, see DevOps-bash-tools install/install_d2.sh for details why
 	@#curl -fsSL https://d2lang.com/install.sh | sh -s -- --tala
+
+.PHONY: install-mermaidjs
+install-mermaidjs:
+	@echo =================
+	@echo Install MermaidJS
+	@echo =================
+	@if ! type -P mmdc >/dev/null 2>&2; then \
+		bash-tools/packages/install_packages_if_not_installed.sh nodejs; \
+		bash-tools/packages/nodejs_npm_install_if_absent.sh @mermaid-js/mermaid-cli; \
+	fi
 
 .PHONY: install-python
 install-python:
@@ -224,7 +258,6 @@ fmt: init
 		popd || \
 		exit 1; \
 	done
-
 
 # set CODE_FILES extensions at the top instead to reuse the better wc in bash-tools/Makefile.in
 #.PHONY: wc
