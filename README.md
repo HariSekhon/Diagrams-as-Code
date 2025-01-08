@@ -896,8 +896,8 @@ gantt
     SQL-keywords : active, 2013-08-13, 2020-12-31
     spark-apps : done, 2015-05-25, 2020-04-02
     lib-java : active, 2015-05-31, 2016-12-31
-    pylib : active, 2015-10-27, 2020-12-31
     DevOps-Python-tools : active, 2015-10-27, 2020-12-31
+    pylib : active, 2015-10-27, 2020-12-31
     Dockerfiles : active, 2016-01-17, 2022-12-31
     DevOps-Bash-tools : active, 2016-01-17, 2024-12-31
     Nagios-Plugin-Kafka : active, 2016-06-07, 2017-12-31
