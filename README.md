@@ -891,8 +891,8 @@ gantt
     title Repositories Gantt Chart
     Nagios-Plugins : active, 2012-12-30, 2020-12-31
     lib : active, 2012-12-30, 2015-12-31
-    Spotify-tools : active, 2012-12-30, 2020-12-31
     DevOps-Perl-tools : active, 2012-12-30, 2020-12-31
+    Spotify-tools : active, 2012-12-30, 2020-12-31
     SQL-keywords : active, 2013-08-13, 2020-12-31
     spark-apps : done, 2015-05-25, 2020-04-02
     lib-java : active, 2015-05-31, 2016-12-31
