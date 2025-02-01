@@ -15,7 +15,7 @@
 ---
 name: D2 fmt
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - master

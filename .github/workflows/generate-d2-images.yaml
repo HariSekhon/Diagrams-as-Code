@@ -15,7 +15,7 @@
 ---
 name: Generate D2 Images
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - master
