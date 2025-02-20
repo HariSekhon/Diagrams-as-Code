@@ -102,7 +102,8 @@ diagrams-d2:
 		#if [ -x "$$x" ]; then
 		#    ./"$$x"
 		#fi
-	@for x in *.d2; do \
+	@set -eu ; \
+	for x in *.d2; do \
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
 		fi; \
