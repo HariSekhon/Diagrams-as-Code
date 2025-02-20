@@ -1,0 +1,121 @@
+# !/usr/bin/env d2 --theme 200
+#                             myfilename.d2 forceformat.png -h # trick to eat arg
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: Hari Sekhon
+#  Date: 2025-02-20 20:39:54 +0700 (Thu, 20 Feb 2025)
+#
+#  https///github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+# ============================================================================ #
+#    A W S   S 3   C o n f i g   N o t i f y   L a m b d a   D y n a m o D B
+# ============================================================================ #
+
+direction: down
+
+# this is just a regular object
+title: {
+  label: AWS S3 Config Upload Notify Lambda DynamoDB
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  users: {
+    label: Vendor
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  apps: {
+    label: Apps
+    icon: https://icons.terrastruct.com/azure%2FIntune%20Service%20Color%2FClient%20Apps.svg
+    shape: image
+  }
+  aws: {
+    label: "" # the icon itself says Amazon Web Services, this is redundant labelling
+    icon: https://icons.terrastruct.com/dev%2Famazonwebservices.svg
+    # icon: https://icons.terrastruct.com/aws%2F_Group%20Icons%2FAWS-Cloud-alt_light-bg.svg
+    shape: image
+  }
+  dynamodb: {
+    label: DynamoDB
+    icon: https://diagrams.mingrammer.com/img/resources/aws/database/dynamodb.png
+    shape: image
+  }
+  lambda: {
+    label: Lambda
+    icon: https://diagrams.mingrammer.com/img/resources/aws/iot/iot-lambda.png
+    shape: image
+  }
+  s3: {
+    label: S3
+    icon: https://diagrams.mingrammer.com/img/resources/aws/storage/simple-storage-service-s3.png
+    shape: image
+  }
+  iam: {
+    label: IAM
+    icon: https://diagrams.mingrammer.com/img/resources/aws/security/identity-and-access-management-iam.png
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  dash: {
+    style.stroke-dash: 5
+  }
+  invisible: {
+    style.opacity: 0
+  }
+}
+
+aws: AWS {
+  vendor_aws: Vendor Account {
+    aws.class: aws
+    vendor.class: users
+    vendor.label: Vendor
+  }
+
+  customer_aws: Customer Account {
+    aws.class: aws
+    s3.class: s3
+    lambda.class: lambda
+    dynamodb.class: dynamodb
+    apps.class: apps
+    s3 -> lambda: S3 Notification\nTrigger {style.animated: true}
+    lambda -> dynamodb: Python Code\nUpdates Config Tables {style.animated: true}
+    lambda -> s3: Python Code\nReads & Parses Config Files {style.animated: true}
+    dynamodb -> apps: Config Tables\nRead by Apps {style.stroke-dash: 5}
+  }
+  # vendor_aws.vendor -> customer_aws.s3: Config Files Upload\n(JSON / YAML) {style.animated: true}
+  vendor_aws.vendor -> configs: {style.animated: true}
+  configs -> customer_aws.s3: Upload {style.animated: true}
+  configs: Configs {
+    # multiple configs look rubbish and aren't needed, people can infer
+    json_config: |json
+      {
+        "json_config":
+          ...
+      }
+    |
+    yaml_config: |yaml
+      ---
+      yaml_config:
+        ...
+    |
+  }
+  customer_aws.s3 -> iam: IAM S3 Bucket Permissions\ngranted to vendor user or role {style.stroke-dash: 5}
+  iam -> vendor_aws.vendor: IAM S3 Bucket Permissions\ngranted to vendor user or role {style.stroke-dash: 5}
+  iam.class: iam
+  iam.class: iam
+}
