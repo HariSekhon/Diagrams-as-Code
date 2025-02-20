@@ -68,8 +68,9 @@ diagrams-python:
 	@echo ==========================
 	mkdir -p -v images
 	$(MAKE) clean
-	export CI=1; \
-	@for x in *.py; do \
+	set -eu; \
+	@export CI=1; \
+	for x in *.py; do \
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
@@ -102,7 +103,7 @@ diagrams-d2:
 		#if [ -x "$$x" ]; then
 		#    ./"$$x"
 		#fi
-	@set -eu ; \
+	@set -eu; \
 	for x in *.d2; do \
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
@@ -126,7 +127,7 @@ diagrams-mermaidjs:
 	@echo =============================
 	mkdir -p -v images
 	$(MAKE) clean
-	@set -eu ; \
+	@set -eu; \
 	for x in *.mmd; do \
 		if [ "$$x" = template.mmd ]; then \
 			continue; \
