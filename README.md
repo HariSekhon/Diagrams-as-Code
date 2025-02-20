@@ -475,6 +475,12 @@ See Also: Prometheus and components quick install scripts in the
 
 ![](images/rabbitmq_pubsub.svg)
 
+### AWS S3 Config Notify Lambda DynamoDB
+
+[aws_s3_config_notify_lambda_dynamodb.d2](aws_s3_config_notify_lambda_dynamodb.d2)
+
+![](images/aws_s3_config_notify_lambda_dynamodb.svg)
+
 ### Apigee Akamai EKS
 
 [apigee_akamai_eks.d2](apigee_akamai_eks.d2)
