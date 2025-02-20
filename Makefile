@@ -126,7 +126,8 @@ diagrams-mermaidjs:
 	@echo =============================
 	mkdir -p -v images
 	$(MAKE) clean
-	@for x in *.mmd; do \
+	@set -eu ; \
+	for x in *.mmd; do \
 		if [ "$$x" = template.mmd ]; then \
 			continue; \
 		fi; \
