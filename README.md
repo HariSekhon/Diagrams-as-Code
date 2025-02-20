@@ -100,6 +100,7 @@ I read an article that said:
   - [Cassandra Queries](#cassandra-queries)
   - [Prometheus & Thanos](#prometheus--thanos)
   - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
+  - [AWS S3 Config Notify Lambda DynamoDB](#aws-s3-config-notify-lambda-dynamodb)
   - [Apigee Akamai EKS](#apigee-akamai-eks)
   - [Devs Test in Production](#devs-test-in-production)
   - [Code, Commit, Push, Boom](#code-commit-push-boom)
