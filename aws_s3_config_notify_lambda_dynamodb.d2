@@ -31,7 +31,7 @@ title: {
 
 classes: {
   users: {
-    label: Vendor
+    label: Users
     icon: https://icons.terrastruct.com/essentials%2F359-users.svg
     # icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
     shape: image
@@ -100,17 +100,20 @@ aws: AWS {
   vendor_aws.vendor -> configs: {style.animated: true}
   configs -> customer_aws.s3: Upload {style.animated: true}
   configs: Configs {
-    # multiple configs look rubbish and aren't needed, people can infer
+    style.multiple: true
     json_config: |json
       {
         "json_config":
           ...
       }
-    |
-    yaml_config: |yaml
-      ---
-      yaml_config:
-        ...
+    | {
+      shape: code
+      style.multiple: true  # doesn't work on code shape and other shapes look ugly for this - applied to Configs container instead
+    }
+      yaml_config: |yaml
+        ---
+        yaml_config:
+          ...
     |
   }
   customer_aws.s3 -> iam: IAM S3 Bucket Permissions\ngranted cross-account\nto vendor user or role {style.stroke-dash: 5}
