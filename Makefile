@@ -75,7 +75,7 @@ diagrams-python:
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
-		echo "Generating $$x -> $$img"; \
+		echo "Generating $$x -> $$img" || git checkout "$$img" || rm -fv "$$img"; \
 		python3 $$x; \
 	done
 	@# generating images straight into images/ dir now to skip one step and avoid local run tidying being required
@@ -116,7 +116,7 @@ diagrams-d2:
 			shebang="d2 --theme 200"; \
 		fi; \
 		echo "Generating $$x -> $$img"; \
-		$$shebang "$$x" "$$img"; \
+		$$shebang "$$x" "$$img" || git checkout "$$img" || rm -fv "$$img"; \
 	done
 
 .PHONY: diagrams-mermaidjs
@@ -137,7 +137,7 @@ diagrams-mermaidjs:
 		fi; \
 		img="images/$${x%.mmd}.svg"; \
 		echo "Generating $$x -> $$img"; \
-		mmdc -i "$$x" -o "$$img"; \
+		mmdc -i "$$x" -o "$$img" || git checkout "$$img" || rm -fv "$$img"; \
 		echo; \
 	done
 
