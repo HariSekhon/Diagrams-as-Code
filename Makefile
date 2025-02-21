@@ -105,6 +105,7 @@ diagrams-d2: clean
 diagrams-mermaidjs: clean
 	@if ! type -P mmdc >/dev/null 2>&1; then \
 		$(MAKE) install-mermaidjs; \
+		echo; \
 	fi;
 	export SKIP_FILENAME_REGEX="template.mmd|diagram.mmd"; \
 	bash-tools/diagrams/mmdc_generate_diagrams.sh . images/
