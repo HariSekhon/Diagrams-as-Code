@@ -71,14 +71,19 @@ diagrams-python:
 	@set -o pipefail; \
 	set -eu; \
 	export CI=1; \
+	exitcode=0; \
 	for x in *.py; do \
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
 		img="images/$${x%.py}.svg"; \
-		echo "Generating $$x -> $$img" || git checkout "$$img" || rm -fv "$$img"; \
-		python3 $$x; \
-	done
+		echo "Generating $$x -> $$img"; \
+		if ! python3 $$x; then \
+			git checkout "$$img" || rm -fv "$$img"; \
+			exitcode=1 ;\
+		fi; \
+	done; \
+	exit "$$exitcode"
 	@# generating images straight into images/ dir now to skip one step and avoid local run tidying being required
 	@#sleep 1  # give the last png a second to be opened before moving it to avoid an error
 	@#mv -fv *.png images/
@@ -107,6 +112,7 @@ diagrams-d2:
 		#fi
 	@set -o pipefail; \
 	set -eu; \
+	exitcode=0; \
 	for x in *.d2; do \
 		if [ "$$x" = template.d2 ]; then \
 			continue; \
@@ -117,8 +123,12 @@ diagrams-d2:
 			shebang="d2 --theme 200"; \
 		fi; \
 		echo "Generating $$x -> $$img"; \
-		$$shebang "$$x" "$$img" || git checkout "$$img" || rm -fv "$$img"; \
-	done
+		if ! $$shebang "$$x" "$$img"; then \
+			git checkout "$$img" || rm -fv "$$img"; \
+			exitcode=1; \
+		fi; \
+	done; \
+	exit "$$exitcode"
 
 .PHONY: diagrams-mermaidjs
 diagrams-mermaidjs:
@@ -138,9 +148,12 @@ diagrams-mermaidjs:
 		fi; \
 		img="images/$${x%.mmd}.svg"; \
 		echo "Generating $$x -> $$img"; \
-		mmdc -i "$$x" -o "$$img" || git checkout "$$img" || rm -fv "$$img"; \
-		echo; \
-	done
+		if ! mmdc -i "$$x" -o "$$img" ; then \
+			git checkout "$$img" || rm -fv "$$img"; \
+			exitcode=1; \
+		fi; \
+	done; \
+	exit "$$exitcode"
 
 .PHONY: mmdc
 mmdc: diagrams-mermaidjs
