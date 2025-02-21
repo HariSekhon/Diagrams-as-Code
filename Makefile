@@ -61,8 +61,10 @@ diagrams: diagrams-python diagrams-d2
 diagrams-python: clean
 	@if ! type -P dot >/dev/null 2>&1 || \
 		! python3 -c 'import diagrams' 2>&1; then \
+		echo; \
 		$(MAKE) install-python; \
 	fi
+	@echo
 	@# Can't guarantee in a generate way in python_mingrammer_generate_diagrams.sh the targeted
 	@# filename that we would have to revert or delete to prevent bad diagram generation
 	@#export SKIP_FILENAME_REGEX="template.py|diagram.py"; \
@@ -104,9 +106,10 @@ diagrams-d2: clean
 .PHONY: diagrams-mermaidjs
 diagrams-mermaidjs: clean
 	@if ! type -P mmdc >/dev/null 2>&1; then \
-		$(MAKE) install-mermaidjs; \
 		echo; \
+		$(MAKE) install-mermaidjs; \
 	fi;
+	@echo
 	export SKIP_FILENAME_REGEX="template.mmd|diagram.mmd"; \
 	bash-tools/diagrams/mmdc_generate_diagrams.sh . images/
 
