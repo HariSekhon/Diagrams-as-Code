@@ -110,25 +110,7 @@ diagrams-d2:
 		#if [ -x "$$x" ]; then
 		#    ./"$$x"
 		#fi
-	@set -o pipefail; \
-	set -eu; \
-	exitcode=0; \
-	for x in *.d2; do \
-		if [ "$$x" = template.d2 ]; then \
-			continue; \
-		fi; \
-		img="images/$${x%.d2}.svg"; \
-		shebang="$$(head -n 1 "$$x" | grep '^#!/.*d2' | sed 's/^#!//' || :)"; \
-		if [ -z "$$shebang" ]; then \
-			shebang="d2 --theme 200"; \
-		fi; \
-		echo "Generating $$x -> $$img"; \
-		if ! $$shebang "$$x" "$$img"; then \
-			git checkout "$$img" || rm -fv "$$img"; \
-			exitcode=1; \
-		fi; \
-	done; \
-	exit "$$exitcode"
+	bash-tools/diagrams/d2_generate_diagrams.sh
 
 .PHONY: diagrams-mermaidjs
 diagrams-mermaidjs:
