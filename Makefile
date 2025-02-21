@@ -154,8 +154,7 @@ install-mermaidjs:
 	@echo Install MermaidJS
 	@echo =================
 	@if ! type -P mmdc >/dev/null 2>&2; then \
-		bash-tools/packages/install_packages_if_not_installed.sh nodejs; \
-		bash-tools/packages/nodejs_npm_install_if_absent.sh @mermaid-js/mermaid-cli; \
+		bash-tools/install/install_mermaidjs.sh; \
 	fi
 
 .PHONY: install-python
