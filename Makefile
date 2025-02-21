@@ -75,6 +75,7 @@ diagrams-python:
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
+		img="images/$${x%.py}.svg"; \
 		echo "Generating $$x -> $$img" || git checkout "$$img" || rm -fv "$$img"; \
 		python3 $$x; \
 	done
