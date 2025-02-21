@@ -96,32 +96,15 @@ diagrams-d2: clean
 	fi
 	@echo
 	export SKIP_FILENAME_REGEX=template.d2; \
-	bash-tools/diagrams/d2_generate_diagrams.sh
+	bash-tools/diagrams/d2_generate_diagrams.sh . images/
 
 .PHONY: diagrams-mermaidjs
-diagrams-mermaidjs:
+diagrams-mermaidjs: clean
 	@if ! type -P mmdc >/dev/null 2>&1; then \
 		$(MAKE) install-mermaidjs; \
 	fi;
-	@echo =============================
-	@echo Generating MermaidJS Diagrams
-	@echo =============================
-	mkdir -p -v images
-	$(MAKE) clean
-	@set -o pipefail; \
-	set -eu; \
-	for x in *.mmd; do \
-		if [ "$$x" = template.mmd ]; then \
-			continue; \
-		fi; \
-		img="images/$${x%.mmd}.svg"; \
-		echo "Generating $$x -> $$img"; \
-		if ! mmdc -i "$$x" -o "$$img" ; then \
-			git checkout "$$img" || rm -fv "$$img"; \
-			exitcode=1; \
-		fi; \
-	done; \
-	exit "$$exitcode"
+	export SKIP_FILENAME_REGEX=template.mmd; \
+	bash-tools/diagrams/mmdc_generate_diagrams.sh . images/
 
 .PHONY: mmdc
 mmdc: diagrams-mermaidjs
