@@ -89,27 +89,12 @@ diagrams-python:
 	@#mv -fv *.png images/
 
 .PHONY: diagrams-d2
-diagrams-d2:
+diagrams-d2: clean
 	@if ! type -P d2 >/dev/null 2>&1; then \
+		echo; \
 		$(MAKE) install-d2; \
-	fi;
-	@echo ======================
-	@echo Generating D2 Diagrams
-	@echo ======================
-	mkdir -p -v images
-	$(MAKE) clean
-		# workaround to use shebang because d2 doesn't currently support defining the theme in the .d2 file
-		# and also doesn't support having a separate images/ directory, see:
-		#
-		#	https://github.com/terrastruct/d2/issues/1286
-		#
-		#	https://github.com/terrastruct/d2/issues/1287
-		#
-		#	https://github.com/terrastruct/d2/issues/1288
-		#
-		#if [ -x "$$x" ]; then
-		#    ./"$$x"
-		#fi
+	fi
+	@echo
 	bash-tools/diagrams/d2_generate_diagrams.sh
 
 .PHONY: diagrams-mermaidjs
