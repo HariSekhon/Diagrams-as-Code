@@ -95,6 +95,7 @@ diagrams-d2: clean
 		$(MAKE) install-d2; \
 	fi
 	@echo
+	export SKIP_FILENAME_REGEX=template.d2; \
 	bash-tools/diagrams/d2_generate_diagrams.sh
 
 .PHONY: diagrams-mermaidjs
