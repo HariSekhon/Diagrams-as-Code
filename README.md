@@ -127,7 +127,7 @@ I read an article that said:
   - [AWS Event Processing](#aws-event-processing)
   - [AWS Serverless Image Processing](#aws-serverless-image-processing)
 - [Build from Source](#build-from-source)
-- [Templates](#templates)
+- [Diagram Templates](#diagram-templates)
 - [Star History](#star-history)
 - [More Core Repos](#more-core-repos)
   - [Knowledge](#knowledge)
@@ -1067,7 +1067,7 @@ Create any single Python diagram and have it open automatically by running the p
 ./gcp_cloudflare_web_architecture_gke.py
 ```
 
-## Templates
+## Diagram Templates
 
 The [templates/diagram.d2](https://github.com/HariSekhon/Templates/blob/master/diagram.d2) and [templates/diagram.py](https://github.com/HariSekhon/Templates/blob/master/diagram.py) show the basics of each language.
 
