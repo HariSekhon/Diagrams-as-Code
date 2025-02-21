@@ -193,11 +193,8 @@ install-d2:
 	@echo ==============
 	@echo Install D2
 	@echo ==============
-	@if ! type -P curl >/dev/null 2>&2; then \
-		bash-tools/packages/install_packages.sh curl; \
-	fi
-	curl -fsSL https://d2lang.com/install.sh | sh -s --
-	@# don't install this, see DevOps-bash-tools install/install_d2.sh for details why
+	bash-tools/install/install_d2.sh
+	@# don't install this, see DevOps-Bash-tools install/install_d2.sh for details why
 	@#curl -fsSL https://d2lang.com/install.sh | sh -s -- --tala
 
 .PHONY: install-mermaidjs
