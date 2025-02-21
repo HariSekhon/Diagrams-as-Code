@@ -58,16 +58,19 @@ diagrams: diagrams-python diagrams-d2
 	@:
 
 .PHONY: diagrams-python
-diagrams-python:
+diagrams-python: clean
 	@if ! type -P dot >/dev/null 2>&1 || \
 		! python3 -c 'import diagrams' 2>&1; then \
 		$(MAKE) install-python; \
 	fi
+	@# Can't guarantee in a generate way in python_mingrammer_generate_diagrams.sh the targeted
+	@# filename that we would have to revert or delete to prevent bad diagram generation
+	@#export SKIP_FILENAME_REGEX=template.py; \
+	@#bash-tools/diagrams/python_mingrammer_generate_diagrams.sh .
 	@echo ==========================
 	@echo Generating Python Diagrams
 	@echo ==========================
 	mkdir -p -v images
-	$(MAKE) clean
 	@set -o pipefail; \
 	set -eu; \
 	export CI=1; \
@@ -76,7 +79,7 @@ diagrams-python:
 		if [ "$$x" = template.py ]; then \
 			continue; \
 		fi; \
-		img="images/$${x%.py}.svg"; \
+		img="images/$${x%.py}.png"; \
 		echo "Generating $$x -> $$img"; \
 		if ! python3 $$x; then \
 			git checkout "$$img" || rm -fv "$$img"; \
