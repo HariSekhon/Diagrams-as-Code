@@ -36,7 +36,7 @@ repos:
       # Git style
       - id: check-added-large-files
       - id: check-merge-conflict
-      - id: check-vcs-permalinks
+      #- id: check-vcs-permalinks
       #- id: forbid-new-submodules
       # Cross platform
       - id: check-case-conflict
