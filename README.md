@@ -106,6 +106,8 @@ I read an article that said:
   - [Code, Commit, Push, Boom](#code-commit-push-boom)
   - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
   - [Git - Environment Branches](#git---environment-branches)
+  - [Separate Branch Workflows](#separate-branch-workflows)
+  - [Mobile iOS Separate Branch Workflows](#mobile-ios-separate-branch-workflows)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Basics](#web-basics)
   - [Network - Layer 2 - Local - ARP](#network---layer-2---local---arp)
@@ -608,6 +610,36 @@ gitGraph
 ```
 
 Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer ([githubNextRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy)). It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating GitHub Releases in Jenkins ([githubCreateRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy)).
+
+### Separate Branch Workflows
+
+In some environments,
+devs push to different branches
+which have diverged such that they cannot do clean Git merges from one branch to the next as per above.
+
+This is not recommended because:
+
+1. allows for further drift between branches
+   1. wastes one of the big advantages of Git to track and merge changes across branches
+1. waste of CI/CD build time minutes
+   1. can incur additional cost
+   1. waste of real time
+   1. artifacts pushed to Production were not actually tested in lower environments
+1. untested code can be pushed to Production
+   1. untested code can be pushed to Production branch and released to Production environment
+      without the code having been tested in lower environments
+
+[release_workflows_separate.d2](release_workflows_separate.d2):
+
+![](images/release_workflows_separate.svg)
+
+### Mobile iOS Separate Branch Workflows
+
+Same as above but with some concrete technologies.
+
+[release_workflows_separate_mobile_ios.d2](release_workflows_separate_mobile_ios.d2):
+
+![](images/release_workflows_separate_mobile_ios.svg)
 
 ### LucidChart - GCP Architecture
 
