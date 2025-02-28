@@ -108,6 +108,7 @@ I read an article that said:
   - [Git - Environment Branches](#git---environment-branches)
   - [Separate Branch Workflows](#separate-branch-workflows)
   - [Mobile iOS Separate Branch Workflows](#mobile-ios-separate-branch-workflows)
+  - [Release Workflow - Unified - Trunk Based](#release-workflow---unified---trunk-based)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Basics](#web-basics)
   - [Network - Layer 2 - Local - ARP](#network---layer-2---local---arp)
