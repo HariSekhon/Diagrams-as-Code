@@ -49,12 +49,12 @@ dev_env.label: Dev\nEnvironment
 staging_env.label: Staging / QA\nEnvironment
 prod_env.label: Production\nEnvironment
 
-devs -> branch1: git push changes {style.animated: true}
-devs -> branch2: git push changes {style.animated: true}
+devs -> branch1: git push {style.animated: true}
+devs -> branch2: git push {style.animated: true}
 # devs -> branch3: git push changes {style.animated: true}
 
-branch1 -> trunk_branch: git merge {style.animated: true}
-branch2 -> trunk_branch: git merge {style.animated: true}
+branch1 -> trunk_branch: git pull request {style.animated: true}
+branch2 -> trunk_branch: git pull request {style.animated: true}
 # branch3 -> trunk_branch: git merge {style.animated: true}
 
 # make diagram messy and is implied
@@ -62,7 +62,7 @@ branch2 -> trunk_branch: git merge {style.animated: true}
 # branch2 -> cicd2: trigger\nbuild & test {style.animated: true}
 # branch3 -> cicd2: tigger\nbuild & test {style.animated: true}
 
-trunk_branch -> cicd1: git tag\nto\ntrigger {style.animated: true}
+trunk_branch -> cicd1: git tag\ntriggers {style.animated: true}
 
 cicd1 -> dev_env: build & deploy {style.animated: true}
 dev_env -> staging_env: promote artifact {style.animated: true}
