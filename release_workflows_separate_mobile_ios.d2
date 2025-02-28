@@ -76,6 +76,6 @@ dev_branch -> cicd1: trigger {style.animated: true}
 staging_branch -> cicd2: trigger {style.animated: true}
 production_branch -> cicd3: trigger {style.animated: true}
 
-cicd1 -> firebase1: build & deploy {style.animated: true}
-cicd2 -> firebase2: build & deploy {style.animated: true}
-cicd3 -> testflight: build & deploy {style.animated: true}
+cicd1 -> firebase1: Build\n&\nUpload .ipa artifact {style.animated: true}
+cicd2 -> firebase2: Build\n&\nUpload .ipa artifact {style.animated: true}
+cicd3 -> testflight: Build\n&\nUpload .ipa artifact {style.animated: true}
