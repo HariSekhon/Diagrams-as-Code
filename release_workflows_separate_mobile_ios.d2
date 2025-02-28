@@ -57,7 +57,7 @@ classes: {
 }
 
 devs.class: devs
-#devs2.class: devs
+# devs2.class: devs
 
 dev_branch.class: git
 staging_branch.class: git
@@ -88,7 +88,7 @@ cicd1 -> firebase1: Build\n&\nUpload .ipa artifact {style.animated: true}
 cicd2 -> firebase2: Build\n&\nUpload .ipa artifact {style.animated: true}
 cicd3 -> testflight: Build\n&\nUpload .ipa artifact {style.animated: true}
 
-#firebase1 -> devs2: Review {style.stroke-dash: 5}
-#firebase2 -> devs2: Review {style.stroke-dash: 5}
-#testflight -> devs2: Review {style.stroke-dash: 5}
+# firebase1 -> devs2: Review {style.stroke-dash: 5}
+# firebase2 -> devs2: Review {style.stroke-dash: 5}
+# testflight -> devs2: Review {style.stroke-dash: 5}
 testflight -> appstore: Manual Release {style.animated: true}
