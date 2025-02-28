@@ -71,8 +71,14 @@ cicd1.class: cicd
 cicd2.class: cicd
 cicd3.class: cicd
 
-firebase1.class: firebase_app_distribution
-firebase2.class: firebase_app_distribution
+firebase1: {
+  class: firebase_app_distribution
+  label: Firebase\nApp Distribution\n(Dev)
+}
+firebase2: {
+  class: firebase_app_distribution
+  label: Firebase\nApp Distribution\n(Staging / QA)
+}
 testflight.class: testflight
 appstore.class: appstore
 
