@@ -102,13 +102,13 @@ I read an article that said:
   - [RabbitMQ Pub/Sub](#rabbitmq-pubsub)
   - [AWS S3 Config Notify Lambda DynamoDB](#aws-s3-config-notify-lambda-dynamodb)
   - [Apigee Akamai EKS](#apigee-akamai-eks)
-  - [Devs Test in Production](#devs-test-in-production)
-  - [Code, Commit, Push, Boom](#code-commit-push-boom)
-  - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
   - [Git - Environment Branches](#git---environment-branches)
   - [Separate Branch Workflows](#separate-branch-workflows)
   - [Mobile iOS Separate Branch Workflows](#mobile-ios-separate-branch-workflows)
   - [Release Workflow - Unified - Trunk Based](#release-workflow---unified---trunk-based)
+  - [Devs Test in Production](#devs-test-in-production)
+  - [Code, Commit, Push, Boom](#code-commit-push-boom)
+  - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
   - [LucidChart - GCP Architecture](#lucidchart---gcp-architecture)
   - [Web Basics](#web-basics)
   - [Network - Layer 2 - Local - ARP](#network---layer-2---local---arp)
@@ -491,30 +491,6 @@ See Also: Prometheus and components quick install scripts in the
 
 ![](images/apigee_akamai_eks.svg)
 
-### Devs Test in Production
-
-Iirc I created and stuck this meme pic of [The Most Interesting Man in the World](https://en.wikipedia.org/wiki/The_Most_Interesting_Man_in_the_World) on the wall of my tech dept back in 2011 while leading the infra team of an internet Ad Tech company doing several production releases a day. We literally did test in production using a small fraction of live internet traffic via canary deployments.
-
-[test_in_production.d2](test_in_production.d2):
-
-![](images/test_in_production.svg)
-
-If done badly though without canary release testing or similar then it can result in this...
-
-### Code, Commit, Push, Boom
-
-[code_commit_push.d2](code_commit_push.d2):
-
-![](images/code_commit_push.svg)
-
-### The Danger of Testing Ideas in Production
-
-I may have gone overboard and done so many Diagrams-as-Code I'm starting to see life this way...
-
-[karl_marx_test_ideas_in_production.d2](karl_marx_test_ideas_in_production.d2)
-
-![](images/karl_marx_test_ideas_in_production.svg)
-
 ### Git - Environment Branches
 
 At least they don't [only test in Production](https://github.com/HariSekhon/Diagrams-as-Code/blob/master/README.md#devs-test-in-production)!
@@ -653,6 +629,30 @@ Build once & promote the same artifact is preferred.
 [release_workflow_trunk.d2](release_workflow_trunk.d2):
 
 ![](images/release_workflow_trunk.svg)
+
+### Devs Test in Production
+
+Iirc I created and stuck this meme pic of [The Most Interesting Man in the World](https://en.wikipedia.org/wiki/The_Most_Interesting_Man_in_the_World) on the wall of my tech dept back in 2011 while leading the infra team of an internet Ad Tech company doing several production releases a day. We literally did test in production using a small fraction of live internet traffic via canary deployments.
+
+[test_in_production.d2](test_in_production.d2):
+
+![](images/test_in_production.svg)
+
+If done badly though without canary release testing or similar then it can result in this...
+
+### Code, Commit, Push, Boom
+
+[code_commit_push.d2](code_commit_push.d2):
+
+![](images/code_commit_push.svg)
+
+### The Danger of Testing Ideas in Production
+
+I may have gone overboard and done so many Diagrams-as-Code I'm starting to see life this way...
+
+[karl_marx_test_ideas_in_production.d2](karl_marx_test_ideas_in_production.d2)
+
+![](images/karl_marx_test_ideas_in_production.svg)
 
 ### LucidChart - GCP Architecture
 
