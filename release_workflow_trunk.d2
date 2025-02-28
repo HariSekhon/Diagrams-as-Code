@@ -62,7 +62,7 @@ branch2 -> trunk_branch: git merge {style.animated: true}
 # branch2 -> cicd2: trigger\nbuild & test {style.animated: true}
 # branch3 -> cicd2: tigger\nbuild & test {style.animated: true}
 
-trunk_branch -> cicd1: trigger {style.animated: true}
+trunk_branch -> cicd1: git tag\nto\ntrigger {style.animated: true}
 
 cicd1 -> dev_env: build & deploy {style.animated: true}
 dev_env -> staging_env: promote artifact {style.animated: true}
