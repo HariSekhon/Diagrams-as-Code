@@ -44,9 +44,9 @@ cicd1.class: cicd
 cicd2.class: cicd
 cicd3.class: cicd
 
-devs -> dev_branch: git push changes {style.animated: true}
-devs -> staging_branch: git push changes {style.animated: true}
-devs -> production_branch: git push changes {style.animated: true}
+devs -> dev_branch: git pull request merge {style.animated: true}
+devs -> staging_branch: git pull request merge {style.animated: true}
+devs -> production_branch: git pull request merge {style.animated: true}
 
 dev_branch -> cicd1: trigger {style.animated: true}
 staging_branch -> cicd2: trigger {style.animated: true}
