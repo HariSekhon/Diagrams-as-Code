@@ -1,0 +1,69 @@
+#!/usr/bin/env d2 --sketch
+#
+#  Author: Hari Sekhon
+#  Date: 2025-02-28 12:52:10 +0700 (Fri, 28 Feb 2025)
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn
+#  and optionally send me feedback to help steer this or other code I publish
+#
+#  https://www.linkedin.com/in/HariSekhon
+#
+
+title: {
+  label: "Release Workflow - Unified - Trunk Based"
+  near: top-center
+  shape: text
+  style.font-size: 40
+}
+
+classes: {
+  devs: {
+    label: Devs
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/client/users.png
+    shape: image
+  }
+  cicd: {
+    label: CI/CD
+    shape: diamond
+  }
+}
+
+devs.class: devs
+
+branch1.label: Git Feature Branch # \nfeature/fancy-stuff
+branch2.label: Git Bugfix Branch
+# \nbugfix/broken-stuff
+# branch3.label: Git Feature Branch\nfeature/more-fancy-stuff
+trunk_branch.label: Git Trunk Branch\n\"main\"
+
+cicd1.class: cicd
+# cicd2.class: cicd
+
+dev_env.label: Dev\nEnvironment
+staging_env.label: Staging / QA\nEnvironment
+prod_env.label: Production\nEnvironment
+
+devs -> branch1: git push changes {style.animated: true}
+devs -> branch2: git push changes {style.animated: true}
+# devs -> branch3: git push changes {style.animated: true}
+
+branch1 -> trunk_branch: git merge {style.animated: true}
+branch2 -> trunk_branch: git merge {style.animated: true}
+# branch3 -> trunk_branch: git merge {style.animated: true}
+
+# make diagram messy and is implied
+# branch1 -> cicd2: trigger\nbuild & test {style.animated: true}
+# branch2 -> cicd2: trigger\nbuild & test {style.animated: true}
+# branch3 -> cicd2: tigger\nbuild & test {style.animated: true}
+
+trunk_branch -> cicd1: trigger {style.animated: true}
+
+cicd1 -> dev_env: build & deploy {style.animated: true}
+dev_env -> staging_env: promote artifact {style.animated: true}
+staging_env -> prod_env: promote artifact {style.animated: true}
