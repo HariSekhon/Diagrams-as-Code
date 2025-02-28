@@ -98,5 +98,4 @@ cicd3 -> testflight: build\n&\nupload .ipa artifact {style.animated: true}
 # firebase1 -> devs2: Review {style.stroke-dash: 5}
 # firebase2 -> devs2: Review {style.stroke-dash: 5}
 # testflight -> devs2: Review {style.stroke-dash: 5}
-testflight -> cicd4: manual trigger\nGitHub \"Environments\"\nprotect who can trigger eg. Tech Leads & Managers only {style.stroke-dash: 5}
-cicd4 -> appstore: upload .ipa artifact {style.animated: true}
+testflight -> appstore: submit for app review\nmanual release {style.stroke-dash: 5}
