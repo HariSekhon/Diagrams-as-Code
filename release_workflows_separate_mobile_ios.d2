@@ -70,6 +70,7 @@ production_branch.label: Production\nGit Branch
 cicd1.class: cicd
 cicd2.class: cicd
 cicd3.class: cicd
+cicd4.class: cicd
 
 firebase1: {
   class: firebase_app_distribution
@@ -82,19 +83,20 @@ firebase2: {
 testflight.class: testflight
 appstore.class: appstore
 
-devs -> dev_branch: git push changes {style.animated: true}
-devs -> staging_branch: git push changes {style.animated: true}
-devs -> production_branch: git push changes {style.animated: true}
+devs -> dev_branch: GitHub\npull request\nmerge {style.animated: true}
+devs -> staging_branch: GitHub\npull request\nmerge {style.animated: true}
+devs -> production_branch: GitHub\npull request\nmerge {style.animated: true}
 
 dev_branch -> cicd1: trigger {style.animated: true}
 staging_branch -> cicd2: trigger {style.animated: true}
 production_branch -> cicd3: trigger {style.animated: true}
 
-cicd1 -> firebase1: Build\n&\nUpload .ipa artifact {style.animated: true}
-cicd2 -> firebase2: Build\n&\nUpload .ipa artifact {style.animated: true}
-cicd3 -> testflight: Build\n&\nUpload .ipa artifact {style.animated: true}
+cicd1 -> firebase1: build\n&\nupload .ipa artifact {style.animated: true}
+cicd2 -> firebase2: build\n&\nupload .ipa artifact {style.animated: true}
+cicd3 -> testflight: build\n&\nupload .ipa artifact {style.animated: true}
 
 # firebase1 -> devs2: Review {style.stroke-dash: 5}
 # firebase2 -> devs2: Review {style.stroke-dash: 5}
 # testflight -> devs2: Review {style.stroke-dash: 5}
-testflight -> appstore: Manual Release {style.animated: true}
+testflight -> cicd4: manual trigger\nGitHub \"Environments\"\nprotect who can trigger\neg. Tech Leads & Managers only {style.stroke-dash: 5}
+cicd4 -> appstore: upload .ipa artifact {style.animated: true}
