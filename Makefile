@@ -68,7 +68,7 @@ diagrams-python: clean
 	@# Can't guarantee in a generate way in python_mingrammer_generate_diagrams.sh the targeted
 	@# filename that we would have to revert or delete to prevent bad diagram generation
 	@#export SKIP_FILENAME_REGEX="template.py|diagram.py"; \
-	@#bash-tools/diagrams/python_mingrammer_generate_diagrams.sh .
+	#@bash-tools/diagrams/python_mingrammer_generate_diagrams.sh .
 	@echo ==========================
 	@echo Generating Python Diagrams
 	@echo ==========================
