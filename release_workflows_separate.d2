@@ -37,7 +37,7 @@ classes: {
 devs.class: devs
 
 dev_branch.label: Dev\nGit Branch
-staging_branch.label: Staging / QA\nGit Branch
+staging_branch.label: Staging\nGit Branch
 production_branch.label: Production\nGit Branch
 
 cicd1.class: cicd
@@ -53,5 +53,5 @@ staging_branch -> cicd2: trigger {style.animated: true}
 production_branch -> cicd3: trigger {style.animated: true}
 
 cicd1 -> Dev\nEnvironment: build & deploy {style.animated: true}
-cicd2 -> Staging\nEnvironment: build & deploy {style.animated: true}
+cicd2 -> Staging / QA\nEnvironment: build & deploy {style.animated: true}
 cicd3 -> Production\nEnvironment: build & deploy {style.animated: true}
