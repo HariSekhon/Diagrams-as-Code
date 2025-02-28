@@ -641,6 +641,18 @@ Same as above but with some concrete technologies.
 
 ![](images/release_workflows_separate_mobile_ios.svg)
 
+### Release Workflow - Unified - Trunk Based
+
+Build once & promote the same artifact is preferred.
+
+1. build once saves physical time and CI/CD costs
+1. test the exact artifact output (Docker image or Mobile iOS `.ipa` or Android `.apk`)
+1. no untested code reaches Production
+
+[release_workflow_trunk.d2](release_workflow_trunk.d2):
+
+![](images/release_workflow_trunk.svg)
+
 ### LucidChart - GCP Architecture
 
 A sample architecture I did for a client for us to talk through, which was similar to what they had in mind (I won the gig).
