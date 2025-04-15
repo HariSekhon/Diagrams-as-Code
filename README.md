@@ -90,6 +90,8 @@ I read an article that said:
   - [Kubernetes Stateful Architecture with persistent volumes](#kubernetes-stateful-architecture-with-persistent-volumes)
   - [Kubernetes Service External Traffic Policy](#kubernetes-service-external-traffic-policy)
   - [Kubernetes on Premise](#kubernetes-on-premise)
+    - [Kubernetes with Traditional Load Balancer](#kubernetes-with-traditional-load-balancer)
+    - [Kubernetes with MetalLB](#kubernetes-with-metallb)
   - [Traefik Kubernetes Ingress on GKE](#traefik-kubernetes-ingress-on-gke)
   - [Kong API Gateway on Kubernetes (AWS EKS)](#kong-api-gateway-on-kubernetes-aws-eks)
   - [OpenTSDB on Kubernetes and HBase](#opentsdb-on-kubernetes-and-hbase)
@@ -376,13 +378,13 @@ A variation using Kubernetes and Cloud Functions of this GCP malware scanner sol
 - GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
 - GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
 
-Traditionally:
+#### Kubernetes with Traditional Load Balancer
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
 
 ![](images/kubernetes_on_premise.svg)
 
-with [MetalLB](https://metallb.universe.tf/):
+#### Kubernetes with [MetalLB](https://metallb.universe.tf/)
 
 - GitHub repo: [HariSekhon/Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
   - [MetalLB](https://github.com/HariSekhon/Kubernetes-configs/tree/master/metal-lb/base)
