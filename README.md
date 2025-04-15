@@ -375,10 +375,10 @@ A variation using Kubernetes and Cloud Functions of this GCP malware scanner sol
 
 ### Kubernetes on Premise
 
+#### Kubernetes with Traditional Load Balancer
+
 - GitHub repo: [Kubernetes-configs](https://github.com/HariSekhon/Kubernetes-configs)
 - GitHub repo: [HAProxy-configs](https://github.com/HariSekhon/HAProxy-configs)
-
-#### Kubernetes with Traditional Load Balancer
 
 [kubernetes_on_premise.d2](kubernetes_on_premise.d2):
 
