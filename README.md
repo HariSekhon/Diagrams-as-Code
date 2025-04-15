@@ -103,9 +103,9 @@ I read an article that said:
   - [AWS S3 Config Notify Lambda DynamoDB](#aws-s3-config-notify-lambda-dynamodb)
   - [Apigee Akamai EKS](#apigee-akamai-eks)
   - [Git - Environment Branches](#git---environment-branches)
-  - [Separate Branch Workflows](#separate-branch-workflows)
-  - [Mobile iOS Separate Branch Workflows](#mobile-ios-separate-branch-workflows)
-  - [Release Workflow - Unified - Trunk Based](#release-workflow---unified---trunk-based)
+  - [CI/CD - Separate Branch Workflows](#cicd---separate-branch-workflows)
+  - [Mobile CI/CD iOS - Separate Branch Workflows](#mobile-cicd-ios---separate-branch-workflows)
+  - [CI/CD Unified Release Workflow - Trunk Based](#cicd-unified-release-workflow---trunk-based)
   - [Devs Test in Production](#devs-test-in-production)
   - [Code, Commit, Push, Boom](#code-commit-push-boom)
   - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
@@ -588,7 +588,7 @@ gitGraph
 
 Note: I did eventually move this client to tagged releases using `YYYY.NN` release format, just incrementing `NN` which is a no brainer ([githubNextRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubNextRelease.groovy)). It turns out the developers had eventually started using releases in Jira labelled as `YYYY.NN` to track which tickets were going into which production deployment, so when I pushed for this, it made sense to them finally as not being too great an inconvenience! It's also easy to automate by creating GitHub Releases in Jenkins ([githubCreateRelease.groovy](https://github.com/HariSekhon/Jenkins/blob/master/vars/githubCreateRelease.groovy)).
 
-### Separate Branch Workflows
+### CI/CD - Separate Branch Workflows
 
 In some environments,
 devs push to different branches
@@ -610,7 +610,7 @@ This is not recommended because:
 
 ![](images/release_workflows_separate.svg)
 
-### Mobile iOS Separate Branch Workflows
+### Mobile CI/CD iOS - Separate Branch Workflows
 
 Same as above but with some concrete technologies.
 
@@ -618,7 +618,7 @@ Same as above but with some concrete technologies.
 
 ![](images/release_workflows_separate_mobile_ios.svg)
 
-### Release Workflow - Unified - Trunk Based
+### CI/CD Unified Release Workflow - Trunk Based
 
 Build once & promote the same artifact is preferred.
 
