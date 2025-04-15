@@ -66,9 +66,11 @@ users -> user_network
 
 user_network: Network {class: network}
 
-user_network -> Server 1.lb1
+user_network -> Server 1.lb1: {
+  label: Active VIP\nARP elected node
+}
 user_network -> Server 2.lb2: {
-  label: VIP\nLayer 2 Failover
+  label: Standby VIP\nLayer 2 Failover\nvia ARP election\n& ARP broadcast update
   style.opacity: 0.5
   style.stroke-dash: 5
 }
