@@ -624,7 +624,11 @@ Build once & promote the same artifact is preferred.
 
 ### Mobile CI/CD iOS - Separate Branch Workflows
 
-Same as above but with some concrete technologies.
+Concrete example of [Separate Branch Workflows](#cicd---separate-branch-workflows) above.
+
+At one client I had
+to do this because the IPA generated in each environment had different bundle IDs
+and the devs would have had to make changes for me to be able to try a unified release workflow.
 
 [release_workflows_separate_mobile_ios.d2](release_workflows_separate_mobile_ios.d2):
 
