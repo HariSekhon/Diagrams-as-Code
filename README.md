@@ -104,8 +104,8 @@ I read an article that said:
   - [Apigee Akamai EKS](#apigee-akamai-eks)
   - [Git - Environment Branches](#git---environment-branches)
   - [CI/CD - Separate Branch Workflows](#cicd---separate-branch-workflows)
+  - [CI/CD - Unified Release Workflow - Trunk Based](#cicd---unified-release-workflow---trunk-based)
   - [Mobile CI/CD iOS - Separate Branch Workflows](#mobile-cicd-ios---separate-branch-workflows)
-  - [CI/CD Unified Release Workflow - Trunk Based](#cicd-unified-release-workflow---trunk-based)
   - [Devs Test in Production](#devs-test-in-production)
   - [Code, Commit, Push, Boom](#code-commit-push-boom)
   - [The Danger of Testing Ideas in Production](#the-danger-of-testing-ideas-in-production)
@@ -610,15 +610,7 @@ This is not recommended because:
 
 ![](images/release_workflows_separate.svg)
 
-### Mobile CI/CD iOS - Separate Branch Workflows
-
-Same as above but with some concrete technologies.
-
-[release_workflows_separate_mobile_ios.d2](release_workflows_separate_mobile_ios.d2):
-
-![](images/release_workflows_separate_mobile_ios.svg)
-
-### CI/CD Unified Release Workflow - Trunk Based
+### CI/CD - Unified Release Workflow - Trunk Based
 
 Build once & promote the same artifact is preferred.
 
@@ -629,6 +621,14 @@ Build once & promote the same artifact is preferred.
 [release_workflow_trunk.d2](release_workflow_trunk.d2):
 
 ![](images/release_workflow_trunk.svg)
+
+### Mobile CI/CD iOS - Separate Branch Workflows
+
+Same as above but with some concrete technologies.
+
+[release_workflows_separate_mobile_ios.d2](release_workflows_separate_mobile_ios.d2):
+
+![](images/release_workflows_separate_mobile_ios.svg)
 
 ### Devs Test in Production
 
