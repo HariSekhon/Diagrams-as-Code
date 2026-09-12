@@ -1,0 +1,273 @@
+#!/usr/bin/env d2
+#
+#  vim:ts=2:sts=2:sw=2:et:filetype=d2
+#
+#  Author: [Your Name]
+#  Date: 2026-06-14
+#
+#  https://github.com/HariSekhon/Diagrams-as-Code
+#
+#  License: see accompanying Hari Sekhon LICENSE file
+#
+
+# ============================================================================ #
+#              A z u r e   D e v O p s   C I / C D   P i p e l i n e
+# ============================================================================ #
+
+direction: right
+
+title: {
+  label: Azure DevOps CI/CD Pipeline
+  near: top-center
+  shape: text
+  style.font-size: 40
+  style.underline: true
+}
+
+classes: {
+  developer: {
+    label: Developer
+    icon: https://icons.terrastruct.com/essentials%2F013-avatar.svg
+    shape: image
+  }
+  azure_devops: {
+    label: Azure DevOps
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/azure-devops.png
+    shape: image
+  }
+  repos: {
+    label: Azure Repos
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/repos.png
+    shape: image
+  }
+  pipelines: {
+    label: Azure Pipelines
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/pipelines.png
+    shape: image
+  }
+  artifacts: {
+    label: Azure Artifacts
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/artifacts.png
+    shape: image
+  }
+  acr: {
+    label: Azure Container Registry
+    icon: https://icons.terrastruct.com/azure%2FContainer%20Service%20Color%2FContainer%20Registries.svg
+    shape: image
+  }
+  aks: {
+    label: Azure Kubernetes Service
+    icon: https://diagrams.mingrammer.com/img/resources/azure/compute/kubernetes-services.png
+    shape: image
+  }
+  keyvault: {
+    label: Azure Key Vault
+    icon: https://icons.terrastruct.com/azure%2FSecurity%20Service%20Color%2FKey%20Vaults.svg
+    shape: image
+  }
+  monitor: {
+    label: Azure Monitor
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/application-insights.png
+    shape: image
+  }
+  alert: {
+    label: Azure Alerts
+    icon: https://diagrams.mingrammer.com/img/resources/azure/devops/log-analytics.png
+    shape: image
+  }
+  k8s: {
+    label: Kubernetes
+    icon: https://icons.terrastruct.com/azure%2F_Companies%2FKubernetes.svg
+    shape: image
+  }
+  pod: {
+    label: Pod
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/compute/pod.png
+    shape: image
+  }
+  ingress: {
+    label: Ingress
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/ing.png
+    shape: image
+  }
+  service: {
+    label: Service
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/network/svc.png
+    shape: image
+  }
+  loadbalancer: {
+    label: Azure Load Balancer
+    icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLoad%20Balancers.svg
+    shape: image
+  }
+  dns: {
+    label: Azure DNS
+    icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FDNS%20Zones.svg
+    shape: image
+  }
+  internet: {
+    label: Internet
+    icon: https://icons.terrastruct.com/infra%2F022-hosting.svg
+    shape: image
+  }
+  github: {
+    label: GitHub
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+    shape: image
+  }
+  docker: {
+    label: Docker
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+    shape: image
+  }
+  helm: {
+    label: Helm
+    icon: https://diagrams.mingrammer.com/img/resources/k8s/ecosystem/helm.png
+    shape: image
+  }
+  argocd: {
+    label: ArgoCD
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/gitops/argocd.png
+    shape: image
+  }
+  slack: {
+    label: Slack
+    icon: https://icons.terrastruct.com/social%2Fslack.svg
+    shape: image
+  }
+  terraform: {
+    label: Terraform
+    icon: https://diagrams.mingrammer.com/img/resources/onprem/iac/terraform.png
+    shape: image
+  }
+  animated: {
+    style.animated: true
+  }
+  push: {
+    label: git push
+    style.animated: true
+  }
+  trigger: {
+    label: triggers pipeline
+    style.animated: true
+  }
+  build: {
+    label: build & test
+    style.animated: true
+  }
+  dockerpush: {
+    label: push image
+    style.animated: true
+  }
+  deploy: {
+    label: deploy
+    style.animated: true
+  }
+  monitor_traffic: {
+    label: monitoring & metrics
+    style.animated: true
+  }
+  secrets: {
+    label: fetch secrets
+    style.animated: true
+  }
+  notify: {
+    label: notify team
+    style.animated: true
+  }
+  invisible: {
+    style.opacity: 0
+  }
+}
+
+developer.class: developer
+
+azure: Azure DevOps {
+  azure_devops.class: azure_devops
+
+  repos.class: repos
+  pipelines.class: pipelines
+  artifacts.class: artifacts
+
+  repos -> pipelines: {class: trigger}
+  pipelines -> artifacts: {class: build}
+}
+
+developer -> azure.repos: git push {class: push}
+
+iac: Infrastructure {
+  terraform.class: terraform
+  terraform -> aks: {class: invisible}
+  terraform -> keyvault: {class: invisible}
+  terraform -> registry: {class: invisible}
+}
+
+registry: Container Registry {
+  acr.class: acr
+  azure.pipelines -> registry: docker push image {class: dockerpush}
+}
+
+keyvault: Azure Key Vault {
+  keyvault.class: keyvault
+  aks.secrets -> keyvault: {class: secrets}
+}
+
+cluster: AKS Cluster {
+  aks.class: aks
+  aks -> k8s
+  k8s.class: k8s
+
+  ingress.class: ingress
+  service.class: service
+  loadbalancer.class: loadbalancer
+
+  k8s -> ingress -> service -> loadbalancer: {class: invisible}
+
+  apps: Application Pods {
+    app1.class: pod
+    app1.label: App
+    app2.class: pod
+    app2.label: App
+  }
+
+  gitops: GitOps {
+    argocd.class: argocd
+    helm.class: helm
+  }
+
+  gitops -> apps: {class: deploy}
+  registry -> apps: {class: invisible}
+  registry -> gitops: {class: invisible}
+  azure.pipelines -> gitops: update manifest {class: deploy}
+  azure.repos -> gitops: sync manifests {class: invisible}
+  azure.artifacts -> apps: {class: invisible}
+}
+
+internet -> cluster.loadbalancer: HTTP/HTTPS {class: animated}
+
+cluster.loadbalancer -> internet: response {class: animated}
+
+monitoring: Monitoring {
+  monitor.class: monitor
+  alert.class: alert
+  cluster.apps -> monitor: {class: monitor_traffic}
+  monitor -> alert: {class: invisible}
+}
+
+notifications: Notifications {
+  slack.class: slack
+  azure.pipelines -> slack: {class: notify}
+  monitoring.alert -> slack: {class: notify}
+}
+
+dns_zone: DNS {
+  dns.class: dns
+  internet -> dns: {class: invisible}
+  dns -> cluster.loadbalancer: {class: invisible}
+}
+
+github: GitHub {
+  github.class: github
+  developer -> github: {class: invisible}
+  azure.repos <- github: sync {class: invisible}
+}
